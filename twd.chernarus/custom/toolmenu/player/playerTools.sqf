@@ -36,7 +36,7 @@ if ( !((getPlayerUID player) in adminAll) && !((getPlayerUID player) in userDALL
 				["Animation Menu >>", [6], "#USER:AnimationMenu", -5, [["expression", ""]], "1", "1"],
 				["Filter Menu >>", [3], "#USER:FilterMenu", -5, [["expression", ""]], "1", "1"],
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
-					["Main Menu", [20], "#USER:playermenu", -5, [["expression", ""]], "1", "1"]
+					["Main Menu", [20], "#USER:playermenu", -5, [["expression", ""]], "1", "1"],
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 		];
 } 
@@ -52,7 +52,7 @@ else
 				["Animation Menu >>", [6], "#USER:AnimationMenu", -5, [["expression", ""]], "1", "1"],
 				["Filter Menu >>", [3], "#USER:FilterMenu", -5, [["expression", ""]], "1", "1"],
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
-					["Main Menu", [20], "#USER:playermenu", -5, [["expression", ""]], "1", "1"]
+					["Main Menu", [20], "#USER:playermenu", -5, [["expression", ""]], "1", "1"],
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 		];
 };
@@ -70,7 +70,7 @@ PlayerTools =
 		["Insert Stuff Here", [8],  "", -5, [["expression", format[_EXECscript2,""]]], "1", "1"],	
 
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
-			["Main Menu", [20], "#USER:playermenu", -5, [["expression", ""]], "1", "1"]
+			["Main Menu", [20], "#USER:playermenu", -5, [["expression", ""]], "1", "1"],
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
 //
@@ -90,7 +90,7 @@ WTMenu=[
 		["Normal", [], "", -5, [["expression", "setTerrainGrid 25;"]], "1", "1"],  
 		["Low *Less Lag*", [], "", -5, [["expression", "setTerrainGrid 50;"]], "1", "1"],  
 	["", [], "", -5, [["expression", ""]], "1", "0"],
-			["Main Menu", [20], "#USER:playermenu", -5, [["expression", ""]], "1", "1"]
+			["Main Menu", [20], "#USER:playermenu", -5, [["expression", ""]], "1", "1"],
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
 //
@@ -102,7 +102,7 @@ VehicleMenu =
 		["Bike", [2],  "", -5, [["expression", format[_EXECscript7,"Bike.sqf"]]], "1", "1"],	
 		["Gyro", [2],  "", -5, [["expression", format[_EXECscript7,"mozzie.sqf"]]], "1", "1"],	
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
-			["Main Menu", [20], "#USER:playermenu", -5, [["expression", ""]], "1", "1"]
+			["Main Menu", [20], "#USER:playermenu", -5, [["expression", ""]], "1", "1"],
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
 //
@@ -125,7 +125,7 @@ FilterMenu =
 		["Shrooms", [2],  "", -5, [["expression", format[_EXECscript11,"Shrooms.sqf"]]], "1", "1"],	
 		["Spider Pig", [2],  "", -5, [["expression", format[_EXECscript11,"Spiderman.sqf"]]], "1", "1"],		
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
-			["Main Menu", [20], "#USER:playermenu", -5, [["expression", ""]], "1", "1"]
+			["Main Menu", [20], "#USER:playermenu", -5, [["expression", ""]], "1", "1"],
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
 //
@@ -145,7 +145,7 @@ AnimationMenu =
 		["Run", [2],  "", -5, [["expression", format[_EXECscript10,"run.sqf"]]], "1", "1"],
 		["Salute", [2],  "", -5, [["expression", format[_EXECscript10,"salute.sqf"]]], "1", "1"],
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
-			["Main Menu", [20], "#USER:playermenu", -5, [["expression", ""]], "1", "1"]
+			["Main Menu", [20], "#USER:playermenu", -5, [["expression", ""]], "1", "1"],
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
 
