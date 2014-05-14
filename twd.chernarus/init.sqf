@@ -27,7 +27,7 @@ enableSentences false;
 	dayz_paraSpawn = false;
 	dayz_sellDistance_vehicle = 10;
 	dayz_sellDistance_boat = 30;
-	dayz_sellDistance_air = 40;
+	dayz_sellDistance_air = 70;
 	dayz_maxAnimals = 5;
 	dayz_tameDogs = true;	
 	dayz_fullMoonNights = true;
