@@ -1,0 +1,1 @@
+dayz_allowedObjects = dayz_allowedObjects + ["HeliHRescue"];
