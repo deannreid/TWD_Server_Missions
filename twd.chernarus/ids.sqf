@@ -1,63 +1,62 @@
 adminAll = 
-[
-"139811590",   // Dean
-"119540166",   // Cable
-"10265984", //Z67
-"77269254",  //DrtyPntyz
-"237964422", //Wicked
-"241379398", //Vapo
-"144565382",   // Curtis
-"102208774",   // Kieran
-"94794054",  // Adrian
-"125215110",    // Calvin
-"5210496", // Mak
-"11655302",  //Ghost
-"167093190", //GhostSamurai
-"153285574", //Fun|Sniper 
-"170218310",  //Headshot
-"111721542" //Robert
-];
+			[
+				"139811590",   // Dean
+				"119540166",   // Cable
+				"10265984", //Z67
+				"77269254",  //DrtyPntyz
+				"237964422", //Wicked
+				"241379398", //Vapo
+				"144565382",   // Curtis
+				"102208774",   // Kieran
+				"94794054",  // Adrian
+				"125215110",    // Calvin
+				"5210496", // Mak
+				"11655302",  //Ghost
+				"167093190", //GhostSamurai
+				"153285574", //Fun|Sniper 
+				"170218310",  //Headshot
+				"111721542" //Robert
+			];
 //
 //////////////////////////////////////////////////////////////
 //
 userOwner =  //Owners - Dean Menu
-[
-"139811590",   // Dean
-"119540166",   // Cable
-"10265984", //Z67
-"77269254",  //DrtyPntyz
-"237964422", //Wicked
-"241379398", //Vapo
-"144565382"   // Curtis
-];
+			[
+				"139811590",   // Dean
+				"119540166",   // Cable
+				"10265984", //Z67
+				"77269254",  //DrtyPntyz
+				"237964422", //Wicked
+				"241379398", //Vapo
+				"144565382"   // Curtis
+			];
 //
 //////////////////////////////////////////////////////////////
 //
-userSuper // Super Admins
-[
-"102208774",   // Kieran
-"94794054",  // Adrian
-"125215110"    // Calvin
-];
+userSuper = // Super Admins
+			[
+				"102208774",   // Kieran
+				"94794054",  // Adrian
+				"125215110"    // Calvin
+			];
 //
 //////////////////////////////////////////////////////////////
 //
 userAdmin = //Admins
-[
-"5210496", // Mak
-"11655302",  //Ghost
-"167093190", //GhostSamurai
-"153285574", //Fun|Sniper 
-"170218310"  //Headshot
-];
+			[
+				"5210496", // Mak
+				"11655302",  //Ghost
+				"167093190", //GhostSamurai
+				"153285574", //Fun|Sniper 
+				"170218310"  //Headshot
+			];
 //
 //////////////////////////////////////////////////////////////
 //
 userMod = //Mods
-[
-"",
-"111721542" //Robert
-];
+			[
+				"111721542" //Robert
+			];
 
 
 
@@ -66,100 +65,100 @@ userMod = //Mods
 ////////////////////////////////////////////////////////////////
 
 userDALL = //ALL DONATORS
-[
-"170530310",  //Vook
-"170096454", //BREAD_man
-"153285574", //Fun|Sniper  
-"128440262", // Ripcord
-"52501638", // Fluttersh
-"11655302",  //Ghost
-"167093190", //GhostSamurai
-"135256198", //Josh
-"10265984", //Z67
-"79105478",  //Apoc Jay
-"236154822", //Secure
-"236156102", //MSI
-"124823430", //JohnLynzi14a
-"77269254",  //DrtyPntyz
-"236124742", //Elam Shtrom
-"239832326", //JLKA-CRY 
-"169641350", // xXAtari5200xX
-"171650182", // =DTU=Blackhawk1917
-"230755206", // Carson
-"169904646", //Devil
-"167672134",  // AAron Attwood
-"83584448",  // Noah Attwood
-"239832326", //Jlka-cry
-"238995270", //WhiteWolf
-"234595718", // MCDagger99
-"116156422", // Matthew Stevens
-"231224966", //Paolo
-"244755462", //Smug
-"107969158", // xconnection 3d
-"151121990", //Splatfreak
-"74806144", //Mastik
-"96576454",   //Kobedabitch
-"248179974", // Burgy
-"248180166" // Fallen Angel
+			[
+				"170530310",  //Vook
+				"170096454", //BREAD_man
+				"153285574", //Fun|Sniper  
+				"128440262", // Ripcord
+				"52501638", // Fluttersh
+				"11655302",  //Ghost
+				"167093190", //GhostSamurai
+				"135256198", //Josh
+				"10265984", //Z67
+				"79105478",  //Apoc Jay
+				"236154822", //Secure
+				"236156102", //MSI
+				"124823430", //JohnLynzi14a
+				"77269254",  //DrtyPntyz
+				"236124742", //Elam Shtrom
+				"239832326", //JLKA-CRY 
+				"169641350", // xXAtari5200xX
+				"171650182", // =DTU=Blackhawk1917
+				"230755206", // Carson
+				"169904646", //Devil
+				"167672134",  // AAron Attwood
+				"83584448",  // Noah Attwood
+				"239832326", //Jlka-cry
+				"238995270", //WhiteWolf
+				"234595718", // MCDagger99
+				"116156422", // Matthew Stevens
+				"231224966", //Paolo
+				"244755462", //Smug
+				"107969158", // xconnection 3d
+				"151121990", //Splatfreak
+				"74806144", //Mastik
+				"96576454",   //Kobedabitch
+				"248179974", // Burgy
+				"248180166", // Fallen Angel
+				"240265670"  //Brian
 ];
 //
 //////////////////////////////////////////////////////////////
 //
 userD1 = //Donator T1
-[
-""
-];
+			[
+				""
+			];
 //
 //////////////////////////////////////////////////////////////
 //
 userD2 = //Donator T2
-[
-"170530310",  //Vook
-"170096454", //BREAD_man
-"153285574", //Fun|Sniper  
-"128440262", // Ripcord
-"52501638" // Fluttersh
-];
+			[
+				"170530310",  //Vook
+				"170096454", //BREAD_man
+				"153285574", //Fun|Sniper  
+				"128440262", // Ripcord
+				"52501638", // Fluttersh
+			];
 //
 //////////////////////////////////////////////////////////////
 //
 userD3 = //Donator T3
-[
-"11655302",  //Ghost
-"167093190", //GhostSamurai
-"135256198", //Josh
-"10265984", //Z67
-"79105478",  //Apoc Jay
-"236154822", //Secure
-"236156102", //MSI
-"124823430", //JohnLynzi14a
-"77269254",  //DrtyPntyz
-"236124742", //Elam Shtrom
-"239832326", //JLKA-CRY 
-"169641350", // xXAtari5200xX
-"171650182", // =DTU=Blackhawk1917
-"230755206", // Carson
-"169904646", //Devil
-"167672134",  // AAron Attwood
-"83584448",  // Noah Attwood
-"239832326", //Jlka-cry
-"238995270", //WhiteWolf
-"234595718", // MCDagger99
-"116156422", // Matthew Stevens
-"231224966", //Paolo
-"244755462", //Smug
-"107969158", // xconnection 3d
-"151121990", //Splatfreak
-"74806144", //Mastik
-"96576454",   //Kobedabitch
-"248179974", // Burgy
-"248179974", //Burgy
-"248180166" // Fallen Angel
-];
+			[
+				"11655302",  //Ghost
+				"167093190", //GhostSamurai
+				"135256198", //Josh
+				"10265984", //Z67
+				"79105478",  //Apoc Jay
+				"236154822", //Secure
+				"236156102", //MSI
+				"124823430", //JohnLynzi14a
+				"77269254",  //DrtyPntyz
+				"236124742", //Elam Shtrom
+				"239832326", //JLKA-CRY 
+				"169641350", // xXAtari5200xX
+				"171650182", // =DTU=Blackhawk1917
+				"230755206", // Carson
+				"169904646", //Devil
+				"167672134",  // AAron Attwood
+				"83584448",  // Noah Attwood
+				"239832326", //Jlka-cry
+				"238995270", //WhiteWolf
+				"234595718", // MCDagger99
+				"116156422", // Matthew Stevens
+				"231224966", //Paolo
+				"244755462", //Smug
+				"107969158", // xconnection 3d
+				"151121990", //Splatfreak
+				"74806144", //Mastik
+				"96576454",   //Kobedabitch
+				"248179974", // Burgy
+				"248180166" // Fallen Angel
+			];
 //
 //////////////////////////////////////////////////////////////
 //
 userD4 = //Donator T4
-[
-"240265670"  //Brian
-];
+			[
+				"240265670"  //Brian
+			];

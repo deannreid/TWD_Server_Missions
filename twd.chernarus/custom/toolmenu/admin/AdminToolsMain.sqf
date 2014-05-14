@@ -24,24 +24,8 @@ _EXECscript10 = 'player execVM "'+_pathtoanimmenu+'%1"';
 _EXECscript11 = 'player execVM "'+_pathtofiltermenu+'%1"';
 _EXECscript12 = 'player execVM "'+_pathtofolding+'%1"';
 
-	if ((getPlayerUID player) in 
-[
-"5210496", // Mak
-"11655302",  //Ghost
-"167093190", //GhostSamurai
-"153285574", //Fun|Sniper 
-"170218310"  //Headshot
-])  
-then {
-	if ((getPlayerUID player) in 
-[
-"5210496", // Mak
-"11655302",  //Ghost
-"167093190", //GhostSamurai
-"153285574", //Fun|Sniper 
-"170218310"  //Headshot
-]) 
-then {
+if ((getPlayerUID player) in userAdmin) then 
+{
 		adminmenu =
 		[
 			["",true],
@@ -56,7 +40,7 @@ then {
 				["Event Boxes >>", [9], "#USER:EventBoxes", -5, [["expression", ""]], "1", "1"],
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]		
-		];};
+		];
 };
                                             /////////
                                             //MENUS//

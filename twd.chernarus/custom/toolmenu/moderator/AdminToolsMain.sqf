@@ -24,17 +24,8 @@ _EXECscript10 = 'player execVM "'+_pathtoanimmenu+'%1"';
 _EXECscript11 = 'player execVM "'+_pathtofiltermenu+'%1"';
 _EXECscript12 = 'player execVM "'+_pathtofolding+'%1"';
 
-	if ((getPlayerUID player) in 
-[
-"111721542" //Robert
-])  
-then {
-	if ((getPlayerUID player) in 
-[
-"111721542" //Robert
-
-]) 
-then {
+if ((getPlayerUID player) in userMod) then 
+{
 		adminmenu =
 		[
 			["",true],
@@ -47,7 +38,7 @@ then {
 				["Key Commands >>", [9], "#USER:keyCommands", -5, [["expression", ""]], "1", "1"],				
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]		
-		];};
+		];
 };
                                             /////////
                                             //MENUS//

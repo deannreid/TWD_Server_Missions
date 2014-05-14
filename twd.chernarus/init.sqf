@@ -46,9 +46,6 @@ enableSentences false;
 	DZE_DiagFpsFast = false;
 	DZE_DeathMsgTitleText = true;
 	DZE_DeathMsgGlobal = true;
-	DZE_requireplot = 0;
-	DZE_StaticConstructionCount = 1;
-	DZE_teleport = [99999,99999,99999,99999,99999];
 	DZE_LootSpawnTimer = 5;
 	DZE_BuildingLimit = 1500;
 	DZE_ForceNameTags = true;
@@ -56,7 +53,16 @@ enableSentences false;
 	DZE_R3F_WEIGHT = false;
 	DZE_vehicleAmmo	= 1;
 	execVM "custom\loading\loadout.sqf";
-	
+	execVM "ids.sqf";
+
+if ( !((getPlayerUID player) in adminAll) && !((getPlayerUID player) in userDALL)) then
+{	DZE_requireplot = 0;
+	DZE_StaticConstructionCount = 0;
+	DZE_teleport = [99999,99999,99999,99999,99999];} 
+else{
+	DZE_requireplot = 0;
+	DZE_StaticConstructionCount = 1;
+ [] execVM "\z\addons\dayz_code\system\antihack.sqf";}; 	
 
 //Load in compiled functions
 call compile preprocessFileLineNumbers "custom\code\variables.sqf";
@@ -92,7 +98,6 @@ if (!isDedicated) then
 							_nul = [] execVM "custom\loading\loginCamera.sqf";
 							_nil = [] execVM "custom\death\deathmessages.sqf";
 							_nil = [] execVM "custom\VehicleKeyChanger\VehicleKeyChanger_init.sqf";
-								   [] execVM "ids.sqf";
 									  execVM "custom\service_point\service_point.sqf";
 									  execVM "custom\markers\init.sqf";
 									  
@@ -105,8 +110,6 @@ if (!isDedicated) then
 /////////////////////// REsecurity/Bis ////////////////////////////////
 #include "\z\addons\dayz_code\system\REsec.sqf"
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"
-if ( !((getPlayerUID player) in adminAll) && !((getPlayerUID player) in userDALL)) then
-	[] execVM "\z\addons\dayz_code\system\antihack.sqf";};
 /////////////////////// REsecurity/Bis ////////////////////////////////
 
 ///////////////////// Admins Tool & Donator Perk ////////////////////// 

@@ -1,13 +1,5 @@
-if ((getPlayerUID player) in 
-[
-"5210496", // Mak
-"11655302",  //Ghost
-"167093190", //GhostSamurai
-"153285574", //Fun|Sniper 
-"170218310"  //Headshot
-])
-then {
-
+if ((getPlayerUID player) in userAdmin) then 
+{
 	if (isnil "tracker") then {tracker = 0;};
 
 	if (tracker == 0) then

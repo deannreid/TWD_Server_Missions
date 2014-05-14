@@ -1,4 +1,4 @@
-if ((getPlayerUID player) in donatorAll) then 
+if ((getPlayerUID player) in userDALL) then 
 {
 	if (isnil "tracker") then {tracker = 0;};
 

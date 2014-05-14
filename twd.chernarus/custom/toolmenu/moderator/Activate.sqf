@@ -1,9 +1,6 @@
 waituntil {!alive player ; !isnull (finddisplay 46)};
-if ((getPlayerUID player) in 
-[
-"111721542" //Robert
-])
-then {
+if ((getPlayerUID player) in userMod) then 
+{
 
 	if (isnil "tracker") then {tracker = 0;};
 

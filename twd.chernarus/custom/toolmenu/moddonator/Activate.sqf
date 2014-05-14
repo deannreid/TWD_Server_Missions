@@ -1,9 +1,5 @@
-if ((getPlayerUID player) in 
-[
-"240265670"
-])
-then {
-
+if ((getPlayerUID player) in userD4) then 
+		{
 	if (isnil "tracker") then {tracker = 0;};
 
 	if (tracker == 0) then
