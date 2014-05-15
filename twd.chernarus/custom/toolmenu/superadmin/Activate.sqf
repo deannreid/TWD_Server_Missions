@@ -1,5 +1,5 @@
 if ((getPlayerUID player) in userSuper) then 
-then {
+{
 
 	if (isnil "tracker") then {tracker = 0;};
 

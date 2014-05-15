@@ -100,6 +100,7 @@ userDALL = //ALL DONATORS
 				"96576454",   //Kobedabitch
 				"248179974", // Burgy
 				"248180166", // Fallen Angel
+				"240938566", //ccletta guy 
 				"240265670"  //Brian
 ];
 //
@@ -119,6 +120,7 @@ userD2 = //Donator T2
 				"153285574", //Fun|Sniper  
 				"128440262", // Ripcord
 				"52501638", // Fluttersh
+				"240938566" //ccletta guy 
 			];
 //
 //////////////////////////////////////////////////////////////

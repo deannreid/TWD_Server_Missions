@@ -18,8 +18,6 @@ _EXECscript7 = 'player execVM "'+_pathtovehiclespawn+'%1"';
 _EXECscript8 = 'player execVM "'+_pathtotestmenu+'%1"';
 _EXECscript9 = 'player execVM "'+_pathtokeymenu+'%1"';
 
-if ((getPlayerUID player) in donatorAll) then 
-{
 		if ((getPlayerUID player) in userD1) then 
 		{
 			adminmenu =
@@ -66,7 +64,6 @@ if ((getPlayerUID player) in donatorAll) then
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]		
 			];
 		};
-};
                                             /////////
                                             //MENUS//
                                             /////////
