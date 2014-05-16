@@ -1,4 +1,4 @@
-if ( !((getPlayerUID player) in adminAll) && !((getPlayerUID player) in userDALL)) then
+if ( !((getPlayerUID player) in adminAll) && (!((getPlayerUID player) in userDALL)) then
 {
 	DZE_requireplot = 0;
 	DZE_StaticConstructionCount = 0;

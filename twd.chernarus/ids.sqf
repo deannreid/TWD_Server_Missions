@@ -37,6 +37,7 @@ userSuper = // Super Admins
 			[
 				"102208774",   // Kieran
 				"94794054",  // Adrian
+				"11655302",  //Ghost
 				"125215110"    // Calvin
 			];
 //
@@ -45,7 +46,6 @@ userSuper = // Super Admins
 userAdmin = //Admins
 			[
 				"5210496", // Mak
-				"11655302",  //Ghost
 				"167093190", //GhostSamurai
 				"153285574", //Fun|Sniper 
 				"170218310"  //Headshot
