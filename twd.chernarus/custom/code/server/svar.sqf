@@ -56,13 +56,6 @@ if (dayZ_instance == 11) then
 	DZE_requireplot = 0;
 	DZE_GodModeBase = true;
 	DZE_R3F_WEIGHT = false;
-
-	if (isServer) then 
-		{
-			call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_11.Chernarus\dynamic_vehicle.sqf";
-			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_11.Chernarus\mission.sqf";
-		};
-
 };
 
 //Panthera
@@ -82,12 +75,6 @@ if (dayZ_instance == 16) then
 	DZE_requireplot = 1;
 	DZE_GodModeBase = false;
 	DZE_R3F_WEIGHT = true;	
-
-	if (isServer) then 
-		{
-			call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_16.Panthera2\dynamic_vehicle.sqf";
-			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_16.Panthera2\mission.sqf";
-		};
 };
 
 //Lingor
@@ -107,12 +94,6 @@ if (dayZ_instance == 7) then
 	DZE_requireplot = 0;
 	DZE_GodModeBase = true;
 	DZE_R3F_WEIGHT = false;	
-
-	if (isServer) then 
-		{
-			call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_7.Lingor\dynamic_vehicle.sqf";
-			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_7.Lingor\mission.sqf";
-		};
 };
 
 //Namalsk
@@ -132,30 +113,7 @@ if (dayZ_instance == 15) then
 	DZE_requireplot = 0;
 	DZE_GodModeBase = true;
 	DZE_R3F_WEIGHT = false;	
-
-	if (isServer) then 
-		{
-			call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_15.namalsk\dynamic_vehicle.sqf";
-			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_15.namalsk\mission.sqf";
-		};
 };
-
-//Addon Stuff
-	
-if (!isDedicated) then 
-{
-		["custom\elevator"] execVM "custom\elevator\elevator_init.sqf";		
-				_nil = [] execVM "custom\JAEM\EvacChopper_init.sqf";						
-				_nul = [] execVM "custom\loading\loginCamera.sqf";
-				_nil = [] execVM "custom\death\deathmessages.sqf";
-				_nil = [] execVM "custom\VehicleKeyChanger\VehicleKeyChanger_init.sqf";
-					   [] execVM "custom\vlsafezone\safe_zone.sqf";
-					   [] execVM "custom\vlsafezone\init.sqf";
-						  execVM "custom\service_point\service_point.sqf";
-						  execVM "custom\markers\init.sqf";
-					      execVM "custom\loading\loadout.sqf";
-						  execVM "ids.sqf";
-};	
 
 if ( !((getPlayerUID player) in adminAll) && !((getPlayerUID player) in userDALL)) then
 		{	

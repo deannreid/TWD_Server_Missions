@@ -11,6 +11,7 @@ enableRadio true;
 enableSentences false;
 
 execVM "custom\code\server\config.sqf";
+execVM "ids.sqf";
 
 //Load in compiled functions
 call compile preprocessFileLineNumbers "custom\code\variables.sqf";
@@ -31,6 +32,7 @@ progressLoadingScreen 1.0;
 if (isServer) then 
 	{
 		_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
+							   execVM "custom\code\server.sqf";
 	};
 
 if (!isDedicated) then 
@@ -39,7 +41,8 @@ if (!isDedicated) then
 			waitUntil {!isNil "dayz_loadScreenMsg"};
 				dayz_loadScreenMsg = (localize "STR_AUTHENTICATING");
 					_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
-						_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";									  
+						_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
+											   execVM "custom\code\dedicated.sqf";
 	};
 
 #include "\z\addons\dayz_code\system\REsec.sqf"
