@@ -28,20 +28,19 @@ progressLoadingScreen 1.0;
 
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";
 		
-if (isServer) then {
-	call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_11.Chernarus\dynamic_vehicle.sqf";
-	_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_11.Chernarus\mission.sqf";
-	_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
-};
+if (isServer) then 
+	{
+		_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
+	};
 
 if (!isDedicated) then 
-{
-	0 fadeSound 0;
-		waitUntil {!isNil "dayz_loadScreenMsg"};
-			dayz_loadScreenMsg = (localize "STR_AUTHENTICATING");
-				_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
-					_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";									  
-};
+	{
+		0 fadeSound 0;
+			waitUntil {!isNil "dayz_loadScreenMsg"};
+				dayz_loadScreenMsg = (localize "STR_AUTHENTICATING");
+					_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
+						_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";									  
+	};
 
 #include "\z\addons\dayz_code\system\REsec.sqf"
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf"

@@ -55,7 +55,13 @@ if (dayZ_instance == 11) then
 	DZE_vehicleAmmo	= 1;
 	DZE_requireplot = 0;
 	DZE_GodModeBase = true;
-	DZE_R3F_WEIGHT = false;	
+	DZE_R3F_WEIGHT = false;
+
+	if (isServer) then 
+		{
+			call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_11.Chernarus\dynamic_vehicle.sqf";
+			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_11.Chernarus\mission.sqf";
+		};
 
 };
 
@@ -76,10 +82,63 @@ if (dayZ_instance == 16) then
 	DZE_requireplot = 1;
 	DZE_GodModeBase = false;
 	DZE_R3F_WEIGHT = true;	
+
+	if (isServer) then 
+		{
+			call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_16.Panthera2\dynamic_vehicle.sqf";
+			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_16.Panthera2\mission.sqf";
+		};
 };
 
-//Lingor and Namalsk coming soon!
+//Lingor
+if (dayZ_instance == 7) then
+{
+	spawnShoremode = 1;
+	spawnArea= 1500;
+	
+	dayz_MapArea = 12000;
+	dayz_minpos = -1; 
+	dayz_maxpos = 14000;	
 
+	DZE_LootSpawnTimer = 10;									
+	DZE_ForceNameTags = true;
+	DZE_PlayerZed   = false;
+	DZE_vehicleAmmo	= 1;
+	DZE_requireplot = 0;
+	DZE_GodModeBase = true;
+	DZE_R3F_WEIGHT = false;	
+
+	if (isServer) then 
+		{
+			call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_7.Lingor\dynamic_vehicle.sqf";
+			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_7.Lingor\mission.sqf";
+		};
+};
+
+//Namalsk
+if (dayZ_instance == 15) then
+{
+	spawnShoremode = 1;
+	spawnArea= 1500;
+	
+	dayz_MapArea = 8000;
+	dayz_minpos = -1; 
+	dayz_maxpos = 14000;	
+
+	DZE_LootSpawnTimer = 10;									
+	DZE_ForceNameTags = true;
+	DZE_PlayerZed   = false;
+	DZE_vehicleAmmo	= 1;
+	DZE_requireplot = 0;
+	DZE_GodModeBase = true;
+	DZE_R3F_WEIGHT = false;	
+
+	if (isServer) then 
+		{
+			call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_15.namalsk\dynamic_vehicle.sqf";
+			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_15.namalsk\mission.sqf";
+		};
+};
 
 //Addon Stuff
 	
@@ -100,14 +159,13 @@ if (!isDedicated) then
 
 if ( !((getPlayerUID player) in adminAll) && !((getPlayerUID player) in userDALL)) then
 		{	
-		
-			DZE_StaticConstructionCount = 0;
-			DZE_teleport = [99999,99999,99999,99999,99999];
+			DZE_StaticConstructionCount = 1;
+			[] execVM "\z\addons\dayz_code\system\antihack.sqf";
 		}
 	else	
 		{
-			DZE_StaticConstructionCount = 1;
-			[] execVM "\z\addons\dayz_code\system\antihack.sqf";
+			DZE_StaticConstructionCount = 0;
+			DZE_teleport = [99999,99999,99999,99999,99999];
 		}; 	
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

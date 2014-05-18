@@ -263,8 +263,8 @@ ZedMenu =
 		["10", [4], "", -5, [["expression", format[_EXECscript6, "ZombieSpawn10.sqf"]]], "1", "1"],
 		["25", [5], "", -5, [["expression", format[_EXECscript6, "ZombieSpawn25.sqf"]]], "1", "1"],
 		["50", [6],  "", -5, [["expression", format[_EXECscript6,"ZombieSpawn50.sqf"]]], "1", "1"],
-		["Spawn AI *They Kill*", [6],  "", -5, [["expression", format[_EXECscript6,"nonow.sqf"]]], "1", "1"],
-		["Spawn AI *Just to Lol*", [6],  "", -5, [["expression", format[_EXECscript6,"nono.sqf"]]], "1", "1"],
+	//	["Spawn AI *They Kill*", [6],  "", -5, [["expression", format[_EXECscript6,"nonow.sqf"]]], "1", "1"],
+	//	["Spawn AI *Just to Lol*", [6],  "", -5, [["expression", format[_EXECscript6,"nono.sqf"]]], "1", "1"],
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];

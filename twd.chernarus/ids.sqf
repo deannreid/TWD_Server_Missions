@@ -79,7 +79,6 @@ userDALL = //ALL DONATORS
 				"236154822", //Secure
 				"236156102", //MSI
 				"124823430", //JohnLynzi14a
-				"77269254",  //DrtyPntyz
 				"236124742", //Elam Shtrom
 				"239832326", //JLKA-CRY 
 				"169641350", // xXAtari5200xX
@@ -135,7 +134,6 @@ userD3 = //Donator T3
 				"236154822", //Secure
 				"236156102", //MSI
 				"124823430", //JohnLynzi14a
-				"77269254",  //DrtyPntyz
 				"236124742", //Elam Shtrom
 				"239832326", //JLKA-CRY 
 				"169641350", // xXAtari5200xX
@@ -155,6 +153,7 @@ userD3 = //Donator T3
 				"74806144", //Mastik
 				"96576454",   //Kobedabitch
 				"248179974", // Burgy
+				"240265670",  //Brian
 				"248180166" // Fallen Angel
 			];
 //
@@ -162,5 +161,5 @@ userD3 = //Donator T3
 //
 userD4 = //Donator T4
 			[
-				"240265670"  //Brian
+				""
 			];

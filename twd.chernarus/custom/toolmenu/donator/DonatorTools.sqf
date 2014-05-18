@@ -18,6 +18,8 @@ _EXECscript7 = 'player execVM "'+_pathtovehiclespawn+'%1"';
 _EXECscript8 = 'player execVM "'+_pathtotestmenu+'%1"';
 _EXECscript9 = 'player execVM "'+_pathtokeymenu+'%1"';
 
+if ((getPlayerUID player) in userDALL) then 
+{
 		if ((getPlayerUID player) in userD1) then 
 		{
 			adminmenu =
@@ -64,7 +66,8 @@ _EXECscript9 = 'player execVM "'+_pathtokeymenu+'%1"';
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]		
 			];
 		};
-                                            /////////
+};
+											/////////
                                             //MENUS//
                                             /////////
 
@@ -125,7 +128,18 @@ SpawnBoxeslvl3 =
 //
 ///////////////////////////////////////////////////////////
 //
-VehicleMenu = 
+VehicleMenu0 = 
+[
+	["",true],
+		["Cars >>", [12], "#USER:VehicleMenu1", -5, [["expression", ""]], "1", "1"],
+		["Trucks/Boats >>", [12], "#USER:VehicleMenu2", -5, [["expression", ""]], "1", "1"],	
+		["Helicopters >>", [12], "#USER:VehicleMenu3", -5, [["expression", ""]], "1", "1"],	
+		["Jets >>", [12], "#USER:VehicleMenu4", -5, [["expression", ""]], "1", "1"],	
+		["", [-1], "", -5, [["expression", ""]], "1", "0"],
+				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
+];
+
+VehicleMenu1 = 
 [
 	["",true],
 		["Cars n Stuff", [-1], "", -5, [["expression", ""]], "1", "0"],
@@ -168,10 +182,8 @@ VehicleMenu4 =
 [
 	["",true],
 		["Aeroplanes and Jets", [-1], "", -5, [["expression", ""]], "1", "0"],
-		["A10", [2],  "", -5, [["expression", format[_EXECscript7,"A10.sqf"]]], "1", "1"],
 		["AV8B", [3],  "", -5, [["expression", format[_EXECscript7,"AV8B.sqf"]]], "1", "1"],
 		["C130", [4],  "", -5, [["expression", format[_EXECscript7,"C130.sqf"]]], "1", "1"],
-		["L39", [6],  "", -5, [["expression", format[_EXECscript7,"L39.sqf"]]], "1", "1"],
 		["MV22", [7],  "", -5, [["expression", format[_EXECscript7,"MV22.sqf"]]], "1", "1"],
 		["AN2", [7],  "", -5, [["expression", format[_EXECscript7,"an2_prop.sqf"]]], "1", "1"],
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
