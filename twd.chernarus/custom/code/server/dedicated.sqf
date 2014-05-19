@@ -7,5 +7,4 @@
 					   [] execVM "custom\vlsafezone\init.sqf";
 						  execVM "custom\service_point\service_point.sqf";
 						  execVM "custom\markers\init.sqf";
-					      execVM "custom\loading\loadout.sqf";
-						  
+					      execVM "custom\loading\loadout.sqf";	

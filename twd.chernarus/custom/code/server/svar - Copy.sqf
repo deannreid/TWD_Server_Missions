@@ -56,6 +56,13 @@ if (dayZ_instance == 11) then
 	DZE_requireplot = 0;
 	DZE_GodModeBase = true;
 	DZE_R3F_WEIGHT = false;
+
+	if (isServer) then 
+		{
+			call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_11.Chernarus\dynamic_vehicle.sqf";
+			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_11.Chernarus\mission.sqf";
+		};
+
 };
 
 //Panthera
@@ -75,6 +82,12 @@ if (dayZ_instance == 16) then
 	DZE_requireplot = 1;
 	DZE_GodModeBase = false;
 	DZE_R3F_WEIGHT = true;	
+
+	if (isServer) then 
+		{
+			call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_16.Panthera2\dynamic_vehicle.sqf";
+			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_16.Panthera2\mission.sqf";
+		};
 };
 
 //Lingor
@@ -94,6 +107,12 @@ if (dayZ_instance == 7) then
 	DZE_requireplot = 0;
 	DZE_GodModeBase = true;
 	DZE_R3F_WEIGHT = false;	
+
+	if (isServer) then 
+		{
+			call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_7.Lingor\dynamic_vehicle.sqf";
+			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_7.Lingor\mission.sqf";
+		};
 };
 
 //Namalsk
@@ -113,6 +132,12 @@ if (dayZ_instance == 15) then
 	DZE_requireplot = 0;
 	DZE_GodModeBase = true;
 	DZE_R3F_WEIGHT = false;	
+
+	if (isServer) then 
+		{
+			call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_15.namalsk\dynamic_vehicle.sqf";
+			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_15.namalsk\mission.sqf";
+		};
 };
 
 if ( !((getPlayerUID player) in adminAll) && !((getPlayerUID player) in userDALL)) then
@@ -129,6 +154,7 @@ if ( !((getPlayerUID player) in adminAll) && !((getPlayerUID player) in userDALL
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////// ADDONS //////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 ///////////////////// Admins Tool & Donator Perk ////////////////////// 
 [] execVM "custom\toolmenu\superadmin\Activate.sqf";

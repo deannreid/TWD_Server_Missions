@@ -32,7 +32,7 @@ progressLoadingScreen 1.0;
 if (isServer) then 
 	{
 		_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
-							   execVM "custom\code\server.sqf";
+							   execVM "custom\code\server\server.sqf";
 	};
 
 if (!isDedicated) then 
@@ -42,7 +42,7 @@ if (!isDedicated) then
 				dayz_loadScreenMsg = (localize "STR_AUTHENTICATING");
 					_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 						_playerMonitor = 	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
-											   execVM "custom\code\dedicated.sqf";
+											   execVM "custom\code\server\dedicated.sqf";
 	};
 
 #include "\z\addons\dayz_code\system\REsec.sqf"

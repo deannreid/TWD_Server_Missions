@@ -22,15 +22,18 @@ class Mission
 		"CAAir2_UH1Y",
 		"CAAir2_MV22",
 		"CAAir",
-		"jetskiyanahuiaddon"
+		"jetskiyanahuiaddon",
+		"mbg_killhouses",
+		"mbg_buildings_3",
+		"kpfswaysigns",
+		"buildings3",
+		"mbg_african_buildings"		
+
 	};
 	addOnsAuto[]=
 	{
 		"dayz_weapons",
 		"ca_modules_functions",
-		"CAAir2_UH1Y",
-		"CAAir2_MV22",
-		"CAAir",
 		"chernarus"
 	};
 	randomSeed=11171215;
