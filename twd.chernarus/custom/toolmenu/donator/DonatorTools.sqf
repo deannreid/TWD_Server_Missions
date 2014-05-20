@@ -92,7 +92,8 @@ LVL3Tools =
 [
 	["",true],
 		["Remove Grass", [2],  "", -5, [["expression", format[_EXECscript2,"removegrass.sqf"]]], "1", "1"],
-		["Flip Vehicle", [3],  "", -5, [["expression", format[_EXECscript2,"flipvehicle.sqf"]]], "1", "1"],		
+		["No Recoil", [3],  "", -5, [["expression", format[_EXECscript2,"norecoil.sqf"]]], "1", "1"],
+		["Flip Vehicle", [4],  "", -5, [["expression", format[_EXECscript2,"flipvehicle.sqf"]]], "1", "1"],		
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
