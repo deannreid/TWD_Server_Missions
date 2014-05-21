@@ -117,7 +117,6 @@ FilterMenu =
 		["Candy", [2],  "", -5, [["expression", format[_EXECscript11,"candy1.sqf"]]], "1", "1"],
 		["Cyan Green", [2],  "", -5, [["expression", format[_EXECscript11,"cyangreen.sqf"]]], "1", "1"],
 		["Dark Blue", [2],  "", -5, [["expression", format[_EXECscript11,"darkblue.sqf"]]], "1", "1"],
-		["Christmas High", [2],  "", -5, [["expression", format[_EXECscript11,"HighOnChristmas.sqf"]]], "1", "1"],
 		["LSD", [2],  "", -5, [["expression", format[_EXECscript11,"LSD.sqf"]]], "1", "1"],
 		["Old Timer", [2],  "", -5, [["expression", format[_EXECscript11,"OldTimey.sqf"]]], "1", "1"],
 		["Pink Lemon", [2],  "", -5, [["expression", format[_EXECscript11,"pinklemonade.sqf"]]], "1", "1"],

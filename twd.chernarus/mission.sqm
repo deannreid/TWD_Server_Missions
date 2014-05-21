@@ -27,6 +27,7 @@ class Mission
 		"mbg_buildings_3",
 		"kpfswaysigns",
 		"buildings3",
+		"warehouse",
 		"mbg_african_buildings"		
 
 	};

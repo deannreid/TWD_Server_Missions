@@ -12,7 +12,6 @@ adminAll =
 				"125215110",    // Calvin
 				"5210496", // Mak
 				"11655302",  //Ghost
-				"167093190", //GhostSamurai
 				"153285574", //Fun|Sniper 
 				"170218310",  //Headshot
 				"111721542" //Robert
@@ -20,7 +19,7 @@ adminAll =
 //
 //////////////////////////////////////////////////////////////
 //
-userOwner =  //Owners - Dean Menu
+userMaster =  //Master Admin
 			[
 				"139811590",   // Dean
 				"119540166",   // Cable
@@ -46,7 +45,6 @@ userSuper = // Super Admins
 userAdmin = //Admins
 			[
 				"5210496", // Mak
-				"167093190", //GhostSamurai
 				"153285574", //Fun|Sniper 
 				"170218310"  //Headshot
 			];
@@ -99,8 +97,9 @@ userDALL = //ALL DONATORS
 				"96576454",   //Kobedabitch
 				"248179974", // Burgy
 				"248180166", // Fallen Angel
+				"241927814", //Jimmi
 				"240938566", //ccletta guy 
-				"240265670",  //Brian
+				"199315590", //Circlederp
 				"231517766"  //Liquid White
 ];
 //
@@ -155,7 +154,7 @@ userD3 = //Donator T3
 				"74806144", //Mastik
 				"96576454",   //Kobedabitch
 				"248179974", // Burgy
-				"240265670",  //Brian
+				"199315590", //Circlederp
 				"248180166" // Fallen Angel
 			];
 //

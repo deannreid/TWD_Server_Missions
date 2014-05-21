@@ -18,12 +18,13 @@ _EXECscript7 = 'player execVM "'+_pathtovehiclespawn+'%1"';
 _EXECscript8 = 'player execVM "'+_pathtotestmenu+'%1"';
 _EXECscript9 = 'player execVM "'+_pathtokeymenu+'%1"';
 
-	if ((getPlayerUID player) in //Brian
+	if ((getPlayerUID player) in 
 		[
-			"240265670"
-		]) 
-		then 
-		{
+			"240265670"  //Brian
+		])  
+then
+{
+
 //
 ///////////////////////////////////////////////////////////
 //	

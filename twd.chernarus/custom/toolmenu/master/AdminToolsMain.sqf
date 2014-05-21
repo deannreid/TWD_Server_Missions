@@ -22,20 +22,18 @@ _EXECscript9 = 'player execVM "'+_pathtokeymenu+'%1"';
 _EXECscript10 = 'player execVM "'+_pathtoanimmenu+'%1"';
 _EXECscript11 = 'player execVM "'+_pathtofiltermenu+'%1"';
 
-if ((getPlayerUID player) in userOwner) then 
+if ((getPlayerUID player) in userMaster) then 
 {
 		adminmenu =
 		[
 			["",true],
-					["LVL 4: Dean's Menu", [-1], "", -5, [["expression", ""]], "1", "0"],
+					["LVL 4: Master Admin", [-1], "", -5, [["expression", ""]], "1", "0"],
 				["Player Tools >>", [2], "#USER:PlayerTools", -5, [["expression", ""]], "1", "1"],
 				["Admin Tools >>", [3], "#USER:AdminTools", -5, [["expression", ""]], "1", "1"],
 				["Skins >>", [4],  "", -5, [["expression", format[_EXECscript5,"Skins.sqf"]]], "1", "1"],
 				["Vehicle >>", [5], "#USER:VehicleMenu", -5, [["expression", ""]], "1", "1"],		
-				["Key Commands *shouldWorkNow* >>", [9], "#USER:keyCommands", -5, [["expression", ""]], "1", "1"],				
-			["", [-1], "", -5, [["expression", ""]], "1", "0"],				
-				["Filter Menu >>", [3], "#USER:FilterMenu", -5, [["expression", ""]], "1", "1"],	
-				["Anim Menu >>", [6], "#USER:AnimationMenu", -5, [["expression", ""]], "1", "1"],						
+				["Key Commands >>", [9], "#USER:keyCommands", -5, [["expression", ""]], "1", "1"],				
+			["", [-1], "", -5, [["expression", ""]], "1", "0"],					
 				["Spawn Zeds >>", [7], "#USER:ZedMenu", -5, [["expression", ""]], "1", "1"],			
 				["Spawn Boxes >>", [8], "#USER:SpawnBoxes", -5, [["expression", ""]], "1", "1"],
 				["Event Boxes >>", [9], "#USER:EventBoxes", -5, [["expression", ""]], "1", "1"],
@@ -72,6 +70,9 @@ PlayerTools1 =
 		["Speed and Fly are buggy", [-1], "", -5, [["expression", ""]], "1", "0"],
 		["Fly", [2],  "", -5, [["expression", format[_EXECscript2,"fly.sqf"]]], "1", "1"],
 		["Speedboost", [3],  "", -5, [["expression", format[_EXECscript2,"speedboost.sqf"]]], "1", "1"],
+		["Remove Grass", [2],  "", -5, [["expression", format[_EXECscript2,"removegrass.sqf"]]], "1", "1"],
+		["Infinite Ammo", [3],  "", -5, [["expression", format[_EXECscript2,"infiniteammo.sqf"]]], "1", "1"],
+		["No Recoil", [4],  "", -5, [["expression", format[_EXECscript2,"norecoil.sqf"]]], "1", "1"],	
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
@@ -141,22 +142,9 @@ AdminTools =
 		["Key Spawn", [5],  "", -5, [["expression", format[_EXECscript2,"keyspawn.sqf"]]], "1", "1"],
 		["Code Check", [6],  "", -5, [["expression", format[_EXECscript2,"codefinder.sqf"]]], "1", "1"],	
 		["Zed Shield", [7],  "", -5, [["expression", format[_EXECscript2,"zombieshield.sqf"]]], "1", "1"],
-		["SafeZone", [7],  "", -5, [["expression", format[_EXECscript2,"safezone.sqf"]]], "1", "1"],
+		["Look N' Repair", [7],  "", -5, [["expression", format[_EXECscript2,"looknrepair.sqf"]]], "1", "1"],		
 		["Invisibility", [8],  "", -5, [["expression", format[_EXECscript2,"invisible.sqf"]]], "1", "1"],		
 		["Delete >>", [10], "#USER:deleteMenu", -5, [["expression", ""]], "1", "1"],
-["Next page", [110], "#USER:AdminTools2", -5, [["expression", ""]], "1", "1"],
-		["", [-1], "", -5, [["expression", ""]], "1", "0"],
-			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
-];
-AdminTools2 =
-[
-	["",true],
-		["Remove Grass", [2],  "", -5, [["expression", format[_EXECscript2,"removegrass.sqf"]]], "1", "1"],
-		["Infinite Ammo", [3],  "", -5, [["expression", format[_EXECscript2,"infiniteammo.sqf"]]], "1", "1"],
-		["No Recoil", [4],  "", -5, [["expression", format[_EXECscript2,"norecoil.sqf"]]], "1", "1"],	
-		["Look N' Repair", [7],  "", -5, [["expression", format[_EXECscript2,"looknrepair.sqf"]]], "1", "1"],
-		["Flip Vehicle", [8],  "", -5, [["expression", format[_EXECscript2,"flipvehicle.sqf"]]], "1", "1"],	
-		["Repair Buildings", [9],  "", -5, [["expression", format[_EXECscript2,"fixbuildings.sqf"]]], "1", "1"],	
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
@@ -167,8 +155,8 @@ ESPMenu =
 [
 	["",true],
 		["Full ESP", [3],  "", -5, [["expression", format[_EXECscript2,"fullesp.sqf"]]], "1", "1"],
-		["Enhanced ESP", [3],  "", -5, [["expression", format[_EXECscript2,"enhanced.sqf"]]], "1", "1"],
-		["Player-Only ESP", [3],  "", -5, [["expression", format[_EXECscript2,"player.sqf"]]], "1", "1"],
+	//	["Enhanced ESP", [3],  "", -5, [["expression", format[_EXECscript2,"enhanced.sqf"]]], "1", "1"],
+	//	["Player-Only ESP", [3],  "", -5, [["expression", format[_EXECscript2,"player.sqf"]]], "1", "1"],
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
@@ -180,46 +168,6 @@ DeleteMenu =
 	["",true],
 		["Temp Delete", [2],  "", -5, [["expression", format[_EXECscript2,"tempdelete.sqf"]]], "1", "1"],
 		["Perm Delete *DEL KEY*", [3],  "", -5, [["expression", format[_EXECscript2,"permdelete.sqf"]]], "1", "1"],
-		["", [-1], "", -5, [["expression", ""]], "1", "0"],
-			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
-];
-//
-///////////////////////////////////////////////////////////
-//
-FilterMenu =
-[
-	["",true],
-			["Some cool Filters", [-1], "", -5, [["expression", ""]], "1", "0"],
-		["BlackWhiteThermal", [2],  "", -5, [["expression", format[_EXECscript11,"blackwhite.sqf"]]], "1", "1"],
-		["Candy", [2],  "", -5, [["expression", format[_EXECscript11,"candy1.sqf"]]], "1", "1"],
-		["Cyan Green", [2],  "", -5, [["expression", format[_EXECscript11,"cyangreen.sqf"]]], "1", "1"],
-		["Dark Blue", [2],  "", -5, [["expression", format[_EXECscript11,"darkblue.sqf"]]], "1", "1"],
-		["Christmas High", [2],  "", -5, [["expression", format[_EXECscript11,"HighOnChristmas.sqf"]]], "1", "1"],
-		["LSD", [2],  "", -5, [["expression", format[_EXECscript11,"LSD.sqf"]]], "1", "1"],
-		["Old Timer", [2],  "", -5, [["expression", format[_EXECscript11,"OldTimey.sqf"]]], "1", "1"],
-		["Pink Lemon", [2],  "", -5, [["expression", format[_EXECscript11,"pinklemonade.sqf"]]], "1", "1"],
-		["Radiation", [2],  "", -5, [["expression", format[_EXECscript11,"Radiation.sqf"]]], "1", "1"],
-		["Shrooms", [2],  "", -5, [["expression", format[_EXECscript11,"Shrooms.sqf"]]], "1", "1"],	
-		["Spider Pig", [2],  "", -5, [["expression", format[_EXECscript11,"Spiderman.sqf"]]], "1", "1"],		
-		["", [-1], "", -5, [["expression", ""]], "1", "0"],
-			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
-];
-//
-///////////////////////////////////////////////////////////
-//
-AnimationMenu =
-[
-	["",true],
-		["Boxing", [2],  "", -5, [["expression", format[_EXECscript10,"boxing.sqf"]]], "1", "1"],
-		["Crouch", [2],  "", -5, [["expression", format[_EXECscript10,"crouch.sqf"]]], "1", "1"],
-		["Dance 1", [2],  "", -5, [["expression", format[_EXECscript10,"dance1.sqf"]]], "1", "1"],
-		["Dance 2", [2],  "", -5, [["expression", format[_EXECscript10,"dance2.sqf"]]], "1", "1"],
-		["Dance 3", [2],  "", -5, [["expression", format[_EXECscript10,"dance3.sqf"]]], "1", "1"],
-		["Gangnam Style", [2],  "", -5, [["expression", format[_EXECscript10,"gangnam.sqf"]]], "1", "1"],
-		["Handstand", [2],  "", -5, [["expression", format[_EXECscript10,"handstand.sqf"]]], "1", "1"],
-		["LayDown", [2],  "", -5, [["expression", format[_EXECscript10,"laydown.sqf"]]], "1", "1"],
-		["Run", [2],  "", -5, [["expression", format[_EXECscript10,"run.sqf"]]], "1", "1"],
-		["Salute", [2],  "", -5, [["expression", format[_EXECscript10,"salute.sqf"]]], "1", "1"],
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
@@ -255,20 +203,6 @@ EventBoxes =
 ///////////////////////////////////////////////////////////
 //
 ZedMenu =
-[
-	["",true],
-		["Select amount to spawn!", [-1], "", -5, [["expression", ""]], "1", "0"],
-		["1", [2],  "", -5, [["expression", format[_EXECscript6,"ZombieSpawn1.sqf"]]], "1", "1"],
-		["5", [3], "", -5, [["expression", format[_EXECscript6, "ZombieSpawn5.sqf"]]], "1", "1"],
-		["10", [4], "", -5, [["expression", format[_EXECscript6, "ZombieSpawn10.sqf"]]], "1", "1"],
-		["25", [5], "", -5, [["expression", format[_EXECscript6, "ZombieSpawn25.sqf"]]], "1", "1"],
-		["50", [6],  "", -5, [["expression", format[_EXECscript6,"ZombieSpawn50.sqf"]]], "1", "1"],
-	//	["Spawn AI *They Kill*", [6],  "", -5, [["expression", format[_EXECscript6,"nonow.sqf"]]], "1", "1"],
-	//	["Spawn AI *Just to Lol*", [6],  "", -5, [["expression", format[_EXECscript6,"nono.sqf"]]], "1", "1"],
-		["", [-1], "", -5, [["expression", ""]], "1", "0"],
-			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
-];
-AIMenu =
 [
 	["",true],
 		["Select amount to spawn!", [-1], "", -5, [["expression", ""]], "1", "0"],
@@ -368,5 +302,4 @@ VehicleMenu4 =
 //
 ///////////////////////////////////////////////////////////
 //
-
 showCommandingMenu "#USER:adminmenu";

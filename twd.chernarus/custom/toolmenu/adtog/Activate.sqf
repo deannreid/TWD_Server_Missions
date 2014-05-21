@@ -1,8 +1,5 @@
-if ((getPlayerUID player) in 
-[
-"240265670"
-])
-then {
+if ((getPlayerUID player) in userToggle) then 
+{
 
 	if (isnil "tracker") then {tracker = 0;};
 
@@ -18,7 +15,7 @@ then {
 			{
 				if (_idx == -1) then
 				{
-					_idx = (vehicle player) addaction [("<t color=""#ff2266"">" + ("Donator") +"</t>"),"custom\toolmenu\moddonator\Eexcute.sqf","",0,false,true,"",""];
+					_idx = (vehicle player) addaction [("<t color=""#ff6600"">" + ("Admin Toggle") +"</t>"),"custom\toolmenu\adtog\Eexcute.sqf","",0,false,true,"",""];
 					_veh = vehicle player;
 				};
 

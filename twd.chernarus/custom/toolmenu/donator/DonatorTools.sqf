@@ -29,6 +29,7 @@ if ((getPlayerUID player) in userDALL) then
 				["Donator Tools", [3], "#USER:LVL1Tools", -5, [["expression", ""]], "1", "1"],
 				["Skins *Remove Backpack!*", [4],  "", -5, [["expression", format[_EXECscript5,"Skins.sqf"]]], "1", "1"],						
 				["Spawn Boxes", [8], "#USER:SpawnBoxesLVL1", -5, [["expression", ""]], "1", "1"],
+				["READ ME!", [8], "#USER:readMe", -5, [["expression", ""]], "1", "1"],
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]		
 			];
@@ -45,6 +46,7 @@ if ((getPlayerUID player) in userDALL) then
 				["Donator Tools", [3], "#USER:LVL2Tools", -5, [["expression", ""]], "1", "1"],
 				["Skins *Remove Backpack!*", [4],  "", -5, [["expression", format[_EXECscript5,"Skins.sqf"]]], "1", "1"],				
 				["Spawn Boxes", [8], "#USER:SpawnBoxesLVL2", -5, [["expression", ""]], "1", "1"],
+				["READ ME!", [8], "#USER:readMe", -5, [["expression", ""]], "1", "1"],
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]		
 			];
@@ -62,6 +64,7 @@ if ((getPlayerUID player) in userDALL) then
 				["Skins *Remove Backpack!*", [4],  "", -5, [["expression", format[_EXECscript5,"Skins.sqf"]]], "1", "1"],
 				["Vehicle", [5], "#USER:VehicleMenu0", -5, [["expression", ""]], "1", "1"],							
 				["Spawn Boxes", [8], "#USER:SpawnBoxesLVL3", -5, [["expression", ""]], "1", "1"],
+				["READ ME!", [8], "#USER:readMe", -5, [["expression", ""]], "1", "1"],
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]		
 			];
@@ -93,6 +96,7 @@ LVL3Tools =
 	["",true],
 		["Remove Grass", [2],  "", -5, [["expression", format[_EXECscript2,"removegrass.sqf"]]], "1", "1"],
 		["Flip Vehicle", [3],  "", -5, [["expression", format[_EXECscript2,"flipvehicle.sqf"]]], "1", "1"],		
+		["No Recoil", [4],  "", -5, [["expression", format[_EXECscript2,"norecoil.sqf"]]], "1", "1"],	
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
@@ -192,4 +196,37 @@ VehicleMenu4 =
 //
 ///////////////////////////////////////////////////////////
 //
+readMe =
+[
+	["",true],
+		["Due to Bohemia Interactives", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["Apparent rules about donations", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["It is possible we might", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["need to remove donator tools", [-1], "", -5, [["expression", ""]], "1", "0"],		
+		["for all users, as giving", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["items for donations", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["that are owned by ", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["BI, DayZ & Epoch, is", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["now a breach of the BI Licence", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["You are still welcome to", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["donate towards paying", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["for server bills", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["but it is possible", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["We may have to remove", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["Donator Tool Access", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["for all users", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["", [-1], "", -5, [["expression", ""]], "1", "0"],		
+		["Apologies for all", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["Inconvenience caused", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["In this matter", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["More information will", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["be available on the forums", [-1], "", -5, [["expression", ""]], "1", "0"],
+		["", [-1], "", -5, [["expression", ""]], "1", "0"],		
+		["Thanks, ", [-1], "", -5, [["expression", ""]], "1", "0"],		
+		["TWD Staff", [-1], "", -5, [["expression", ""]], "1", "0"],
+			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
+];
+
 showCommandingMenu "#USER:adminmenu";

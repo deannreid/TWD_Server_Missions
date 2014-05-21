@@ -1,4 +1,4 @@
-if ((getPlayerUID player) in userOwner) then 
+if ((getPlayerUID player) in userMaster) then 
 {
 
 	if (isnil "tracker") then {tracker = 0;};
@@ -16,8 +16,8 @@ if ((getPlayerUID player) in userOwner) then
 				if (_idx == -1) then
 				{
 					[]execVM "custom\toolmenu\common\keyBinds\deanmenu\fKeyBind.sqf";
-					[]execVM "custom\toolmenu\common\keyBinds\deanmenu\nKeyBind.sqf";
-					_idx = (vehicle player) addaction [("<t color=""#ff2266"">" + ("Level 4: Dean Menu") +"</t>"),"custom\toolmenu\deanmenu\Eexcute.sqf","",0,false,true,"",""];
+					//[]execVM "custom\toolmenu\common\keyBinds\deanmenu\nKeyBind.sqf";
+					_idx = (vehicle player) addaction [("<t color=""#ff2266"">" + ("Level 4: Master Admin") +"</t>"),"custom\toolmenu\master\Eexcute.sqf","",0,false,true,"",""];
 					_veh = vehicle player;
 				};
 

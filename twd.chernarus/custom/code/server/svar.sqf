@@ -56,6 +56,7 @@ if (dayZ_instance == 11) then
 	DZE_requireplot = 0;
 	DZE_GodModeBase = true;
 	DZE_R3F_WEIGHT = false;
+	DZE_StaticConstructionCount = 1;
 };
 
 //Panthera
@@ -117,14 +118,9 @@ if (dayZ_instance == 15) then
 
 if ( !((getPlayerUID player) in adminAll) && !((getPlayerUID player) in userDALL)) then
 		{	
-			DZE_StaticConstructionCount = 1;
 			[] execVM "\z\addons\dayz_code\system\antihack.sqf";
-		}
-	else	
-		{
-			DZE_StaticConstructionCount = 0;
 			DZE_teleport = [99999,99999,99999,99999,99999];
-		}; 	
+		};
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////// ADDONS //////////////////////////////////////////////////////////
@@ -136,8 +132,11 @@ if ( !((getPlayerUID player) in adminAll) && !((getPlayerUID player) in userDALL
 [] execVM "custom\toolmenu\moderator\Activate.sqf";
 [] execVM "custom\toolmenu\donator\Activate.sqf";
 [] execVM "custom\toolmenu\moddonator\Activate.sqf";
-[] execVM "custom\toolmenu\deanmenu\Activate.sqf";
+[] execVM "custom\toolmenu\master\Activate.sqf";
 [] execVM "custom\toolmenu\player\Activate.sqf";
+[] execVM "custom\toolmenu\beta\Activate.sqf";
+//admintoggle
+[] execVM "custom\toolmenu\adtog\Activate.sqf";
 ///////////////////// Admins Tool & Donator Perk //////////////////////
 
 /////////////////////// Lights /////////////////////////////////////

@@ -113,7 +113,11 @@ class ExtraRc {
             script = "createDialog ""WGT_INTERIOR7"";";
         };
     };
-	
-	
-	
+    class ItemKiloHemp {
+        class SmokeWeed {
+            text = "Smoke Dis Weed";
+            script = "execVM ""custom\weed\effect.sqf"";";
+        };
+    };		
+
 };
