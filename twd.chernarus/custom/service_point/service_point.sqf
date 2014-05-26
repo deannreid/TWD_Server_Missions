@@ -30,9 +30,9 @@ _repair_repairTime = 2; // time needed to repair each damaged part (in seconds)
 // rearm settings
 _rearm_enable = true; // enable or disable the rearm option
 _rearm_costs = [
-	["ArmoredSUV_PMC_DZE",["ItemGoldBar10oz",2]], // special costs for a single vehicle type
-	["Air",["ItemGoldBar10oz",2]], // 2 10oz Gold for helicopters and planes
-	["AllVehicles",["ItemGoldBar10oz",1]] // 1 10oz Gold for all other vehicles
+	["ArmoredSUV_PMC_DZE",["ItemGoldBar10oz",4]], // special costs for a single vehicle type
+	["Air",["ItemGoldBar10oz",5]], // 2 10oz Gold for helicopters and planes
+	["AllVehicles",["ItemGoldBar10oz",2]] // 1 10oz Gold for all other vehicles
 ];
 _rearm_magazineCount = 3; // amount of magazines to be added to the vehicle weapon
 
@@ -129,7 +129,11 @@ while {true} do {
 		if (_inRange) then {
 			private ["_servicePoint","_role","_actionCondition","_costs","_actionTitle"];
 			_servicePoint = _servicePoints select 0;
-			_role = assignedVehicleRole player;
+			if (assignedDriver _vehicle == player) then {
+				_role = ["Driver", [-1]];
+			} else {
+				_role = assignedVehicleRole player;
+			};
 			if (((str _role) != (str _lastRole)) || (_vehicle != _lastVehicle)) then {
 				// vehicle or seat changed
 				call _fnc_removeActions;

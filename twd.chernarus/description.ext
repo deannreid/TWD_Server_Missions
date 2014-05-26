@@ -13,6 +13,17 @@ debriefing = 0;
 
 onPauseScript = "";
 loadScreen = "custom\loading\dayzbg.jpg";
+#include "custom\header\titles.hpp"
+#include "custom\header\sounds.hpp"
+#include "custom\header\rclick.hpp"
+#include "custom\header\admind.hpp"
+#include "custom\header\intdesign.hpp"
+#include "custom\intdesign\dialogs.hpp"
+#include "custom\R3F_ARTY_AND_LOG\desc_rsct_include.h"
+#include "custom\custom_loot\Configs\CfgBuildingLoot.hpp"
+#include "custom\custom_loot\Configs\CfgLootSmall.hpp"
+#include "custom\custom_loot\Configs\CfgLoot.hpp"
+#include "custom\snap\points.hpp"
 
 class Header
 {
@@ -39,36 +50,6 @@ class RscText
 	colorText[] = {1,1,1,1};
 	colorBackground[] = {0, 0, 0, 0};
 	linespacing = 1;
-}
-class RscPicture
-{
-	access=0;
-	type=0;
-	idc=-1;
-	style=48;
-	colorBackground[]={0,0,0,0};
-	colorText[]={1,1,1,1};
-	font="TahomaB";
-	sizeEx=0;
-	lineSpacing=0;
-	text="";
-};
-class CfgSounds
-{
-	sounds[] ={z_wzombie1,z_wzombie2,shotscream};
-	class z_wzombie1 {
-		name = "";
-		sound[] = {"custom\walkamongstthedead\dayz_sfx\femalezombie_attack_04.ogg",0.3,1,40};
-		titles[] = {0, ""};
-	};
-	class z_wzombie2 : z_wzombie1 {
-		sound[] = {"custom\walkamongstthedead\dayz_sfx\femalezombie_spotted_01.ogg",0.3,1,40};
-	};
-	class shotscream {
-		name = "";
-		sound[] = {"custom\sounds\suicide\shotscream.ogg",0.3,1,40};
-		titles[] = {0, ""};
-	};
 };
 class RscLoadingText : RscText
 {
@@ -101,48 +82,6 @@ class RscProgressNotFreeze
 	h = 0.039216;
 	texture = "#(argb,8,8,3)color(0,0,0,0)";
 };
-class RscPictureGUI
-{
-	access=0;
-	type=0;
-	idc=-1;
-	colorBackground[]={0,0,0,0};
-	colorText[]={0.38,0.63,0.25999999,0.75};
-	font="TahomaB";
-	sizeEx=0;
-	lineSpacing=0;
-	text="";
-	style="0x30 + 0x100";
-	x=0;
-	y=0;
-	w=0.2;
-	h=0.15000001;
-};
-class RscTitles
-{ 
-	class zCamoStatusGUI {
-	idd = -1;
-	fadeout=0;
-	fadein=0;
-		onLoad = "uiNamespace setVariable ['zCamo_GUI_display', _this select 0]";
-		duration = 10e10;
-		name= "zCamoGui";
-		controlsBackground[] = {};
-		objects[] = {};
-		class controls {
-			class zCamoIcon:RscPictureGUI {
-			idc = 1;
-			text="custom\walkamongstthedead\zombie.paa";
-			x="0.958313 * safezoneW + safezoneX";
-			y="0.43 * safezoneH + safezoneY";
-			w=0.059999999;
-			h=0.079999998;
-			colorText[]={1,1,1,1};
-			};
-		};
-	};
-};
-
 //
 // the loading screen itself
 //
@@ -207,13 +146,3 @@ class DayZ_loadingScreen
 		};
 	};
 };
-#include "custom\walkamongstthedead\watd.hpp"
-#include "custom\snap\points.hpp"
-#include "custom\toolmenu\common\dialog.hpp"
-#include "custom\code\extra_rc.hpp"
-#include "custom\R3F_ARTY_AND_LOG\desc_rsct_include.h"
-#include "custom\custom_loot\Configs\CfgBuildingLoot.hpp"
-#include "custom\custom_loot\Configs\CfgLootSmall.hpp"
-#include "custom\custom_loot\Configs\CfgLoot.hpp"
-#include "custom\intdesign\defines.hpp"
-#include "custom\intdesign\dialogs.hpp"

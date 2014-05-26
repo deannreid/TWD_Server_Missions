@@ -28,8 +28,7 @@ class Mission
 		"kpfswaysigns",
 		"buildings3",
 		"warehouse",
-		"mbg_african_buildings"		
-
+		"mbg_african_buildings"	
 	};
 	addOnsAuto[]=
 	{
@@ -1238,15 +1237,15 @@ class Mission
 		{
 			position[]={4361.4937,3,2259.9526};
 			name="wholesaleSouth";
-			text="Balota Traders";
-			type="mil_circle";
-			colorName="ColorRed";
+			text="Wholesaler";
+			type="mil_dot";
+			colorName="ColorBlack";
 		};
 		class Item9
 		{
 			position[]={13532.614,3.0083523,6355.9497};
 			name="boatTraderEast";
-			text="Wholesaler Willie";
+			text="Wholesaler";
 			type="mil_dot";
 			colorName="ColorBlack";
 		};
@@ -1254,7 +1253,7 @@ class Mission
 		{
 			position[]={7989.3354,0.30462033,2900.9946};
 			name="BoatDealerSouth";
-			text="Big Bob's Boats";
+			text="Boat Dealer";
 			type="mil_dot";
 			colorName="ColorBlack";
 		};
@@ -1262,17 +1261,17 @@ class Mission
 		{
 			position[]={12060.471,158.85699,12638.533};
 			name="AirVehicles";
-			text="Dean's Air Stuff";
-			type="mil_dot";
+			text="Aircraft Dealer";
+			type="Airport";
 			colorName="ColorGreen";
 		};
 		class Item12
 		{
 			position[]={1606.6443,289.70795,7803.5156};
 			name="BanditDen";
-			text="Adrian's Medical Fondling Clinic *Closed by F.B.I*";
+			text="Bandit Camp";
 			type="mil_dot";
-			colorName="ColorPink";
+			colorName="ColorRed";
 		};
 		class Item13
 		{
@@ -1286,7 +1285,7 @@ class Mission
 		{
 			position[]={13441.16,1.1406164,5429.3013};
 			name="BoatDealerEast";
-			text="Cable's Boat Dealer";
+			text="Boat Dealer";
 			type="mil_dot";
 			colorName="ColorBlack";
 		};
@@ -1302,14 +1301,14 @@ class Mission
 		{
 			position[]={12944.227,210.19823,12766.889};
 			name="HeroTrader";
-			text="Harry's Hero Camp";
+			text="Hero Camp";
 			type="mil_dot";
 			colorName="ColorBlue";
 		};
 	};
 	class Sensors
 	{
-		items=4;
+		items=5;
 		class Item0
 		{
 			position[]={6325.6772,304.99033,7807.7412};
@@ -1362,6 +1361,23 @@ class Mission
 			};
 		};
 		class Item3
+		{
+			position[]={1606.6443,289.70795,7803.5156};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonebandit";
+			expCond="(player distance zonebandit) < 100;";
+			expActiv="canbuild = false; inTraderCity = ""Bandit Trader"";";
+			expDesactiv="canbuild = true; inTraderCity = ""Any"";";
+			class Effects
+			{
+			};
+		};
+		class Item4
 		{
 			position[]={12944.227,210.19823,12766.889};
 			a=100;

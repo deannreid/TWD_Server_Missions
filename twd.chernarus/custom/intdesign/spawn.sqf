@@ -1,4 +1,18 @@
-private ["_location","_dir","_classname","_item","_hasrequireditem","_missing","_hastoolweapon","_cancel","_reason","_started","_finished","_animState","_isMedic","_dis","_sfx","_hasbuilditem","_tmpbuilt","_onLadder","_isWater","_require","_text","_offset","_IsNearPlot","_isOk","_location1","_location2","_counter","_limit","_proceed","_num_removed","_position","_object","_canBuildOnPlot","_friendlies","_nearestPole","_ownerID","_findNearestPoles","_findNearestPole","_distance","_classnametmp","_ghost","_isPole","_needText","_lockable","_zheightchanged","_rotate","_combination_1","_combination_2","_combination_3","_combination_4","_combination","_combination_1_Display","_combinationDisplay","_zheightdirection","_abort","_isNear","_need","_objHupDiff","_needNear","_vehicle","_inVehicle","_requireplot","_objHDiff","_isLandFireDZ","_isTankTrap"];
+/*
+DayZ Base Building
+Made for DayZ Epoch please ask permission to use/edit/distrubute email vbawol@veteranbastards.com.
+ 
+ 
+Note: Edit the _classname variable below to be the correct classname of the item you want to build, and I suggest you name the file appropiately!
+ 
+Recommended to use alongside Maca's excellent 'right clicks' system: http://epochmod.com/...tions-to-items/
+ 
+Edits by Mike of http://www.petuniaserver.com/ - Original file & all kudos to the EPOCH devs! http://www.dayzepoch.com
+*/
+ 
+private ["_plotReq","_proceed","_location","_dir","_classname","_item","_hasrequireditem","_missing","_hastoolweapon","_cancel","_reason","_started","_finished","_animState","_isMedic","_dis","_sfx","_hasbuilditem","_tmpbuilt","_onLadder","_isWater","_require","_text","_offset","_IsNearPlot","_isOk","_location1","_location2","_counter","_limit","_proceed","_num_removed","_position","_object","_canBuildOnPlot","_friendlies","_nearestPole","_ownerID","_findNearestPoles","_findNearestPole","_distance","_classnametmp","_ghost","_isPole","_needText","_lockable","_zheightchanged","_rotate","_combination_1","_combination_2","_combination_3","_combination_4","_combination","_combination_1_Display","_combinationDisplay","_zheightdirection","_abort","_isNear","_need","_needNear","_vehicle","_inVehicle","_requireplot","_objHDiff","_isLandFireDZ","_isTankTrap"];
+
+_plotReq = false; //Plotpole requirement to build enabled
 
  fnc_Pos_fired1 = {
 disableSerialization;
@@ -56,11 +70,15 @@ _returnTextTable = lbText [2673, _indexTable]; // name of selection
  classnameChange = _returnTextTable;
  };
  
-// Edit the classname BELOW to change what is built
+    fnc_Pos_fired8 = {
+disableSerialization;
+_indexExt = lbCurSel 2674; // index of selection
+_returnTextExt = lbText [2674, _indexExt]; // name of selection
+ hint format["BAR : [%1] \n [%2]",_indexExt,_returnTextExt];// display the value
+ classnameChange = _returnTextExt;
+ };
  
 _classname = classnameChange;
- 
-// Edit the classname ABOVE to change what is built
  
 if(DZE_ActionInProgress) exitWith { cutText [(localize "str_epoch_player_40") , "PLAIN DOWN"]; };
 DZE_ActionInProgress = true;
@@ -130,7 +148,7 @@ _isAllowedUnderGround = getNumber(configFile >> "CfgVehicles" >> _classname >> "
  
 _offset =  getArray (configFile >> "CfgVehicles" >> _classname >> "offset");
 if((count _offset) <= 0) then {
-_offset = [0,1.5,0];
+_offset = [0,3.5,0]; //This is distance of object from player XYZ.. increase Y if you want an object to spawn further away from player
 };
  
 _isPole = (_classname == "Plastic_Pole_EP1_DZ");
@@ -142,54 +160,38 @@ _needText = localize "str_epoch_player_246";
 if(_isPole) then {
 _distance = DZE_PlotPole select 1;
 };
- 
+
+
+_proceed = true;
 // check for near plot
-_findNearestPoles = nearestObjects [(vehicle player), ["Plastic_Pole_EP1_DZ"], _distance];
+_findNearestPoles = nearestObjects[player, ["Plastic_Pole_EP1_DZ"], 30];
 _findNearestPole = [];
- 
-{
-if (alive _x) then {
-_findNearestPole set [(count _findNearestPole),_x];
-};
-} foreach _findNearestPoles;
- 
+{if (alive _x) then {_findNearestPole set [(count _findNearestPole),_x];};} foreach _findNearestPoles;
+
 _IsNearPlot = count (_findNearestPole);
- 
-// If item is plot pole and another one exists within 45m
-if(_isPole and _IsNearPlot > 0) exitWith {  DZE_ActionInProgress = false; cutText [(localize "str_epoch_player_44") , "PLAIN DOWN"]; };
- 
-if(_IsNearPlot == 0) then {
- 
-// Allow building of plot
-_canBuildOnPlot = true;
- 
-} else {
-// Since there are plots nearby we check for ownership and then for friend status
- 
-// check nearby plots ownership and then for friend status
-_nearestPole = _findNearestPole select 0;
- 
-// Find owner
-_ownerID = _nearestPole getVariable["CharacterID","0"];
- 
-// diag_log format["DEBUG BUILDING: %1 = %2", dayz_characterID, _ownerID];
- 
-// check if friendly to owner
-if(dayz_characterID == _ownerID) then {  //Keep ownership
-// owner can build anything within his plot except other plots
-if(!_isPole) then {
-_canBuildOnPlot = true;
+
+if(_IsNearPlot >= 1) then {
+	_proceed = false;
+	_plotReq = false;
+	_nearestPole = _findNearestPole select 0;
+
+	// Find owner
+	_ownerID = _nearestPole getVariable["CharacterID","0"];
+	
+	// check if friendly to owner
+	if(dayz_characterID != _ownerID) then {
+
+		_friendlies		= player getVariable ["friendlyTo",[]];
+		// check if friendly to owner
+		if(!(_ownerID in _friendlies)) then {
+			_proceed = false;
+			} else {
+			_proceed = true;
+		};
+		} else {
+		_proceed = true;
+	};
 };
- 
-} else {
-// disallow building plot
-_canBuildOnPlot = false;
-};
-};
- 
-// _message
-if(!_canBuildOnPlot) exitWith {  DZE_ActionInProgress = false; cutText [format["Woah there survivor! This ain't your patch, someone's plot pole is nearby!"], "PLAIN DOWN",3]; };
- 
 _missing = "";
  
 _location = [0,0,0];
@@ -198,11 +200,6 @@ _isOk = true;
 // get inital players position
 _location1 = getPosATL player;
 _dir = getDir player;
- 
-// if ghost preview available use that instead
-//if (_ghost != "") then {
-//classname = _ghost;
-//};
  
 _object = createVehicle [_classname, _location, [], 0, "CAN_COLLIDE"];
  
@@ -213,6 +210,7 @@ _position = getPosATL _object;
 cutText [(localize "str_epoch_player_45"), "PLAIN DOWN"];
  
 _objHDiff = 0;
+
  
 while {_isOk} do {
 	 
@@ -283,7 +281,7 @@ while {_isOk} do {
 	 
 	if(_zheightdirection == "up_alt") then {
 	_position set [2,((_position select 2)+1)];
-	_objHupDiff = _objHupDiff + 1;
+	_objHDiff = _objHDiff + 1;
 	};
 	if(_zheightdirection == "down_alt") then {
 	_position set [2,((_position select 2)-1)];
@@ -292,7 +290,7 @@ while {_isOk} do {
 	 
 	if(_zheightdirection == "up_ctrl") then {
 	_position set [2,((_position select 2)+0.01)];
-	_objHupDiff = _objHupDiff + 0.01;
+	_objHDiff = _objHDiff + 0.01;
 	};
 	if(_zheightdirection == "down_ctrl") then {
 	_position set [2,((_position select 2)-0.01)];
@@ -367,6 +365,9 @@ if (isOnRoad _position) then { _cancel = true; _reason = "Cannot build on a road
 // No building in trader zones
 if(!canbuild) then { _cancel = true; _reason = "Cannot build in a city."; };
  
+if (!_proceed) then {_cancel = true; _reason = "Someone's plotpole nearby";};
+if (_plotReq) then {_cancel = true; _reason = "Plotpole required to build here";};
+
 if(!_cancel) then {
  
 _classname = _classnametmp;
@@ -420,13 +421,7 @@ _activatingPlayer = player;
 PVDZE_obj_Publish = [dayz_characterID,_tmpbuilt,[_dir,_location],_classname];
 publicVariableServer "PVDZE_obj_Publish";
 player removeMagazine "ItemEmerald";
- 
-// Customise the message below
- 
-cutText [format["Object saved to database!"], "PLAIN DOWN",3];
- 
-// Customer the message above
- 
+cutText [format["%1 saved to database!",_classname], "PLAIN DOWN",3];
 player reveal _tmpbuilt;
 DZE_ActionInProgress = false;
  

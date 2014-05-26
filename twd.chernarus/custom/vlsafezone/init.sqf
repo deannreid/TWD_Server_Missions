@@ -2,7 +2,8 @@ private ["_safezoneZonePerm", "_safezones"];
 
 _safezones = [
 	[[12060.471,12638.533],100, "Airfield"], // Airfield
-	[[4361.4937,2259.9526],100, "Balota"] // Balota	
+	[[4361.4937,2259.9526],100, "Balota"], // Balota	
+	[[5056.7383,9740.4668],100, "NWAF"] //NWAF
 ];
 
 _safezoneZonePerm = {
@@ -18,16 +19,12 @@ _safezoneZonePerm = {
 
 	for "_x" from 0 to _count do
 	{
-		private["_pos", "_sign"];
+		private["_pos"];
 		_a = (_trigger_pos select 0) + (sin(_angle)*_radius);
 		_b = (_trigger_pos select 1) + (cos(_angle)*_radius);
 
 		_pos = [_a,_b,0];
 		_angle = _angle + _step;
-		diag_log format["Spawn sign at: %1", _pos];
-		_sign = createVehicle ["SignM_FARP_Winchester_EP1", _pos, [], 0, "CAN_COLLIDE"];
-		_sign setVehicleInit "this setObjectTexture [0, ""custom\vlsafezone\sign.paa""];";
-		_sign setDir ([_pos, _trigger_pos] call BIS_fnc_DirTo);
 	};
 };
 

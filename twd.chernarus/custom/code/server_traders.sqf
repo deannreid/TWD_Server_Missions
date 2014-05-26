@@ -1,8 +1,9 @@
 // DayZ Epoch TRADERS for 11
-serverTraders = ["RU_Functionary1","RU_Citizen3","Rocker4","Profiteer4","Rita_Ensler_EP1","CIV_EuroMan01_EP1","CIV_EuroMan02_EP1","TK_GUE_Soldier_5_EP1","GUE_Soldier_MG","Worker2","Worker3","Soldier_GL_M16A2_PMC","Woodlander1","UN_CDF_Soldier_Pilot_EP1","RU_WorkWoman1","Dr_Annie_Baker_EP1","RU_Citizen4","RU_WorkWoman5","RU_Citizen1","RU_Villager3","TK_CIV_Takistani04_EP1","Pilot_EP1","RU_Profiteer4","Woodlander3","Dr_Hladik_EP1","Doctor","HouseWife1","GUE_Woodlander2","US_Delta_Force_Undercover_Takistani06_EP1","BAF_Soldier_Officer_MTP","BAF_Soldier_SniperH_MTP"];
+serverTraders = ["Pierce","RU_Functionary1","RU_Citizen3","Rocker4","Profiteer4","Rita_Ensler_EP1","CIV_EuroMan01_EP1","CIV_EuroMan02_EP1","TK_GUE_Soldier_5_EP1","GUE_Soldier_MG","Worker2","Worker3","Woodlander1","UN_CDF_Soldier_Pilot_EP1","RU_WorkWoman1","Dr_Annie_Baker_EP1","RU_Citizen4","RU_WorkWoman5","RU_Citizen1","RU_Villager3","TK_CIV_Takistani04_EP1","Pilot_EP1","RU_Profiteer4","Woodlander3","Dr_Hladik_EP1","Doctor","HouseWife1","GUE_Woodlander2"];
+
 // Hero Vendor
 menu_RU_Functionary1 = [
-	[["Ammunition",478],["Hero Clothing",476],["Bandit Clothing",575],["Tank",999],["Helicopter Armed",493],["Helicopter Armed",997],["Military Armed",562],["Trucks Armed",479],["Armoured Vehicle",996],["Weapons",477]],
+	[["Ammunition",478],["Clothes",476],["Helicopter Armed",493],["Military Armed",562],["Trucks Armed",479],["Weapons",477]],
 	[],
 	"hero"
 ];
@@ -50,25 +51,27 @@ menu_TK_GUE_Soldier_5_EP1 = [
 ];
 // Bandit Trader
 menu_GUE_Soldier_MG = [
-	[["Cooked Meats",630],["Drinks",601],["Packaged Food",629],["Medical Supplies",541]],
-	[["FoodBioMeat","ItemZombieParts",1,1,"buy","Zombie Parts","Bio Meat",101]],
-	"neutral"
+	[["Ammunition",577],["Clothing",575],["Helicopter Armed",512],["Military Armed",569],["Trucks Armed",534],["Weapons",627]],
+	[],
+	"hostile"
 ];
-// Aircraft Dealer
+// Aircraft Dealer NEAF
 menu_Worker2 = [
-	[["Airplanes",517],["Jet",998],["Helicopter Unarmed",519]],
+	[["Airplanes",517],["Helicopter Unarmed",519]],
 	[],
 	"neutral"
 ];
+
+/* AIRCRAFT TRADER NWA */
+menu_Pierce = [
+	[["Airplanes",517],["Helicopter Unarmed",519]],
+	[],
+	"neutral"
+];
+
 // Vehicles Neutral
 menu_Worker3 = [
 	[["Bikes and ATV",587],["Buses and Vans",588],["Cargo Trucks",586],["Fuel Trucks",589],["Military Unarmed",598],["Trucks",590],["Used Cars",520],["Utility Vehicles",591]],
-	[],
-	"neutral"
-];
-// Black Market Vendor
-menu_Soldier_GL_M16A2_PMC = [
-	[["Black Market Ammo",527],["Black Market Weapons",526],["Explosives",529]],
 	[],
 	"neutral"
 ];
@@ -108,12 +111,11 @@ menu_RU_WorkWoman5 = [
 	[["ItemTinBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Tin Bar",101]],
 	"neutral"
 ];
-// Balota Trader
+// West Wholesaler
 menu_RU_Citizen1 = [
-	[["Bikes and ATV",650],["Buses and Vans",651],["Cargo Trucks",653],["Trucks",659],["Used Cars",660],["Cooked Meats",634],["Drinks",633],["Packaged Food",635]],
-	[["FoodBioMeat","ItemZombieParts",1,1,"buy","Zombie Parts","Bio Meat",101]],
-    "neutral"
-
+	[["Wholesale",636]],
+	[],
+	"neutral"
 ];
 // Boat Vendor
 menu_RU_Villager3 = [
@@ -166,26 +168,6 @@ menu_HouseWife1 = [
 // Black market
 menu_GUE_Woodlander2 = [
 	[["Black Market Ammo",527],["Black Market Weapons",526],["Explosives",529]],
-	[],
-	"neutral"
-];
-// Extra Fahrzeuge
-menu_US_Delta_Force_Undercover_Takistani06_EP1 = [
-	[["Backpacks",632],["Clothes",631],["Cooked Meats",634],["Drinks",633],["Packaged Food",635]],
-	[],
-	"neutral"
-];
-
-// Extra Essen
-menu_BAF_Soldier_Officer_MTP = [
-	[["Backpacks",632],["Clothes",631],["Cooked Meats",634],["Drinks",633],["Packaged Food",635]],
-	[],
-	"neutral"
-];
-
-// Extra Waffen
-menu_BAF_Soldier_SniperH_MTP = [
-	[["Black Market Ammo",527],["Black Market Weapons",526],["Explosives",529],["Assault Rifle Ammo",643],["Light Machine Gun Ammo",644],["Pistol Ammo",646],["Shotguns and Single-shot Ammo",649],["Sniper Rifle Ammo",647],["Submachine Gun Ammo",648]],
 	[],
 	"neutral"
 ];

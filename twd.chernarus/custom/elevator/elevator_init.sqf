@@ -13,14 +13,14 @@ _folder = (_this select 0) + "\";
 if (isNil "ELE_PlatformClass") then { ELE_PlatformClass = "MetalFloor_DZ" };
 if (isNil "ELE_StopClass") then { ELE_StopClass = "MetalFloor_Preview_DZ" };
 if (isNil "ELE_MaxRange") then { ELE_MaxRange = 555 }; // m
-if (isNil "ELE_Size") then { ELE_Size = 4 }; // m
+if (isNil "ELE_Size") then { ELE_Size = 10 }; // m
 if (isNil "ELE_Speed") then { ELE_Speed = 6 }; // m/s
 if (isNil "ELE_StopWaitTime") then { ELE_StopWaitTime = 5 }; // s
 if (isNil "ELE_UpdatesPerSecond") then { ELE_UpdatesPerSecond = 60 }; // animation updates per second
 if (isNil "ELE_RequiredBuildTools") then { ELE_RequiredBuildTools = ["ItemToolbox", "ItemCrowbar"] }; // required tools for building an elevator and elevator stop
 if (isNil "ELE_RequiredBuildItems") then { ELE_RequiredBuildItems = [["PartGeneric",4], "PartEngine", "ItemGenerator", "ItemJerrycan"] }; // required items to build an elevator
 if (isNil "ELE_RequiredBuildStopItems") then { ELE_RequiredBuildStopItems = [["PartGeneric",4]] }; // required items to build an elevator stop
-if (isNil "ELE_Debug") then { ELE_Debug = false }; // debug flag
+if (isNil "ELE_Debug") then { ELE_Debug = true }; // debug flag
 
 ELE_elevator = nil;
 

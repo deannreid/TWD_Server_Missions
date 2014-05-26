@@ -127,7 +127,7 @@ SpawnBoxeslvl3 =
 		["Backpack", [4],  "", -5, [["expression", format[_EXECscript3,"backpack.sqf"]]], "1", "1"],
 		["Ammo *NEW*", [5],  "", -5, [["expression", format[_EXECscript3,"ammoBox.sqf"]]], "1", "1"],
 		["DONT ABUSE", [-1], "", -5, [["expression", ""]], "1", "0"],
-			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
+		["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];
 //
 ///////////////////////////////////////////////////////////
@@ -196,6 +196,7 @@ VehicleMenu4 =
 //
 ///////////////////////////////////////////////////////////
 //
+
 readMe =
 [
 	["",true],

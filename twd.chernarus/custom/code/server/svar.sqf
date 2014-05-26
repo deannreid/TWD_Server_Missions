@@ -1,17 +1,10 @@
-/*===============================
-  == This file defines the different variables per-server
-  == It will make map change easier
-  == To change the server Go to the config file and comment out the old one and uncomment server you are moving too :)
-  == Love Dean,
-  ===============================*/
-
 // GLOBAL VARIABLES
 	// Arma Config			
 	MaxVehicleLimit = 1000;
 	MaxDynamicDebris = 100;
 	DynamicVehicleDamageLow = 50;
 	DynamicVehicleDamageHigh = 100;										
-
+	server_name = "V3Dev"; 
 	// DayZ Config											
 	dayz_paraSpawn = false;
 	dayz_sellDistance_vehicle = 10;
@@ -57,6 +50,8 @@ if (dayZ_instance == 11) then
 	DZE_GodModeBase = true;
 	DZE_R3F_WEIGHT = false;
 	DZE_StaticConstructionCount = 1;
+	[] execVM "custom\markers\init.sqf";
+	[] execVM "custom\vlsafezone\init.sqf";
 };
 
 //Panthera
@@ -116,45 +111,11 @@ if (dayZ_instance == 15) then
 	DZE_R3F_WEIGHT = false;	
 };
 
-if ( !((getPlayerUID player) in adminAll) && !((getPlayerUID player) in userDALL)) then
-		{	
-			[] execVM "\z\addons\dayz_code\system\antihack.sqf";
-			DZE_teleport = [99999,99999,99999,99999,99999];
-		};
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////// ADDONS //////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-///////////////////// Admins Tool & Donator Perk ////////////////////// 
-[] execVM "custom\toolmenu\superadmin\Activate.sqf";
-[] execVM "custom\toolmenu\admin\Activate.sqf";
-[] execVM "custom\toolmenu\moderator\Activate.sqf";
-[] execVM "custom\toolmenu\donator\Activate.sqf";
-[] execVM "custom\toolmenu\moddonator\Activate.sqf";
-[] execVM "custom\toolmenu\master\Activate.sqf";
-[] execVM "custom\toolmenu\player\Activate.sqf";
-[] execVM "custom\toolmenu\beta\Activate.sqf";
-//admintoggle
-[] execVM "custom\toolmenu\adtog\Activate.sqf";
-///////////////////// Admins Tool & Donator Perk //////////////////////
-
-/////////////////////// Lights /////////////////////////////////////
-[0,0,true,true,true,58,280,600,[0.698, 0.556, 0.419],"Generator_DZ",0.1] execVM "\z\addons\dayz_code\compile\local_lights_init.sqf";
-////////////////////// Lights /////////////////////////////////////
-
-///////////////////// Towing and Lifting ///////////////////// 
-[] execVM "custom\R3F_ARTY_AND_LOG\init.sqf";
-///////////////////// Towing and Lifting /////////////////////
-
-///////////////////// Heli/Plane, Seat Change /////////////////////
-[] execVM "custom\heliswitch\seat_action.sqf";
-///////////////////// Heli/Plane Seat Change /////////////////////
-
-///////////////////// Vehicle Stow /////////////////////
-execVM "custom\VehicleStow\Start.sqf";
-///////////////////// Vehicle Stow /////////////////////
-
-///////////////////// Dead Walking /////////////////////
-call compile preprocessFileLineNumbers "custom\walkamongstthedead\walkamongstthedead.sqf";
-///////////////////// Dead Walking /////////////////////	
+if (!isNil "server_name") then {
+  [] spawn {
+      waitUntil {(!isNull Player) and (alive Player) and (player == player)};
+      waituntil {!(isNull (findDisplay 46))};
+      5 cutRsc ["wm_disp","PLAIN"];
+      ((uiNamespace getVariable "wm_disp") displayCtrl 1) ctrlSetText server_name;
+  };
+};

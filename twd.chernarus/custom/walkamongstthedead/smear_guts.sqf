@@ -1,6 +1,5 @@
-private ["_txt","_smQTY","_c","_zombiePartsNeeded"];
+private ["_txt","_smQTY","_c"];
 
-_zombiePartsNeeded = 2; // Number of zombie parts in order to apply the camo.
 
 if (dayz_combat == 1) exitWith {
 	_txt = "You need to hide and get out of combat first.";
@@ -14,7 +13,7 @@ if (hasGutsOnHim) exitWith {
 
 _smQTY = {_x == "ItemZombieParts"} count magazines player;
 
-if (_smQTY >= _zombiePartsNeeded) then {
+if (_smQTY >= DZ_zombiePartsNeeded) then {
 	r_interrupt = false;
 	player playActionNow "Medic";
 	for [{_c=0}, {_c < 2}, {_c=_c+1}] do
@@ -27,8 +26,8 @@ if (_smQTY >= _zombiePartsNeeded) then {
 	sleep 10;
 	
 	sand_USEDGUTS = true; 
-	hasGutsOnHim = true;
 	sand_washed =  false;
+	hasGutsOnHim = true;
 	cutText ["You smeared the zombie parts on you.", "PLAIN DOWN"];
 	
 	r_interrupt = false;
@@ -36,6 +35,6 @@ if (_smQTY >= _zombiePartsNeeded) then {
 	player playActionNow "stop";
 	sleep 2;
 } else {
-	_txt = "You need: "+str(_zombiePartsNeeded - _smQTY)+" more Zombie parts to do a Zombie Camo.";
+	_txt = "You need: "+str(DZ_zombiePartsNeeded - _smQTY)+" more Zombie parts to do a Zombie Camo.";
 	cutText [_txt, "PLAIN DOWN"];
 };

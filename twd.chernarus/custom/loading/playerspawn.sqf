@@ -1,5 +1,4 @@
 waitUntil { alive player };
-//BlurGaming Intro Script
 sleep 3;
 cutText ["You are playing on The Wasteland Diaries", "PLAIN DOWN"];
 sleep 1;

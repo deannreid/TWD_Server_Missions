@@ -475,7 +475,73 @@ class WGT_INTERIOR7
 };
 
 
+class WGT_INTERIOR8
+{
+	idd = -1;
+	movingenable = true;
+	onLoad = "_this ExecVM 'custom\intdesign\items.sqf'";
+	
+	class Controls
+	{
 
+		class dialogBox8: BOX
+		{
+			idc = -1;
+			text = "";
+			x = 0.401725 * safezoneW + safezoneX;
+			y = 0.449425 * safezoneH + safezoneY;
+			w = 0.186587 * safezoneW;
+			h = 0.124143 * safezoneH;
+		};
+		class dialogFrame8: RscFrame
+		{
+			idc = -1;
+			text = "Interior Designer";
+			x = 0.401725 * safezoneW + safezoneX;
+			y = 0.449425 * safezoneH + safezoneY;
+			w = 0.186587 * safezoneW;
+			h = 0.124143 * safezoneH;
+		};
+		class dialogChoose8: RscShortcutButton
+		{
+			idc = -1;
+			text = "Spawn";
+			x = 0.454806 * safezoneW + safezoneX;
+			y = 0.512518 * safezoneH + safezoneY;
+			w = 0.0594089 * safezoneW;
+			h = 0.0500295 * safezoneH;
+			action= "[] call fnc_Pos_fired8;_nil=[]ExecVM ""custom\intdesign\spawn.sqf"";closeDialog 0;";
+		};
+		class dialogCancel8: RscShortcutButton
+		{
+			idc = -1;
+			text = "Cancel";
+			x = 0.520496 * safezoneW + safezoneX;
+			y = 0.512518 * safezoneH + safezoneY;
+			w = 0.0594089 * safezoneW;
+			h = 0.0500295 * safezoneH;
+			action = "closeDialog 0;";
+		};
+		class dialogPic8: RscPicture
+		{
+			idc = -1;
+			text = "custom\intdesign\emerald.paa";
+			x = 0.412763 * safezoneW + safezoneX;
+			y = 0.478468 * safezoneH + safezoneY;
+			w = 0.0320813 * safezoneW;
+			h = 0.0690587 * safezoneH;
+		};
+		class dialogCombo8: RscCombo
+		{
+			idc = 2674;
+			text = "Choose your item";
+			x = 0.45638 * safezoneW + safezoneX;
+			y = 0.478467 * safezoneH + safezoneY;
+			w = 0.120896 * safezoneW;
+			h = 0.0229882 * safezoneH;
+		};
+	};
+};
 
 
 
