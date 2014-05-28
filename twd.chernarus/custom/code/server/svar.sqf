@@ -41,7 +41,7 @@ if (dayZ_instance == 11) then
 	dayz_MapArea = 22000;
 	dayz_minpos = -1; 
 	dayz_maxpos = 26000;	
-
+	dayz_spawnselection = 1;
 	DZE_LootSpawnTimer = 5;									
 	DZE_ForceNameTags = true;
 	DZE_PlayerZed   = false;
