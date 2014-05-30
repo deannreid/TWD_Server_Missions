@@ -1,0 +1,11 @@
+execVM "custom\markers\base\wicked.sqf";
+execVM "custom\markers\base\kevwar.sqf";
+execVM "custom\markers\base\vaporizer.sqf";
+execVM "custom\markers\base\dirtypanty.sqf";
+execVM "custom\markers\base\aftershock.sqf";
+execVM "custom\markers\base\apoc.sqf";
+execVM "custom\markers\base\splatfreak.sqf";
+execVM "custom\markers\base\smug.sqf";
+execVM "custom\markers\base\ace.sqf";
+execVM "custom\markers\base\paolo.sqf";
+execVM "custom\markers\base\mastik.sqf";

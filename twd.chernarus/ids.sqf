@@ -23,6 +23,7 @@ userMaster =  //Master Admin
 			[
 				"139811590",   // Dean
 				"119540166",   // Cable
+				"102208774",   // Kieran
 				"10265984", //Z67
 				"77269254",  //DrtyPntyz
 				"237964422", //Wicked
@@ -34,7 +35,6 @@ userMaster =  //Master Admin
 //
 userSuper = // Super Admins
 			[
-				"102208774",   // Kieran
 				"94794054",  // Adrian
 				"11655302",  //Ghost
 				"125215110"    // Calvin

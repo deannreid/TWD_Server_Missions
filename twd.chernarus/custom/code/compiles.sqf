@@ -1,18 +1,18 @@
 //Custom Compiles
-if (!isDedicated) then 
-{
+
 	diag_log "Initialising VL Compiles";
 		fnc_usec_selfActions =			compile preprocessFileLineNumbers "custom\code\fn_selfActions.sqf";
 		dayz_spaceInterrupt =			compile preprocessFileLineNumbers "custom\code\dayz_spaceInterrupt.sqf";
 		player_selectSlot =			compile preprocessFileLineNumbers "custom\code\ui_selectSlot.sqf";
 		local_lockUnlock =			compile preprocessFileLineNumbers "custom\code\local_lockUnlock.sqf";
 		fn_gearMenuChecks =			compile preprocessFileLineNumbers "custom\code\fn_gearMenuChecks.sqf";	
-	
+if (!isDedicated) then 
+{	
 //Build Snap
 		player_build		= compile preprocessFileLineNumbers "custom\snap\player_build.sqf";
 		player_buildControls	= compile preprocessFileLineNumbers "custom\snap\player_buildControls.sqf";
 		snap_object		= compile preprocessFileLineNumbers "custom\snap\snap_object.sqf";
-
+ };
 //Custom Zeds
 	diag_log "Initialising Custom Zeds";
 		building_spawnZombies =			compile preprocessFileLineNumbers "custom\custom_loot\compile\building_spawnZombies.sqf";
@@ -30,8 +30,7 @@ if (!isDedicated) then
 	
 //GUI
 	diag_log "Injecting GUI";
-	player_updateGui =			compile preprocessFileLineNumbers "custom\GUI\player_updateGui.sqf";
+	//player_updateGui =			compile preprocessFileLineNumbers "custom\GUI\player_updateGui.sqf";
 	diag_log "GUI successfully Injected";
 	
 	diag_log "Finished Initialising VL Compiles";
- };

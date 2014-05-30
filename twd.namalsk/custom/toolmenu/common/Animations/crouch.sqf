@@ -1,0 +1,1 @@
+player playMove "AsigPercMstpSlowWrflDnon_SendMenInAction";
