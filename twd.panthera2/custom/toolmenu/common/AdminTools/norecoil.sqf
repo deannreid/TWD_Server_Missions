@@ -1,0 +1,1 @@
+nrIndex = _this select 1;while {(vars select nrIndex) == "1"} do{	player setUnitRecoilCoefficient 0;};if((vars select nrIndex) == "0") then{	player setUnitRecoilCoefficient 1;};
