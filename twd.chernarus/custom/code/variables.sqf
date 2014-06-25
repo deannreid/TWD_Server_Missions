@@ -15,7 +15,8 @@ Soldier1_DZ = 	"Soldier1_DZ";
 Rocket_DZ = 	"Rocket_DZ";
 
 AllPlayers = ["Survivor2_DZ","SurvivorWcombat_DZ","SurvivorWdesert_DZ","SurvivorWurban_DZ","SurvivorWsequishaD_DZ","SurvivorWsequisha_DZ","SurvivorWpink_DZ","SurvivorW3_DZ","SurvivorW2_DZ","Bandit1_DZ","Bandit2_DZ","BanditW1_DZ","BanditW2_DZ","Soldier_Crew_PMC","Sniper1_DZ","Camo1_DZ","Soldier1_DZ","Rocket_DZ","Rocker1_DZ","Rocker2_DZ","Rocker3_DZ","Rocker4_DZ","Priest_DZ","Functionary1_EP1_DZ","GUE_Commander_DZ","Ins_Soldier_GL_DZ","Haris_Press_EP1_DZ","Pilot_EP1_DZ","RU_Policeman_DZ","pz_policeman","pz_suit1","pz_suit2","pz_worker1","pz_worker2","pz_worker3","pz_doctor","pz_teacher","pz_hunter","pz_villager1","pz_villager2","pz_villager3","pz_priest","Soldier_TL_PMC_DZ","Soldier_Sniper_PMC_DZ","Soldier_Bodyguard_AA12_PMC_DZ","Drake_Light_DZ","CZ_Special_Forces_GL_DES_EP1_DZ","TK_INS_Soldier_EP1_DZ","TK_INS_Warlord_EP1_DZ","FR_OHara_DZ","FR_Rodriguez_DZ","CZ_Soldier_Sniper_EP1_DZ","Graves_Light_DZ","GUE_Soldier_MG_DZ","GUE_Soldier_Sniper_DZ","GUE_Soldier_Crew_DZ","GUE_Soldier_CO_DZ","GUE_Soldier_2_DZ","TK_Special_Forces_MG_EP1_DZ","TK_Soldier_Sniper_EP1_DZ","TK_Commander_EP1_DZ","RU_Soldier_Crew_DZ","INS_Lopotev_DZ","INS_Soldier_AR_DZ","INS_Soldier_CO_DZ","INS_Bardak_DZ","INS_Worker2_DZ"];
-
+MeleeWeapons = ["MeleeFishingPole","MeleeCrowbar","MeleeBaseBallBatNails","MeleeBaseBallBatBarbed","MeleeBaseBallBat","Crossbow_DZ","MeleeSledge","MeleeMachete","MeleeHatchet_DZE"];
+gear_done = false;
 //Cooking
 meatraw = [
 	"FoodSteakRaw",
@@ -295,7 +296,8 @@ r_action_repair = 		false;
 r_action_targets = 		[];
 r_pitchWhine = 			false;
 r_isBandit =			false;
-
+isInTraderCity =		false;
+NORRN_dropAction =		-1;
 DZE_PROTOBOX = objNull;
 
 //ammo routine
@@ -307,7 +309,7 @@ r_player_removeActions2 = {
 	if (!isNull r_player_lastVehicle) then {
 		{
 			r_player_lastVehicle removeAction _x;
-		} forEach r_player_actions2;
+		} count r_player_actions2;
 		r_player_actions2 = [];
 		r_action2 = false;
 	};
@@ -384,7 +386,8 @@ DZE_HeliAllowTowFrom = [
 	"CH_47F_EP1_DZ",
 	"CH_47F_BAF",
 	"CH_47F_EP1",
-	"BAF_Merlin_DZE"
+	"BAF_Merlin_DZE",
+	"CH53_DZE"
 ];
 
 DZE_HeliAllowToTow = [
@@ -429,6 +432,15 @@ DAYZ_agentnumber = 0;
 dayz_animalDistance = 800;
 dayz_zSpawnDistance = 1000;
 
+dayz_maxMaxModels = 80; // max quantity of Man models (player || Z, dead || alive) around players. Below this limit we can spawn Z // max quantity of loot piles around players. Below this limit we can spawn some loot
+dayz_spawnArea = 200; // radius around player where we can spawn loot & Z
+dayz_cantseeDist = 150; // distance from which we can spawn a Z in front of any player without ray-tracing && angle checks
+dayz_cantseefov = 70; // half player field-of-view. Visible Z won't be spawned in front of any near players
+dayz_canDelete = 300; // Z, further than this distance from its "owner", will be deleted
+
+if(isNil "DZE_SelfTransfuse") then {
+	DZE_SelfTransfuse = false;
+};
 if(isNil "dayz_maxAnimals") then {
 	dayz_maxAnimals = 5;
 };
@@ -455,6 +467,9 @@ if (isNil "DZE_GodModeBase") then {
 };
 if(isNil "DZEdebug") then {
 	DZEdebug = false;
+};
+if (isNil "DZE_Debug_Damage") then {
+	DZE_Debug_Damage = true;
 };
 if(isNil "DZE_TRADER_SPAWNMODE") then {
 	DZE_TRADER_SPAWNMODE = false;
@@ -510,7 +525,9 @@ if(isNil "DZE_DamageBeforeMaint") then {
 if(isNil "DZE_StaticConstructionCount") then {
 	DZE_StaticConstructionCount = 0;
 };
-
+if (isNil "DZE_selfTransfuse_Values") then {
+	DZE_selfTransfuse_Values = [12000, 15, 300];
+};
 
 // needed on server
 if(isNil "DZE_PlotPole") then {
@@ -533,213 +550,15 @@ if(isNil "dayz_zedsAttackVehicles") then {
 };
 
 // update objects
-dayz_updateObjects = ["Plane","Car", "Helicopter", "Motorcycle", "Ship", "TentStorage", "VaultStorage","LockboxStorage","OutHouse_DZ","Wooden_shed_DZ","WoodShack_DZ","StorageShed_DZ","GunRack_DZ","WoodCrate_DZ","Scaffolding_DZ"];
+dayz_updateObjects = ["Plane","Tank","Car", "Helicopter", "Motorcycle", "Ship", "TentStorage", "VaultStorage","LockboxStorage","OutHouse_DZ","Wooden_shed_DZ","WoodShack_DZ","StorageShed_DZ","GunRack_DZ","WoodCrate_DZ","Scaffolding_DZ"];
 dayz_disallowedVault = ["TentStorage", "BuiltItems","ModularItems","DZE_Base_Object"];
 dayz_reveal = ["AllVehicles","WeaponHolder","Land_A_tent","BuiltItems","ModularItems","DZE_Base_Object"];
-dayz_allowedObjects = [
-"MAP_picture_a",
-"MAP_picture_a_02",
-"MAP_picture_a_03",
-"MAP_picture_a_04",
-"MAP_picture_a_05",
-"MAP_picture_b",
-"MAP_picture_b_02",
-"MAP_picture_c",
-"MAP_picture_c_02",
-"MAP_picture_d",
-"MAP_picture_e",
-"MAP_picture_f",
-"MAP_picture_f_02",
-"MAP_picture_g",
-"MAP_wall_board",
-"MAP_wall_board_02",
-"MAP_wall_board_03",
-"MAP_F_ch_mod_c",
-"MAP_ch_mod_h",
-"MAP_armchair",
-"MAP_ch_mod_h",
-"MAP_ch_office_B",
-"MAP_chair",
-"MAP_Church_chair",
-"MAP_hospital_bench",
-"MAP_kitchen_chair_a",
-"MAP_lavicka_1",
-"MAP_lavicka_2",
-"MAP_lavicka_3",
-"MAP_lavicka_4",
-"MAP_lobby_chair",
-"MAP_office_chair",
-"MAP_F_postel_manz_kov",
-"MAP_F_postel_panelak1",
-"MAP_F_postel_panelak2",
-"MAP_F_Vojenska_palanda",
-"MAP_postel_manz_kov",
-"MAP_postel_panelak1",
-"MAP_vojenska_palanda",
-"MAP_fridge",
-"MAP_Kitchenstove_Elec",
-"MAP_washing_machine",
-"MAP_P_Basin_A",
-"MAP_P_bath",
-"MAP_F_bath",
-"MAP_lekarnicka",
-"MAP_P_sink",
-"MAP_toilet_b",
-"MAP_P_toilet_b_02",
-"MAP_almara",
-"MAP_case_a",
-"MAP_case_bedroom_a",
-"MAP_case_bedroom_b",
-"MAP_case_cans_b",
-"MAP_case_d",
-"MAP_case_wall_unit_part_c",
-"MAP_case_wall_unit_part_d",
-"MAP_case_wooden_b",
-"MAP_Dhangar_borwnskrin",
-"MAP_Dhangar_brownskrin",
-"MAP_Dhangar_knihovna",
-"MAP_library_a",
-"MAP_shelf",
-"MAP_Skrin_bar",
-"MAP_Skrin_opalena",
-"MAP_Truhla_stara",
-"MAP_briefcase",
-"MAP_Dkamna_bila",
-"MAP_Dkamna_uhli",
-"MAP_F_Dkamna_uhli",
-"MAP_icebox",
-"MAP_mutt_vysilacka",
-"MAP_notebook",
-"MAP_pc",
-"MAP_phonebox",
-"MAP_radio",
-"MAP_radio_b",
-"MAP_satelitePhone",
-"MAP_smallTV",
-"MAP_tv_a",
-"MAP_vending_machine",
-"MAP_lantern",
-"MAP_bucket",
-"MAP_MetalBucket",
-"MAP_FuelCan",
-"MAP_SmallObj_money",
-"MAP_conference_table_a",
-"MAP_desk",
-"MAP_Dhangar_psacistul",
-"MAP_F_conference_table_a",
-"MAP_kitchen_table_a",
-"MAP_lobby_table",
-"MAP_office_table_a",
-"MAP_pultskasou",
-"MAP_SmallTable",
-"MAP_stul_hospoda",
-"MAP_stul_kuch1",
-"MAP_Table",
-"MAP_table_drawer",
-"MAP_kasna_new",
-"MAP_Misc_Boogieman",
-"MAP_ChickenCoop",
-"MAP_Misc_Greenhouse",
-"MAP_Misc_Hutch",
-"MAP_Misc_Well",
-"MAP_Misc_WellPump",
-"MAP_PowerGenerator",
-"MAP_psi_bouda",
-"MAP_pumpa",
-"MAP_stanek_3",
-"MAP_stanek_3_d",
-"MAP_stanek_3B",
-"MAP_AirCond_big",
-"MAP_AirCond_small",
-"MAP_antenna_big_roof",
-"MAP_antenna_small_roof",
-"MAP_antenna_small_roof_1",
-"MAP_drapes",
-"MAP_drapes_long",
-"MAP_GasMeterExt",
-"MAP_Ladder",
-"MAP_P_Ladder",
-"MAP_LadderHalf",
-"MAP_P_LadderLong",
-"MAP_leseni2x",
-"MAP_leseni4x",
-"MAP_Misc_loudspeakers",
-"MAP_parabola_big",
-"MAP_P_Stavebni_kozy",
-"MAP_Heli_H_civil",
-"MAP_Heli_H_army",
-"MAP_Heli_H_cross",
-"MAP_Heli_H_rescue",
-"MAP_Sr_border",
-"MAP_drevo_hromada",
-"MAP_garbage_misc",
-"MAP_garbage_paleta",
-"MAP_Ind_BoardsPack1",
-"MAP_Ind_BoardsPack2",
-"MAP_Ind_Timbers",
-"MAP_Kontejner",
-"MAP_Misc_GContainer_Big",
-"MAP_Misc_HayStack",
-"MAP_Misc_TyreHeap",
-"MAP_Misc_WoodPile",
-"MAP_pneu",
-"MAP_popelnice",
-"MAP_sekyraspalek",
-"MAP_seno_balik",
-"MAP_concrete_block",
-"MAP_Concrete_Ramp",
-"MAP_ramp_concrete",
-"MAP_woodenRamp",
-"MAP_brana",
-"MAP_Houpacka",
-"MAP_nastenkaX",
-"MAP_Piskoviste",
-"MAP_snowman",
-"MAP_Barel1",
-"MAP_Barel3",
-"MAP_Barel4",
-"MAP_Barel5",
-"MAP_Barel6",
-"MAP_Barel7",
-"MAP_Barel8",
-"MAP_Barels",
-"MAP_Barels2",
-"MAP_Barels3",
-"MAP_barrel_empty",
-"MAP_barrel_sand",
-"MAP_barrel_water",
-"MAP_P_bedna",
-"MAP_box_c",
-"MAP_P_cihly1",
-"MAP_P_cihly2",
-"MAP_P_cihly3",
-"MAP_P_cihly4",
-"MAP_metalcrate",
-"MAP_metalcrate_02",
-"Misc_concrete",
-"MAP_Misc_G_Pipes",
-"MAP_Misc_palletsfoiled",
-"MAP_Misc_palletsfoiled_heap",
-"MAP_obstacle_get_over",
-"MAP_obstacle_prone",
-"MAP_obstacle_run_duck",
-"MAP_paletaA",
-"MAP_paletyC",
-"MAP_paletyD",
-"MAP_Pallets_Column",
-"MAP_P_pipe_big",
-"MAP_P_pipe_small",
-"MAP_P_ytong",
-"HeliHRescue",
-"MetalFloor_Preview_DZ",
-"Sign_Checkpoint_TK_EP1",
-"TentStorage","TentStorageDomed","TentStorageDomed2", "VaultStorageLocked", "Hedgehog_DZ", "Sandbag1_DZ","BagFenceRound_DZ","TrapBear","Fort_RazorWire","WoodGate_DZ","Land_HBarrier1_DZ","Land_HBarrier3_DZ","Land_HBarrier5_DZ","Fence_corrugated_DZ","M240Nest_DZ","CanvasHut_DZ","ParkBench_DZ","MetalGate_DZ","OutHouse_DZ","Wooden_shed_DZ","WoodShack_DZ","StorageShed_DZ","Plastic_Pole_EP1_DZ","Generator_DZ","StickFence_DZ","LightPole_DZ","FuelPump_DZ","DesertCamoNet_DZ","ForestCamoNet_DZ","DesertLargeCamoNet_DZ","ForestLargeCamoNet_DZ","SandNest_DZ","DeerStand_DZ","MetalPanel_DZ","WorkBench_DZ","WoodFloor_DZ","WoodLargeWall_DZ","WoodLargeWallDoor_DZ","WoodLargeWallWin_DZ","WoodSmallWall_DZ","WoodSmallWallWin_DZ","WoodSmallWallDoor_DZ","LockboxStorageLocked","WoodFloorHalf_DZ","WoodFloorQuarter_DZ","WoodStairs_DZ","WoodStairsSans_DZ","WoodStairsRails_DZ","WoodSmallWallThird_DZ","WoodLadder_DZ","Land_DZE_GarageWoodDoor","Land_DZE_LargeWoodDoor","Land_DZE_WoodDoor","Land_DZE_GarageWoodDoorLocked","Land_DZE_LargeWoodDoorLocked","Land_DZE_WoodDoorLocked","CinderWallHalf_DZ","CinderWall_DZ","CinderWallDoorway_DZ","CinderWallDoor_DZ","CinderWallDoorLocked_DZ","CinderWallSmallDoorway_DZ","CinderWallDoorSmall_DZ","CinderWallDoorSmallLocked_DZ","MetalFloor_DZ","WoodRamp_DZ","GunRack_DZ","FireBarrel_DZ","WoodCrate_DZ","Scaffolding_DZ"];
+dayz_allowedObjects = ["HeliHRescue","MetalFloor_Preview_DZ","TentStorage","TentStorageDomed","TentStorageDomed2", "VaultStorageLocked", "Hedgehog_DZ", "Sandbag1_DZ","BagFenceRound_DZ","TrapBear","Fort_RazorWire","WoodGate_DZ","Land_HBarrier1_DZ","Land_HBarrier3_DZ","Land_HBarrier5_DZ","Fence_corrugated_DZ","M240Nest_DZ","CanvasHut_DZ","ParkBench_DZ","MetalGate_DZ","OutHouse_DZ","Wooden_shed_DZ","WoodShack_DZ","StorageShed_DZ","Plastic_Pole_EP1_DZ","Generator_DZ","StickFence_DZ","LightPole_DZ","FuelPump_DZ","DesertCamoNet_DZ","ForestCamoNet_DZ","DesertLargeCamoNet_DZ","ForestLargeCamoNet_DZ","SandNest_DZ","DeerStand_DZ","MetalPanel_DZ","WorkBench_DZ","WoodFloor_DZ","WoodLargeWall_DZ","WoodLargeWallDoor_DZ","WoodLargeWallWin_DZ","WoodSmallWall_DZ","WoodSmallWallWin_DZ","WoodSmallWallDoor_DZ","LockboxStorageLocked","WoodFloorHalf_DZ","WoodFloorQuarter_DZ","WoodStairs_DZ","WoodStairsSans_DZ","WoodStairsRails_DZ","WoodSmallWallThird_DZ","WoodLadder_DZ","Land_DZE_GarageWoodDoor","Land_DZE_LargeWoodDoor","Land_DZE_WoodDoor","Land_DZE_GarageWoodDoorLocked","Land_DZE_LargeWoodDoorLocked","Land_DZE_WoodDoorLocked","CinderWallHalf_DZ","CinderWall_DZ","CinderWallDoorway_DZ","CinderWallDoor_DZ","CinderWallDoorLocked_DZ","CinderWallSmallDoorway_DZ","CinderWallDoorSmall_DZ","CinderWallDoorSmallLocked_DZ","MetalFloor_DZ","WoodRamp_DZ","GunRack_DZ","FireBarrel_DZ","WoodCrate_DZ","Scaffolding_DZ"];
 
 DZE_LockableStorage = ["VaultStorage","VaultStorageLocked","LockboxStorageLocked","LockboxStorage"];
 DZE_LockedStorage = ["VaultStorageLocked","LockboxStorageLocked"];
 DZE_UnLockedStorage = ["VaultStorage","LockboxStorage"];
-//["ModularItems", "DZE_Housebase", "BuiltItems", "Plastic_Pole_EP1_DZ" ,"FireBarrel_DZ"] - Skaronator, looks like some classes are missing not sure if this is intended
-DZE_maintainClasses = ["ModularItems","DZE_Housebase","LightPole_DZ"];
+DZE_maintainClasses = ["ModularItems","DZE_Housebase","LightPole_DZ","BuiltItems","Plastic_Pole_EP1_DZ","Fence_corrugated_DZ","CanvasHut_DZ","ParkBench_DZ","MetalGate_DZ","StickFence_DZ","DesertCamoNet_DZ","ForestCamoNet_DZ","DesertLargeCamoNet_DZ","ForestLargeCamoNet_DZ","DeerStand_DZ","Scaffolding_DZ","FireBarrel_DZ"];
 
 DZE_DoorsLocked = ["Land_DZE_GarageWoodDoorLocked","Land_DZE_LargeWoodDoorLocked","Land_DZE_WoodDoorLocked","CinderWallDoorLocked_DZ","CinderWallDoorSmallLocked_DZ"];
 
@@ -787,7 +606,15 @@ if(isServer) then {
 	if(isNil "DZE_CleanNull") then {
 		DZE_CleanNull = false;
 	};
-
+	if (isNil "DZE_DeathMsgGlobal") then {
+		DZE_DeathMsgGlobal = false;
+	};
+	if (isNil "DZE_DeathMsgSide") then {
+		DZE_DeathMsgSide = false;
+	};
+	if (isNil "DZE_DeathMsgTitleText") then {
+		DZE_DeathMsgTitleText = false;
+	};
 	DZE_safeVehicle = ["ParachuteWest","ParachuteC"];
 };
 
@@ -845,7 +672,6 @@ if(!isDedicated) then {
 	dayz_guiHumanity =		-90000;
 	dayz_firstGroup = 		group player;
 	dayz_originalPlayer = 	player;
-	dayz_playerName =		"Unknown";
 	dayz_sourceBleeding =	objNull;
 	dayz_clientPreload = 	false;
 	dayz_authed = 			false;
@@ -853,20 +679,34 @@ if(!isDedicated) then {
 	dayz_areaAffect =		2.5;
 	dayz_heartBeat = 		false;
 	dayzClickTime =			0;
+//Current local
+	dayz_spawnZombies = 0;
+	dayz_swarmSpawnZombies = 0;
+//Max local
+	dayz_maxLocalZombies = 30; // max quantity of Z controlled by local gameclient, used by player_spawnCheck. Below this limit we can spawn Z
+//Current NearBy
+	dayz_CurrentNearByZombies = 0;
+//Max NearBy
+	dayz_maxNearByZombies = 60; // max quantity of Z controlled by local gameclient, used by player_spawnCheck. Below this limit we can spawn Z
+//Current total
+	dayz_currentGlobalZombies = 0;
+//Max global zeds.
+	dayz_maxGlobalZeds = 3000;
 	dayz_spawnDelay =		120;
 	dayz_spawnWait =		-120;
 	dayz_lootDelay =		3;
 	dayz_lootWait =			-300;
-	dayz_spawnZombies =		0;
 	//used to count global zeds around players
 	dayz_CurrentZombies = 0;
 	//Used to limit overall zed counts
+	dayz_tickTimeOffset = 0;
+	dayz_currentWeaponHolders = 0;
+	dayz_maxMaxWeaponHolders = 80;
 	dayz_maxCurrentZeds = 0;
 	dayz_inVehicle =		false;
 	dayz_Magazines = 		[];
 	dayzGearSave = 			false;
 	dayz_unsaved =			false;
-	DZE_ActionInProgress =		false;
 	dayz_scaleLight = 		0;
 	dayzDebug = false;
 	dayzState = -1;
@@ -874,6 +714,8 @@ if(!isDedicated) then {
 	//if (uiNamespace getVariable ['DZ_displayUI', 0] == 2) then {
 	//	dayzDebug = true;
 	//};
+
+	DZE_ActionInProgress =		false;
 
 	// DayZ Epoch Client only variables
 	if(isNil "DZE_AllowForceSave") then {
@@ -888,12 +730,15 @@ if(!isDedicated) then {
 	if(isNil "DZE_ForceNameTagsOff") then {
 		DZE_ForceNameTagsOff = false;
 	};
+	if(isNil "DZE_ForceNameTagsInTrader") then {
+		DZE_ForceNameTagsInTrader = false;
+	};
 	if(isNil "DZE_HaloJump") then {
 		DZE_HaloJump = true;
 	};
 
 	if(isNil "DZE_AntiWallLimit") then {
-		DZE_AntiWallLimit = 1;
+		DZE_AntiWallLimit = 3;
 	};
 	if(isNil "DZE_requireplot") then {
 		DZE_requireplot = 1;

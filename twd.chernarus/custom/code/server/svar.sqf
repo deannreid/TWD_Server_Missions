@@ -4,7 +4,7 @@
 	MaxDynamicDebris = 10;
 	DynamicVehicleDamageLow = 0;
 	DynamicVehicleDamageHigh = 40;										
-	server_name = "V3Dev"; 
+	
 	// DayZ Config											
 	dayz_paraSpawn = false;
 	dayz_sellDistance_vehicle = 20;
@@ -17,8 +17,8 @@
 	dayz_maxLocalZombies = 15;
 	dayz_maxGlobalZombiesInit = 8;
 	dayz_maxGlobalZombiesIncrease = 3;
-	dayz_maxZeds = 400;							
-	
+	dayz_maxZeds = 400;				
+
 	// DayZ Epoch Config										
 	DZE_DiagFpsSlow = true;
 	DZE_DiagVerbose = false;
@@ -29,9 +29,11 @@
 	DZE_AllowCargoCheck = false;										
 	DZE_BuildOnRoads = false;									
 	DZE_HeliLift = true;
+	DZE_defaultSkin = [["Rocker1_DZ","Rocker4_DZ"],["SurvivorWpink_DZ","SurvivorWdesert_DZ"]];
+	DZE_selfTransfuse_Values =[12000, 0.5, 240];
+	DZE_selfTransfuse = true;
 	
 //SERVER ONLY VARIABLES
-
 // Chernarus
 if (dayZ_instance == 11) then
 {
@@ -109,13 +111,4 @@ if (dayZ_instance == 15) then
 	DZE_requireplot = 0;
 	DZE_GodModeBase = true;
 	DZE_R3F_WEIGHT = false;	
-};
-
-if (!isNil "server_name") then {
-  [] spawn {
-      waitUntil {(!isNull Player) and (alive Player) and (player == player)};
-      waituntil {!(isNull (findDisplay 46))};
-      5 cutRsc ["wm_disp","PLAIN"];
-      ((uiNamespace getVariable "wm_disp") displayCtrl 1) ctrlSetText server_name;
-  };
 };
