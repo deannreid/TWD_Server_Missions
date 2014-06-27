@@ -1,0 +1,1 @@
+[] execVM "custom\toolmenu\moderator\AdminToolsMain.sqf";
