@@ -5,6 +5,7 @@ call compile preprocessFileLineNumbers "custom\takeclothes\init.sqf";
 		  _nil = [] execVM "custom\JAEM\EvacChopper_init.sqf";
 		  _nil = [] execVM "custom\code\deathmessages.sqf";
 		  _nul = [] execVM "custom\loading\loginCamera.sqf";
+		  _nil = [] execVM "custom\VASP\VASP_init.sqf";
 				 [] execVM "custom\VehicleStow\Start.sqf";
 				 [] execVM "custom\vlsafezone\safe_zone.sqf";
 				 []	execVM "custom\loading\loadout.sqf";

@@ -40,7 +40,6 @@ if (!isDedicated) then
 			dayz_loadScreenMsg = (localize "STR_AUTHENTICATING");
 				_id = player addEventHandler ["Respawn", {_id = [] spawn player_death;}];
 					_playerMonitor =	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
-								 _nil = [] execVM "custom\VASP\VASP_init.sqf";
 										   execVM "custom\code\server\dedicated.sqf";
 };
 
