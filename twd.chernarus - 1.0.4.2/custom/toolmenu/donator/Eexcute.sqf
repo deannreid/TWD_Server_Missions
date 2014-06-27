@@ -1,1 +1,0 @@
-[] execVM "custom\toolmenu\donator\DonatorTools.sqf";
