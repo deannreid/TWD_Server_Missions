@@ -1,19 +1,6 @@
-/*
-Build Snapping - Extended v1.6
-
-Idea and first code:
-Maca
-
-Reworked by: OtterNas3
-01/11/2014
-Last update 02/20/2014
-*/
-
+/* Edited by Dean to include new items  */
 class SnapPoints
 {
-	////////////////
-	//EPOCH STUFF///
-	////////////////
 	class MetalFloor_DZ {
 		snap[] = {"MetalFloor_DZ"};
 		points[] = {
@@ -558,3 +545,166 @@ class SnapPoints
 	class Land_DZE_WoodDoor: 		WoodSmallBase {};
 	class Land_DZE_WoodDoorLocked: 	WoodSmallBase {};
 };
+
+class WoodRamp_DZ {
+		snap[] = {"WoodRamp_DZ"};
+		points[] = {
+			{
+				{0, -3.31323, 0}, 0
+			},
+			{
+				{0, 3.31323, 0}, 0
+			}
+		};
+	};
+
+	class VaultStorage {
+		snap[] = {"VaultStorage", "VaultStorageLocked"};
+		points[] = {
+			{
+				{0.732422, 0, 0}, 0
+			},
+			{
+				{-0.732422, 0, 0}, 0
+			},
+			{
+				{0, 0, 1.22001}, 0
+			},
+			{
+				{0, 0, -1.22001}, 0
+			}
+		};
+	};
+
+	class VaultStorageLocked: VaultStorage {};
+
+	class TentStorage {
+		snap[] = {"TentStorage"};
+		points[] = {
+			{
+				{-1.59155, 0, -0.583953}, 0
+			},
+			{
+				{1.59155, 0, -0.583953}, 0
+			}
+		};
+	};
+
+	class TentStorageDomed {
+		snap[] = {"TentStorageDomed", "TentStorageDomed2"};
+		points[] = {
+			{
+				{-2.66309, 0, -0.619246}, 0
+			},
+			{
+				{2.66309, 0, -0.619246}, 0
+			}
+		};
+	};
+
+	class TentStorageDomed2: TentStorageDomed {};
+
+	class StorageShed_DZ {
+		snap[] = {"StorageShed_DZ"};
+		points[] = {
+			{
+				{0, -2.72192, -1.22576}, 0
+			},
+			{
+				{0, 2.72192, -1.22576}, 0
+			}
+		};
+	};
+
+	class WoodFloorHalf_DZ {
+		snap[] = {"WoodFloorHalf_DZ"};
+		points[] = {
+			{
+				{-2.50244, 0, 0}, 0
+			},
+			{
+				{2.50244, 0, 0}, 0
+			},
+			{
+				{0, -4.67456, 0}, 0
+			},
+			{
+				{0, 4.67456, 0}, 0
+			}
+		};
+	};
+
+	class WoodFloorQuarter_DZ {
+		snap[] = {"WoodFloorQuarter_DZ"};
+		points[] = {
+			{
+				{-2.49268, 0, 0}, 0
+			},
+			{
+				{2.49268, 0, 0}, 0
+			},
+			{
+				{0, -2.45239, 0}, 0
+			},
+			{
+				{0, 2.45239, 0}, 0
+			}
+		};
+	};
+
+	class WoodStairsSans_DZ {
+		snap[] = {"WoodStairsSans_DZ", "WoodStairs_DZ", "WoodStairsRails_DZ"};
+		points[] = {
+			{
+				{0, 1.58154, 0}, 0
+			},
+			{
+				{0, -1.58154, 0}, 0
+			}
+		};
+	};
+
+	class WoodStairs_DZ: WoodStairsSans_DZ {};
+	class WoodStairsRails_DZ: WoodStairsSans_DZ {};
+
+	class GunRack_DZ {
+		snap[] = {"GunRack_DZ"};
+		points[] = {
+			{
+				{0.78125, 0, -0.504823}, 0
+			},
+			{
+				{-0.78125, 0, -0.504823}, 0
+			},
+			{
+				{0, 0, 0.234676}, 0
+			},
+			{
+				{0, 0, -0.234676}, 0
+			}
+		};
+	};
+
+	class WoodCrate_DZ {
+		snap[] = {"WoodCrate_DZ"};
+		points[] = {
+			{
+				{0.996582, 0, -0.486694}, 0
+			},
+			{
+				{-0.996582, 0, -0.486694}, 0
+			},
+			{
+				{0, 1.00293, -0.486694}, 0
+			},
+			{
+				{0, -1.00293, -0.486694}, 0
+			},
+			{
+				{0, 0, 0.481537}, 0
+			},
+			{
+				{0, 0, -0.481537}, 0
+			}
+		};
+	}; 

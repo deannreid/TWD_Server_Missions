@@ -1,1 +1,0 @@
-deleteVehicle cursorTarget;
