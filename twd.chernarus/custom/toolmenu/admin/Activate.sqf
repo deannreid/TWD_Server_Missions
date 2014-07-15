@@ -14,8 +14,7 @@ if ((getPlayerUID player) in userAdmin) then
 			{
 				if (_idx == -1) then
 				{
-									[]execVM "custom\toolmenu\common\keyBinds\admin\fKeyBind.sqf";
-					_idx = (vehicle player) addaction [("<t color=""#ff2266"">" + ("LVL 2: Admin") +"</t>"),"custom\toolmenu\admin\Eexcute.sqf","",0,false,true,"",""];
+					_idx = (vehicle player) addaction [("<t color=""#ff2266"">" + ("Press F2 for Admin Menu") +"</t>"),"VLAH12881ERNU","",0,false,true,"",""];
 					_veh = vehicle player;
 				};
 

@@ -28,14 +28,14 @@ if ((getPlayerUID player) in userMaster) then
 		[
 			["",true],
 					["LVL 4: Master Admin", [-1], "", -5, [["expression", ""]], "1", "0"],
-				["Player Tools >>", [2], "#USER:PlayerTools", -5, [["expression", ""]], "1", "1"],
-				["Admin Tools >>", [3], "#USER:AdminTools", -5, [["expression", ""]], "1", "1"],
-				["Skins >>", [4],  "", -5, [["expression", format[_EXECscript5,"Skins.sqf"]]], "1", "1"],
+				//["Player Tools >>", [2], "#USER:PlayerTools", -5, [["expression", ""]], "1", "1"],
+			//	["Admin Tools >>", [3], "#USER:AdminTools", -5, [["expression", ""]], "1", "1"],
+			//	["Skins >>", [4],  "", -5, [["expression", format[_EXECscript5,"Skins.sqf"]]], "1", "1"],
 				["Vehicle >>", [5], "#USER:VehicleMenu", -5, [["expression", ""]], "1", "1"],
-				["Key Commands >>", [9], "#USER:keyCommands", -5, [["expression", ""]], "1", "1"],				
-			["", [-1], "", -5, [["expression", ""]], "1", "0"],					
-				["Spawn Zeds >>", [7], "#USER:ZedMenu", -5, [["expression", ""]], "1", "1"],			
-				["Spawn Boxes >>", [8], "#USER:SpawnBoxes", -5, [["expression", ""]], "1", "1"],
+			//	["Key Commands >>", [9], "#USER:keyCommands", -5, [["expression", ""]], "1", "1"],				
+			//["", [-1], "", -5, [["expression", ""]], "1", "0"],					
+			//	["Spawn Zeds >>", [7], "#USER:ZedMenu", -5, [["expression", ""]], "1", "1"],			
+			//	["Spawn Boxes >>", [8], "#USER:SpawnBoxes", -5, [["expression", ""]], "1", "1"],
 				["Event Boxes >>", [9], "#USER:EventBoxes", -5, [["expression", ""]], "1", "1"],
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
 			["Exit", [13], "", -3, [["expression", ""]], "1", "1"]		
@@ -238,8 +238,8 @@ VehicleMenu =
 		["Temp Vehicles >>", [12], "#USER:VehicleMenu0", -5, [["expression", ""]], "1", "1"],
 		["Perm Vehicles >>", [2],  "", -5, [["expression", format[_EXECscript7,"addvehicleDialog.sqf"]]], "1", "1"],
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
-		["Lock Vehicle", [8],  "", -5, [["expression", format[_EXECscript2,"vehicle_lock.sqf"]]], "1", "1"],			
-		["Unlock Vehicle", [8],  "", -5, [["expression", format[_EXECscript2,"vehicle_unlock.sqf"]]], "1", "1"],	
+		//["Lock Vehicle", [8],  "", -5,  [["expression",""]], "1", "1"],	]], "1", "1"],			
+		//["Unlock Vehicle", [8],  "", -5, [["expression",""]], "1", "1"],	
 		["", [-1], "", -5, [["expression", ""]], "1", "0"],
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]
 ];

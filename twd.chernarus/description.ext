@@ -32,7 +32,6 @@ diagHit = 1;
 #include "custom\custom_loot\Configs\CfgBuildingLoot.hpp"
 #include "custom\custom_loot\Configs\CfgLootSmall.hpp"
 #include "custom\custom_loot\Configs\CfgLoot.hpp"
-
 class RscStructuredText
 {
     class Attributes;
@@ -696,7 +695,7 @@ class DayZ_loadingScreen
 	};
 };
 
-#include "custom\snap\points.hpp"
+#include "custom\snap_pro\snappoints.hpp"
 #include "custom\header\rclick.hpp"
 #include "custom\header\admind.hpp"
 #include "custom\money\bank\dialog\bank.hpp"

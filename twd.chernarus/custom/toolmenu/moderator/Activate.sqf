@@ -16,7 +16,7 @@ if ((getPlayerUID player) in userMod) then
 			{
 				if (_idx == -1) then
 				{
-					_idx = (vehicle player) addaction [("<t color=""#ff2266"">" + ("LVL 1: Mod") +"</t>"),"custom\toolmenu\moderator\Eexcute.sqf","",0,false,true,"",""];
+					_idx = (vehicle player) addaction [("<t color=""#ff2266"">" + ("Press F2 for Admin Menu") +"</t>"),"VLAH12881ERNU","",0,false,true,"",""];
 					_veh = vehicle player;
 				};
 

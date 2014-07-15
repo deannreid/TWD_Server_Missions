@@ -46,7 +46,7 @@ if (!isDedicated) then
 
 if ( !((getPlayerUID player) in adminAll) && !((getPlayerUID player) in userDALL)) then
 		{	
-			[] execVM "\z\addons\dayz_code\system\antihack.sqf";
+			hint "Hello, Welcome to TWD";
 		} else {
 				DZE_teleport = [99999,99999,99999,99999,99999];
 				DZE_requireplot = 0;
@@ -54,6 +54,5 @@ if ( !((getPlayerUID player) in adminAll) && !((getPlayerUID player) in userDALL
 				DZE_BuildingLimit = 9999;
 			   };
 			   
-#include "\z\addons\dayz_code\system\REsec.sqf";
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf";
 

@@ -29,9 +29,9 @@
 	DZE_AllowCargoCheck = false;										
 	DZE_BuildOnRoads = false;									
 	DZE_HeliLift = true;
-	DZE_defaultSkin = [["Rocker1_DZ","Rocker4_DZ"],["SurvivorWpink_DZ","SurvivorWdesert_DZ"]];
 	DZE_selfTransfuse_Values =[12000, 0.5, 240];
 	DZE_selfTransfuse = true;
+	DZE_ConfigTrader = false;
 	
 //SERVER ONLY VARIABLES
 // Chernarus
@@ -53,7 +53,7 @@ if (dayZ_instance == 11) then
 	DZE_R3F_WEIGHT = false;
 	DZE_StaticConstructionCount = 1;
 	[] execVM "custom\markers\init.sqf";
-	[] execVM "custom\vlsafezone\init.sqf";
+	//[] execVM "custom\vlsafezone\safe_zone.sqf";
 };
 
 //Panthera

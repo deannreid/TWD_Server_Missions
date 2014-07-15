@@ -15,8 +15,6 @@ if ((getPlayerUID player) in userMaster) then
 			{
 				if (_idx == -1) then
 				{
-					[]execVM "custom\toolmenu\common\keyBinds\deanmenu\fKeyBind.sqf";
-					//[]execVM "custom\toolmenu\common\keyBinds\deanmenu\nKeyBind.sqf";
 					_idx = (vehicle player) addaction [("<t color=""#ff2266"">" + ("Level 4: Master Admin") +"</t>"),"custom\toolmenu\master\Eexcute.sqf","",0,false,true,"",""];
 					_veh = vehicle player;
 				};

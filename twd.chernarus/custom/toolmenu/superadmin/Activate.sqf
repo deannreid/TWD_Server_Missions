@@ -15,7 +15,7 @@ if ((getPlayerUID player) in userSuper) then
 			{
 				if (_idx == -1) then
 				{
-					_idx = (vehicle player) addaction [("<t color=""#ff2266"">" + ("LVL 3: Super Admin") +"</t>"),"custom\toolmenu\superadmin\Eexcute.sqf","",0,false,true,"",""];
+					_idx = (vehicle player) addaction [("<t color=""#ff2266"">" + ("Press F2 for Admin Menu") +"</t>"),"VLAH12881ERNU","",0,false,true,"",""];
 					_veh = vehicle player;
 				};
 

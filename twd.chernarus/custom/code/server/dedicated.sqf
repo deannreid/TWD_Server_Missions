@@ -11,6 +11,6 @@ call compile preprocessFileLineNumbers "custom\takeclothes\init.sqf";
 				 []	execVM "custom\loading\loadout.sqf";
 				 [] execVM "custom\toolmenu\init.sqf";
 				 []	execVM "custom\service_point\service_point.sqf";
-				 
+				 [] execVM "R3F_ARTY_AND_LOG\init.sqf";
 watermark_1 = compile preprocessFileLineNumbers "custom\code\twd.sqf";
 player spawn watermark_1;

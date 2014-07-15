@@ -29,6 +29,8 @@ if ((getPlayerUID player) in userDALL) then
 				["Donator Tools", [3], "#USER:LVL1Tools", -5, [["expression", ""]], "1", "1"],
 				["Skins *Remove Backpack!*", [4],  "", -5, [["expression", format[_EXECscript5,"Skins.sqf"]]], "1", "1"],						
 				["Spawn Boxes", [8], "#USER:SpawnBoxesLVL1", -5, [["expression", ""]], "1", "1"],
+				["", [-1], "", -5, [["expression", ""]], "1", "0"],
+				["Tools getting removed 1st Jan 2015", [-1], "", -5, [["expression", ""]], "1", "0"],
 				["READ ME!", [8], "#USER:readMe", -5, [["expression", ""]], "1", "1"],
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]		
@@ -48,6 +50,8 @@ if ((getPlayerUID player) in userDALL) then
 				["Spawn Boxes", [8], "#USER:SpawnBoxesLVL2", -5, [["expression", ""]], "1", "1"],
 				["READ ME!", [8], "#USER:readMe", -5, [["expression", ""]], "1", "1"],
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
+				["Tools getting removed 1st Jan 2015", [-1], "", -5, [["expression", ""]], "1", "0"],
+				["", [-1], "", -5, [["expression", ""]], "1", "0"],
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]		
 			];
 		};
@@ -66,6 +70,8 @@ if ((getPlayerUID player) in userDALL) then
 				["Spawn Boxes", [8], "#USER:SpawnBoxesLVL3", -5, [["expression", ""]], "1", "1"],
 				["READ ME!", [8], "#USER:readMe", -5, [["expression", ""]], "1", "1"],
 				["", [-1], "", -5, [["expression", ""]], "1", "0"],
+				["Tools getting removed 1st Jan 2015", [-1], "", -5, [["expression", ""]], "1", "0"],
+				["", [-1], "", -5, [["expression", ""]], "1", "0"],				
 				["Exit", [13], "", -3, [["expression", ""]], "1", "1"]		
 			];
 		};
