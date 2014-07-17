@@ -6,9 +6,9 @@ diag_log "1 OR MORE VARIABLES NOT FOUND AT LOCATION @TWD\server\var.sqf";
 };
 
 if (_infiStarAC == true) then {[] spawn {[] execVM "@TWD\infiSTAR\AH.sqf";}; diag_log "infiSTAR Activated";}else{diag_log"infiSTAR deactivated";};
-if (_hclient == true) then {execVM "@TWD\HeadlessClient\init.sqf"; diag_log "Headless Client Activated";};
-if (_dzmsAC == true) then {[] ExecVM "@TWD\DZMS\DZMSInit.sqf"; diag_log "DayZ Mission System Activated";};
-if (_dzaiAC == true) then {call compile preprocessFileLineNumbers "@TWD\DZAI\init\dzai_initserver.sqf"; diag_log "DayZ AI Activated";};
+if (_hclient == true) then {execVM "@TWD\HeadlessClient\init.sqf"; diag_log "Headless Client Activated";}else{diag_log"Headless Client deactivated";};
+if (_dzmsAC == true) then {[] ExecVM "@TWD\DZMS\DZMSInit.sqf"; diag_log "DayZ Mission System Activated";}else{diag_log"DayZ Mission System deactivated";};
+if (_dzaiAC == true) then {call compile preprocessFileLineNumbers "@TWD\DZAI\init\dzai_initserver.sqf"; diag_log "DayZ AI Activated";}else{diag_log"DayZ AI deactivated";};
 /*TWD Edits End*/
 waituntil {!isnil "bis_fnc_init"};
 
