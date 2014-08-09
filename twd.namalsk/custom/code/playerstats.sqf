@@ -15,18 +15,6 @@ titleText ["Debug Monitor Activated","PLAIN DOWN"];titleFadeOut 2;
 
 if ((getPlayerUID player) in 
 [
-"139811590"    // Dean
-//"143144390",    // Ricco
-//"144565382",    // Curtis
-//"102208774",    // Kieran
-//"94794054",     // Adrian
-//"119540166",    // Cable
-//"125215110",    // Calvin
-//"5210496", 		// Mak
-//"167093190",    // GhostSamurai
-//"111721542",    // Robert
-//"10265984",     // Z67
-//"11655302"      // Ghost
 ]) then {
 	while {sleep 1;hotkey_hitme == 1} do {
 	  
@@ -80,13 +68,12 @@ while {sleep 1;hotkey_hitme == 1} do {
 hintSilent parseText format ["
 	<t size='1.20' font='Bitstream' align='center' color='#00CC00'>%1</t><br/>
 	<t size='1.15' font='Bitstream' align='center' color='#00CC00'>voxelloop.co.uk</t><br/>	
-	<t size='1' font='Bitstream' align='left' color='#FFBF00'>Zombies Killed: </t><t size='1.15' font='Bitstream' align='right'>%2</t><br/>
-	<t size='1' font='Bitstream' align='left' color='#FFBF00'>Murders: </t><t size='1.15' font='Bitstream' align='right'>%4</t><br/>
-	<t size='1' font='Bitstream' align='left' color='#FFBF00'>Bandits Killed: </t><t size='1.15' font='Bitstream' align='right'>%5</t><br/>
-	<t size='1' font='Bitstream' align='left' color='#FFBF00'>Humanity: </t><t size='1.15' font='Bitstream' align='right'>%6</t><br/><br/>
+	<t size='1.15' font='Bitstream' align='center' color='#00CC00'>TS: voice.vlhosting.co.uk</t><br/>	<br/>
 	<t size='1' font='Bitstream' align='left' color='#FFBF00'>Blood: </t><t size='1.15' font='Bitstream' align='right'>%12</t><br/>
 	<t size='1' font='Bitstream' align='left' color='#FFBF00'>Zombies (alive/total): </t><t size='1.15' font='Bitstream' align='right'>%14(%13)</t><br/>
-	<t size='1.15' font='Bitstream' align='center' color='#00CC00'>TS: voice.vlhosting.co.uk</t><br/>	
+	<t size='0.95' font='Bitstream' align='left' color='#FFBF00'>Humanity: </t><t size='0.95' font='Bitstream' align='right'>%6</t><br/>
+	<t size='0.95' font='Bitstream' align='left' >GPS: %16</t><t size='0.95' font='Bitstream' align='right'>DIR: %17</t><br/>
+	<br/>
 	<t size='1.20' font='Bitstream' align='center' color='#00CC00'>Restart in: %11</t><br/>
 	",
 	(name player),
@@ -103,6 +90,8 @@ hintSilent parseText format ["
 	r_player_blood,
 	(count entities "zZombie_Base"),
 	({alive _x} count entities "zZombie_Base"),
-	(round diag_fps)
+	(round diag_fps),
+	(mapGridPosition getPos player),
+	(round(getDir player))
 	
 ];};};

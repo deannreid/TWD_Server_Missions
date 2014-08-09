@@ -1,4 +1,4 @@
-private ["_res","_isInfected","_doLoop","_hiveVer","_isHiveOk","_playerID","_playerObj","_primary","_key","_charID","_playerName","_backpack","_isNew","_inventory","_survival","_model","_mags","_wpns","_bcpk","_config","_newPlayer"];
+private ["_isInfected","_doLoop","_hiveVer","_isHiveOk","_playerID","_playerObj","_primary","_key","_charID","_playerName","_backpack","_isNew","_inventory","_survival","_model","_mags","_wpns","_bcpk","_config","_newPlayer"];
 
 #ifdef DZE_SERVER_DEBUG
 diag_log ("STARTING LOGIN: " + str(_this));
@@ -31,7 +31,7 @@ if (_playerID == "") then {
 	_playerID = getPlayerUID _playerObj;
 };
 
-if ((_playerID == "") or (isNil "_playerID")) exitWith {
+if ((_playerID == "") || (isNil "_playerID")) exitWith {
 #ifdef DZE_SERVER_DEBUG
 	diag_log ("LOGIN FAILED: Player [" + _playerName + "] has no login ID");
 #endif
@@ -44,15 +44,15 @@ diag_log ("LOGIN ATTEMPT: " + str(_playerID) + " " + _playerName);
 //Do Connection Attempt
 _doLoop = 0;
 while {_doLoop < 5} do {
-	_key = format["CHILD:101:%1:%2:%3:",_playerID,dayZ_instance,_playerName];
+        _key = format["CHILD:101:%1:%2:%3:",_playerID,dayZ_instance,_playerName];
 	diag_log (_key);
-        _key = format["\cache\players\%1\%2.sqf", MyPlayerCounter, _playerID];
+        _key = format["\cache\players\%1\%2.sqf", MyPlayerCounter, toLower(_playerID)];
         diag_log ("LOAD PLAYER: "+_key);
         _res = preprocessFile _key;
         diag_log ("PLAYER CACHE: "+_res);
 
         if ((_res == "") or (isNil "_res")) then {
-            _key = format["\cache\players\%1\%2.sqf", (MyPlayerCounter - 1), _playerID];
+            _key = format["\cache\players\%1\%2.sqf", (MyPlayerCounter - 1), toLower(_playerID)];
             diag_log ("BACKLOAD PLAYER: "+_key);
             _res = preprocessFile _key;
             diag_log ("PLAYER CACHE: "+_res);
@@ -69,20 +69,19 @@ while {_doLoop < 5} do {
             _primary = call compile _res;
         };
         _res = nil;
-		onPlayerConnected "[_id, _name] execVM ""\z\addons\dayz_server\compile\server_setTime.sqf""";
-  
+    	onPlayerConnected "[_id, _name] execVM ""\z\addons\dayz_server\compile\server_setTime.sqf""";
         MyPlayerCounter = MyPlayerCounter + 1;
         diag_log format["CHILD:11:%1:", MyPlayerCounter];
 
 	if (count _primary > 0) then {
-	    if ((_primary select 0) != "ERROR") then {
-	        _doLoop = 9;
-	    };
+		if ((_primary select 0) != "ERROR") then {
+			_doLoop = 9;
+		};
 	};
 	_doLoop = _doLoop + 1;
 };
 
-if (isNull _playerObj or !isPlayer _playerObj) exitWith {
+if (isNull _playerObj || !isPlayer _playerObj) exitWith {
 #ifdef DZE_SERVER_DEBUG
 	diag_log ("LOGIN RESULT: Exiting, player object null: " + str(_playerObj));
 #endif
@@ -95,10 +94,12 @@ if ((_primary select 0) == "ERROR") exitWith {
 };
 
 //Process request
-_newPlayer = 	_primary select 1;
+_newPlayer =    _primary select 1;
 _isNew = true;
-_isNew =                count (_primary select 3) < 1;
-_charID =               _primary select 2;
+_isNew = 		count _primary < 7; //_result select 1;
+_charID = 		_primary select 2;
+
+
 
 #ifdef DZE_SERVER_DEBUG
 diag_log ("LOGIN RESULT: " + str(_primary));
@@ -120,17 +121,23 @@ if (!_isNew) then {
 	};
 	
 } else {
+	/*if (DZE_PlayerZed) then {
+		_isInfected = _primary select 3;
+	} else {
+		_isInfected = 0;
+	};*/
     _isInfected = 0;
-    _model =     _primary select 7;
-    _hiveVer =   _primary select 8;
-       
-        if (isNil "_model") then {
-                _model = "Survivor2_DZ";
-        } else {
-                if (_model == "") then {
-                        _model = "Survivor2_DZ";
-                };
-        };
+    _model =            _primary select 7;
+    _hiveVer =              _primary select 8;
+	
+	
+	if (isNil "_model") then {
+		_model = "Survivor2_DZ";
+	} else {
+		if (_model == "") then {
+			_model = "Survivor2_DZ";
+		};
+	};
 
 	
 	//Record initial inventory only if not player zombie 

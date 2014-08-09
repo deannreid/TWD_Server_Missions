@@ -1,0 +1,2155 @@
+version=11;
+class Mission
+{
+	addOns[]=
+	{
+		"ori_pragacopter",
+		"origins_pack_cars",
+		"ori_scraptank",
+		"ori_bigraft",
+		"ori_smallraft",
+		"ori_titanic",
+		"ori_scrapbuggy",
+		"ori_vil_pack",
+		"vil_ori_autogyro",
+		"ori_dc3",
+		"ori_flying_fortress",
+		"rth_small_tent",
+		"tavi",		
+	    "ca_modules_animals",
+		"dayz_anim",
+		"dayz_code",
+		"dayz_communityassets",
+		"dayz_weapons",
+		"dayz_equip",
+		"dayz_epoch",
+		"dayz_vehicles",
+		"cacharacters_pmc",
+		"ca_modules_functions",
+		"glt_m300t",
+		"pook_h13",
+		"csj_gyroac",
+		"map_eu",
+		"base_buildings",
+		"jetskiyanahuiaddon"
+	};
+	addOnsAuto[]=
+	{
+		"dayz_weapons",
+		"origins_pack_cars",
+		"origins_pack",
+		"ori_vil_pack",
+		"ca_modules_functions",
+		"warfarebuildings",
+		"tavi"
+	};
+	randomSeed=11171215;
+	class Intel
+	{
+		briefingName="DayZ Epoch Origins";
+		briefingDescription="DayZ Epoch Origins";
+		resistanceEast=1;
+		startWeather=0.067362607;
+		forecastWeather=0.52341133;
+		year=2008;
+		month=6;
+		day=1;
+		hour=12;
+	};
+	class Groups
+	{
+		items=18;
+		class Item0
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={23069.475,16.271852,19177.129};
+					azimut=140;
+					special="NONE";
+					id=11;
+					side="EAST";
+					vehicle="US_Soldier_SniperH_EP1";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="na zadore";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={23068.881,16.271852,19175.895};
+					type="CYCLE";
+					combatMode="RED";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item1
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={23138.191,16.256777,19393.635};
+					azimut=90;
+					special="NONE";
+					id=12;
+					side="EAST";
+					vehicle="TK_Soldier_Spotter_EP1";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="na zadore";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={23138.201,16.256777,19391.447};
+					type="CYCLE";
+					combatMode="RED";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item2
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22816.883,16.207289,20193.377};
+					azimut=15;
+					special="NONE";
+					id=13;
+					side="EAST";
+					vehicle="BAF_Soldier_SniperH_W";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="na zadore";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22817.34,16.207289,20193};
+					type="CYCLE";
+					combatMode="RED";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item3
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22424.869,16.264851,20250.041};
+					azimut=335;
+					special="NONE";
+					id=14;
+					side="EAST";
+					vehicle="TK_Soldier_Spotter_EP1";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="na zadore";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22424.35,16.264851,20249.625};
+					type="CYCLE";
+					combatMode="RED";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item4
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22563.867,16.26581,20274.58};
+					special="NONE";
+					id=17;
+					side="EAST";
+					vehicle="BAF_Soldier_Sniper_W";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="na zadore";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22564.457,16.26581,20274.631};
+					type="CYCLE";
+					combatMode="RED";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item5
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={23027.262,16.261002,19953.234};
+					azimut=50;
+					special="NONE";
+					id=18;
+					side="EAST";
+					vehicle="TK_Soldier_EP1";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="na zadore";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={23027.537,16.261002,19952.688};
+					type="CYCLE";
+					combatMode="RED";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item6
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22711.25,16.284704,19038.221};
+					azimut=175;
+					special="NONE";
+					id=32;
+					side="EAST";
+					vehicle="TK_Soldier_Spotter_EP1";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="na zadore";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22710.666,16.284704,19037.832};
+					type="CYCLE";
+					combatMode="RED";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item7
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22547.332,16.284716,19000.174};
+					azimut=185;
+					special="NONE";
+					id=33;
+					side="EAST";
+					vehicle="TK_Soldier_Spotter_EP1";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="na zadore";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22546.654,16.284716,18999.928};
+					type="CYCLE";
+					combatMode="RED";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item8
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={23125,19609.6,16};
+					placement=5;
+					azimut=93;
+					special="NONE";
+					id=47;
+					side="EAST";
+					vehicle="TK_INS_Soldier_Sniper_EP1";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="Snayper_1";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={23125,19609.6,16};
+					type="CYCLE";
+					combatMode="RED";
+					combat="STEALTH";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item9
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22293.703,16.283468,20144.137};
+					azimut=335;
+					special="NONE";
+					id=97;
+					side="EAST";
+					vehicle="TK_INS_Soldier_EP1";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="na zadore";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22293.086,16.263313,20143.771};
+					type="CYCLE";
+					combatMode="RED";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item10
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22147.068,16.272823,20006.666};
+					azimut=335;
+					special="NONE";
+					id=98;
+					side="EAST";
+					vehicle="TK_INS_Soldier_EP1";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="na zadore";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22146.549,16.272823,20006.105};
+					type="CYCLE";
+					combatMode="RED";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item11
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21978.145,16.276573,19814.072};
+					azimut=310;
+					special="NONE";
+					id=99;
+					side="EAST";
+					vehicle="TK_INS_Soldier_EP1";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="na zadore";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={21977.77,16.276573,19813.268};
+					type="CYCLE";
+					combatMode="RED";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item12
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22010.949,16.284712,19559.936};
+					azimut=250;
+					special="NONE";
+					id=100;
+					side="EAST";
+					vehicle="TK_INS_Soldier_EP1";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="na zadore";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22011.207,16.284712,19559.375};
+					type="CYCLE";
+					combatMode="RED";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item13
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22092.318,16.280338,19403.016};
+					azimut=215;
+					special="NONE";
+					id=101;
+					side="EAST";
+					vehicle="TK_INS_Soldier_EP1";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="na zadore";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22092.621,16.280338,19402.309};
+					type="CYCLE";
+					combatMode="RED";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item14
+		{
+			side="EAST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22309.865,16.284725,19133.34};
+					azimut=195;
+					special="NONE";
+					id=102;
+					side="EAST";
+					vehicle="TK_Soldier_Spotter_EP1";
+					leader=1;
+					lock="UNLOCKED";
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+					description="na zadore";
+				};
+			};
+			class Waypoints
+			{
+				items=1;
+				class Item0
+				{
+					position[]={22310.795,16.284725,19132.635};
+					type="CYCLE";
+					combatMode="RED";
+					combat="AWARE";
+					class Effects
+					{
+					};
+					showWP="NEVER";
+				};
+			};
+		};
+		class Item15
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={10184.648,76.735474,18613.084};
+					azimut=250.019;
+					special="NONE";
+					id=105;
+					side="WEST";
+					vehicle="Survivor3_DZ";
+					player="PLAYER COMMANDER";
+					leader=1;
+					rank="COLONEL";
+					skill=1;init="this disableAI 'MOVE';";
+				};
+			};
+		};
+		class Item16
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=50;
+				class Item0
+				{
+					position[]={126.2492,0.69394171,157.38708};
+					azimut=-17.0839;
+					id=11;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item1
+				{
+					position[]={125.96489,0.69394171,158.18182};
+					azimut=-17.0839;
+					id=0;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAYER COMMANDER";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item2
+				{
+					position[]={125.19946,0.69394171,157.7467};
+					azimut=-17.083944;
+					id=5;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item3
+				{
+					position[]={125.40584,0.69394171,159.02014};
+					azimut=-17.083944;
+					id=8;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item4
+				{
+					position[]={125.68189,0.69394171,158.16467};
+					azimut=-17.083944;
+					id=18;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item5
+				{
+					position[]={124.93312,0.69394171,157.35168};
+					azimut=-17.083944;
+					id=2;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item6
+				{
+					position[]={126.50222,0.69394171,157.78412};
+					azimut=-17.083937;
+					id=9;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item7
+				{
+					position[]={127.07344,0.69394171,158.64423};
+					azimut=-17.083944;
+					id=21;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item8
+				{
+					position[]={126.96429,0.69394171,157.22162};
+					azimut=-17.083944;
+					id=13;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item9
+				{
+					position[]={125.59901,0.69394171,157.57892};
+					azimut=-17.083944;
+					id=7;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item10
+				{
+					position[]={125.57819,0.69394171,158.80487};
+					azimut=-17.0839;
+					id=36;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item11
+				{
+					position[]={125.68203,0.69394171,157.75305};
+					azimut=-17.083944;
+					id=25;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item12
+				{
+					position[]={126.13457,0.69394171,157.20508};
+					azimut=-17.083944;
+					id=43;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item13
+				{
+					position[]={126.92294,0.69394171,157.58636};
+					azimut=-17.083944;
+					id=30;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item14
+				{
+					position[]={126.47661,0.69394171,159.03381};
+					azimut=-17.083944;
+					id=33;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item15
+				{
+					position[]={126.66208,0.69394171,158.41077};
+					azimut=-17.083944;
+					id=1;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item16
+				{
+					position[]={124.98711,0.69394171,158.37115};
+					azimut=-17.083944;
+					id=4;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item17
+				{
+					position[]={126.90768,0.69394171,158.84821};
+					azimut=-17.083944;
+					id=3;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item18
+				{
+					position[]={125.42049,0.69394171,158.17358};
+					azimut=-17.083944;
+					id=6;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item19
+				{
+					position[]={125.15991,0.69394171,158.16504};
+					azimut=-17.083944;
+					id=10;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item20
+				{
+					position[]={126.53394,0.69394171,157.39856};
+					azimut=-17.083944;
+					id=16;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item21
+				{
+					position[]={126.08256,0.69394171,158.8205};
+					azimut=-17.083944;
+					id=19;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item22
+				{
+					position[]={126.79144,0.69394171,158.6333};
+					azimut=-17.083944;
+					id=15;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item23
+				{
+					position[]={126.07879,0.69394171,157.56116};
+					azimut=-17.083944;
+					id=23;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item24
+				{
+					position[]={127.20182,0.69394171,158.40826};
+					azimut=-17.083944;
+					id=26;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item25
+				{
+					position[]={127.23447,0.69394171,157.59155};
+					azimut=-17.083944;
+					id=29;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item26
+				{
+					position[]={126.61225,0.69394171,157.58185};
+					azimut=-17.083944;
+					id=31;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item27
+				{
+					position[]={126.39537,0.69394171,158.40656};
+					azimut=-17.083944;
+					id=28;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item28
+				{
+					position[]={126.47921,0.69394171,158.18719};
+					azimut=-17.083944;
+					id=35;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item29
+				{
+					position[]={127.09355,0.69394171,157.40118};
+					azimut=-17.083944;
+					id=27;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item30
+				{
+					position[]={125.4594,0.69394171,157.37329};
+					azimut=-17.083937;
+					id=34;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item31
+				{
+					position[]={126.69575,0.69394171,157.20886};
+					azimut=-17.083944;
+					id=46;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item32
+				{
+					position[]={126.19179,0.69394171,159.03729};
+					azimut=-17.083944;
+					id=38;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item33
+				{
+					position[]={126.63866,0.69394171,158.84766};
+					azimut=-17.083944;
+					id=32;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item34
+				{
+					position[]={126.08863,0.69394171,158.39252};
+					azimut=-17.083944;
+					id=47;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item35
+				{
+					position[]={125.2139,0.69394171,157.35583};
+					azimut=-17.083944;
+					id=41;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item36
+				{
+					position[]={127.02809,0.69394171,159.04047};
+					azimut=-17.083944;
+					id=40;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item37
+				{
+					position[]={125.62182,0.69394171,157.18188};
+					azimut=-17.083944;
+					id=44;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item38
+				{
+					position[]={126.35212,0.69394171,158.83722};
+					azimut=-17.083944;
+					id=48;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item39
+				{
+					position[]={125.14499,0.69394171,159.01099};
+					azimut=-17.083944;
+					id=39;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item40
+				{
+					position[]={127.19611,0.69394171,158.83636};
+					azimut=-17.083944;
+					id=37;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item41
+				{
+					position[]={125.32362,0.69394171,157.56714};
+					azimut=-17.083944;
+					id=45;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item42
+				{
+					position[]={124.65946,0.69394171,158.13086};
+					azimut=-17.0839;
+					id=49;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item43
+				{
+					position[]={126.78382,0.69394171,157.39423};
+					azimut=-17.083944;
+					id=42;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item44
+				{
+					position[]={125.9855,0.69394171,157.38159};
+					azimut=-17.083944;
+					id=22;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item45
+				{
+					position[]={126.51171,0.69394171,158.63306};
+					azimut=-17.083944;
+					id=12;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item46
+				{
+					position[]={126.62286,0.69394171,157.96991};
+					azimut=-17.083944;
+					id=14;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item47
+				{
+					position[]={125.27383,0.69394171,158.37024};
+					azimut=-17.0839;
+					id=24;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item48
+				{
+					position[]={125.55512,0.69394171,158.38495};
+					azimut=-17.083944;
+					id=20;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item49
+				{
+					position[]={126.75509,0.69394171,158.18536};
+					azimut=-17.083944;
+					id=17;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAY CDG";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};														
+			};
+		};
+		class Item17
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={-143.93861,0.52647489,2319.5012};
+					id=50;
+					side="LOGIC";
+					vehicle="FunctionsManager";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+	};
+	class Markers
+	{
+		items=31;
+		class Item0
+		{
+			position[]={10732.087,193.02972,12687.841};
+			name="center";
+			type="Empty";
+		};
+		class Item1
+		{
+			position[]={125.80597,0.55931646,158.21259};
+			name="respawn_west";
+			type="Empty";
+		};
+		class Item2
+		{
+			position[]={17587.729,206.90927,4952.0513};
+			name="spawn0";
+			type="Empty";
+		};
+		class Item3
+		{
+			position[]={9093.4707,33.920578,2614.3794};
+			name="spawn1";
+			type="Empty";
+		};
+		class Item4
+		{
+			position[]={15954.211,19.612961,15847.49};
+			name="spawn2";
+			type="Empty";
+		};
+		class Item5
+		{
+			position[]={13560.766,32.488033,19300.455};
+			name="spawn3";
+			type="Empty";
+		};
+		class Item6
+		{
+			position[]={17743.729,255.98103,10299.182};
+			name="spawn4";
+			type="Empty";
+		};
+		class Item7
+		{
+			position[]={15245.996,56.273598,17424.979};
+			name="spawn5";
+			type="Empty";
+		};
+		class Item8
+		{
+			position[]={16674.049,52.588493,13930.056};
+			name="spawn6";
+			type="Empty";
+		};
+		class Item9
+		{
+			position[]={11361.38,24.342115,6684.8628};
+			name="spawn7";
+			type="Empty";
+		};
+		class Item10
+		{
+			position[]={12268.094,77.620689,9762.8389};
+			name="spawn8";
+			type="Empty";
+		};
+		class Item11
+		{
+			position[]={18292.107,70.055626,7537.231};
+			name="spawn9";
+			type="Empty";
+		};
+		class Item12
+		{
+			position[]={2820.71,0.000,17833.6};
+			name="spawn10";
+			type="Empty";
+		};		
+		class Item13
+		{
+			position[]={11698.81,-114,15210.121};
+			name="TraderCityLyepestok";
+			text=" Trader City Lyepestok";
+			type="mil_circle";
+			colorName="ColorOrange";
+		};
+		class Item14
+		{
+			position[]={15309.663,-14.993002,9278.4912};
+			name="TraderCitySabina";
+			text=" Trader City Sabina";
+			type="mil_circle";
+			colorName="ColorOrange";
+		};
+		class Item15
+		{
+			position[]={5538.7354,-35.799999,8762.2695};
+			name="TraderCityBilgrad";
+			text=" Trader City Bilgrad";
+			type="mil_circle";
+			colorName="ColorOrange";
+		};
+		class Item16
+		{
+			position[]={7376.6084,-34.6604,4296.5879};
+			name="TraderCityBranibor";
+			text=" Trader City Branibor";
+			type="mil_circle";
+			colorName="ColorOrange";
+		};
+		class Item17
+		{
+			position[]={10948.426,-10.727827,654.90265};
+			name="BanditVendor";
+			text=" Bandit Vendor";
+			type="mil_circle";
+			colorName="ColorRed";
+		};
+		class Item18
+		{
+			position[]={15587.822,-35.599998,16394.049};
+			name="HeroVendor";
+			text=" Hero Vendor";
+			type="mil_circle";
+			colorName="ColorGreen";
+		};
+		class Item19
+		{
+			position[]={16555.732,-44.942032,10159.68};
+			name="AircraftDealer";
+			text=" Aircraft Dealer";
+			type="mil_dot";
+			colorName="ColorBlack";
+		};
+		class Item20
+		{
+			position[]={6815.0776,7.6293945e-006,8534.1504};
+			name="AircraftDealer";
+			text=" Aircraft Dealer";
+			type="mil_dot";
+			colorName="ColorBlack";
+		};
+		class Item21
+		{
+			position[]={4066.3528,-36.305538,7265.0024};
+			name="Misc.Vendor";
+			text=" Misc. Vendor";
+			type="mil_box";
+			colorName="ColorGreen";
+		};
+		class Item22
+		{
+			position[]={17497.631,-235.07928,7159.0879};
+			name="Misc.Vendor";
+			text=" Misc. Vendor";
+			type="mil_box";
+			colorName="ColorGreen";
+		};
+		class Item23
+		{
+			position[]={17332.115,5.3882599e-005,12930.239};
+			name="BoatDealer";
+			text=" Boat Dealer";
+			type="mil_dot";
+			colorName="ColorBlack";
+		};
+		class Item24
+		{
+			position[]={10570.494,-0.28882828,16772.477};
+			name="BoatDealer";
+			text=" Boat Dealer";
+			type="mil_dot";
+			colorName="ColorBlack";
+		};
+		class Item25
+		{
+			position[]={10698.463,-0.00011062622,5983.665};
+			name="BoatDealer";
+			text=" Boat Dealer";
+			type="mil_dot";
+			colorName="ColorBlack";
+		};
+		class Item26
+		{
+			position[]={5419.2437,-1.6689301e-006,9503.5479};
+			name="BoatDealer";
+			text=" Boat Dealer";
+			type="mil_dot";
+			colorName="ColorBlack";
+		};
+		class Item27
+		{
+			position[]={13342.758,-172.991,8611.9932};
+			name="Wholesaler";
+			text=" Wholesaler";
+			type="mil_box";
+			colorName="ColorBlack";
+		};
+		class Item28
+		{
+			position[]={9859.4209,-173.54755,7471.5684};
+			name="Wholesaler";
+			text=" Wholesaler";
+			type="mil_box";
+			colorName="ColorBlack";
+		};
+		class Item29
+		{
+			position[]={1013.0505,5.0996313,18247.072};
+			name="buildabletrader";
+			text=" Carls Buildables";
+			type="mil_circle";
+			colorName="ColorOrange";
+		};
+		class Item30
+		{
+			position[]={3097.4031,-0.2819894,2469.9319};
+			name="Kninmil";
+			text=" Knin military outpost";
+			type="mil_circle";
+			colorName="ColorRed";
+		};
+	};	
+	class Sensors
+	{
+		items=40;
+		class Item0
+		{
+			position[]={8042.2275,0.12761667,6496.458}; 
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonenovy";
+			expCond="(player distance zonenovy) < 150;";
+			expActiv="TitleText["" "",""PLAIN DOWN""]; canbuild = false;";
+			expDesactiv="TitleText["" "",""PLAIN DOWN""]; canbuild = true;";
+			class Effects
+			{
+			};
+		};
+		class Item1
+		{
+			position[]={3097.4031,-0.2819894,2469.9319}; 
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zoneknin";
+			expCond="(player distance zoneknin) < 150;";
+			expActiv="TitleText["" "",""PLAIN DOWN""]; canbuild = false;";
+			expDesactiv="TitleText["" "",""PLAIN DOWN""]; canbuild = true;";
+			class Effects
+			{				
+			};		
+		};
+		class Item2
+		{
+			position[]={15309.663,-14.993002,9278.4912};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonesabina";
+			expCond="(player distance zonesabina) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item3
+		{
+			position[]={15309.663,-14.993002,9278.4912};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonesabina_safezone";
+			expCond="(player distance zonesabina_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};
+		class Item4
+		{
+			position[]={11698.81,-114,15210.121};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonelyep";
+			expCond="(player distance zonelyep) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item5
+		{
+			position[]={11698.81,-114,15210.121};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonelyep_safezone";
+			expCond="(player distance zonelyep_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};
+		class Item6
+		{
+			position[]={5538.7354,-35.799999,8762.2695};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonebilgrad";
+			expCond="(player distance zonebilgrad) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item7
+		{
+			position[]={5538.7354,-35.799999,8762.2695};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonebilgrad_safezone";
+			expCond="(player distance zonebilgrad_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};
+		class Item8
+		{
+			position[]={7376.6084,-34.6604,4296.5879};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonebranibor";
+			expCond="(player distance zonebranibor) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item9
+		{
+			position[]={7376.6084,-34.6604,4296.5879};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonebranibor_safezone";
+			expCond="(player distance zonebranibor_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};		
+		class Item10
+		{
+			position[]={10948.426,-10.727827,654.90265};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="BanditVendor";
+			expCond="(player distance BanditVendor) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item11
+		{
+			position[]={10948.426,-10.727827,654.90265};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="BanditVendor_safezone";
+			expCond="(player distance BanditVendor_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};		
+		class Item12
+		{
+			position[]={15587.822,-35.599998,16394.049};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="HeroVendor";
+			expCond="(player distance HeroVendor) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item13
+		{
+			position[]={15587.822,-35.599998,16394.049};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="HeroVendor_safezone";
+			expCond="(player distance HeroVendor_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};		
+		class Item14
+		{
+			position[]={16555.732,-44.942032,10159.68};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="AircraftDealer1";
+			expCond="(player distance AircraftDealer1) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item15
+		{
+			position[]={16555.732,-44.942032,10159.68};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="AircraftDealer1_safezone";
+			expCond="(player distance AircraftDealer1_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};		
+		class Item16
+		{
+			position[]={6815.0776,7.6293945e-006,8534.1504};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="AircraftDealer";
+			expCond="(player distance AircraftDealer) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item17
+		{
+			position[]={6815.0776,7.6293945e-006,8534.1504};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="AircraftDealer_safezone";
+			expCond="(player distance AircraftDealer_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};		
+		class Item18
+		{
+			position[]={4066.3528,-36.305538,7265.0024};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="MiscVendor";
+			expCond="(player distance MiscVendor) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item19
+		{
+			position[]={4066.3528,-36.305538,7265.0024};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="MiscVendor_safezone";
+			expCond="(player distance MiscVendor_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};		
+		class Item20
+		{
+			position[]={17497.631,-235.07928,7159.0879};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="MiscVendor1";
+			expCond="(player distance MiscVendor1) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item21
+		{
+			position[]={17497.631,-235.07928,7159.0879};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="MiscVendor1_safezone";
+			expCond="(player distance MiscVendor1_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};		
+		class Item22
+		{
+			position[]={17332.115,5.3882599e-005,12930.239};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="BoatDealer";
+			expCond="(player distance BoatDealer) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item23
+		{
+			position[]={17332.115,5.3882599e-005,12930.239};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="BoatDealer_safezone";
+			expCond="(player distance BoatDealer_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};		
+		class Item24
+		{
+			position[]={10570.494,-0.28882828,16772.477};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="BoatDealer1";
+			expCond="(player distance BoatDealer1) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item25
+		{
+			position[]={10570.494,-0.28882828,16772.477};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="BoatDealer1_safezone";
+			expCond="(player distance BoatDealer1_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};		
+		class Item26
+		{
+			position[]={10698.463,-0.00011062622,5983.665};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="BoatDealer2";
+			expCond="(player distance BoatDealer2) < 50;";
+			eexpActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item27
+		{
+			position[]={10698.463,-0.00011062622,5983.665};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="BoatDealer2_safezone";
+			expCond="(player distance BoatDealer2_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};		
+		class Item28
+		{
+			position[]={5419.2437,-1.6689301e-006,9503.5479};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="BoatDealer3";
+			expCond="(player distance BoatDealer3) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item29
+		{
+			position[]={5419.2437,-1.6689301e-006,9503.5479};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="BoatDealer3_safezone";
+			expCond="(player distance BoatDealer3_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};		
+		class Item30
+		{
+			position[]={13342.758,-172.991,8611.9932};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Wholesaler";
+			expCond="(player distance Wholesaler) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item31
+		{
+			position[]={13342.758,-172.991,8611.9932};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Wholesaler_safezone";
+			expCond="(player distance Wholesaler_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};		
+		class Item32
+		{
+			position[]={9859.4209,-173.54755,7471.5684};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Wholesaler1";
+			expCond="(player distance Wholesaler1) < 50;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item33
+		{
+			position[]={9859.4209,-173.54755,7471.5684};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Wholesaler1_safezone";
+			expCond="(player distance Wholesaler1_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};
+		class Item34
+		{
+			position[]={1013.0505,5.0996313,18247.072};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="buildabletrader";
+			expCond="(player distance buildabletrader) < 100;";
+			expActiv="canbuild = false; clearzeds = [] execVM ""custom\code\tavi\clearzeds.sqf""; speedlimit = [] execVM ""custom\code\tavi\speedlimit.sqf"";  titleText [""\n\nEntering the trader - god mode on"", ""PLAIN DOWN"", 1];";
+            expDesactiv="canbuild = true; terminate clearzeds; terminate speedlimit; titleText [""\n\nLeaving the trader - God mode deactivated."", ""PLAIN DOWN"", 1];";
+			class Effects
+			{
+			};
+		};
+		class Item35
+		{
+			position[]={1013.0505,5.0996313,18247.072};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="buildabletrader_safezone";
+			expCond="(player distance buildabletrader_safezone) < 50;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{				
+			};
+		};
+		class Item36
+		{
+			position[]={22614.5, 0, 19667.8};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="sectorb";
+			expCond="(player distance sectorb) < 2500;";
+			expActiv="canbuild = false; secb = true; clearzeds = [] execVM ""custom\code\tavi\clearzedsb.sqf"";";
+            expDesactiv="canbuild = true; secb = false; terminate clearzeds;";
+			class Effects
+			{
+			};
+		};
+		class Item37
+		{
+			position[]={24470.5, 0, 24624.5};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="refuel1";
+			expCond="(player distance refuel1) < 120;";
+			expActiv="canbuild = false;";
+            expDesactiv="canbuild = true;";
+			class Effects
+			{
+			};
+		};
+		class Item38
+		{
+			position[]={691.527, 0, 778.384};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="refuel2";
+			expCond="(player distance refuel2) < 120;";
+			expActiv="canbuild = false;";
+            expDesactiv="canbuild = true;";
+			class Effects
+			{
+			};
+		};
+		class Item39
+		{
+			position[]={951.492, 0, 25022.8};
+			a=100;
+			b=100;
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="refuel3";
+			expCond="(player distance refuel3) < 120;";
+			expActiv="canbuild = false;";
+            expDesactiv="canbuild = true;";
+			class Effects
+			{
+			};
+		};
+	};
+};
+class Intro
+{
+	addOns[]=
+	{
+		"tavi"
+	};
+	addOnsAuto[]=
+	{
+		"tavi"
+	};
+	randomSeed=6913869;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"tavi"
+	};
+	addOnsAuto[]=
+	{
+		"tavi"
+	};
+	randomSeed=4081731;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"tavi"
+	};
+	addOnsAuto[]=
+	{
+		"tavi"
+	};
+	randomSeed=4975929;
+	class Intel
+	{
+		startWeather=0.25;
+		forecastWeather=0.25;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};

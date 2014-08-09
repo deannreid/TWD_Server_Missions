@@ -40,6 +40,11 @@ _ctrlFPS = _display displayCtrl 1321;
 _ctrlFPSOuter = _display displayCtrl 1322;
 
 
+_ctrlServerRestart = _display displayCtrl 1404;
+_RestartTime = 180-(round(serverTime/60));
+_ctrlServerRestart  ctrlSetText str(_RestartTime);
+
+
 _fps = round diag_FPS;
 //_colors = ["color = '#99bb00'","color = '#CDEF65'","color = '#F5F53D'","color = '#EFAA43'","color = '#FF0000'"];
 _ctrlFPS ctrlSetText str(_fps);

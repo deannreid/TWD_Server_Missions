@@ -10,7 +10,7 @@ if(isNull(_object)) exitWith {
 };
 
 _type = 	_this select 1;
-_parachuteWest = ((typeOf _object == "ParachuteWest") or (typeOf _object == "ParachuteC"));
+_parachuteWest = ((typeOf _object == "ParachuteWest") || (typeOf _object == "ParachuteC"));
 _isbuildable = (typeOf _object) in dayz_allowedObjects;
 _isNotOk = false;
 _firstTime = false;
@@ -25,8 +25,10 @@ if ((typeName _objectID != "string") || (typeName _uid != "string")) then
     _objectID = "0";
     _uid = "0";
 };
+
 if (_object getVariable "Sarge" == 1) exitWith {};
-if (!_parachuteWest and !(locked _object)) then {
+
+if (!_parachuteWest && !(locked _object)) then {
 	if (_objectID == "0" && _uid == "0" && (vehicle _object getVariable ["Sarge",0] != 1)) then
 	{
 		_object_position = getPosATL _object;
@@ -34,8 +36,8 @@ if (!_parachuteWest and !(locked _object)) then {
 	};
 };
 
-// do not update if buildable and not ok
-if (_isNotOk and _isbuildable) exitWith {  };
+// do not update if buildable && not ok
+if (_isNotOk && _isbuildable) exitWith {  };
 
 // delete if still not ok
 if (_isNotOk) exitWith { deleteVehicle _object; diag_log(format["Deleting object %1 with invalid ID at pos [%2,%3,%4]",typeOf _object,_object_position select 0,_object_position select 1, _object_position select 2]); };
@@ -74,7 +76,7 @@ _object_inventory = {
 			} else {
 				_key = format["CHILD:303:%1:%2:",_objectID,_inventory];
 			};
-                        if ( count(toArray(_key)) > 1020 ) then {
+			if ( count(toArray(_key)) > 1020 ) then {
                             diag_log ("Prevent diag_log limit...");
                             if (_objectID == "0") then {
                                 diag_log format["CHILD:39:%1:0:%2:", _uid, _inventory select 0]; // weapons
@@ -100,12 +102,12 @@ _object_damage = {
 			_hit = [_object,_x] call object_getHit;
 			_selection = getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "HitPoints" >> _x >> "name");
 			if (_hit > 0) then {_array set [count _array,[_selection,_hit]]};
-			_object setHit ["_selection", _hit]
-		} forEach _hitpoints;
+			_object setHit ["_selection", _hit];
+		} count _hitpoints;
 	
 		diag_log format["CHILD:306:%1:%2:%3:",_objectID,_array,_damage];
 	        _object setVariable ["needUpdate",false,true];
-};
+	};
 
 _object_killed = {
 	private["_hitpoints","_array","_hit","_selection","_key","_damage"];
@@ -118,15 +120,30 @@ _object_killed = {
 		_selection = getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "HitPoints" >> _x >> "name");
 		if (_hit > 0) then {_array set [count _array,[_selection,_hit]]};
 		_hit = 1;
-		_object setHit ["_selection", _hit]
-	} forEach _hitpoints;
+		_object setHit ["_selection", _hit];
+	} count _hitpoints;
 	
 	if (_objectID == "0") then {
 		diag_log format["CHILD:306:%1:%2:%3:",_uid,_array,_damage];
 	} else {
 		diag_log format["CHILD:306:%1:%2:%3:",_objectID,_array,_damage];
 	};
+	
 	_object setVariable ["needUpdate",false,true];
+
+	if ((count _this) > 2) then {
+		_killer = _this select 2;
+		_charID = _object getVariable ['CharacterID','0'];
+		_objID 	= _object getVariable['ObjectID','0'];
+		_objUID	= _object getVariable['ObjectUID','0'];
+		_worldSpace = getPosATL _object;
+		if (getPlayerUID _killer != "") then {
+			_name = if (alive _killer) then { name _killer; } else { format["OBJECT %1", _killer]; };
+			diag_log format["Vehicle killed: Vehicle %1 (TYPE: %2), CharacterID: %3, ObjectID: %4, ObjectUID: %5, Position: %6, Killer: %7 (UID: %8)", _object, (typeOf _object), _charID, _objID, _objUID, _worldSpace, _name, (getPlayerUID _killer)];
+		} else {
+			diag_log format["Vehicle killed: Vehicle %1 (TYPE: %2), CharacterID: %3, ObjectID: %4, ObjectUID: %5, Position: %6", _object, (typeOf _object), _charID, _objID, _objUID, _worldSpace];
+		};
+	};
 };
 
 _object_repair = {
@@ -138,8 +155,8 @@ _object_repair = {
 		_hit = [_object,_x] call object_getHit;
 		_selection = getText (configFile >> "CfgVehicles" >> (typeOf _object) >> "HitPoints" >> _x >> "name");
 		if (_hit > 0) then {_array set [count _array,[_selection,_hit]]};
-		_object setHit ["_selection", _hit]
-	} forEach _hitpoints;
+		_object setHit ["_selection", _hit];
+	} count _hitpoints;
 	
 	diag_log format["CHILD:306:%1:%2:%3:",_objectID,_array,_damage];
 	_object setVariable ["needUpdate",false,true];

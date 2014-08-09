@@ -9,7 +9,7 @@ _activatingPlayer =  _this select 5;
 _characterID = _keySelected;
 
 _isOK = isClass(configFile >> "CfgVehicles" >> _class);
-if(!_isOK or isNull _object) exitWith { diag_log ("HIVE-pv3: Vehicle does not exist: "+ str(_class)); };
+if(!_isOK || isNull _object) exitWith { diag_log ("HIVE-pv3: Vehicle does not exist: "+ str(_class)); };
 
 diag_log ("PUBLISH: Attempt " + str(_object));
 _dir = 		_worldspace select 0;
@@ -61,7 +61,7 @@ diag_log format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance, _class, 0
    };
    _res = nil;
 
-   if(!_done) exitWith { diag_log("CUSTOM: failed to get id for : " + str(_uid)); };
+   if (!_done) exitWith { diag_log("CUSTOM: failed to get id for : " + str(_uid)); };
 
 	// add items from previous vehicle here
 	_weapons = 		getWeaponCargo _object;
@@ -93,7 +93,7 @@ diag_log format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance, _class, 0
 	{
 		_object addWeaponCargoGlobal [_x,(_objWpnQty select _countr)];
 		_countr = _countr + 1;
-	} forEach _objWpnTypes;
+	} count _objWpnTypes;
 	
 	//Add Magazines
 	_objWpnTypes = _magazines select 0;
@@ -102,7 +102,7 @@ diag_log format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance, _class, 0
 	{
 		_object addMagazineCargoGlobal [_x,(_objWpnQty select _countr)];
 		_countr = _countr + 1;
-	} forEach _objWpnTypes;
+	} count _objWpnTypes;
 
 	//Add Backpacks
 	_objWpnTypes = _backpacks select 0;
@@ -111,7 +111,7 @@ diag_log format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance, _class, 0
 	{
 		_object addBackpackCargoGlobal [_x,(_objWpnQty select _countr)];
 		_countr = _countr + 1;
-	} forEach _objWpnTypes;
+	} count _objWpnTypes;
 
 	_object setVariable ["ObjectID", _oid, true];
 	

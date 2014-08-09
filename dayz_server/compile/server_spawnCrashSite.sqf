@@ -15,7 +15,7 @@ _fadeFire	= _this select 8;
 
 diag_log("CRASHSPAWNER: Starting spawn logic for Crash Spawner");
 
-while {true} do {
+while {1 == 1} do {
 	private["_timeAdjust","_timeToSpawn","_spawnRoll","_crash","_hasAdjustment","_newHeight","_adjustedPos"];
 	// Allows the variance to act as +/- from the spawn frequency timer
     _timeAdjust = round((random(_variance * 2)) - _variance);
@@ -115,11 +115,11 @@ while {true} do {
 
 			diag_log(format["CRASHSPAWNER: Loot spawn at '%1' with loot table '%2'", _crashName, _lootTable]);
 
-			// ReammoBox is preferred parent class here, as WeaponHolder wouldn't match MedBox0 and other such items.
+			// ReammoBox is preferred parent class here, as WeaponHolder wouldn't match MedBox0 && other such items.
 			_nearby = _position nearObjects ["ReammoBox", sizeOf(_crashModel)];
 			{
 				_x setVariable ["permaLoot",true];
-			} forEach _nearBy;
+			} count _nearBy;
 		};
 
 	};

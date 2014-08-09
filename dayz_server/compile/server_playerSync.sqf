@@ -1,4 +1,4 @@
-private ["_empty","_playerwasNearby","_character","_magazines","_force","_characterID","_charPos","_isInVehicle","_timeSince","_humanity","_debug","_distance","_isNewMed","_isNewPos","_isNewGear","_playerPos","_playerGear","_playerBackp","_medical","_distanceFoot","_lastPos","_backpack","_kills","_killsB","_killsH","_headShots","_lastTime","_timeGross","_timeLeft","_currentWpn","_currentAnim","_config","_onLadder","_isTerminal","_currentModel","_modelChk","_muzzles","_temp","_currentState","_array","_key","_pos","_forceGear","_friendlies"];
+private ["_empty","_name","_playerwasNearby","_character","_magazines","_force","_characterID","_charPos","_isInVehicle","_timeSince","_humanity","_debug","_distance","_isNewMed","_isNewPos","_isNewGear","_playerPos","_playerGear","_playerBackp","_medical","_distanceFoot","_lastPos","_backpack","_kills","_killsB","_killsH","_headShots","_lastTime","_timeGross","_timeLeft","_currentWpn","_currentAnim","_config","_onLadder","_isTerminal","_currentModel","_modelChk","_muzzles","_temp","_currentState","_array","_key","_pos","_forceGear","_friendlies"];
 
 _character = 	_this select 0;
 _magazines = _this select 1;
@@ -23,24 +23,24 @@ _timeSince = 	0;
 _humanity =		0;
 
 //diag_log ("DW_DEBUG: (isnil _characterID): " + str(isnil "_characterID"));
-
+_name = if (alive _character) then { name _character; } else { "Dead Player"; };
 if (_character isKindOf "Animal") exitWith {
-	diag_log ("ERROR: Cannot Sync Character " + (name _character) + " is an Animal class");
+	diag_log ("ERROR: Cannot Sync Character " + (_name) + " is an Animal class");
 };
 
 if (isnil "_characterID") exitWith {
-	diag_log ("ERROR: Cannot Sync Character " + (name _character) + " has nil characterID");	
+	diag_log ("ERROR: Cannot Sync Character " + (_name) + " has nil characterID");	
 };
 
 if (_characterID == "0") exitWith {
-	diag_log ("ERROR: Cannot Sync Character " + (name _character) + " as no characterID");
+	diag_log ("ERROR: Cannot Sync Character " + (_name) + " as no characterID");
 };
 
 private["_debug","_distance"];
 _debug = getMarkerpos "respawn_west";
 _distance = _debug distance _charPos;
 if (_distance < 2000) exitWith { 
-	diag_log format["ERROR: server_playerSync: Cannot Sync Player %1 [%2]. Position in debug! %3",name _character,_characterID,_charPos];
+	diag_log format["ERROR: server_playerSync: Cannot Sync Player %1 [%2]. Position in debug! %3",_name,_characterID,_charPos];
 };
 
 //Check for server initiated updates
@@ -59,15 +59,15 @@ if (_characterID != "0") then {
 	//diag_log ("Found Character...");
 	
 	//Check if update is requested
-	if (_isNewPos or _force) then {
+	if (_isNewPos || _force) then {
 		//diag_log ("position..." + str(_isNewPos) + " / " + str(_force)); sleep 0.05;
-		if (((_charPos select 0) == 0) and ((_charPos select 1) == 0)) then {
+		if (((_charPos select 0) == 0) && ((_charPos select 1) == 0)) then {
 			//Zero Position
 		} else {
 			//diag_log ("getting position..."); sleep 0.05;
 			_playerPos = 	[round(direction _character),_charPos];
 			_lastPos = 		_character getVariable["lastPos",_charPos];
-			if (count _lastPos > 2 and count _charPos > 2) then {
+			if (count _lastPos > 2 && count _charPos > 2) then {
 				if (!_isInVehicle) then {
 					_distanceFoot = round(_charPos distance _lastPos);
 				};
@@ -80,7 +80,7 @@ if (_characterID != "0") then {
 		};
 		_character setVariable ["posForceUpdate",false,true];
 	};
-	if (_isNewGear or _forceGear) then {
+	if (_isNewGear || _forceGear) then {
 		//diag_log ("gear..."); sleep 0.05;
 		_playerGear = [weapons _character,_magazines];
 		//diag_log ("playerGear: " +str(_playerGear));
@@ -92,7 +92,7 @@ if (_characterID != "0") then {
 			_playerBackp = [typeOf _backpack,getWeaponCargo _backpack,getMagazineCargo _backpack];
 		};
 	};
-	if (_isNewMed or _force) then {
+	if (_isNewMed || _force) then {
 		//diag_log ("medical..."); sleep 0.05;
 		if (!(_character getVariable["USEC_isDead",false])) then {
 			//diag_log ("medical check..."); sleep 0.05;
@@ -139,14 +139,14 @@ if (_characterID != "0") then {
 		if (_currentModel == _modelChk) then {
 			_currentModel = "";
 		} else {
-			_currentModel = str(_currentModel);
+			_currentModel = _currentModel;
 			_character setVariable ["model_CHK",typeOf _character];
 		};
 		
-		if (_onLadder or _isInVehicle or _isTerminal) then {
+		if (_onLadder || _isInVehicle || _isTerminal) then {
 			_currentAnim = "";
 			//If position to be updated, make sure it is at ground level!
-			if ((count _playerPos > 0) and !_isTerminal) then {
+			if ((count _playerPos > 0) && !_isTerminal) then {
 				_charPos set [2,0];
 				_playerPos set[1,_charPos];					
 			};
@@ -167,7 +167,7 @@ if (_characterID != "0") then {
 		_temp = round(_character getVariable ["temperature",100]);
 		_currentState = [_currentWpn,_currentAnim,_temp];
 		if(DZE_FriendlySaving) then {
-			// save only last/most recent 5 entrys as we only have 200 chars in db field and weapon + animation names are sometimes really long 60-70 chars.
+			// save only last/most recent 5 entrys as we only have 200 chars in db field && weapon + animation names are sometimes really long 60-70 chars.
 			_friendlies = [(_character getVariable ["friendlies",[]]),5] call array_reduceSizeReverse;
 			_currentState set [(count _currentState),_friendlies];
 		};
@@ -177,10 +177,10 @@ if (_characterID != "0") then {
 		if (count _playerPos > 0) then {
 			_array = [];
 			{
-				if (_x > dayz_minpos and _x < dayz_maxpos) then {
+				if (_x > dayz_minpos && _x < dayz_maxpos) then {
 					_array set [count _array,_x];
 				};
-			} forEach (_playerPos select 1);
+			} count (_playerPos select 1);
 			_playerPos set [1,_array];
 		};
 		if (!isNull _character) then {
@@ -188,7 +188,7 @@ if (_characterID != "0") then {
 			    //Wait for HIVE to be free
 			    //Send request
 			    _key = format["CHILD:201:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11:%12:%13:%14:%15:%16:",_characterID,_playerPos,_playerGear,_playerBackp,_medical,false,false,_kills,_headShots,_distanceFoot,_timeSince,_currentState,_killsH,_killsB,_currentModel,_humanity];
-			    // Prevent diag_log limit
+				// Prevent diag_log limit
                             if ( count(toArray(_key)) > 1020 ) then {
                                 diag_log ("Prevent diag_log limit...");
                                 _key = format["CHILD:201:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11:%12:%13:%14:%15:%16:",_characterID,_playerPos,[],[],_medical,false,false,_kills,_headShots,_distanceFoot,_timeSince,_currentState,_killsH,_killsB,_currentModel,_humanity];                                                 
@@ -214,10 +214,11 @@ if (_characterID != "0") then {
 		};
 		
 		// Force gear updates for nearby vehicles/tents
-		_pos = _this select 0;
+		//_pos = _this select 0;
 		{
 			[_x, "gear"] call server_updateObject;
-		} forEach nearestObjects [_pos, dayz_updateObjects, 10];
+		//} count nearestObjects [_pos, dayz_updateObjects, 10];
+		} count (nearestObjects [_charPos, dayz_updateObjects, 10]);
 		//[_charPos] call server_updateNearbyObjects;
 
 		//Reset timer

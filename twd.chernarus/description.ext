@@ -25,7 +25,6 @@ aiKills = 1;
 diagRadio = 1;
 diagHit = 1;
 
-
 //////////////////////////////////////////////
 /////////////DEAN CUSTOM HEADERS//////////////
 //////////////////////////////////////////////
@@ -80,6 +79,12 @@ class RscTextGUIK {
     w = 0.1;
     h = 0.2;
 };
+class creditz { idd = -1; movingEnable = 0; duration = 10; fadein = 2; fadeout = 2; name="creditz";
+
+controls[]={"Picture"};
+
+class Picture { x=-0.5; y=-0.5; w=2.0; h=2.0; text="custom\death\DC1.jpg"; sizeEx = -1; type=0; idc=-1; style=48; colorBackground[]={0,0,0,0}; colorText[]={1,1,1,1}; font="Bitstream"; }; };
+
 class CfgSounds
 {
 	sounds[] ={z_wzombie1,z_wzombie2,carLock};
@@ -100,114 +105,6 @@ class CfgSounds
 
 class RscTitles
 { 
-	class BTC_Hud
-   	{
-      	idd = 1000;
-     	movingEnable=0;
-      	duration=1e+011;
-      	name = "BTC_Hud_Name";
-      	onLoad = "uiNamespace setVariable [""HUD"", _this select 0];";
-      	controlsBackground[] = {};
-      	objects[] = {};
-      	class controls 
-		{
-			class Radar
-			{
-				type = CT_STATIC;
-				idc = 1001;
-				style = ST_PICTURE;
-				x = (SafeZoneW+2*SafeZoneX) - 0.1;//safezonex + 0.1;//0.9
-				y = (SafeZoneH+2*SafeZoneY) - 0.15;//safezoney + 0.1;//0.85
-				w = 0.3;
-				h = 0.4;
-				font = "Zeppelin32";
-				sizeEx = 0.03;
-				colorBackground[] = {0, 0, 0, 0};
-				colorText[] = {1, 1, 1, 1};
-				text = "\ca\ui\data\igui_radar_air_ca.paa";
-			};
-			class Img_Obj
-			{
-				type = CT_STATIC;
-				idc = 1002;
-				style = ST_PICTURE;
-				x = (SafeZoneW+2*SafeZoneX) + 0.045;
-				y = (SafeZoneH+2*SafeZoneY) + 0.045;
-				w = 0.01;
-				h = 0.01;
-				font = "Zeppelin32";
-				sizeEx = 0.04;
-				colorBackground[] = {0, 0, 0, 0};
-				colorText[] = {1, 1, 1, 1};
-				text = "custom\=BTC=_Logistic\=BTC=_Lift\=BTC=_Obj.paa";
-			};
-			class Pic_Obj
-			{
-				type = CT_STATIC;
-				idc = 1003;
-				style = ST_PICTURE;
-				x = (SafeZoneW+2*SafeZoneX) - 0.125;
-				y = (SafeZoneH+2*SafeZoneY) - 0.23;
-				w = 0.1;
-				h = 0.1;
-				font = "Zeppelin32";
-				sizeEx = 0.03;
-				colorBackground[] = {0, 0, 0, 0};
-				colorText[] = {1, 1, 1, 1};
-				text = "";
-			};
-			class Arrow
-			{
-				type = CT_STATIC;
-				idc = 1004;
-				style = ST_PICTURE;
-				x = (SafeZoneW+2*SafeZoneX) + 0.15;
-				y = (SafeZoneH+2*SafeZoneY) - 0.15;
-				w = 0.05;
-				h = 0.05;
-				font = "Zeppelin32";
-				sizeEx = 0.03;
-				colorBackground[] = {0, 0, 0, 0};
-				colorText[] = {1, 1, 1, 1};
-				text = "";
-			};
-			class Type_Obj
-			{
-				type = CT_STATIC;
-				idc = 1005;
-				style = ST_LEFT;
-				x = (SafeZoneW+2*SafeZoneX) - 0.03;
-				y = (SafeZoneH+2*SafeZoneY) - 0.335;
-				w = 0.3;
-				h = 0.3;
-				font = "Zeppelin32";
-				sizeEx = 0.03;
-				colorBackground[] = {0, 0, 0, 0};
-				colorText[] = {1, 1, 1, 1};
-				text = "";
-			};
-		};   
- 	};
-	titles[] ={BTC_intro};
-	class BTC_intro
-	{
-		idd=-1;
-		movingEnable = true;
-		duration=6; // Fade Duration
-		fadein=2; // Fade Time
-		name = "BTC_intro"; // Name in Editor
-		controls[]={Picture};
-		class Picture : RscPicture
-		{
-			x = 0.05; // X-Axis
-			y = 0.10; // Y-Axis
-			w = 0.25; //WindowWidth
-			h = 0.40; //Window Height
-			text = "=BTC=_logo.paa"; // Graphic Direction
-			sizeEx = 0.04;
-			style = ST_PICTURE;
-		};
-	};
 	class zCamoStatusGUI 
 	{
 		idd = -1;
@@ -268,10 +165,6 @@ class RscTitles
 	        };
         };
 	};	
-/*
-#define CT_STATIC 0
-#define ST_LEFT           0x00
-#define ST_PICTURE        48*/
 class playerStatusGUI {
         idd = 6900;
         movingEnable = 0;
@@ -389,7 +282,6 @@ class playerStatusGUI {
                 w = 0.075;
                 h = 0.10;
             };
-            /*--------------------------------------------*/
             class RscPicture_1307: RscPictureGUI
             {
                 idc = 1307;
@@ -540,7 +432,8 @@ class playerStatusGUI {
                 colorText[] = {1,1,1,0.0};
             };
             /*-----------------------------------------------*/
-            class RscText_1400: RscTextGUIK
+           
+		   class RscText_1400: RscTextGUIK
             {
                 idc = 1400;
                 text = "1000";
@@ -588,6 +481,30 @@ class playerStatusGUI {
                 colorText[] = {1,1,1,1.0};
                 size = 0.03;
                 sizeEx = 0.03;
+            };
+			class RscText_1404: RscTextGUIK
+            {
+                idc = 1404;
+                text = "(180-(round(serverTime/60)))";
+                x = 0.04 * safezoneW + safezoneX;
+                y = 0.0 * safezoneH + safezoneY;
+                w = 0.3 * safezoneW;
+                h = 0.047 * safezoneH;
+                colorText[] = {1,0.8,0,1.0};
+                size = 0.06;
+                sizeEx = 0.04;
+			};
+			class RscText_1405: RscTextGUIK
+            {
+                idc = 1405;
+                text = "Restart:";
+                x = 0.08 * safezoneW + safezoneX;
+                y = 0.0 * safezoneH + safezoneY;
+                w = 0.05 * safezoneW;
+                h = 0.047 * safezoneH;
+                colorText[] = {1,1,1,1.0};
+                size = 0.06;
+                sizeEx = 0.04;
             };
         };
     };
@@ -695,10 +612,6 @@ class DayZ_loadingScreen
 	};
 };
 
-#include "custom\snap_pro\snappoints.hpp"
 #include "custom\header\rclick.hpp"
 #include "custom\header\admind.hpp"
-#include "custom\money\bank\dialog\bank.hpp"
-#include "custom\playermenu\dialog\menu.hpp"
-//#include "custom\money\dialogues\refuel_dialog.hpp" <-- Money System
-//#include "custom\money\dialogues\give_player_dialog.hpp" <-- Money System
+#include "custom\snap_pro\snappoints.hpp"

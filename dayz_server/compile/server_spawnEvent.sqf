@@ -26,12 +26,12 @@ epoch_eventIsAny = {
 		};
 		if (!_boolReturn) exitWith {};
 		_index = _index + 1;	
-	} forEach _event;
+	} count _event;
 
 	_boolReturn
 };
 
-while {true} do {
+while {1 == 1} do {
 	
 	// Find current time from server
 //	_key = "CHILD:307:";
@@ -54,9 +54,8 @@ while {true} do {
 					diag_log ("RUNNING EVENT: " + (_x select 5) + " on " + _datestr);
 					_handle = [] execVM "\z\addons\dayz_server\modules\" + (_x select 5) + ".sqf";
 				};
-			} forEach EpochEvents;
+			} count EpochEvents;
 		};
 //	};
 	sleep 10;
 };
-

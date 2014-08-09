@@ -5,5 +5,5 @@ dayZ_instance = 11; // Cherno
 
 
 
-#include "svar.sqf"
+#include "svar.sqf";
 #include "server.sqf";

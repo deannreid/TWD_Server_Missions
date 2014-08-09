@@ -28,7 +28,7 @@ _location = _worldspace select 1;
 //Generate UID test using time
 _uid = _worldspace call dayz_objectUID3;
 
-// TODO: check if uid already exists and if so increment by 1 and check again as soon as we find nothing continue.
+// TODO: check if uid already exists && if so increment by 1 && check again as soon as we find nothing continue.
 
 //Send request
 diag_log format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance, _class, 0 , _characterID, _worldspace, [], [], 1,_uid];
@@ -67,7 +67,7 @@ diag_log format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance, _class, 0
 	   _done = true;       
        };
    };
-   _res = nil;	
+   _res = nil;
 
    // Remove marker
    deleteVehicle _object;
@@ -75,8 +75,8 @@ diag_log format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance, _class, 0
    if(!_done) exitWith { diag_log("CUSTOM: failed to get id for : " + str(_uid)); };
 
 	if(DZE_TRADER_SPAWNMODE) then {
-		_object_para = "ParachuteMediumWest" createVehicle [0,0,0];
-		_object_para setpos [_location select 0, _location select 1,(_location select 2) + 65];
+		_object_para = createVehicle ["ParachuteMediumWest", [0,0,0], [], 0, "CAN_COLLIDE"];
+		_object_para setPos [_location select 0, _location select 1,(_location select 2) + 65];
 		_object = createVehicle [_class, [0,0,0], [], 0, "CAN_COLLIDE"];
 	} else {
 		_object = createVehicle [_class, _location, [], 0, "CAN_COLLIDE"];
@@ -100,7 +100,7 @@ diag_log format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance, _class, 0
 	if(DZE_TRADER_SPAWNMODE) then {
 		_object attachTo [_object_para, [0,0,-1.6]];
 		sleep 1.0;
-		WaitUntil{(getpos _object select 2) < 0.1};
+		WaitUntil{(([_object] call FNC_GetPos) select 2) < 0.1};
 		detach _object;
 		deleteVehicle _object_para;
 	};

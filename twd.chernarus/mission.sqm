@@ -1182,7 +1182,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=17;
+		items=18;
 		class Item0
 		{
 			position[]={7839.6055,381.33774,8414.7324};
@@ -1304,6 +1304,14 @@ class Mission
 			text="Hero Camp";
 			type="mil_dot";
 			colorName="ColorBlue";
+		};
+	    class Item17
+		{
+			position[]={5054.0127,14.798248,9736.8398};
+			name="AirVehicles";
+			text="Aircraft Dealer";
+			type="mil_dot";
+			colorName="ColorGreen";
 		};
 	};
 	class Sensors

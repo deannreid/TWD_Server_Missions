@@ -1,6 +1,6 @@
 ///////////////////// Members //////////////////////
 DefaultMagazines = ["ItemBandage","ItemBandage","17Rnd_9x19_glock17","17Rnd_9x19_glock17","ItemMorphine","ItemPainkiller","ItemWaterbottleBoiled","FoodSteakCooked"];
-DefaultWeapons = ["glock17_EP1","ItemFlashlight","ItemHatchet","ItemMap"];
+DefaultWeapons = ["glock17_EP1","ItemFlashlight","ItemHatchet","ItemMap","ItemToolbox"];
 DefaultBackpack = "DZ_Patrol_Pack_EP1";
 ///////////////////// Members //////////////////////
 

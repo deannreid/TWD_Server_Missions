@@ -17,25 +17,26 @@ diag_log "Locating Markers";
 		_dk_Skalisty  setMarkerType "City";
 		_dk_Skalisty  setMarkerColor "ColorBlack";
 		_dk_Skalisty  = _dk_Skalisty;
+	
+		_qdoba = createMarker ["_qdoba", [4071.9851, 8610.6514]];
+		_qdoba setMarkerText "Qdoba City *WARNING*";
+		_qdoba setMarkerColor "ColorRed";
+		_qdoba setMarkerType "Strongpoint";
+		_qdoba = _qdoba;
+
+		_mine1 = createMarker ["_mine1", [3893.9448, 11426.449]];
+		_mine1 setMarkerText "Mining Node";
+		_mine1 setMarkerColor "ColorRed";
+		_mine1 setMarkerType "end";
+		_mine1 = _mine1;
+	
+		_mine2 = createMarker ["_mine2", [13273.093, 0, 6099.0747]];
+		_mine2 setMarkerText "Mining Node";
+		_mine2 setMarkerColor "ColorRed";
+		_mine2 setMarkerType "end";
+		_mine2 = _mine2;
+	
 		
-		_weed = createMarker ["_weed", [7325.9077, 9357.582]];
-		_weed setMarkerText "Weed Farm *Coming Soon*";
-		_weed setMarkerColor "ColorGreen";
-		_weed setMarkerType "FOB";
-		_weed = _weed;
-		
-		_drugd = createMarker ["_drugd", [8347.5869, 2443.801]];
-		_drugd setMarkerText "Druglord *Coming Soon*";
-		_drugd setMarkerColor "ColorRed";
-		_drugd setMarkerType "FOB";
-		_drugd = _drugd;
-/*		
-		_bunker = createMarker ["_bunker ", [8849.4346, 2839.7505]];
-		_bunker setMarkerText "Secret Trader *Not that Secret*";
-		_bunker  setMarkerType "mil_dot";
-		_bunker  setMarkerColor "ColorPink";
-		_bunker  = _bunker ;
-*/
 diag_log "Markers Added";
 
 

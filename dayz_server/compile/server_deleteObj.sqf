@@ -1,4 +1,7 @@
-private["_id","_uid","_activatingPlayer"];
+/*
+[_objectID,_objectUID] call server_deleteObj;
+*/
+private["_id","_uid","_key"];
 _id 	= _this select 0;
 _uid 	= _this select 1;
 _activatingPlayer 	= _this select 2;
@@ -15,4 +18,3 @@ if (isServer) then {
 		diag_log format["DELETE: %1 Deleted by UID: %2",_activatingPlayer,_uid];
 	};
 };
-

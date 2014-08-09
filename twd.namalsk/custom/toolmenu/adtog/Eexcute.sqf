@@ -1,1 +1,0 @@
-[] execVM "custom\toolmenu\adtog\toggle.sqf";

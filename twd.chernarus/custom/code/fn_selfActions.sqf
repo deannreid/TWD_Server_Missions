@@ -265,7 +265,31 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		player removeAction s_player_deleteBuild;
 		s_player_deleteBuild = -1;
 	};
-	
+	_lever = cursorTarget;
+
+//Zombie Shield
+	if (_cursorTarget isKindof TypeOfZShield) then {
+		if (EnableZShield == 1) then {
+			if (s_player_ZombieShield_on < 0) then {
+				s_player_ZombieShield_on = player addAction [format[("<t color=""#FFF700"">" + ("Zombie Shield On") +"</t>"),_adminText], "custom\zombie\shield\ZombieShield.sqf", [_lever, true], 6, true, true, "", ""];
+			};
+			if (s_player_ZombieShield_off < 0) then {
+				s_player_ZombieShield_off = player addAction [format[("<t color=""#FFF700"">" + ("Zombie Shield Off") +"</t>"),_adminText], "custom\zombie\shield\ZombieShield.sqf", [_lever, false], 6, false, true, "", ""];
+			};
+		} else {
+			if (s_player_ZombieShield_on < 0) then {
+				s_player_ZombieShield_on = player addAction [format[("<t color=""#FFF700"">" + ("Zombie Shields are disabled on this server") +"</t>"),_adminText], "", [], 6, false, true, "", ""];
+			};
+			player removeAction s_player_ZombieShield_off;
+			s_player_ZombieShield_off = -1;
+		};
+	} else {
+		player removeAction s_player_ZombieShield_on;
+		s_player_ZombieShield_on = -1;
+		player removeAction s_player_ZombieShield_off;
+		s_player_ZombieShield_off = -1;
+	};
+//End Shield
 	if (DZE_HeliLift) then {
 		_liftHeli = objNull;
 		_found = false;
@@ -352,6 +376,9 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 				s_player_forceSave = player addAction [format[localize "str_actions_save",_text], "\z\addons\dayz_code\actions\forcesave.sqf",_cursorTarget, 1, true, true, "", ""];
 			};
 		} else {
+			s_player_ZombieShield_on = -1;
+			player removeAction s_player_ZombieShield_off;
+			s_player_ZombieShield_off = -1;
 			player removeAction s_player_forceSave;
 			s_player_forceSave = -1;
 		};
@@ -728,7 +755,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		if (s_player_repair_crtl < 0) then {
 			dayz_myCursorTarget = _cursorTarget;
 			_menu = dayz_myCursorTarget addAction [localize "STR_EPOCH_PLAYER_REPAIRV", "\z\addons\dayz_code\actions\repair_vehicle.sqf",_cursorTarget, 0, true, false, "",""];
-			_menu1 = dayz_myCursorTarget addAction [localize "STR_EPOCH_PLAYER_SALVAGEV", "\z\addons\dayz_code\actions\salvage_vehicle.sqf",_cursorTarget, 0, true, false, "",""];
+_menu1 = dayz_myCursorTarget addAction [localize "STR_EPOCH_PLAYER_SALVAGEV", "custom\code\salvage_vehicle.sqf",_cursorTarget, 0, true, false, "",""];
 			s_player_repairActions set [count s_player_repairActions,_menu];
 			s_player_repairActions set [count s_player_repairActions,_menu1];
 			s_player_repair_crtl = 1;
@@ -774,6 +801,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 				
 				} count (_traderMenu select 1);
 				// Database menu
+				LastTraderMenu = (_traderMenu select 0);
 				_buy = player addAction [localize "STR_EPOCH_PLAYER_289", "\z\addons\dayz_code\actions\show_dialog.sqf",(_traderMenu select 0), 999, true, false, "",""];
 				s_player_parts set [count s_player_parts,_buy];
 

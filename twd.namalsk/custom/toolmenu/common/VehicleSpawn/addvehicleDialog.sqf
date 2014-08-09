@@ -1,7 +1,6 @@
 private ["_kindOf", "_filter", "_cfgvehicles","_dialog","_vehicle"];
 #define KINDOF_ARRAY(a,b) [##a,##b] call {_veh = _this select 0;_types = _this select 1;_res = false; {if (_veh isKindOf _x) exitwith { _res = true };}forEach _types;_res}
 PermDialogSelected = -1;
-TempDialogSelected = -1;
 AdminDialogList = 13000;
 if (isNil "vhnlist") then
 {
@@ -10,6 +9,7 @@ if (isNil "vhnlist") then
 	_filter = ["BIS_Steerable_Parachute","ParachuteBase","StaticWeapon"];      
 	_cfgvehicles = configFile >> "cfgVehicles";
 	titleText ["Generating Vehicle list... Wait...","PLAIN DOWN"];titleFadeOut 2;
+	systemChat ('<TheWastelandDiaries>: To spawn perm vehicles you must be near a trader or you get temp banned.');
 	for "_i" from 0 to (count _cfgvehicles)-1 do 
 	{
 		private ["_vehicle", "_veh_type", "_textPart"];
@@ -77,10 +77,4 @@ if (PermDialogSelected > -1) then {
 	_vehicle = ((vhnlist select PermDialogSelected) select 0);
 	hint format["Spawning Perm %1", _vehicle];
 	[_vehicle] execVM "custom\toolmenu\common\VehicleSpawn\addvehicle.sqf";
-};
-
-if (TempDialogSelected > -1) then {
-	_vehicle = ((vhnlist select TempDialogSelected) select 0);
-	hint format["Spawning Temp %1", _vehicle];
-	[_vehicle] execVM "custom\toolmenu\common\VehicleSpawn\addtempvehicle.sqf";
 };

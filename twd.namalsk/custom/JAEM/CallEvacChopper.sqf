@@ -1,19 +1,18 @@
 /*------------------------------------*/
 /* JAEM                               */
-/* Just another Chopper-Evac Mod v1.3 */
+/* Just another Chopper-Evac Mod v1.4 */
 /* OtterNas3                          */
 /* 01/14/2014                         */
-/* Last update: 02/20/2014            */
+/* Last update: 06/14/2014            */
 /*------------------------------------*/
 
-
-private ["_cnt","_locationPlayer","_evacFieldID","_checkForChopper","_validPlayerEvacField","_evacCallerID","_evacCallerUID","_evacFields","_playerEvacField","_heliHRescue","_routeFinished","_evacZone","_chopperStartPos","_getChopperStartPos","_evacZoneDistance","_startZoneWaypoint","_evacZoneWaypoint","_part","_damage","_hitpoints","_evacChopperFuel","_finishMarker"];
+private ["_cnt","_locationPlayer","_evacFieldID","_checkForChopper","_evacCallerID","_evacCallerUID","_evacFields","_heliHRescue","_routeFinished","_evacZone","_chopperStartPos","_getChopperStartPos","_evacZoneDistance","_startZoneWaypoint","_evacZoneWaypoint","_part","_damage","_hitpoints","_evacChopperFuel","_finishMarker","_evacZonePos","_dayTime"];
 player removeAction s_player_evacCall;
 s_player_evacCall = 1;
 
 /* 5 seconds timeout to cancel a call on accident */
 _cnt = 5;
-_locationPlayer = (getPosATL player);
+_locationPlayer = (([player] call ON_fnc_GetPos));
 for "_p" from 1 to 5 do
 {
 	systemChat(format ["Evac-Chopper get called in %1s - Move to cancel!",_cnt]);
@@ -25,25 +24,22 @@ for "_p" from 1 to 5 do
 	sleep 1;
 	_cnt = _cnt - 1;
 };
-
 systemChat ("Searching for your Evac-Chopper - Please wait...");
 sleep 5;
 
 //Setting needed variables to check which Evac-Field the player owns
 _evacCallerID = (player getVariable ["CharacterID","0"]);
-_evacCallerUID = (getPlayerUID player);
-_playerEvacField = [];
+_evacCallerUID = ([player] call ON_fnc_convertUID);
 
 //If Player seems not to have a Evac-Chopper
 //we getting all HeliHRescue signs on Server and check if Player is owner
 //This is just for the case the check on playerlogin failed
 if (!playerHasEvacField) then { 
-	_evacFields = nearestObjects [player, ["HeliHRescue"], 40000];
+	_evacFields = PVDZE_EvacChopperFields;
 	if ((count _evacFields) > 0) then {
 		{
 			_evacFieldID = _x getVariable ["CharacterID", "0"];
 			if (_evacCallerID == _evacFieldID || _evacCallerUID == _evacFieldID) then {
-				_playerEvacField set [(count _playerEvacField), _x];
 				playerHasEvacField = true;
 				playersEvacField = _x;
 			};
@@ -59,7 +55,7 @@ if (!playerHasEvacField) then {
 };
 
 //Player has a evac field now check if a Chopper is on it
-_checkForChopper = nearestObjects [playersEvacField, ["Helicopter"], 10];
+_checkForChopper = nearestObjects [playersEvacField, evac_AllowedChoppers, 10];
 if ((count _checkForChopper) > 0) then {
 	evacChopper = _checkForChopper select 0;
 } else {
@@ -90,9 +86,9 @@ _hitpoints = evacChopper call vehicle_getHitpoints;
 	if(["Engine",_x,false] call fnc_inString) then {
 		_part = "PartEngine";
 	};
-		
+
 	if(["HRotor",_x,false] call fnc_inString) then {
-		_part = "PartVRotor"; //yes you need PartVRotor to fix HRotor LOL
+		_part = "PartVRotor";
 	};
 
 	if (_damage >= 1 && (_part == "PartEngine" || _part == "PartVRotor")) then {
@@ -115,14 +111,15 @@ sleep 2;
 //create the AI Pilot and waypoints
 //and get him on his way to the player
 systemChat("Fuel and Damage check done - Your Evac-Chopper is starting");
+
 //Create the Evacuation Zone Marker
 if (evac_zoneMarker == 1) then {
-	_heliHRescue = "SmokeshellGreen" createVehicle getPosATL player;
-	_heliHRescue setPosATL (getPosATL player);
+	_heliHRescue = "SmokeshellGreen" createVehicle ([player] call ON_fnc_GetPos);
+	_heliHRescue setPosATL (([player] call ON_fnc_GetPos));
 } else {
-	_heliHRescue = "HeliHRescue" createVehicle getPosATL player;
+	_heliHRescue = "HeliHRescue" createVehicle ([player] call ON_fnc_GetPos);
 	_heliHRescue setDir (getDir player);
-	_heliHRescue setPosATL (getPosATL player);
+	_heliHRescue setPosATL (([player] call ON_fnc_GetPos));
 };
 
 //Reset of the checkpoint bool's
@@ -130,9 +127,9 @@ evacZoneReached = false;
 _routeFinished = false;
 
 //Get needed positions
-_evacZonePos = getPosATL _heliHRescue;
+_evacZonePos = ([_heliHRescue] call ON_fnc_GetPos);
 _evacZone = _evacZonePos;
-_getChopperStartPos = getPosATL evacChopper;
+_getChopperStartPos = ([evacChopper] call ON_fnc_GetPos);
 _chopperStartPos = _getChopperStartPos;
 
 //Unlocking the Chopper and create the AI Pilot
@@ -142,8 +139,8 @@ evacChopperPilot = evacChopperGroup createUnit ["USMC_Soldier_pilot", evacChoppe
 {[evacChopperPilot, _x, 1] call BIS_fnc_invRemove;}forEach items evacChopperPilot;
 {[evacChopperPilot, _x, 1] call BIS_fnc_invRemove;}forEach magazines evacChopperPilot;
 {[evacChopperPilot, _x, 1] call BIS_fnc_invRemove;}forEach weapons evacChopperPilot;
-evacChopperPilot removeAllEventHandlers "handleDamage";
-evacChopperPilot addEventHandler ["handleDamage", {false}];
+evacChopperPilot removeAllEventHandlers "HandleDamage";
+evacChopperPilot addEventHandler ["HandleDamage", {false}];
 evacChopperPilot allowDamage false;
 evacChopperPilot assignAsDriver evacChopper;
 evacChopperPilot moveInDriver evacChopper;
@@ -153,9 +150,10 @@ sleep 1;
 
 //Lock the Chopper again so noone can jump in
 evacChopper setVehicleLock "LOCKED";
+
 //Turn the Engine on and set fly height for the Pilot
 evacChopper engineOn true;
-evacChopper flyInHeight 400;
+evacChopper flyInHeight 200;
 
 //Create the Waypoint for the Evacuation Zone
 _startZoneWaypoint = evacChopperGroup addWaypoint [_chopperStartPos, 0];
@@ -180,8 +178,8 @@ while {sleep 0.5; alive player && !_routeFinished && alive evacChopper} do {
 		_evacZoneDistance = format["%1m", round (evacChopper distance _evacZone)];
 	} else {
 		//Arrived!
-		if (((getPosATL evacChopper) select 2) < 1) then {
-			waitUntil {!isEngineOn evacChopper};
+		if ((([evacChopper] call ON_fnc_GetPos) select 2) < 1) then {
+			waitUntil {sleep 0.1;!isEngineOn evacChopper};
 			_routeFinished = true;
 			_evacZoneDistance = "!!! ARRIVED !!!";
 			_evacZoneWaypoint = evacChopperGroup addWaypoint [_evacZone, 0];
@@ -196,7 +194,7 @@ while {sleep 0.5; alive player && !_routeFinished && alive evacChopper} do {
 		<t size='1'		font='Bitstream'align='left' 	color='#FFBF00'>Fly Height:</t>				<t size='1'		font='Bitstream'align='right'>%1</t><br/>
 		<t size='1'		font='Bitstream'align='left' 	color='#FFBF00'>Fly Speed:</t>				<t size='1'		font='Bitstream'align='right'>%2</t><br/>
 		<t size='1'		font='Bitstream'align='left' 	color='#FFBF00'>Distance:</t>				<t size='1'		font='Bitstream'align='right'>%3</t><br/>",
-		(round ((position evacChopper) select 2)), (round (speed evacChopper)), _evacZoneDistance
+		(round (([evacChopper] call ON_fnc_GetPos) select 2)), (round (speed evacChopper)), _evacZoneDistance
 	];
 };
 
@@ -230,7 +228,7 @@ if (!alive player) then {
 	{deleteWaypoint _x} forEach waypoints evacChopperGroup;
 	_evacZoneWaypoint = evacChopperGroup addWaypoint [_chopperStartPos, 0];
 	_evacZoneWaypoint setWaypointType "GETOUT";
-	waitUntil{{_x in evacChopper} count units group evacChopperPilot == 0};
+	waitUntil{sleep 0.1;{_x in evacChopper} count units group evacChopperPilot == 0};
 	{deleteWaypoint _x} forEach waypoints evacChopperGroup;
 	deleteVehicle evacChopperPilot;
 	waitUntil{sleep 5; count units group evacChopperPilot == 0};
@@ -244,22 +242,27 @@ if (!alive player) then {
 //Create Visible Marker
 _dayTime = dayTime;
 if (_dayTime > 6 && _dayTime < 18.5) then {
-	_finishMarker = "SmokeShellGreen" createVehicle getPosATL evacChopper;
-	_finishMarker setPosATL (getPosATL evacChopper);
+	_finishMarker = "SmokeShellGreen" createVehicle ([evacChopper] call ON_fnc_GetPos);
+	_finishMarker setPosATL ([evacChopper] call ON_fnc_GetPos);
 	_finishMarker attachTo [evacChopper,[0,0,0]];
 };
 if (_dayTime > 18.5 && _dayTime < 6) then {
-	_finishMarker = "ARTY_Flare_Medium" createVehicle getPosATL evacChopper;
-	_finishMarker setPosATL (getPosATL evacChopper);
+	_finishMarker = "ARTY_Flare_Medium" createVehicle ([evacChopper] call ON_fnc_GetPos);
+	_finishMarker setPosATL ([evacChopper] call ON_fnc_GetPos);
 	_finishMarker attachTo [evacChopper, [0,0,0]];
 };
 
 //We delete the AI Pilot his group and the Evac-Zone Marker
-waitUntil{{_x in evacChopper} count units group evacChopperPilot == 0};
+//Wait until Pilot left the Chopper
+waitUntil{sleep 0.1;{_x in evacChopper} count units group evacChopperPilot == 0};
 {deleteWaypoint _x} forEach waypoints evacChopperGroup;
 deleteVehicle evacChopperPilot;
+
+//Wait until the pilot is deleted so we can delete the group
 waitUntil{sleep 0.5; count units group evacChopperPilot == 0};
 deleteGroup evacChopperGroup;
+
+//Delete the target zone marker
 deleteVehicle _heliHRescue;
 
 //Wait until player dies - Chopper get destroyed or
@@ -278,7 +281,7 @@ if (!alive player) then {
 	{deleteWaypoint _x} forEach waypoints evacChopperGroup;
 	_evacZoneWaypoint = evacChopperGroup addWaypoint [_chopperStartPos, 0];
 	_evacZoneWaypoint setWaypointType "GETOUT";
-	waitUntil{{_x in evacChopper} count units group evacChopperPilot == 0};
+	waitUntil{sleep 0.1;{_x in evacChopper} count units group evacChopperPilot == 0};
 	{deleteWaypoint _x} forEach waypoints evacChopperGroup;
 	deleteVehicle evacChopperPilot;
 	waitUntil{sleep 5; count units group evacChopperPilot == 0};

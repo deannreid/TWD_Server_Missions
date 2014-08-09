@@ -1,7 +1,9 @@
-private ["_nul","_result","_pos","_wsDone","_dir","_block","_isOK","_countr","_objWpnTypes","_objWpnQty","_dam","_selection","_totalvehicles","_object","_idKey","_type","_ownerID","_worldspace","_intentory","_hitPoints","_fuel","_damage","_key","_vehLimit","_hiveResponse","_objectCount","_codeCount","_data","_status","_val","_traderid","_retrader","_traderData","_id","_lockable","_debugMarkerPosition","_vehicle_0","_bQty","_vQty","_BuildingQueue","_objectQueue"];
+private ["_nul","_result","_pos","_wsDone","_dir","_isOK","_countr","_objWpnTypes","_objWpnQty","_dam","_selection","_totalvehicles","_object","_idKey","_type","_ownerID","_worldspace","_intentory","_hitPoints","_fuel","_damage","_key","_vehLimit","_hiveResponse","_objectCount","_codeCount","_data","_status","_val","_traderid","_retrader","_traderData","_id","_lockable","_debugMarkerPosition","_vehicle_0","_bQty","_vQty","_BuildingQueue","_objectQueue","_superkey","_shutdown","_res","_hiveLoaded"];
 
 dayz_versionNo = 		getText(configFile >> "CfgMods" >> "DayZ" >> "version");
 dayz_hiveVersionNo = 	getNumber(configFile >> "CfgMods" >> "DayZ" >> "hiveVersion");
+
+_hiveLoaded = false;
 
 waitUntil{initialized}; //means all the functions are now defined
 
@@ -43,9 +45,9 @@ if(isnil "MaxMineVeins") then {
 };
 // Custon Configs End
 
-if (isServer and isNil "sm_done") then {
+if (isServer && isNil "sm_done") then {
 	serverVehicleCounter = [];
-        diag_log ("LOAD OBJECTS");
+	diag_log ("LOAD OBJECTS");
 
         _objectArray = [];
 	
@@ -57,7 +59,7 @@ if (isServer and isNil "sm_done") then {
         };
         _res = nil;
         diag_log format["FOUND %1 OBJECTS", str(count _objectArray)];
-		
+	
 	// # NOW SPAWN OBJECTS #
 	_totalvehicles = 0;
 	{
@@ -146,7 +148,7 @@ if (isServer and isNil "sm_done") then {
 				};
 				// Test disabling simulation server side on buildables only.
 				_object enableSimulation false;
-				// used for inplace upgrades and lock/unlock of safe
+				// used for inplace upgrades && lock/unlock of safe
 				_object setVariable ["OEMPos", _pos, true];
 				
 			};
@@ -154,9 +156,9 @@ if (isServer and isNil "sm_done") then {
 			if (count _intentory > 0) then {
 				if (_type in DZE_LockedStorage) then {
 					// Fill variables with loot
-					_object setVariable ["WeaponCargo", (_intentory select 0)];
-					_object setVariable ["MagazineCargo", (_intentory select 1)];
-					_object setVariable ["BackpackCargo", (_intentory select 2)];
+					_object setVariable ["WeaponCargo", (_intentory select 0),true];
+					_object setVariable ["MagazineCargo", (_intentory select 1),true];
+					_object setVariable ["BackpackCargo", (_intentory select 2),true];
 				} else {
 
 					//Add weapons
@@ -172,7 +174,7 @@ if (isServer and isNil "sm_done") then {
 							_object addWeaponCargoGlobal [_x,(_objWpnQty select _countr)];
 						};
 						_countr = _countr + 1;
-					} forEach _objWpnTypes; 
+					} count _objWpnTypes; 
 				
 					//Add Magazines
 					_objWpnTypes = (_intentory select 1) select 0;
@@ -186,7 +188,7 @@ if (isServer and isNil "sm_done") then {
 							_object addMagazineCargoGlobal [_x,(_objWpnQty select _countr)];
 						};
 						_countr = _countr + 1;
-					} forEach _objWpnTypes;
+					} count _objWpnTypes;
 
 					//Add Backpacks
 					_objWpnTypes = (_intentory select 2) select 0;
@@ -198,7 +200,7 @@ if (isServer and isNil "sm_done") then {
 							_object addBackpackCargoGlobal [_x,(_objWpnQty select _countr)];
 						};
 						_countr = _countr + 1;
-					} forEach _objWpnTypes;
+					} count _objWpnTypes;
 				};
 			};	
 			
@@ -206,9 +208,9 @@ if (isServer and isNil "sm_done") then {
 				{
 					_selection = _x select 0;
 					_dam = _x select 1;
-					if (_selection in dayZ_explosiveParts and _dam > 0.8) then {_dam = 0.8};
+					if (_selection in dayZ_explosiveParts && _dam > 0.8) then {_dam = 0.8};
 					[_object,_selection,_dam] call object_setFixServer;
-				} forEach _hitpoints;
+				} count _hitpoints;
 
 				_object setFuel _fuel;
 
@@ -217,7 +219,7 @@ if (isServer and isNil "sm_done") then {
 					//_object setvelocity [0,0,1];
 					_object call fnc_veh_ResetEH;		
 					
-					if(_ownerID != "0" and !(_object isKindOf "Bicycle")) then {
+					if(_ownerID != "0" && !(_object isKindOf "Bicycle")) then {
 						_object setvehiclelock "locked";
 					};
 					
@@ -231,54 +233,54 @@ if (isServer and isNil "sm_done") then {
 			//Monitor the object
 			PVDZE_serverObjectMonitor set [count PVDZE_serverObjectMonitor,_object];
 		};
-	} forEach _objectArray;
+	} count _objectArray;
 	// # END SPAWN OBJECTS #
-	
 
 	// preload server traders menu data into cache
 	if !(DZE_ConfigTrader) then {
 		{
 			// get tids
 			_traderData = call compile format["menu_%1;",_x];
-			if(!isNil "_traderData") then {
-			    {
-			        _traderid = _x select 1;
-				//_key = format["CHILD:399:%1:",_traderid];
-				_key = format["\cache\traders\%1.sqf", _traderid];
-                                diag_log ("LOAD TRADER: "+_key);
-                                _res = preprocessFile _key;
+			if (!isNil "_traderData") then {
+				{
+					_traderid = _x select 1;
+					//_key = format["CHILD:399:%1:",_traderid];
+					_key = format["\cache\traders\%1.sqf", _traderid];
+                                        diag_log ("LOAD TRADER: "+_key);
+                                        _res = preprocessFile _key;
 
-                                if ((_res == "") or (isNil "_res")) then {
-                                    diag_log ("TRADER NOT FOUND");
-                                } else {
-                                    call compile format["ServerTcache_%1 = [];", _traderid];
+                                        if ((_res == "") or (isNil "_res")) then {
+                                            diag_log ("TRADER NOT FOUND");
+                                        } else {
+                                            call compile format["ServerTcache_%1 = [];", _traderid];
 					
-                                    _retrader = call compile _res;
-                                     diag_log format["Count: %1", str(count _retrader)];
+                                            _retrader = call compile _res;
+                                            diag_log format["Count: %1", str(count _retrader)];
             
-                                    {
-                                        call compile format["ServerTcache_%1 set [count ServerTcache_%1,%2]", _traderid, _x];
-                                    } forEach _retrader;
+                                            {
+                                                call compile format["ServerTcache_%1 set [count ServerTcache_%1,%2]", _traderid, _x];
+                                            } forEach _retrader;
 
-                                    _retrader = nil;
-                                };
-                                _res = nil;
+                                            _retrader = nil;
+                                        };
+                                        _res = nil;
 
-			    } forEach (_traderData select 0);
+				} forEach (_traderData select 0);
 			};
 		} forEach serverTraders;
 	};
 
 	//  spawn_vehicles
 	_vehLimit = MaxVehicleLimit - _totalvehicles;
-	if(_vehLimit > 0) then {
-		diag_log ("HIVE: Spawning # of Vehicles: " + str(_vehLimit));
-		for "_x" from 1 to _vehLimit do {
-			[] spawn spawn_vehicles;
-		};
+	if (_vehLimit > 0) then {
+	    diag_log ("HIVE: Spawning # of Vehicles: " + str(_vehLimit));
+	    for "_x" from 1 to _vehLimit do {
+	        [] spawn spawn_vehicles;
+	    };
 	} else {
-		diag_log "HIVE: Vehicle Spawn limit reached!";
+	    diag_log "HIVE: Vehicle Spawn limit reached!";
 	};
+	
 	//  spawn_roadblocks
 	diag_log ("HIVE: Spawning # of Debris: " + str(MaxDynamicDebris));
 	for "_x" from 1 to MaxDynamicDebris do {
@@ -304,7 +306,6 @@ if (isServer and isNil "sm_done") then {
 	if(isnil "OldHeliCrash") then {
 		OldHeliCrash = false;
 	};
-	allowConnection = true;
 
 	// [_guaranteedLoot, _randomizedLoot, _frequency, _variance, _spawnChance, _spawnMarker, _spawnRadius, _spawnFire, _fadeFire]
 	if(OldHeliCrash) then {
@@ -333,9 +334,7 @@ if (isServer and isNil "sm_done") then {
 		if(isnil "spawnMarkerCount") then {
 			spawnMarkerCount = 10;
 		};
-		
 		actualSpawnMarkerCount = 0;
-
 		// count valid spawn marker positions
 		for "_i" from 0 to spawnMarkerCount do {
 			if (!([(getMarkerPos format["spawn%1", _i]), [0,0,0]] call BIS_fnc_areEqual)) then {
@@ -347,8 +346,14 @@ if (isServer and isNil "sm_done") then {
 			
 		};
 		diag_log format["Total Number of spawn locations %1", actualSpawnMarkerCount];
+		
+		endLoadingScreen;
 	};
 
+	[] ExecVM "\@externalutils\dzms\DZMSInit.sqf";
+	[] call compile preprocessFileLineNumbers "\@externalutils\dzai\init\dzai_initserver.sqf";
+	
+	allowConnection = true;	
 	sm_done = true;
 	publicVariable "sm_done";
 };

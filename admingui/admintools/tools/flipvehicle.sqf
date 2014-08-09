@@ -1,1 +1,0 @@
-(getPos player nearestObject "LandVehicle") setVectorUp [0, 0, 1];titleText ["Vehicle is now right-side up", "PLAIN DOWN"];titleFadeOut 3;

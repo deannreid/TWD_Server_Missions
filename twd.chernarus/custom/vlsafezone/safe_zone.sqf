@@ -3,7 +3,7 @@
    *updated on 25.06.2014
 */
 USE_CANBUILD = true;		// if you don't want to define your own positions
-USE_TraderCity = true;	//	if you don't want to define your own positions (Epoch 1.0.5)
+USE_TraderCity = false;	//	if you don't want to define your own positions (Epoch 1.0.5)
 USE_POSITIONS = false;	// to use own positions and radius
 USE_AI_REMOVER = true;	// use this to remove Missionbots (AI) within 100m of a player if the player is in a SafeZone
 USE_AntiSteal = true;	// use this to block opening gear if another player is within 3m!
@@ -20,7 +20,8 @@ _infiSZ =
 	[[12060.471,12638.533],100,true],
 	[[4361.4937,2259.9526],100,true],	
 	[[5056.7383,9740.4668],100,true],
-	[[5068.6636,9723.4248],100,true]
+	[[5068.6636,9723.4248],100,true],
+	[[5054.0127,9736.8398],100,true]
 ];
 if (isServer) exitWith
 {
