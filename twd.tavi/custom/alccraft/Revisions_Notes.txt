@@ -1,0 +1,64 @@
+  /* Advanced Alchemical Crafting
+	Version Notes:
+	v 1.0  64 items craftable using maca's right click addon and a custom made
+			player_build.sqf. 
+			https://www.youtube.com/watch?v=LSjj96Hri40
+	v 1.1  Added catch for possible duping with punishment of radius deletion
+			Also added lightbulbs to craftables
+			74 items total with this version
+	v 1.2 Removed catch and punishment and re-wrote code to delete items from
+			player's backpack as soon as pre-reqs are met then to add them back
+			in if the player cancels crafting
+	v 1.3  Cleaned up code and simplified a few routines. 
+			MAJOR CHANGE
+	v 2.0  Ported old right click crafting system to new menu based system
+			as a variation of concept found in Raymix's Emerald Interior Designer
+			http://epochmod.com/forum/index.php?/topic/10665-release-emerald-interior-designer/
+	v 2.05 Moved much duplicated code to two new functions in Crafting_Compiles.sqf
+			to simplify code and possibly speed things up a little.
+	v 2.1  Added all items from Emerald Interiors to item set.
+	v 2.2  Created new system with material/tool definitions using classes
+			in MT_Defines.hpp. Allows for cross file data usage by pulling
+			from missionconfigfile.	Added required tools and materials to all items.
+	v 2.3 Changed menu gui to show items and materials that player currently
+			has in inventory to display as green and those the player does not have
+			to display as red. Makes for easier item selection across Catagories
+	v 2.4  Added back in several items from before 1.0 - Top heavy items like
+	       the satellite dish must be set inside ground or they will fall over when placed
+	       267 items total with this version
+	v 2.5  Added many other MAP, (map_eu), and LAND,(base Arma2), items that were useable in editor 
+			Passed on many duplicate items between MAP and LAND as well as most
+			buildings that were not fortifications or tents.
+			565 total items with this version
+	v 2.6  Edited/updated files for compatibility with 112555/1.0.5.1
+			This included several changes to allow client usage on servers using Infistar
+	v 2.65 Removed ladders and most towers due to non-functionality of ladder
+	v 2.7  Added custom dayz_spaceInterrupt function to allow usage of number keys
+			1 and 3, (above qwerty), to allow rotation of item in 22.5 degree increments
+			MAJOR CHANGE
+	v 3.0  Added in preview functionality to craft menu using my old uav script as base- Thanks to [GOM] Simbo for the idea!
+			Item being previewed is circled by camera. Changed code so that the
+			Since Infistar was blocking setbuttonaction commands, three new buttons were
+			added and simply turned off with others at start.
+	v 3.1  Added in camera control buttons to Preview screen. <<Spin Spin>> moves camera
+			around item faster or slower. Zoom- Zoom+ move camera closer/further away
+			from item. Camera Up Camera Down changed view altitude.
+	v 3.2  Added global variable to use with dayz_spaceInterrupt function in order
+			to capture any keyboard input at all during Preview. This helped stop
+			a bug where ESC would remove the Return button forcing player to relog.
+			Once inside the Preview pressing any key will have same functionality as
+			using the mouse to press the Return button.
+			Added Admin_Craft variable to variables.sqf and in checks for tools/materials in 
+			custom_builds.sqf to allow easier testing/crafting.
+			https://www.youtube.com/watch?v=kM38MaHV6DE
+	v 3.21 Fixed issue with many items not showing materials or tools in the crafting
+			window while using Admin_Craft.
+	v 3.3  Restructured classes to have master Default classes for most menu Catagory selections. 
+			This cleaned up a few 1,000 lines of uneeded code and allows editing/updating of 
+			tools and materials easier for most classes. Added in DefaultGem class for
+			several simple/small items. These require a toolbox, the gem for that class and two
+			10Oz Gold bars. Consolidated many similar items to have same materials/tools.
+			
+			
+	
+			*/
