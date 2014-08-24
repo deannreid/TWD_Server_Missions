@@ -7,18 +7,18 @@ if (!isNull _hclient && _infiStarAdminMenu && _vlAntiHack && _dzmsAC && _dzaiAC)
 diag_log "1 OR MORE VARIABLES NOT FOUND AT LOCATION @TWD\\var.sqf";
 };
 
-<<<<<<< HEAD
+
 if (_infiStarAC == true) then {[] spawn {[] execVM "\@externalutils\isantihack\AH.sqf";}; diag_log "infiSTAR Activated";}else{diag_log"infiSTAR deactivated";};
 if (_vlAntihack == true) then {[] spawn {[] execVM "\@externalutils\vlantihack\AH.sqf";}; diag_log "VL Antihack Activated";}else{diag_log"VLAH deactivated";};
 if (_hclient == true) then {execVM "\@externalutils\headlessclient\init.sqf"; diag_log "Headless Client Activated";}else{diag_log"Headless Client deactivated";};
 if (_dzmsAC == true) then {[] ExecVM "\@externalutils\dzms\DZMSInit.sqf"; diag_log "DayZ Mission System Activated";}else{diag_log"DayZ Mission System deactivated";};
 if (_dzaiAC == true) then {call compile preprocessFileLineNumbers "\@externalutils\dzai\init\dzai_initserver.sqf"; diag_log "DayZ AI Activated";}else{diag_log"DayZ AI deactivated";};
-=======
+
 if (_infiStarAC == true) then {[] spawn {[] execVM "@TWD\infiSTAR\AH.sqf";}; diag_log "infiSTAR Activated";}else{diag_log"infiSTAR deactivated";};
 if (_hclient == true) then {execVM "@TWD\HeadlessClient\init.sqf"; diag_log "Headless Client Activated";}else{diag_log"Headless Client deactivated";};
 if (_dzmsAC == true) then {[] ExecVM "@TWD\DZMS\DZMSInit.sqf"; diag_log "DayZ Mission System Activated";}else{diag_log"DayZ Mission System deactivated";};
 if (_dzaiAC == true) then {call compile preprocessFileLineNumbers "@TWD\DZAI\init\dzai_initserver.sqf"; diag_log "DayZ AI Activated";}else{diag_log"DayZ AI deactivated";};
->>>>>>> 7feed296ebc67678a149798318ac998fe196b08d
+
 /*TWD Edits End*/
 
 waituntil {!isnil "bis_fnc_init"};
