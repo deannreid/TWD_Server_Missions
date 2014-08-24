@@ -4,7 +4,7 @@
 #include "\@externalutils\var.sqf";
 private["_hclient","_infiStarAC","_dzmsAC","dzaiAC"]
 if (!isNull _hclient && _infiStarAdminMenu && _vlAntiHack && _dzmsAC && _dzaiAC) then {
-diag_log "1 OR MORE VARIABLES NOT FOUND AT LOCATION @TWD\\var.sqf";
+diag_log "1 OR MORE VARIABLES NOT FOUND AT LOCATION @TWD\var.sqf";
 };
 
 
