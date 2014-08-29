@@ -1,6 +1,7 @@
-/*
-Created by Raymix
-*/
+/*-----------------------------------------------------------*/
+// Created by Raymix
+// Last update - August 21 2014
+/*-----------------------------------------------------------*/
 
 
 class SnapBuilding {
@@ -123,7 +124,7 @@ class SnapBuilding {
 			"CinderWallDoorSmall_DZ",
 			"MetalFloor_DZ"
 		};
-		radius = 5;
+		radius = 7;
 	};
 	
 	class WoodFloorQuarter_Preview_DZ: FloorsWallsStairs { //fix for broken offsets in ghost
@@ -170,8 +171,8 @@ class SnapBuilding {
 		{0,0,0,"Pivot"},
 		{0,-2.33,0.130,"Back"},
 		{0,2.33,0.130,"Front"},
-		{-2.45,0,0.130,"Left"},
-		{2.45,0,0.130,"Right"}
+		{-2.495,0,0.130,"Left"},
+		{2.495,0,0.130,"Right"}
 		};
 		radius = 10;
 	};
@@ -246,7 +247,7 @@ class SnapBuilding {
 		{2.752, 0, 1.5,"Right"},
 		{0, 0, 3.37042,"Top"}
 		};
-		radius = 5;
+		radius = 10;
 	};
 	class CinderWall_Preview_DZ: Cinder_DZE {};
 	class CinderWallDoorway_Preview_DZ: Cinder_DZE {};
@@ -283,7 +284,7 @@ class SnapBuilding {
 		{-2.64, 0, 0.009,"Left"},
 		{2.64, 0, 0.009,"Right"}
 		};
-		radius = 10;
+		radius = 12;
 	};
 	class MetalFloor_DZ: FloorsWallsStairs{
 		points[] = {
@@ -293,7 +294,7 @@ class SnapBuilding {
 		{-2.64, 0, 0.15,"Left"},
 		{2.64, 0, 0.15,"Right"}
 		};
-		radius = 10;
+		radius = 12;
 	};
 	
 	
@@ -340,7 +341,7 @@ class SnapBuilding {
 		snapTo[] = {
 			"StickFence_DZ"
 		};
-		radius = 5;
+		radius = 10;
 		points[] = {
 		{0,0,0,"Pivot"},
 		{-2.95,0,0.3,"Left"},
@@ -352,7 +353,7 @@ class SnapBuilding {
 		snapTo[] = {
 			"Fence_corrugated_DZ"
 		};
-		radius = 5;
+		radius = 10;
 		points[] = {
 		{0,0,0,"Pivot"},
 		{-1.95,0,0.88,"Left"},
@@ -364,7 +365,7 @@ class SnapBuilding {
 		snapTo[] = {
 			"WoodRamp_DZ"
 		};
-		radius = 5;
+		radius = 7;
 		points[] = {
 		{0,0,0,"Pivot"},
 		{0.65,-1.7,1.2,"Back"},

@@ -1316,7 +1316,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=5;
+		items=6;
 		class Item0
 		{
 			position[]={6325.6772,304.99033,7807.7412};
@@ -1402,6 +1402,23 @@ class Mission
 			{
 			};
 		};
+		class Item5
+        {
+            position[]={13700, 2961};
+            a=500;
+            b=500;
+            activationBy="ANY";
+            repeating=1;
+            interruptable=1;
+            age="UNKNOWN";
+            name="AntiCamp";
+            expCond="(vehicle player) in thislist";
+            expActiv="AntiCamp = [] execVM ""custom/code/skalistypvp.sqf"";";
+            expDesactiv="terminate AntiCamp; titleText [""You have left the PvP area Good Job!!!"", ""PLAIN DOWN"", 3];";
+            class Effects
+            {
+            };
+        };
 	};
 };
 class Intro
