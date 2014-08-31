@@ -86,6 +86,20 @@ diag_log format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance, _class, 0
 	_object setDir _dir;
 	_object setPosATL _location;
 						
+								/* VEHICLE EDITS */
+	if (_class == "SUV_Pink") then {_object setVehicleInit 'this setObjectTexture [0, ''custom\overlay\suvKTY_overlay.jpg''];';};
+	if (_class == "SUV_Red") then {_object setVehicleInit 'this setObjectTexture [0, ''custom\overlay\suvRED_overlay.jpg''];';};
+	if (_class == "SUV_Blue") then {_object setVehicleInit 'this setObjectTexture [0, ''custom\overlay\suvUSA_overlay.jpg''];';};
+	if (_class == "SUV_Camo") then {_object setVehicleInit 'this setObjectTexture [0, ''custom\overlay\suvLF_overlay.jpg''];';};
+	if (_class == "SUV_Black") then {_object setVehicleInit 'this setObjectTexture [0, ''custom\overlay\suvBLK_overlay.jpg''];';};
+	if (_class == "SUV_Silver") then {_object setVehicleInit 'this setObjectTexture [0, ''custom\overlay\suvGRY_overlay.jpg''];';};
+	if (_class == "SUV_Charcoal") then {_object setVehicleInit 'this setObjectTexture [0, ''custom\overlay\suvDSRT_overlay.jpg''];';};
+	if (_class == "SUV_Yellow") then {_object setVehicleInit 'this setObjectTexture [0, ''custom\overlay\suvCAN_overlay.jpg''];';};
+	if (_class == "SUV_White") then {_object setVehicleInit 'this setObjectTexture [0, ''custom\overlay\suvUK_overlay.jpg''];';};
+	if (_class == "SUV") then {_object setVehicleInit 'this setObjectTexture [0, ''custom\overlay\suvUAE_overlay.jpg''];';};
+	/* VEHICLE EDITS */
+						
+						
 	//Add weapons
 	_objWpnTypes = 	_weapons select 0;
 	_objWpnQty = 	_weapons select 1;
@@ -126,6 +140,12 @@ diag_log format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance, _class, 0
 	// for non JIP users this should make sure everyone has eventhandlers for vehicles.
 	PVDZE_veh_Init = _object;
 	publicVariable "PVDZE_veh_Init";
+	
+/*VEHICLE EDIS*/
+
+	processInitCommands;
+	
+/*VEHICLE EDIS*/
 	
 	diag_log ("PUBLISH: " + str(_activatingPlayer) + " Upgraded " + (_class) + " with ID " + str(_uid));
 };

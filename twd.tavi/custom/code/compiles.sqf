@@ -1,25 +1,15 @@
 //Custom Compiles
-
 	diag_log "Initialising VL Compiles";
+		fnc_usec_selfActions =			compile preprocessFileLineNumbers "custom\code\fn_selfActions.sqf";
 		player_selectSlot =			compile preprocessFileLineNumbers "custom\code\ui_selectSlot.sqf";
 		local_lockUnlock =			compile preprocessFileLineNumbers "custom\code\local_lockUnlock.sqf";
-		fn_gearMenuChecks =			compile preprocessFileLineNumbers "custom\code\fn_gearMenuChecks.sqf";	
-		convertPlayerUID  = 		compile preprocessFileLineNumbers "custom\code\convertPUID.sqf";
-		fnc_usec_damageActions  = compile preprocessFileLineNumbers "custom\code\fn_damageActions.sqf";
-
-if (!isDedicated) then {
-	DZE_SNAP_PRO_USE_COMMAND_MENU = false;
-	DZE_SNAP_BUILD_NUMKEYS = [0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B];
-	player_build = compile preprocessFileLineNumbers "custom\snap_pro\player_build.sqf";
-	snap_build = compile preprocessFileLineNumbers "custom\snap_pro\snap_build.sqf";
-	dayz_spaceInterrupt = compile preprocessFileLineNumbers "custom\snap_pro\dayz_spaceInterrupt.sqf";
-};
+	//	player_death = 			compile preprocessFileLineNumbers "custom\death\player_death.sqf";
 
 //Custom Zeds
 	diag_log "Initialising Custom Zeds";
 		building_spawnZombies =			compile preprocessFileLineNumbers "custom\custom_loot\compile\building_spawnZombies.sqf";
-		zombie_generate = 			compile preprocessFileLineNumbers "custom\custom_loot\compile\zombie_generate.sqf";			//Server compile, used for loiter behaviour
-		wild_spawnZombies = 			compile preprocessFileLineNumbers "custom\custom_loot\compile\wild_spawnZombies.sqf";			//Server compile, used for loiter behaviour
+		zombie_generate = 			compile preprocessFileLineNumbers "custom\custom_loot\compile\zombie_generate.sqf";
+		wild_spawnZombies = 			compile preprocessFileLineNumbers "custom\custom_loot\compile\wild_spawnZombies.sqf";
 	diag_log "Finished initialising Custom Zeds";	
 
 //Custom Loot	
@@ -30,28 +20,29 @@ if (!isDedicated) then {
 		player_spawnCheck = 			compile preprocessFileLineNumbers "custom\custom_loot\compile\player_spawnCheck.sqf";	
 	diag_log "Finished initialising Custom Loot";
 	
+if (!isDedicated) then {
+	player_build = compile preprocessFileLineNumbers "custom\snap_pro\player_build.sqf";
+	snap_build = compile preprocessFileLineNumbers "custom\snap_pro\snap_build.sqf";
+	dayz_spaceInterrupt = compile preprocessFileLineNumbers "custom\snap_pro\dayz_spaceInterrupt.sqf";
+};
 	
-	if (dayZ_instance == 13) then
-	{
-		diag_log "Origins Mod Found, Loading Origins Compiles!";
-		player_buildStronghold = 		compile preprocessFileLineNumbers "custom\code\tavi\build\stronghold\s.sqf";
-		player_removeObject =			compile preprocessFileLineNumbers "custom\code\tavi\remove.sqf";
-		player_selectSlot = 			compile preprocessFileLineNumbers"custom\code\tavi\ui_selectSlot.sqf";
-		fnc_usec_selfActions = 			compile preprocessFileLineNumbers "custom\code\tavi\fn_selfActions.sqf";
-		diag_log "Origins Compiles Loaded";
-	};
-	
-//Custom Trader
-	/*diag_log "Initialising Custom Traders";
-	if (DZE_ConfigTrader) then {
-		call compile preprocessFileLineNumbers "custom\code\player_traderMenuConfig.sqf";
-	}else{
-		call compile preprocessFileLineNumbers "custom\code\player_traderMenuHive.sqf";
-	};
-	diag_log "Finished initialising Custom Traders";*/
 //GUI
 	diag_log "Injecting GUI";
 	player_updateGui =			compile preprocessFileLineNumbers "custom\GUI\player_updateGui.sqf";
 	diag_log "GUI successfully Injected";
 	
+	
+//Anims
+diag_log "Loading Animations";	
+if (!isDedicated) then {
+   mv22_pack = compile preprocessFileLineNumbers "\ca\air2\mv22\scripts\pack.sqf";
+};
+diag_log "Finished Loading Animations";
+
+//Temp Fixes
+diag_log "Loading Temp Fixes to Epoch";
+		player_craftItem =			compile preprocessFileLineNumbers "temp\player_craftItem.sqf";
+
+diag_log "Finished Loading Temp Fixes to Epoch";	
+
 	diag_log "Finished Initialising VL Compiles";

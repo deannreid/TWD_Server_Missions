@@ -1,0 +1,1 @@
+player playMove "AmovPercMstpSnonWnonDnon_idle70chozeniPoRukou";

@@ -37,13 +37,3 @@ if (dayZ_instance == 15) then
 			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_15.namalsk\mission.sqf";
 		};
 };
-
-
-if (dayZ_instance == 13) then
-{
-	if (isServer) then 
-		{
-			call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_13.Tavi\dynamic_vehicle.sqf";
-			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_13.Tavi\mission.sqf";
-		};
-};

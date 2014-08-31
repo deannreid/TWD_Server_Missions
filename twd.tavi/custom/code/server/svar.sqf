@@ -1,6 +1,6 @@
 // GLOBAL VARIABLES
 	// Arma Config			
-	MaxVehicleLimit = 600;
+	MaxVehicleLimit = 500;
 	MaxDynamicDebris = 10;
 	DynamicVehicleDamageLow = 0;
 	DynamicVehicleDamageHigh = 40;										
@@ -17,7 +17,8 @@
 	dayz_maxLocalZombies = 15;
 	dayz_maxGlobalZombiesInit = 8;
 	dayz_maxGlobalZombiesIncrease = 3;
-	dayz_maxZeds = 400;				
+	dayz_maxZeds = 400;
+	DayZ_UseSteamID = true;	
 
 	// DayZ Epoch Config										
 	DZE_DiagFpsSlow = true;
@@ -31,7 +32,17 @@
 	DZE_HeliLift = true;
 	DZE_selfTransfuse_Values =[12000, 0.5, 240];
 	DZE_selfTransfuse = true;
-	DZE_ConfigTrader = false;
+	DZE_snapBuilding = true;
+	DZE_teleport = [500000,0,0,500000,500000];
+	
+	//TWD Vars
+	EnableZShield = 1;
+	MaxZShields	= 1; 
+	ZShieldRadius = 50;
+	ZShieldClean = 0;
+	TypeOfZShield = "CDF_WarfareBUAVterminal";
+	AllZShieldTypes = ["CDF_WarfareBUAVterminal"]; 
+
 	
 //SERVER ONLY VARIABLES
 // Chernarus
@@ -47,11 +58,13 @@ if (dayZ_instance == 11) then
 	DZE_LootSpawnTimer = 5;									
 	DZE_ForceNameTags = true;
 	DZE_PlayerZed   = false;
-	DZE_vehicleAmmo	= 1;
-	DZE_requireplot = 1;
+	//DZE_vehicleAmmo	= 1;
+	DZE_requireplot = 0;
 	DZE_PlotPole = [150,0];
 	DZE_R3F_WEIGHT = false;
 	DZE_StaticConstructionCount = 1;
+	execVM "custom\markers\init.sqf";
+	execVM "custom\code\pvp.sqf";
 };
 
 //Panthera
@@ -109,25 +122,4 @@ if (dayZ_instance == 15) then
 	DZE_requireplot = 0;
 	DZE_GodModeBase = true;
 	DZE_R3F_WEIGHT = false;	
-};
-
-
-// Origins
-if (dayZ_instance == 13) then
-{
-	spawnShoremode = 1;
-	spawnArea= 2500;
-	dayz_MapArea = 42000;
-	dayz_minpos = -26000; 
-	dayz_maxpos = 26000;	
-	dayz_spawnselection = 1;
-	DZE_LootSpawnTimer = 5;									
-	DZE_ForceNameTags = true;
-	DZE_PlayerZed   = false;
-	DZE_vehicleAmmo	= 1;
-	DZE_requireplot = 1;
-	DZE_GodModeBase = true;
-	DZE_R3F_WEIGHT = false;
-	DZE_StaticConstructionCount = 1;
-//	[] execVM "custom\vlsafezone\init.sqf"; <-- deprecated -->
 };

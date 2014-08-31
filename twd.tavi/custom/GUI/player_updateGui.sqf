@@ -1,5 +1,5 @@
 private ["_display","_ctrlBloodOuter","_ctrlBlood","_ctrlBleed","_bloodVal","_ctrlFood","_ctrlThirst","_thirstVal","_foodVal","_ctrlTemp","_ctrlFoodBorder","_ctrlThirstBorder","_ctrlTempBorder","_tempVal","_array","_ctrlEar","_ctrlEye","_ctrlFracture","_visual","_audible","_uiNumber","_bloodText","_blood","_thirstLvl","_foodLvl","_tempImg","_bloodLvl","_tempLvl","_thirst","_food","_temp","_playerUID"];
-
+//private ["_display","_ctrlBloodOuter","_ctrlBlood","_ctrlBleed","_bloodVal","_ctrlFood","_ctrlThirst","_thirstVal","_foodVal","_ctrlTemp","_ctrlFoodBorder","_ctrlThirstBorder","_ctrlTempBorder","_tempVal","_array","_ctrlEar","_ctrlEye","_ctrlFracture","_visual","_audible","_uiNumber","_bloodText","_blood","_thirstLvl","_foodLvl","_tempImg","_bloodLvl","_tempLvl","_thirst","_food","_temp","_typeHumanity","_color","_string","_humanity","_size","_friendlies","_charID","_rcharID","_rfriendlies","_rfriendlyTo","_distance","_ctrlFPS","_ctrlFPSOuter","_ctrlServerRestart","_RestartTime","_fps","_ctrlhumanKills","_ctrlhHeadshots","_ctrlbanditKills","_ctrlzombieKills","_ctrlHumanity","_targetControl","_humanityTarget"]
 
 //private ["_array","_bloodText","_tempImg","_uiNumber","_blood","_foodLvl","_thirstLvl","_audible","_visual"];
 disableSerialization;
@@ -38,6 +38,11 @@ _ctrlFracture = _display displayCtrl 1203;
 
 _ctrlFPS = _display displayCtrl 1321;
 _ctrlFPSOuter = _display displayCtrl 1322;
+
+
+_ctrlServerRestart = _display displayCtrl 1404;
+_RestartTime = 180-(round(serverTime/60));
+_ctrlServerRestart  ctrlSetText str(_RestartTime);
 
 
 _fps = round diag_FPS;

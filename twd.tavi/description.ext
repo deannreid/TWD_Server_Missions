@@ -31,7 +31,6 @@ diagHit = 1;
 #include "custom\custom_loot\Configs\CfgBuildingLoot.hpp"
 #include "custom\custom_loot\Configs\CfgLootSmall.hpp"
 #include "custom\custom_loot\Configs\CfgLoot.hpp"
-#include "R3F_ARTY_AND_LOG\desc_include.h"
 class RscStructuredText
 {
     class Attributes;
@@ -80,9 +79,10 @@ class RscTextGUIK {
     w = 0.1;
     h = 0.2;
 };
+
 class CfgSounds
 {
-	sounds[] ={z_wzombie1,z_wzombie2,carLock,DoorCreak,metalGates,stronghold};
+	sounds[] ={z_wzombie1,z_wzombie2,carLock,nitro,siren,bl_begin,bl_hit1,bl_hit2,bl_hit3,bl_wave1,bl_wave2,bl_wave3,bl_psi,bl_full,bl_detect,apsi_on,apsi_off,ns_fx_misc4,ns_fx_drone1,ns_fx_drone2};
 	class z_wzombie1 {
 		name = "";
 		sound[] = {"custom\walkamongstthedead\dayz_sfx\femalezombie_attack_04.ogg",0.3,1,40};
@@ -96,29 +96,112 @@ class CfgSounds
 		sound[] = {"custom\sounds\carlock.ogg",0.3,1,40};
 		titles[] = {0, ""};
 	};
-	class DoorCreak
+	class nitro  {
+        name="nitro";
+        sound[]={custom\nos\nitro.ogg,0.9,1};
+        titles[] = {};
+    };
+    class siren
     {
-		name="DoorCreak";
-		sound[]={custom\sounds\doorCreak.ogg, 0.1, 1};
+		name = "siren";
+		sound[] = {custom\sounds\siren.ogg,0.5,1};
 		titles[] = {};
     };
-	class metalGates
-    {
-		name="metalGates";
-		sound[]={custom\sounds\metalGates.ogg, 0.1, 1};
-		titles[] = {};	
-    };
-	class stronghold
+    class bl_begin
 	{
-	name = "stronghold";
-	sound[] = {custom\sounds\vrata_sound.ogg,0.1,1};
-	titles[] = {};
-    };
+		name = "NS blowout_begin";
+		sound[] = {"custom\blowout\sounds\blowout_begin.ogg",3.162278,1.0};
+		titles[] = {};
+	};
+	class bl_hit1
+	{
+		name = "NS blowout_begin";
+		sound[] = {"custom\blowout\sounds\blowout_hit_1.ogg",1.584893,1.0};
+		titles[] = {};
+	};
+	class bl_hit2
+	{
+		name = "NS blowout_begin";
+		sound[] = {"custom\blowout\sounds\blowout_hit_2.ogg",1.584893,1.0};
+		titles[] = {};
+	};
+	class bl_hit3
+	{
+		name = "NS blowout_begin";
+		sound[] = {"custom\blowout\sounds\blowout_hit_3.ogg",1.584893,1.0};
+		titles[] = {};
+	};
+	class bl_wave1
+	{
+		name = "NS blowout_begin";
+		sound[] = {"custom\blowout\sounds\blowout_wave_1.ogg",1.584893,1.0};
+		titles[] = {};
+	};
+	class bl_wave2
+	{
+		name = "NS blowout_begin";
+		sound[] = {"custom\blowout\sounds\blowout_wave_2.ogg",1.584893,1.0};
+		titles[] = {};
+	};
+	class bl_wave3
+	{
+		name = "NS blowout_begin";
+		sound[] = {"custom\blowout\sounds\blowout_wave_3.ogg",1.584893,1.0};
+		titles[] = {};
+	};
+	class bl_psi
+	{
+		name = "NS blowout_psi";
+		sound[] = {"custom\blowout\sounds\blowout_psy_voices.ogg",1.778279,1.0};
+		titles[] = {};
+	};
+	class bl_full
+	{
+		name = "NS blowout_full";
+		sound[] = {"custom\blowout\sounds\blowout_full_wave.ogg",1.778279,1.0};
+		titles[] = {};
+	};
+	class bl_detect
+	{
+		name = "NS blowout_detect";
+		sound[] = {"custom\blowout\sounds\blowout_detect.ogg",1.778279,1.0};
+		titles[] = {};
+	};
+	class apsi_on
+	{
+		name = "NS apsi_on";
+		sound[] = {"custom\blowout\sounds\apsi_start.ogg",1.778279,1.0};
+		titles[] = {};
+	};
+	class apsi_off
+	{
+		name = "NS apsi_off";
+		sound[] = {"custom\blowout\sounds\apsi_off.ogg",1.778279,1.0};
+		titles[] = {};
+	};
+	class ns_fx_misc4
+	{
+		name = "Misc strange wind";
+		sound[] = {"custom\blowout\sounds\fx_misc4.ogg",1.0,1.0};
+		titles[] = {};
+	};
+	class ns_fx_drone1
+	{
+		name = "Drone 1";
+		sound[] = {"custom\blowout\sounds\fx_drone1.ogg",1.0,1.0};
+		titles[] = {};
+	};
+	class ns_fx_drone2
+	{
+		name = "Drone 2";
+		sound[] = {"custom\blowout\sounds\fx_drone2.ogg",1.0,1.0};
+		titles[] = {};
+	}; 
 };
 
 class RscTitles
 { 
-	#include "R3F_ARTY_AND_LOG\desc_rsct_include.h"
+//#include "R3F_ARTY_AND_LOG\desc_rsct_include.h"
 	class zCamoStatusGUI 
 	{
 		idd = -1;
@@ -446,7 +529,8 @@ class playerStatusGUI {
                 colorText[] = {1,1,1,0.0};
             };
             /*-----------------------------------------------*/
-            class RscText_1400: RscTextGUIK
+           
+		   class RscText_1400: RscTextGUIK
             {
                 idc = 1400;
                 text = "1000";
@@ -494,6 +578,30 @@ class playerStatusGUI {
                 colorText[] = {1,1,1,1.0};
                 size = 0.03;
                 sizeEx = 0.03;
+            };
+			class RscText_1404: RscTextGUIK
+            {
+                idc = 1404;
+                text = "(180-(round(serverTime/60)))";
+                x = 0.04 * safezoneW + safezoneX;
+                y = 0.0 * safezoneH + safezoneY;
+                w = 0.3 * safezoneW;
+                h = 0.047 * safezoneH;
+                colorText[] = {1,0.8,0,1.0};
+                size = 0.06;
+                sizeEx = 0.04;
+			};
+			class RscText_1405: RscTextGUIK
+            {
+                idc = 1405;
+                text = "Restart:";
+                x = 0.08 * safezoneW + safezoneX;
+                y = 0.0 * safezoneH + safezoneY;
+                w = 0.05 * safezoneW;
+                h = 0.047 * safezoneH;
+                colorText[] = {1,1,1,1.0};
+                size = 0.06;
+                sizeEx = 0.04;
             };
         };
     };
@@ -601,10 +709,7 @@ class DayZ_loadingScreen
 	};
 };
 
-#include "custom\snap_pro\snappoints.hpp"
 #include "custom\header\rclick.hpp"
 #include "custom\header\admind.hpp"
-//#include "custom\money\bank\dialog\bank.hpp"
-//#include "custom\playermenu\dialog\menu.hpp"
-//#include "custom\money\dialogues\refuel_dialog.hpp" <-- Money System
-//#include "custom\money\dialogues\give_player_dialog.hpp" <-- Money System
+#include "custom\snap_pro\snappoints.hpp"
+#include "R3F_ARTY_AND_LOG\desc_include.h"
