@@ -37,6 +37,7 @@ if (twd_debug) then {diag_log "Loading Global Variables";};
 	DZE_ConfigTrader = false;
 	DZE_modularBuild = false;
 	DZE_snapExtraRange = 0;	
+	
 if (twd_debug) then {diag_log "Global Variables Loaded";};
 
 if (twd_debug) then {diag_log "Loading TWD Variables";};
@@ -59,7 +60,6 @@ if (dayZ_instance == 11) then
 	dayz_MapArea = 22000;
 	dayz_minpos = -1; 
 	dayz_maxpos = 17000;	
-	//dayz_spawnselection = 1;
 	DZE_LootSpawnTimer = 5;									
 	DZE_ForceNameTags = true;
 	DZE_PlayerZed   = false;
@@ -69,7 +69,6 @@ if (dayZ_instance == 11) then
 	DZE_R3F_WEIGHT = false;
 	DZE_StaticConstructionCount = 1;
 	execVM "custom\markers\init.sqf";
-	execVM "custom\code\pvp.sqf";
 	if (twd_debug) then {diag_log "Chernarus Specific Variables Loaded";};	
 };
 

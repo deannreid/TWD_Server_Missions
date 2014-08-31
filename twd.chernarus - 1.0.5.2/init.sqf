@@ -23,6 +23,7 @@ if (twd_debug) then {diag_log "Instance Loaded";};
 
 
 if (twd_debug) then {diag_log "Loading Epoch Compiled Functions";};
+///Default Compiles
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";
 progressLoadingScreen 0.1;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";
@@ -31,16 +32,21 @@ call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functi
 progressLoadingScreen 0.4;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";
 if (twd_debug) then {diag_log "Finished Loading Epoch Compiled Functions";};
-progressLoadingScreen 0.5;
+
+
+//Custom Compiles
 if (twd_debug) then {diag_log "Loading TWD Compiled Functions";};
+progressLoadingScreen 0.5;
 call compile preprocessFileLineNumbers "custom\code\server_traders.sqf";
 call compile preprocessFileLineNumbers "custom\code\compiles.sqf";
 call compile preprocessFileLineNumbers "custom\code\variables.sqf"; 
 if (twd_debug) then {diag_log "Finished Loading TWD Compiled Functions";};
 progressLoadingScreen 1.0;
+
+
 "filmic" setToneMappingParams [0.153, 0.357, 0.231, 0.1573, 0.011, 3.750, 6, 4]; setToneMapping "Filmic";	   
 
-if (twd_debug) then {diag_log "Loading Server Monitor & Server Executions!";
+if (twd_debug) then {diag_log "Loading Server Monitor & Server Executions!";};
 if (isServer) then  {
 						_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
 											   execVM "custom\code\server\server.sqf";
