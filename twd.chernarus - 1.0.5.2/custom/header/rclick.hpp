@@ -27,4 +27,16 @@ class ExtraRc {
 			script = "['CSJ_GyroC'] execVM 'custom\toolmenu\player\vdeploy.sqf'";
 		};
 	};
+	class ItemRadio {
+		class GroupManagement {
+			text = "Group Management";
+			script = "execVM 'custom\groups\loadGroupManagement.sqf'";
+		};
+    };
+	class ItemMap {
+        class locate {
+            text = "Locate Vehicles";
+            script = "execVM 'custom\code\twd_vehicle.sqf'";
+        };
+    };
 };

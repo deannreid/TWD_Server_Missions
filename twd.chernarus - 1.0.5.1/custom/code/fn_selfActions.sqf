@@ -1150,4 +1150,48 @@ if (_dogHandle > 0) then {
         player removeAction s_player_nitroInstall;
         s_player_nitroInstall = -1;
     };
+	
+	
+ //Allow owner to change Door code
+
+if((_isDestructable || _cursorTarget isKindOf "Land_DZE_WoodDoorLocked_Base" || _cursorTarget isKindOf "CinderWallDoorLocked_DZ_Base") && (DZE_Lock_Door == _ownerID)) then {
+		if ((s_player_lastTarget select 1) != _cursorTarget) then {
+			if (s_player_ckc > 0) then {	
+				player removeAction s_player_ckc;
+				s_player_ckc = -1;
+			};
+		};
+
+		if (s_player_ckc < 0) then {
+			s_player_lastTarget set [1,_cursorTarget];	
+		        s_player_ckc = player addaction["Set new Code", "custom\keychange\ckc_startUI.sqf","",0,false,true,"", ""];
+		};
+	} else {
+		player removeAction s_player_ckc;
+		s_player_ckc = -1;
+	};
+	
+//Allow owner to change vault code
+
+_unlockedVault = ["VaultStorage"];
+
+	if(typeOf(cursortarget) in _unlockedVault && _ownerID != "0" && (player distance _cursorTarget < 2)) then {
+	
+	if (s_player_Safe_ckc < 0) then {
+	if ((typeOf(cursortarget) == "VaultStorage") &&(_ownerID == dayz_combination || _ownerID == dayz_playerUID)  ) then {
+     
+				
+			s_player_Safe_ckc = player addaction["Set new Code", "custom\keychange\ckc_startSafeUI.sqf","",1,false,true,"", ""];
+		};
+		};
+	} else {
+		player removeAction s_player_Safe_ckc;
+		s_player_Safe_ckc = -1;
+
+	};
+	
+	    player removeAction s_player_ckc;
+		s_player_ckc = -1;
+        player removeAction s_player_Safe_ckc;
+        s_player_Safe_ckc = -1;
  

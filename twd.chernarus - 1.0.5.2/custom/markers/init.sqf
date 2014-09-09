@@ -5,18 +5,19 @@ diag_log "Locating Markers";
 		_dean_airfield  setMarkerType "Airport";
 		_dean_airfield  setMarkerColor "ColorBlack";
 		_dean_airfield  = _dean_airfield ;
+
+		_dk_Skalisty  = createMarker ["_dk_Skalisty", [13700, 2961]];
+		_dk_Skalisty  setMarkerText "Skalisty Village";
+		_dk_Skalisty  setMarkerType "b_inf";
+		_dk_Skalisty  setMarkerColor "ColorBlack";
+		_dk_Skalisty  = _dk_Skalisty;
 		/*
 		_NWAF  = createMarker ["_NWAF", [5056.7383,9740.4668]];
 		_NWAF  setMarkerText "Aircraft Dealer";
 		_NWAF  setMarkerType "Airport";
 		_NWAF  setMarkerColor "ColorBlack";
-		_NWAF  = _NWAF;*/
+		_NWAF  = _NWAF;
 		
-		_dk_Skalisty  = createMarker ["_dk_Skalisty", [13700, 2961]];
-		_dk_Skalisty  setMarkerText "Skalisty Village  !!!PVP/Event AREA!!!";
-		_dk_Skalisty  setMarkerType "Warning";
-		_dk_Skalisty  setMarkerColor "ColorBlack";
-		_dk_Skalisty  = _dk_Skalisty;
 	
 		_pvp = createMarker ["_pvp", [13700, 2961]];
 		_pvp setMarkerText "!!!PVP AREA!!!";
@@ -24,13 +25,13 @@ diag_log "Locating Markers";
 		_pvp setMarkerShape "ELLIPSE";
 		_pvp setMarkerBrush "Grid";
 		_pvp setMarkerSize [500,500];
-		_pvp = _pvp;		
+		_pvp = _pvp;	*/	
 		
-		_qdoba = createMarker ["_qdoba", [4071.9851, 8610.6514]];
-		_qdoba setMarkerText "Qdoba City *WARNING*";
-		_qdoba setMarkerColor "ColorRed";
-		_qdoba setMarkerType "Strongpoint";
-		_qdoba = _qdoba;
+	//	_qdoba = createMarker ["_qdoba", [4071.9851, 8610.6514]];
+	//	_qdoba setMarkerText "Qdoba City *WARNING*";
+	//	_qdoba setMarkerColor "ColorRed";
+	//	_qdoba setMarkerType "Strongpoint";
+	//	_qdoba = _qdoba;
 
 		_mine1 = createMarker ["_mine1", [3893.9448, 11426.449]];
 		_mine1 setMarkerText "Mining Node";

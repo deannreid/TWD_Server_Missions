@@ -109,9 +109,10 @@ class CfgSounds
     }; 
 };
 
+#include "custom\header\defines.hpp"
 class RscTitles
 { 
-//#include "R3F_ARTY_AND_LOG\desc_rsct_include.h"
+	#include "custom\header\icons.hpp"
 	class zCamoStatusGUI 
 	{
 		idd = -1;
@@ -620,5 +621,5 @@ class DayZ_loadingScreen
 };
 
 #include "custom\header\rclick.hpp"
-#include "custom\header\admind.hpp"
 #include "R3F_ARTY_AND_LOG\desc_include.h"
+#include "custom\header\groupManagement.hpp"
