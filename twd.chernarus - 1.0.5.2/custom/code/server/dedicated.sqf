@@ -8,5 +8,6 @@ call compile preprocessFileLineNumbers "custom\wmod\init.sqf";
 				 [] execVM "custom\toolmenu\player\Activate.sqf";
 				 [] execVM "custom\toolmenu\permveh\Activate.sqf";
 				 []	execVM "custom\service_point\service_point.sqf";
+				 [] execVM "custom\code\player_nametag.sqf";
 watermark_1 = compile preprocessFileLineNumbers "custom\code\twd.sqf";
 player spawn watermark_1;

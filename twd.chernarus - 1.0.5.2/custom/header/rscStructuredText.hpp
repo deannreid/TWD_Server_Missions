@@ -1,0 +1,4 @@
+class RscStructuredText
+{
+    class Attributes;
+};
