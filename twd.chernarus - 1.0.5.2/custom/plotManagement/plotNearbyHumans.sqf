@@ -1,6 +1,6 @@
 private ["_close"];
 lbClear 7001;
-_allUnits = playableUnits;
+_allUnits = player nearEntities ["CAManBase", 12000];
 Humans = [];
 {
 	if (_x isKindOf "Man" and !(_x isKindOf "zZombie_base") and (isPlayer _x)) then {

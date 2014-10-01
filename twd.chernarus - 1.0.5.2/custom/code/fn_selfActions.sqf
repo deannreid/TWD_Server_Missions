@@ -336,6 +336,11 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 					_lock = player addAction [format[localize "STR_EPOCH_ACTIONS_LOCK",_text], "\z\addons\dayz_code\actions\lock_veh.sqf",_cursorTarget, 1, true, true, "", ""];
 					s_player_lockunlock set [count s_player_lockunlock,_lock];
 					s_player_lockUnlock_crtl = 1;
+					if (_typeOfCursorTarget in ColourVehicles) then {
+		private ["_paint"];
+		_paint = player addAction ["Paint", "Paint\player_paint_init.sqf",_cursorTarget, 2, true, true, "", ""];
+		s_player_lockunlock set [count s_player_lockunlock,_paint];
+	};
 				};
 			};
 		};

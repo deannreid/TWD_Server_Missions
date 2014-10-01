@@ -12,7 +12,7 @@ class dzgmHud_Rsc
 	fadeout = 0;
 	class controls
 	{
-		class Icons : w_RscStructuredText
+		class Icons : RscStructuredText
 		{
 			idc = -1;
 			style = 0x00;

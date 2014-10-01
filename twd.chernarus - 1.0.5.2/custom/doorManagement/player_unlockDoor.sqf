@@ -15,7 +15,7 @@ if(!isNull dayz_selectedDoor) then {
 		cutText [(localize "STR_EPOCH_ACTIONS_16"), "PLAIN DOWN"];
 	} else {
 		_allowedComplex 	=  dayz_selectedDoor getVariable ["doorfriends",[]];	
-		_ownerID = dayz_selectedDoor getVariable ["OwnerPUID","-1"];	
+		_ownerID = dayz_selectedDoor getVariable ["ownerPUID","-1"];	
 		if(isNil "_ownerID")then{
 		 _ownerID = -1;
 		};		
@@ -32,7 +32,7 @@ if(!isNull dayz_selectedDoor) then {
 			
 			cutText ["Scanning", "PLAIN DOWN"];
 			
-			sleep DZE_ScanTime; // to make it realistic, not instantly opening door.
+			sleep 2; // to make it realistic, not instantly opening door.
 			// unlock if locked
 			
 			cutText ["Eye Scan SUCCESS.", "PLAIN DOWN"];

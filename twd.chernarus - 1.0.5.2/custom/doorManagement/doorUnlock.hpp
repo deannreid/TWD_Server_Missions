@@ -16,10 +16,10 @@ class ComboLockUI
 			font = "Zeppelin32";
 			SizeEx = 0.03921;			
 			idc = -1;
-			x = 0.30 * safezoneW + safezoneX;
+			x = 0.35 * safezoneW + safezoneX;
 			y = 0.30 * safezoneH + safezoneY;
-			w = 0.30 * safezoneW;
-			h = 0.30 * safezoneH;
+			w = 0.20 * safezoneW;
+			h = 0.50 * safezoneH;
 			colorBackground[] = {0,0,0,0.8};
 		};	
 		
@@ -27,9 +27,9 @@ class ComboLockUI
 		{
 		
 			idc = -1;
-			x = 0.30 * safezoneW + safezoneX;
+			x = 0.35 * safezoneW + safezoneX;
 			y = 0.30 * safezoneH + safezoneY;
-			w = 0.30 * safezoneW;
+			w = 0.20 * safezoneW;
 			h = 0.05 * safezoneH;		
 			text = "Unlock / Lock Door";
 			colorBackground[] = {0,0,0,0.8};	
@@ -47,24 +47,36 @@ class ComboLockUI
 			w = 0.20;
 			onButtonClick = "call player_unlockDoor";					
 		};
+		
+		class ZupaButton_4 : RscShortcutButton
+		{
+			idc = -1;
+			text = "Manual Code";
+			x = 0.40 * safezoneW + safezoneX;
+			y = 0.50 * safezoneH + safezoneY;					
+			style = 2;
+			w = 0.20;
+			onButtonClick = "call player_enterCode";					
+		};
+		
 		class ZupaButton_2: RscShortcutButton
 		{
 			idc = -1;
 			text = "Cancel";
-			x = 0.50 * safezoneW + safezoneX;
-			y = 0.55 * safezoneH + safezoneY;			
+			x = 0.40 * safezoneW + safezoneX;
+			y = 0.70 * safezoneH + safezoneY;			
 			w = 0.20;
 			onButtonClick = "((ctrlParent (_this select 0)) closeDisplay 3000);";			
 		};		
 
 		class ZupaButton_3: RscShortcutButton
-				{
-					idc = -1;
-					text = "Manage";
-					x = 0.30 * safezoneW + safezoneX;
-					y = 0.55 * safezoneH + safezoneY;			
-					w = 0.20;
-					onButtonClick = "[] call player_manageDoor";			
-				};				
+		{
+			idc = -1;
+			text = "Manage";
+			x = 0.40 * safezoneW + safezoneX;
+			y = 0.60 * safezoneH + safezoneY;			
+			w = 0.20;
+			onButtonClick = "[] call player_manageDoor";			
+		};				
 	};	
 };

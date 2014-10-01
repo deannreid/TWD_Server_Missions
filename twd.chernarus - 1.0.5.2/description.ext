@@ -38,7 +38,7 @@ diagHit = 1;
 #include "custom\header\cfgSounds.hpp"
 #include "custom\header\defines.hpp"
 #include "custom\header\rscTitles.hpp"
-#include "custom\header\groupManagement.hpp"
+
 
 //////////////////////////////////////////////
 /////////////DEAN CUSTOM HEADERS//////////////
@@ -143,4 +143,12 @@ class DayZ_loadingScreen
 
 #include "custom\header\rclick.hpp"
 #include "R3F_ARTY_AND_LOG\desc_include.h"
-#include "custom\plotManagement\plotManagement.hpp"
+
+//#include "custom\header\groupManagement.hpp"
+//Door Management 
+#include "custom\doorManagement\doorUnlock.hpp"
+#include "custom\doorManagement\doorManagement.hpp"
+#include "custom\doorManagement\ComboLockUI.hpp"
+//Plot Management
+	#include "custom\Paint\defines.hpp"
+	#include "custom\Paint\vehiclecolour.hpp"

@@ -21,7 +21,9 @@ gear_done = false;
 
 DZE_DoorsLocked = ["Land_DZE_GarageWoodDoorLocked","Land_DZE_LargeWoodDoorLocked","Land_DZE_WoodDoorLocked","CinderWallDoorLocked_DZ","CinderWallDoorSmallLocked_DZ"];
 DZE_ScanTime = 2; // Amount of Seconds the scanner takes to scan if you are allowed
-
+HarderPenalty = true;
+AllowManualCode = true;
+DoorAdminList = ["-2","-3"];
 //Cooking
 meatraw = [
 	"FoodSteakRaw",
@@ -794,3 +796,47 @@ if(!isDedicated) then {
 
 	DZE_SaveTime = 30;
 };
+ColourVehicles = [
+	"ATV_CZ_EP1",
+	"ATV_US_EP1",
+	"SUV_TK_CIV_EP1",
+	"Mi17_Civilian_DZ",
+	"UH60M_EP1_DZE",
+	"Ka52",
+	"Ka52Black",
+	"UH1H_TK_EP1",
+	"UH60M_MEV_EP1",
+	"HMMWV_M998A2_SOV_DES_EP1_DZE",
+	"HMMWV_M1151_M2_CZ_DES_EP1_DZE",
+	"UAZ_MG_TK_EP1_DZE",
+	"Ural_CDF",
+	"Ural_TK_CIV_EP1",
+	"Ural_UN_EP1",
+	"V3S_Open_TK_CIV_EP1",
+	"Kamaz",
+	"MTVR_DES_EP1", 
+	"MH6J_DZ",
+	"AH6X_DZ",
+	"HMMWV_M1035_DES_EP1",
+	"HMMWV_Ambulance",
+	"HMMWV_Ambulance_CZ_DES_EP1",
+	"HMMWV_DES_EP1",
+	"HMMWV_DZ",
+	"hilux1_civil_3_open_EP1",
+	"hilux1_civil_1_open",
+	"datsun1_civil_1_open",
+	"Pickup_PK_GUE_DZE",
+	"Pickup_PK_INS_DZE",
+	"Pickup_PK_TK_GUE_EP1_DZE",
+	"Offroad_DSHKM_Gue_DZE",
+	"LAV25_HQ",
+	"BTR90_HQ_DZE",
+	"M1133_MEV_EP1",
+	"pook_H13_amphib",
+	"pook_H13_civ",
+	"pook_H13_medevac_CIV",
+	"pook_H13_transport",
+	"pook_H13_gunship_PMC",
+	"pook_H13_transport_INS",
+	"VWGolf"
+	];

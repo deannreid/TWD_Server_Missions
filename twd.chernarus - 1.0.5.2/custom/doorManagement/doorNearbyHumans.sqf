@@ -1,6 +1,6 @@
 private ["_close"];
 lbClear 7101;
-_closePeople =  playableUnits;
+_closePeople =  player nearEntities ["CAManBase", 20];
 Humans = [];
 _counter =  0;
 {
@@ -13,5 +13,4 @@ _counter =  0;
 	};
 } forEach _closePeople;
 
-systemChat format["Loaded %1 people",_counter];
 

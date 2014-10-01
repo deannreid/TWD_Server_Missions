@@ -4,6 +4,7 @@
 		player_selectSlot		    =			compile preprocessFileLineNumbers "custom\code\ui_selectSlot.sqf";
 		local_lockUnlock 			=			compile preprocessFileLineNumbers "custom\code\local_lockUnlock.sqf";
 		dayz_spaceInterrupt		    = 			compile preprocessFileLineNumbers "custom\code\dayz_spaceInterrupt.sqf";
+		player_upgrade		    = 			compile preprocessFileLineNumbers "custom\code\player_upgrade.sqf";
 
 
 //Custom Zeds
@@ -69,7 +70,20 @@ if (!isDedicated) then {
 	DoorRemoveFriend 	= compile preprocessFileLineNumbers "custom\doorManagement\doorRemoveFriend.sqf";
 	player_unlockDoor       = compile preprocessFileLineNumbers "custom\doorManagement\player_unlockDoor.sqf";
 	player_manageDoor       = compile preprocessFileLineNumbers "custom\doorManagement\initDoorManagement.sqf";
+		player_unlockDoorCode = compile preprocessFileLineNumbers "custom\doorManagement\player_unlockDoorCode.sqf";
+	player_enterCode       = compile preprocessFileLineNumbers "custom\doorManagement\player_enterCode.sqf";
+	player_changeCombo = compile preprocessFileLineNumbers "custom\doorManagement\player_changeCombo.sqf"; 
+
 	};
 diag_log "Finished loading Group Management, Plot Management and Door Management";
+
+diag_log "Loading Microsoft Paint";
+
+VehicleColourPaint =			compile preprocessFileLineNumbers "Paint\vehicleColourPaint.sqf";
+VehicleColourUpdate =			compile preprocessFileLineNumbers "Paint\VehicleColourUpdate.sqf";
+VehicleColourUpdate2 =			compile preprocessFileLineNumbers "Paint\VehicleColourUpdate2.sqf";
+player_paint =				compile preprocessFileLineNumbers "Paint\player_paint.sqf";
+diag_log "Finished Loading Microsoft Paint";
+
 
 	diag_log "Finished Initialising VL Compiles";
