@@ -3,7 +3,9 @@
 	MaxVehicleLimit = 500;
 	MaxDynamicDebris = 10;
 	DynamicVehicleDamageLow = 0;
-	DynamicVehicleDamageHigh = 40;										
+	DynamicVehicleDamageHigh = 40;		
+	
+	_debugMonitor = true;
 	
 	// DayZ Config											
 	dayz_paraSpawn = false;
