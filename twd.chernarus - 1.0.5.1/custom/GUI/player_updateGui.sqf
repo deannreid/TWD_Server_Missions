@@ -143,7 +143,7 @@ switch true do {
 	default { _uiNumber = 0 };
 };
 
-_bloodText = "custom\GUI\status_blood_border";
+_bloodText = "\z\addons\dayz_code\gui\status\status_blood_border";
 
 if (r_player_infected) then {
 	switch true do {
@@ -153,7 +153,7 @@ if (r_player_infected) then {
 	};
 } else {
 	//if (r_player_Sepsis select 0) then {
-	//	_bloodText = "\z\addons\dayz_code\custom\GUI\status\status_blood_border_sick_ca.paa"
+	//	_bloodText = "\z\addons\dayz_code\gui\custom\GUI\status\status_blood_border_sick_ca.paa"
 	//} else {
 		switch true do {
 			case (_uiNumber < 0): { _bloodText = _bloodText + "_down" + str(_uiNumber * -1) + "_ca.paa" };
@@ -166,16 +166,16 @@ if (r_player_infected) then {
 _ctrlBloodOuter ctrlSetText _bloodText;
 
 if (_bloodLvl <= 0) then {
-	_blood = "custom\GUI\status_blood_inside_1_ca.paa";
+	_blood = "\z\addons\dayz_code\gui\status\status_blood_inside_1_ca.paa";
 } else {
-	_blood = "custom\GUI\status_blood_inside_" + str(_bloodLvl) + "_ca.paa";
+	_blood = "\z\addons\dayz_code\gui\status\status_blood_inside_" + str(_bloodLvl) + "_ca.paa";
 };
 
 if (_thirstLvl < 0) then { _thirstLvl = 0 };
-_thirst = "custom\GUI\status_thirst_inside_" + str(_thirstLvl) + "_ca.paa";
+_thirst = "\z\addons\dayz_code\gui\status\status_thirst_inside_" + str(_thirstLvl) + "_ca.paa";
 
 if (_foodLvl < 0) then { _foodLvl = 0 };
-_food = "custom\GUI\status_food_inside_" + str(_foodLvl) + "_ca.paa";
+_food = "\z\addons\dayz_code\gui\status\status_food_inside_" + str(_foodLvl) + "_ca.paa";
 
 switch true do {
 	case (_tempLvl >= 36): { _tempImg = 4 };
@@ -185,7 +185,7 @@ switch true do {
 	default { _tempImg = 0 };
 };
 
-_temp = "custom\GUI\status_temp_" + str(_tempImg) + "_ca.paa";
+_temp = "\z\addons\dayz_code\gui\status\status_temp_" + str(_tempImg) + "_ca.paa";
 
 _ctrlBlood ctrlSetText _blood;
 _ctrlThirst ctrlSetText _thirst;

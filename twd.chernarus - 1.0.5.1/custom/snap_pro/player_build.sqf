@@ -2,9 +2,12 @@
 	DayZ Base Building
 	Made for DayZ Epoch please ask permission to use/edit/distrubute email vbawol@veteranbastards.com.
 */
-private ["_helperColor","_objectHelper","_objectHelperDir","_objectHelperPos","_canDo", "_pos", "_cnt",
+private ["_nearestCity","_helperColor","_objectHelper","_objectHelperDir","_objectHelperPos","_canDo", "_pos", "_cnt",
 "_location","_dir","_classname","_item","_hasrequireditem","_missing","_hastoolweapon","_cancel","_reason","_started","_finished","_animState","_isMedic","_dis","_sfx","_hasbuilditem","_tmpbuilt","_onLadder","_isWater","_require","_text","_offset","_IsNearPlot","_isOk","_location1","_location2","_counter","_limit","_proceed","_num_removed","_position","_object","_canBuildOnPlot","_friendlies","_nearestPole","_ownerID","_findNearestPoles","_findNearestPole","_distance","_classnametmp","_ghost","_isPole","_needText","_lockable","_zheightchanged","_rotate","_combination_1","_combination_2","_combination_3","_combination_4","_combination","_combination_1_Display","_combinationDisplay","_zheightdirection","_abort","_isNear","_need","_needNear","_vehicle","_inVehicle","_requireplot","_objHDiff","_isLandFireDZ","_isTankTrap"];
 
+
+_nearestCity = nearestLocations [getPos player, ["NameCityCapital","NameCity","NameVillage"],500];
+ 
 if(DZE_ActionInProgress) exitWith { cutText [(localize "str_epoch_player_40") , "PLAIN DOWN"]; };
 DZE_ActionInProgress = true;
 
@@ -69,7 +72,9 @@ if (_isWater) exitWith {DZE_ActionInProgress = false; cutText [localize "str_pla
 if (_inVehicle) exitWith {DZE_ActionInProgress = false; cutText [(localize "str_epoch_player_42"), "PLAIN DOWN"];};
 if (_onLadder) exitWith {DZE_ActionInProgress = false; cutText [localize "str_player_21", "PLAIN DOWN"];};
 if (player getVariable["combattimeout", 0] >= time) exitWith {DZE_ActionInProgress = false; cutText [(localize "str_epoch_player_43"), "PLAIN DOWN"];};
-
+// No building in Cities or Towns
+if (count _nearestCity > 0) exitWith { DZE_ActionInProgress = false; systemChat ("You cannot build here!");};
+ 
 _item =	_this;
 
 // Need Near Requirements

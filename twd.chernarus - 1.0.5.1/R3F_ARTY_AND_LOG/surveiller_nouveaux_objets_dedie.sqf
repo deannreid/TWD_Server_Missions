@@ -10,8 +10,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "R3F_ARTY_disable_enable.sqf"
-
 // A l'heure actuelle ce fil d'exécution n'est utile que si l'artillerie est activée
 #ifdef R3F_ARTY_enable
 

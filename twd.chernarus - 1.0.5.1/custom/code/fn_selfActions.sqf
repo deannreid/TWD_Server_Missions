@@ -114,39 +114,6 @@ if (_inVehicle && (_vehicle isKindOf "MV22")) then {
    };
 };
 
-
-
-
-
-if (_inVehicle && (_vehicle isKindOf "AH1Z")) then {
-   if (isEngineOn _vehicle) then {[_vehicle,0] call ah1z_fold;};
-   if (ah1z_fold < 0) then {
-     theah1z = _vehicle;
-     if !(isEngineOn theah1z) then {
-       ah1z_fold = theah1z addAction ["Fold","custom\anim\ah1z\ah1z_fold.sqf","",5,false,true];
-       ah1z_unfold = theah1z addAction ["UnFold","custom\anim\ah1z\ah1z_unfold.sqf","",5,false,true];
-     };
-   };
-   if (isEngineOn theah1z) then {
-     theah1z removeAction ah1z_fold;
-     ah1z_fold = -1;
-     theah1z removeAction ah1z_unfold;
-     ah1z_unfold = -1;
-   };
-} else {
-    if (!isNil "theah1z") then {
-       theah1z removeAction ah1z_fold;
-       ah1z_fold = -1;
-       theah1z removeAction ah1z_unfold;
-       ah1z_unfold = -1;
-   };
-};
-
-
-
-
-
-
 if (_inVehicle && (_vehicle isKindOf "ArmoredSUV_Base_PMC")) then {
    if ((_vehicle animationPhase "HideGun_01") == 1) then {
      _unit = _vehicle turretUnit [0];
@@ -918,7 +885,7 @@ _menu1 = dayz_myCursorTarget addAction [localize "STR_EPOCH_PLAYER_SALVAGEV", "c
 				_humanity_logic = (_humanity > -5000);
 			};
 			if((_traderMenu select 2) == "hero") then {
-				_humanity_logic = (_humanity < 5000);
+				_humanity_logic = (_humanity < 7500);
 			};
 			if(_humanity_logic) then {
 				_cancel = player addAction [format[localize "STR_EPOCH_ACTIONS_HUMANITY",_low_high], "\z\addons\dayz_code\actions\trade_cancel.sqf",["na"], 0, true, false, "",""];
@@ -1134,64 +1101,4 @@ if (_dogHandle > 0) then {
 	player removeAction s_player_calldog;
 	s_player_calldog = 		-1;
 };
-
-   _isaCar = _cursorTarget isKindOf "Car";
-    if (("ItemJerrycan" in _magazinesPlayer) && ("ItemSodaRbull" in _magazinesPlayer)) then {
-       _hasNOSitems = true;
-    } else {
-       _hasNOSitems = false;
-    };
-    _isNOSinstalled = _cursorTarget getVariable ["nitroinstalled", 0];
-    if (_isaCar and !locked _cursorTarget and _hasNOSitems and _isNOSinstalled == 0) then {
-        if (s_player_nitroInstall < 0) then {
-            s_player_nitroInstall = player addAction [("<t color=""#39C1F3"">" + ("Install NOS boost") +"</t>"), "custom\nos\nitroinstall.sqf",_cursorTarget, 999, true, false, "",""];
-        };
-    } else {
-        player removeAction s_player_nitroInstall;
-        s_player_nitroInstall = -1;
-    };
-	
-	
- //Allow owner to change Door code
-
-if((_isDestructable || _cursorTarget isKindOf "Land_DZE_WoodDoorLocked_Base" || _cursorTarget isKindOf "CinderWallDoorLocked_DZ_Base") && (DZE_Lock_Door == _ownerID)) then {
-		if ((s_player_lastTarget select 1) != _cursorTarget) then {
-			if (s_player_ckc > 0) then {	
-				player removeAction s_player_ckc;
-				s_player_ckc = -1;
-			};
-		};
-
-		if (s_player_ckc < 0) then {
-			s_player_lastTarget set [1,_cursorTarget];	
-		        s_player_ckc = player addaction["Set new Code", "custom\keychange\ckc_startUI.sqf","",0,false,true,"", ""];
-		};
-	} else {
-		player removeAction s_player_ckc;
-		s_player_ckc = -1;
-	};
-	
-//Allow owner to change vault code
-
-_unlockedVault = ["VaultStorage"];
-
-	if(typeOf(cursortarget) in _unlockedVault && _ownerID != "0" && (player distance _cursorTarget < 2)) then {
-	
-	if (s_player_Safe_ckc < 0) then {
-	if ((typeOf(cursortarget) == "VaultStorage") &&(_ownerID == dayz_combination || _ownerID == dayz_playerUID)  ) then {
-     
-				
-			s_player_Safe_ckc = player addaction["Set new Code", "custom\keychange\ckc_startSafeUI.sqf","",1,false,true,"", ""];
-		};
-		};
-	} else {
-		player removeAction s_player_Safe_ckc;
-		s_player_Safe_ckc = -1;
-
-	};
-	
-	    player removeAction s_player_ckc;
-		s_player_ckc = -1;
-        player removeAction s_player_Safe_ckc;
-        s_player_Safe_ckc = -1;
  

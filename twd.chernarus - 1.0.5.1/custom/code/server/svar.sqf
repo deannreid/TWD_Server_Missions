@@ -42,7 +42,7 @@
 	ZShieldClean = 0;
 	TypeOfZShield = "CDF_WarfareBUAVterminal";
 	AllZShieldTypes = ["CDF_WarfareBUAVterminal"]; 
-    if (isNil 'twd_debug') then {twd_debug = true;};
+
 	
 //SERVER ONLY VARIABLES
 // Chernarus
@@ -60,11 +60,11 @@ if (dayZ_instance == 11) then
 	DZE_PlayerZed   = false;
 	//DZE_vehicleAmmo	= 1;
 	DZE_requireplot = 0;
+	DZE_GodModeBase = true;
 	DZE_PlotPole = [150,0];
 	DZE_R3F_WEIGHT = false;
 	DZE_StaticConstructionCount = 1;
 	execVM "custom\markers\init.sqf";
-	execVM "custom\code\pvp.sqf";
 };
 
 //Panthera
