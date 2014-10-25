@@ -3,9 +3,7 @@
 	MaxVehicleLimit = 500;
 	MaxDynamicDebris = 10;
 	DynamicVehicleDamageLow = 0;
-	DynamicVehicleDamageHigh = 40;		
-	
-	_debugMonitor = true;
+	DynamicVehicleDamageHigh = 40;										
 	
 	// DayZ Config											
 	dayz_paraSpawn = false;
@@ -37,6 +35,14 @@
 	DZE_snapBuilding = true;
 	DZE_teleport = [500000,0,0,500000,500000];
 	
+	//TWD Vars
+	EnableZShield = 1;
+	MaxZShields	= 1; 
+	ZShieldRadius = 50;
+	ZShieldClean = 0;
+	TypeOfZShield = "CDF_WarfareBUAVterminal";
+	AllZShieldTypes = ["CDF_WarfareBUAVterminal"]; 
+
 	
 //SERVER ONLY VARIABLES
 // Chernarus
@@ -58,6 +64,7 @@ if (dayZ_instance == 11) then
 	DZE_PlotPole = [150,0];
 	DZE_R3F_WEIGHT = false;
 	DZE_StaticConstructionCount = 1;
+	execVM "custom\markers\init.sqf";
 };
 
 //Panthera
