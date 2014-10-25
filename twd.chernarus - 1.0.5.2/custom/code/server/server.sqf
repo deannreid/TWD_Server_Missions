@@ -37,3 +37,5 @@ if (dayZ_instance == 15) then
 			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_15.namalsk\mission.sqf";
 		};
 };
+
+execVM "custom\overlay\skins.sqf";
