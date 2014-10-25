@@ -1,1 +1,0 @@
-[] execVM "custom\toolmenu\player\playerTools.sqf";
