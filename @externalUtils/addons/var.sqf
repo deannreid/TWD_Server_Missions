@@ -1,3 +1,4 @@
+private ["_hClient","_infiStarAdminMenu","_vlAntiHack","dzmsAC","_dzaiAC","_buildEnable"];
 _hClient = false; //<== Do not enable.  
 _infiStarAdminMenu = true; 
 _vlAntiHack = true;
