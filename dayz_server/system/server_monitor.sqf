@@ -349,10 +349,6 @@ if (isServer && isNil "sm_done") then {
 		
 		endLoadingScreen;
 	};
-
-	[] ExecVM "\@externalutils\dzms\DZMSInit.sqf";
-	[] call compile preprocessFileLineNumbers "\@externalutils\dzai\init\dzai_initserver.sqf";
-	
 	allowConnection = true;	
 	sm_done = true;
 	publicVariable "sm_done";

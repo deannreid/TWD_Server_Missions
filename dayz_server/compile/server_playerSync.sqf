@@ -116,6 +116,7 @@ if (_characterID != "0") then {
 		_killsH = 		["humanKills",_character] call server_getDiff;
 		_headShots = 	["headShots",_character] call server_getDiff;
 		_humanity = 	["humanity",_character] call server_getDiff2;
+		_cashMoney = 	["cashMoney",_character] call server_getDiff2;
 		//_humanity = 	_character getVariable ["humanity",0];
 		_character addScore _kills;		
 		/*
@@ -187,11 +188,11 @@ if (_characterID != "0") then {
 			if (alive _character) then {
 			    //Wait for HIVE to be free
 			    //Send request
-			    _key = format["CHILD:201:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11:%12:%13:%14:%15:%16:",_characterID,_playerPos,_playerGear,_playerBackp,_medical,false,false,_kills,_headShots,_distanceFoot,_timeSince,_currentState,_killsH,_killsB,_currentModel,_humanity];
+			    _key = format["CHILD:201:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11:%12:%13:%14:%15:%16:%17:",_characterID,_playerPos,_playerGear,_playerBackp,_medical,false,false,_kills,_headShots,_distanceFoot,_timeSince,_currentState,_killsH,_killsB,_currentModel,_humanity,_cashMoney];
 				// Prevent diag_log limit
                             if ( count(toArray(_key)) > 1020 ) then {
                                 diag_log ("Prevent diag_log limit...");
-                                _key = format["CHILD:201:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11:%12:%13:%14:%15:%16:",_characterID,_playerPos,[],[],_medical,false,false,_kills,_headShots,_distanceFoot,_timeSince,_currentState,_killsH,_killsB,_currentModel,_humanity];                                                 
+                                _key = format["CHILD:201:%1:%2:%3:%4:%5:%6:%7:%8:%9:%10:%11:%12:%13:%14:%15:%16:%17:",_characterID,_playerPos,[],[],_medical,false,false,_kills,_headShots,_distanceFoot,_timeSince,_currentState,_killsH,_killsB,_currentModel,_humanity,_cashMoney];                                                 
                                 if ( count(_playerGear) > 1 ) then {
                                     diag_log format["CHILD:21:%1:0:%2:", _characterID, _playerGear select 0]; // weapons
                                     diag_log format["CHILD:21:%1:1:%2:", _characterID, _playerGear select 1]; // magazines
@@ -214,11 +215,10 @@ if (_characterID != "0") then {
 		};
 		
 		// Force gear updates for nearby vehicles/tents
-		//_pos = _this select 0;
+		_pos = _this select 0;
 		{
 			[_x, "gear"] call server_updateObject;
-		//} count nearestObjects [_pos, dayz_updateObjects, 10];
-		} count (nearestObjects [_charPos, dayz_updateObjects, 10]);
+		} count nearestObjects [_pos, dayz_updateObjects, 10];
 		//[_charPos] call server_updateNearbyObjects;
 
 		//Reset timer

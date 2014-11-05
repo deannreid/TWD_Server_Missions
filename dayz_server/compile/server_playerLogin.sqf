@@ -69,7 +69,7 @@ while {_doLoop < 5} do {
             _primary = call compile _res;
         };
         _res = nil;
-    	onPlayerConnected "[_id, _name] execVM ""\z\addons\dayz_server\compile\server_setTime.sqf""";
+    
         MyPlayerCounter = MyPlayerCounter + 1;
         diag_log format["CHILD:11:%1:", MyPlayerCounter];
 
@@ -94,12 +94,9 @@ if ((_primary select 0) == "ERROR") exitWith {
 };
 
 //Process request
-_newPlayer =    _primary select 1;
-_isNew = true;
+_newPlayer = 	_primary select 1;
 _isNew = 		count _primary < 7; //_result select 1;
 _charID = 		_primary select 2;
-
-
 
 #ifdef DZE_SERVER_DEBUG
 diag_log ("LOGIN RESULT: " + str(_primary));
@@ -121,15 +118,13 @@ if (!_isNew) then {
 	};
 	
 } else {
-	/*if (DZE_PlayerZed) then {
+	if (DZE_PlayerZed) then {
 		_isInfected = _primary select 3;
 	} else {
 		_isInfected = 0;
-	};*/
-    _isInfected = 0;
-    _model =            _primary select 7;
-    _hiveVer =              _primary select 8;
-	
+	};
+	_model =		_primary select 4;
+	_hiveVer =		_primary select 5;
 	
 	if (isNil "_model") then {
 		_model = "Survivor2_DZ";

@@ -13,9 +13,9 @@ if (isNil "_retrader") then {
     _retrader = [];
 
     _key = format["\cache\traders\%1.sqf", _traderid];
-  //  diag_log ("LOAD TRADER: "+_key);
+    diag_log ("LOAD TRADER: "+_key);
     _res = preprocessFile _key;
-   // diag_log ("TRADER CACHE: "+_res);
+    diag_log ("TRADER CACHE: "+_res);
 
     if ((_res == "") or (isNil "_res")) then {
         diag_log ("TRADER NOT FOUND");
@@ -23,7 +23,7 @@ if (isNil "_retrader") then {
         call compile format["ServerTcache_%1 = [];", _traderid];
         
         _myArr = call compile _res;
-     //   diag_log format["Count: %1", str(count _myArr)];
+        diag_log format["Count: %1", str(count _myArr)];
             
         {
             call compile format["ServerTcache_%1 set [count ServerTcache_%1,%2]", _traderid, _x];

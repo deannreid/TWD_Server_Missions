@@ -1,5 +1,17 @@
 disableSerialization;
 
+//----------------------------------- Configs Start ---------------------------------//
+CurrencyName = "Boobs"; // name of your currency
+Bank_Object = ["Laptop_EP1"]; // Object to get option to bank
+LimitOnBank = false; // false = no limits, true = banks are limited on the value below
+MaxBankMoney = 500000; // limit on bank for normal players
+DonatorBank = [""]; // Bigger banks, Players ID
+MaxDonatorBankMoney = 1000000; // Bank size for donators
+InstantTrading = true; // (True = No Animation / False = Animation)
+AllBankersOnServer = [];
+SmeltingGoldBarsToCoinsRate = 1000; // How many gold coins are in a gold bar
+//----------------------------------- Configs End -----------------------------------//
+
 //Model Variables
 Bandit1_DZ = 	"Bandit1_DZ";
 Bandit2_DZ = 	"Bandit2_DZ";
@@ -251,6 +263,9 @@ dayz_resetSelfActions = {
 	s_player_heli_lift = -1;
 	s_player_heli_detach = -1;
 	s_player_lockUnlock_crtl = -1;
+		s_player_refuelTop_crtl = -1;
+	s_player_refuelSub_crtl = -1;
+	s_player_refuelActionsSub = [];
 	mv22_fold = -1;
     mv22_unfold = -1;
     mv22_open = -1;
@@ -788,4 +803,31 @@ if(!isDedicated) then {
 	DZE_InRadiationZone = false;
 
 	DZE_SaveTime = 30;
+	
+		// Array of fixed and mobile (fuel truck) fuel sources.
+	DZE_RB_AllFuelSources = ["Land_Ind_TankSmall","Land_fuel_tank_big","Land_fuel_tank_stairs","Land_fuel_tank_stairs_ep1","Land_wagon_tanker","Land_fuelstation","Land_fuelstation_army","land_fuelstation_w","Land_benzina_schnell","KamazRefuel_DZ","UralRefuel_TK_EP1_DZ","MtvrRefuel_DES_EP1_DZ","V3S_Refuel_TK_GUE_EP1_DZ","MtvrRefuel_DZ","KamazRefuel_DZE","UralRefuel_TK_EP1_DZE","MtvrRefuel_DES_EP1_DZE","V3S_Refuel_TK_GUE_EP1_DZE","MtvrRefuel_DZE"];
+
+	// Realistic Vehicle capacity array [[classname],[capacity]]
+	DZE_RB_FuelCapArray = [["AH6X_DZ","MH6J_DZ","AN2_DZ","RBX","RHIB","BAF_Merlin_DZE","C130J_US_EP1","CH_47F_EP1_DZ","CH_47F_EP1_DZE","CH53_DZ","CH53_DZE","Mi17_DZ","Mi17_DZE","Mi17_Civilian_DZ","MV22_DZ","UH1Y_DZ","UH1Y_DZE","MH60S_DZ","UH60M_base_EP1","UH60M_EP1_DZ","MH60S_DZE","UH60M_EP1_DZE"],[242,242,757,23,250,3222,34095,4043,4043,3849,3849,1870,1870,1870,6513,1333,1333,1360,1360,1360,1360,1360]];
+
+	// Vehicles that can be flood fill refuelled by a fuel truck)
+	DZE_RB_floodfill = ["BAF_Merlin_DZE","C130J_US_EP1","CH_47F_EP1_DZ","CH_47F_EP1_DZE","CH53_DZ","CH53_DZE","Mi17_DZ","Mi17_DZE","Mi17_Civilian_DZ","MV22_DZ","UH1Y_DZ","UH1Y_DZE","MH60S_DZ","UH60M_base_EP1","UH60M_EP1_DZ","MH60S_DZE","UH60M_EP1_DZE"];
+
+	// Refuelling range
+	DZE_RefuelRange = 90;
+	
+	// Fuel truck pump speed
+	DZE_RB_pumpspeed_truck = 40;
+
+	// Fixed fuel pump speed 
+	DZE_RB_pumpspeed_fixed = 50;
+	
+	// Flood fill fuel pump speed 
+	DZE_RB_pumpspeed_flood = 400;	
+	
+	// Variable to show if fuel trucks can be used as fuel pump fuel sources.
+	DZE_RB_PumpSourceTruck =	false;
+	DZE_RB_AllowFloodRefuel =	True;
+	DZE_RB_RealisticFuelCapacity = 	True;
+	RefuelCursorTarget = nil;
 };

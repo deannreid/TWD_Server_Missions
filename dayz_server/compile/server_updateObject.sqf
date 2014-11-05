@@ -26,10 +26,11 @@ if ((typeName _objectID != "string") || (typeName _uid != "string")) then
     _uid = "0";
 };
 
-if (_object getVariable "Sarge" == 1) exitWith {};
+// Epoch Admin Tools
+if (_object getVariable "MalSar" == 1) exitWith {};
 
 if (!_parachuteWest && !(locked _object)) then {
-	if (_objectID == "0" && _uid == "0" && (vehicle _object getVariable ["Sarge",0] != 1)) then
+	if (_objectID == "0" && _uid == "0") then
 	{
 		_object_position = getPosATL _object;
     	_isNotOk = true;

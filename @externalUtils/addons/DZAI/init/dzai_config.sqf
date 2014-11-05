@@ -26,9 +26,9 @@ DZAI_verifyTables = true;
 //If running DayZ Mod ("vanilla DayZ") or DayZ Overwatch, it is highly recommended to enable this option, as many added buildings are handled by the CfgTownGenerator. Not used with Epoch.							
 DZAI_objPatch = true;
 
-//Minimum seconds to pass until each dead AI body or destroyed vehicle can be cleaned up by DZAI's task scheduler. DZAI will not clean up a body/vehicle if there is a player close by (Default: 600).	
+//Minimum seconds to pass until each dead AI body or destroyed vehicle can be cleaned up by DZAI's task scheduler. DZAI will not clean up a body/vehicle if there is a player close by (Default: 900).	
 //Note: Other cleanup scripts might interfere by cleaning up dead AI bodies/vehicles!									
-DZAI_cleanupDelay = 600;									
+DZAI_cleanupDelay = 900;									
 
 
 /*
@@ -70,22 +70,22 @@ DZAI_lowBloodLevel = 5000;
 
 //Enable or disable zombie attraction to AI weapon sounds. No effect if DZAI_zombieEnemy is set to false. Enabling this option may impact server performance as a script is run for each AI bullet fired.
 //Note: AI cannot be attacked or damaged by zombies.(Default: false)		
-DZAI_weaponNoise = true;
+DZAI_weaponNoise = false;
 
 //If enabled, AI group will attempt to track down player responsible for killing a group member. Players with radios will be given text warnings if they are being pursued (Default: true)
 DZAI_findKiller = true;	
 
 //If normal probability check for spawning NVGs fails, then give AI temporary NVGs only if they are spawned with weapongrade 1 or higher (applies only during nighttime hours). Temporary NVGs are unlootable and will be removed at death (Default: false).									
-DZAI_tempNVGs = true;	
+DZAI_tempNVGs = false;	
 
 //Amount of humanity to reward player for killing an AI unit (Default: 0)									
-DZAI_humanityGain = 25;										
+DZAI_humanityGain = 0;										
 
 //If enabled, players with radios will be given text warnings if they are being pursued by AI groups. (Default: true)
 DZAI_radioMsgs = true;
 
 //If enabled, last surviving unit of a group will be granted slightly boosted skills. No effect if unit is spawned alone (Default: false)
-DZAI_lastManStanding = true;
+DZAI_lastManStanding = false;
 
 
 /*DZAI client-side addon settings. 
@@ -93,13 +93,13 @@ DZAI_lastManStanding = true;
 --------------------------------------------------------------------------------------------------------------------*/	
 
 //Enable to use client-side radio addon for radio messages instead of remote execution method. (Default: false)
-DZAI_clientRadio = true;
+DZAI_clientRadio = false;
 
-//Enable or disable AI hostility to zombies. If enabled, AI will attack zombies. (Default: false)
-DZAI_zombieEnemy = true;	
+//Enable or disable AI hostility to zombies. If enabled, AI units spawned by DZAI will attack nearby zombies. (Default: false)
+DZAI_zombieEnemy = false;	
 
-//Maximum distance for AI group leader to detect zombies. Increasing range beyond default may impact server performance. (Default: 150)							
-DZAI_zDetectRange = 170;									
+//Maximum distance (in meters) for AI group leader to detect zombies. Increasing range beyond default may negatively impact server performance. (Default: 150)							
+DZAI_zDetectRange = 150;									
 
 
 /*	Static AI Spawning Settings
@@ -109,8 +109,8 @@ DZAI_zDetectRange = 170;
 DZAI_staticAI = true;
 
 //Set minimum and maximum wait time in seconds to respawn an AI group after all units have been killed. Applies to both static AI and custom spawned AI (Default: Min 300, Max 600).									
-DZAI_respawnTimeMin = 200;
-DZAI_respawnTimeMax = 500;
+DZAI_respawnTimeMin = 300;
+DZAI_respawnTimeMax = 600;
 
 //Time to allow spawned AI units to exist in seconds before being despawned when no players are present in a trigger area. Applies to both static AI and custom spawned AI (Default: 120)										
 DZAI_despawnWait = 120;										
@@ -129,7 +129,8 @@ DZAI_respawnLimit3 = -1; //Respawn limit for very high level AI in places with h
 DZAI_dynAISpawns = true;
 
 //Time (seconds) required to reach maximum spawn probability per player, after which the probability is reset to 0%. Lower number = More frequent spawns, Higher Number = Less frequent. (Recommended range: 1200-2700, Default: 1800)
-DZAI_maxSpawnTime = 1000;
+DZAI_maxSpawnTime = 1800;
+
 //Time (seconds) to allow each player to retain maximum spawn probability. (Default: 1800).
 DZAI_keepMaxSpawnTime = 1800;
 
@@ -147,7 +148,7 @@ DZAI_dynAreaBlacklist = [];
 DZAI_dynDespawnWait = 120;
 
 //Enable or disable dynamic spawn-free zones of 600m radius around player spawn areas. (Default: false)
-DZAI_freshSpawnSafeArea = true;
+DZAI_freshSpawnSafeArea = false;
 
 
 /*	AI Air vehicle patrol settings. These AI vehicles will randomly travel between different cities and towns.
@@ -202,6 +203,14 @@ DZAI_vehGunnerUnits = 2;
 
 //Maximum number of cargo units per land vehicle. Limited by actual number of available cargo positions. (Default: 3)
 DZAI_vehCargoUnits = 3;
+
+
+/*	AI Vehicle (Air & Land) Settings
+--------------------------------------------------------------------------------------------------------------------*/
+
+//Array of area blacklist markers. Areas covered by marker will not be used as waypoints for vehicle patrols. (Example: ["BlacklistArea1","BlacklistArea2","BlacklistArea3"])
+//Note: Vehicles may still pass through these areas but will not make stops unless enemies are encountered.
+DZAI_waypointBlacklist = [];
 
 
 /*	AI weapon selection settings

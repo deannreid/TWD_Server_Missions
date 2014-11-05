@@ -1,24 +1,4 @@
-/*TWD Edits*/
-#include "twd\addons\var.sqf";
-private["_hclient","_infiStarAC","_dzmsAC","dzaiAC"]
-if (!isNull _hclient && _infiStarAdminMenu && _vlAntiHack && _dzmsAC && _dzaiAC) then {
-diag_log "1 OR MORE VARIABLES NOT FOUND AT LOCATION @TWD\var.sqf";
-};
-
-/* <=== DEPRICATED 
-if (_infiStarAC == true) then {[] spawn {[] execVM "\@externalutils\isantihack\AH.sqf";}; diag_log "infiSTAR Activated";}else{diag_log"infiSTAR deactivated";};
-if (_vlAntihack == true) then {[] spawn {[] execVM "\@externalutils\vlantihack\AH.sqf";}; diag_log "VL Antihack Activated";}else{diag_log"VLAH deactivated";};
-if (_hclient == true) then {execVM "\@externalutils\headlessclient\init.sqf"; diag_log "Headless Client Activated";}else{diag_log"Headless Client deactivated";};
-if (_dzmsAC == true) then {[] ExecVM "\@externalutils\dzms\DZMSInit.sqf"; diag_log "DayZ Mission System Activated";}else{diag_log"DayZ Mission System deactivated";};
-if (_dzaiAC == true) then {call compile preprocessFileLineNumbers "\@externalutils\dzai\init\dzai_initserver.sqf"; diag_log "DayZ AI Activated";}else{diag_log"DayZ AI deactivated";};
-
-if (_infiStarAC == true) then {[] spawn {[] execVM "@TWD\infiSTAR\AH.sqf";}; diag_log "infiSTAR Activated";}else{diag_log"infiSTAR deactivated";};
-if (_hclient == true) then {execVM "@TWD\HeadlessClient\init.sqf"; diag_log "Headless Client Activated";}else{diag_log"Headless Client deactivated";};
-if (_dzmsAC == true) then {[] ExecVM "@TWD\DZMS\DZMSInit.sqf"; diag_log "DayZ Mission System Activated";}else{diag_log"DayZ Mission System deactivated";};
-if (_dzaiAC == true) then {call compile preprocessFileLineNumbers "@TWD\DZAI\init\dzai_initserver.sqf"; diag_log "DayZ AI Activated";}else{diag_log"DayZ AI deactivated";};
-*/
-/*TWD Edits End*/
-
+#include "\twd\addons\var.sqf";
 waituntil {!isnil "bis_fnc_init"};
 
 BIS_MPF_remoteExecutionServer = {
@@ -53,6 +33,7 @@ server_maintainArea = 			compile preprocessFileLineNumbers "\z\addons\dayz_serve
 
 /* PVS/PVC - Skaronator */
 server_sendToClient =			compile preprocessFileLineNumbers "\z\addons\dayz_server\compile\server_sendToClient.sqf";
+#include "\z\addons\dayz_server\bankzones\bankinit.sqf"
 
 //onPlayerConnected 			{[_uid,_name] call server_onPlayerConnect;};
 onPlayerDisconnected 		{[_uid,_name] call server_onPlayerDisconnect;};
@@ -400,7 +381,6 @@ spawn_vehicles = {
 		};
 	};
 };
-
 
 spawn_ammosupply = {
 	private ["_position","_veh","_istoomany","_marker","_spawnveh","_WreckList"];
@@ -828,9 +808,10 @@ server_checkHackers = {
 	DZE_DYN_HackerCheck = true;
 	{
 	if (!((isNil "_x") || {(isNull _x)})) then {
+		// Epoch Admin Tools
 		//if(vehicle _x != _x && !(vehicle _x in PVDZE_serverObjectMonitor) && (isPlayer _x)  && !((typeOf vehicle _x) in DZE_safeVehicle)) then {
-		if (vehicle _x != _x && !(vehicle _x in PVDZE_serverObjectMonitor) && (isPlayer _x) && (vehicle _x getVariable ["Mission",0] != 1) && (vehicle _x getVariable ["Sarge",0] != 1) && !((typeOf vehicle _x) in DZE_safeVehicle)) then {		
-		diag_log ("CLEANUP: KILLING A HACKER " + (name _x) + " " + str(_x) + " IN " + (typeOf vehicle _x));
+		if(vehicle _x != _x && !(vehicle _x in PVDZE_serverObjectMonitor) && (isPlayer _x)  && !((typeOf vehicle _x) in DZE_safeVehicle) && (vehicle _x getVariable ["MalSar",0] !=1)) then {
+			diag_log ("CLEANUP: KILLING A HACKER " + (name _x) + " " + str(_x) + " IN " + (typeOf vehicle _x));
 			(vehicle _x) setDamage 1;
 			_x setDamage 1;
 			sleep 0.25;
@@ -945,8 +926,3 @@ server_logUnlockLockEvent = {
 		diag_log format["SAFE %5: ID:%1 UID:%2 BY %3(%4)", _objectID, _objectUID, (name _player), (getPlayerUID _player), _statusText];
 	};
 };
-
-ExecVM "\@externalutils\buildings\init.sqf";
-
-[] execVM "@TWD\Buildings\init.sqf";
-

@@ -4,8 +4,6 @@ scriptName "Functions\misc\fn_selfActions.sqf";
 	- Function
 	- [] call fnc_usec_selfActions;
 ************************************************************/
-//private ["_isWreckBuilding","_temp_keys","_magazinesPlayer","_isPZombie","_vehicle","_inVehicle","_hasFuelE","_hasRawMeat","_hasKnife","_hasToolbox","_onLadder","_nearLight","_canPickLight","_canDo","_text","_isHarvested","_isVehicle","_isVehicletype","_isMan","_traderType","_ownerID","_isAnimal","_isDog","_isZombie","_isDestructable","_isTent","_isFuel","_isAlive","_Unlock","_lock","_buy","_dogHandle","_lieDown","_warn","_hastinitem","_allowedDistance","_menu","_menu1","_humanity_logic","_low_high","_cancel","_metals_trader","_traderMenu","_isWreck","_isRemovable","_isDisallowRepair","_rawmeat","_humanity","_speed","_dog","_hasbottleitem","_isAir","_isShip","_playersNear","_findNearestGens","_findNearestGen","_IsNearRunningGen","_cursorTarget","_isnewstorage","_itemsPlayer","_ownerKeyId","_typeOfCursorTarget","_hasKey","_oldOwner","_combi","_key_colors","_player_deleteBuild","_player_flipveh","_player_lockUnlock_crtl","_player_butcher","_player_studybody","_player_cook","_player_boil","_hasFuelBarrelE","_hasHotwireKit","_player_SurrenderedGear","_isSurrendered","_isModular","_isModularDoor","_ownerKeyName","_temp_keys_names","_hasAttached","_allowTow","_liftHeli","_found","_posL","_posC","_height","_liftHelis","_attached"];
-
   private ["_isWreckBuilding","_temp_keys","_magazinesPlayer","_isPZombie","_vehicle","_inVehicle","_hasFuelE","_hasRawMeat","_hasKnife","_hasToolbox","_onLadder","_nearLight","_canPickLight","_canDo","_text","_isHarvested","_isVehicle","_isVehicletype","_isMan","_traderType","_ownerID","_isAnimal","_isDog","_isZombie","_isDestructable","_isTent","_isFuel","_isAlive","_Unlock","_lock","_buy","_dogHandle","_lieDown","_warn","_hastinitem","_allowedDistance","_menu","_menu1","_humanity_logic","_low_high","_cancel","_traderMenu","_isWreck","_isRemovable","_isDisallowRepair","_rawmeat","_humanity","_speed","_dog","_hasbottleitem","_isAir","_isShip","_playersNear","_findNearestGens","_findNearestGen","_IsNearRunningGen","_cursorTarget","_isnewstorage","_itemsPlayer","_ownerKeyId","_typeOfCursorTarget","_hasKey","_oldOwner","_combi","_key_colors","_player_deleteBuild","_player_flipveh","_player_lockUnlock_crtl","_player_butcher","_player_studybody","_player_cook","_player_boil","_hasFuelBarrelE","_hasHotwireKit","_player_SurrenderedGear","_isSurrendered","_isModular","_isModularDoor","_ownerKeyName","_temp_keys_names","_hasAttached","_allowTow","_liftHeli","_found","_posL","_posC","_height","_liftHelis","_attached","_unit","_adminText","_lever","_bankrobbery","_hasNOSitems","_hasNOSinstalled","_isCopcar","_isaCar","_isNOSinstalled"];
 
 if (DZE_ActionInProgress) exitWith {}; // Do not allow if any script is running.
@@ -17,30 +15,6 @@ _inVehicle = (_vehicle != player);
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _canDo = (!r_drag_sqf && !r_player_unconscious && !_onLadder);
 
-//Nitro action
-    _hasNOSinstalled = _vehicle getVariable["nitroinstalled",0];
-    if (_inVehicle and _vehicle isKindOf "Car" and speed _vehicle >= 1) then {
-        if (_inVehicle and _hasNOSinstalled == 1) then {
-            if (isnil("NITRO_Cond")) then {NITRO_Cond = false;};
-            if (s_player_nitrobooston <0) then {
-                if (NITRO_Cond) then {
-                    s_player_nitrobooston = _vehicle addAction [("<t color=""#39C1F3"">" + ("Nitro Off") + "</t>"),"custom\nos\nitro.sqf", [_vehicle], 999, false,true,"","driver _target == _this"];
-                } else {
-                    s_player_nitrobooston = _vehicle addAction [("<t color=""#39C1F3"">" + ("Nitro On") + "</t>"),"custom\nos\nitro.sqf", [_vehicle], 999, false,true,"","driver _target == _this"];
-                };
-            };
-        } else {
-            _vehicle removeAction s_player_nitrobooston;
-            s_player_nitrobooston = -1;
-        };
-  } else {
-        _vehicle removeAction s_player_nitrobooston;
-        s_player_nitrobooston = -1;
-        if (_hasNOSinstalled == 1) then {
-            _vehicle setVariable ["nitroinstalled", 1, true];
-        };
-    };
- 
  
 _nearLight = 	nearestObject [player,"LitObject"];
 _canPickLight = false;
@@ -673,6 +647,24 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		s_player_unlockvault = -1;
 	};
 
+	if(_typeOfCursorTarget in DZE_UnLockedStorage and (player distance _cursorTarget < 3)) then {
+		if (s_bank_dialog < 0) then {
+				s_bank_dialog = player addAction ["Online Banking", "custom\bank\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];	
+		};
+	} else {
+     	player removeAction s_bank_dialog;
+		s_bank_dialog = -1;
+	};
+
+	if(_typeOfCursorTarget in Bank_Object and (player distance _cursorTarget < 3)) then {		
+		if (s_bank_dialog2 < 0) then {
+			s_bank_dialog2 = player addAction ["Bank ATM", "custom\bank\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
+		};			
+	} else {		
+		player removeAction s_bank_dialog2;
+		s_bank_dialog2 = -1;
+	};
+	
 	//Allow owner to pack vault
 	if(_typeOfCursorTarget in DZE_UnLockedStorage && _ownerID != "0" && (player distance _cursorTarget < 3)) then {
 
@@ -702,6 +694,63 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		player removeAction s_player_information;
 		s_player_information = -1;
 	};
+	
+	if (_isMan and _isAlive and !_isZombie and !_isAnimal and !(_traderType in serverTraders)) then {
+		if (s_givemoney_dialog < 0) then {
+			s_givemoney_dialog = player addAction [format["Give Money to %1", (name _cursorTarget)], "custom\bank\Gold_Coin_system\Give_Money\give_player_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
+		};
+	} else {
+	        player removeAction s_smelt_coins;
+				s_smelt_coins = -1;
+			player removeAction s_smelt_bars;
+				s_smelt_bars = -1;
+			player removeAction s_smelt_10bars;
+				s_smelt_10bars = -1;
+		player removeAction s_givemoney_dialog;
+		s_givemoney_dialog = -1;
+	};
+	
+	if (isNil "SmeltingInProgress") then {
+		SmeltingInProgress = false;
+	};
+
+	_player_money = player getVariable["cashMoney",0];
+	// Smelt gold coins
+	if (inflamed _cursorTarget and (_player_money > SmeltingGoldBarsToCoinsRate) and !SmeltingInProgress) then {
+		if (s_smelt_coins < 0) then {
+			if (_player_money > 10000) then {
+				s_smelt_coins = player addAction [format["Smelt %1 %2 into a 10oz Gold Bar", (SmeltingGoldBarsToCoinsRate * 10), CurrencyName], "gold\player_smeltcoins.sqf","ItemGoldBar10oz", 3, true, true, "", ""];
+			} else {
+				s_smelt_coins = player addAction [format["Smelt %1 %2 into a Gold Bar", SmeltingGoldBarsToCoinsRate, CurrencyName], "custom\bank\convert\player_smeltcoins.sqf","ItemGoldBar", 3, true, true, "", ""];
+			};
+		};
+	} else {
+		player removeAction s_smelt_coins;
+		s_smelt_coins = -1;
+	};
+
+	_hasGoldBars = "ItemGoldBar" in _magazinesPlayer;
+	// Smelt bars into coins
+	if (inflamed _cursorTarget and (_hasGoldBars) and !SmeltingInProgress) then {
+		if (s_smelt_bars < 0) then {
+			s_smelt_bars = player addAction [format["Smelt a Gold Bar into %1 %2", SmeltingGoldBarsToCoinsRate, CurrencyName], "custom\bank\convert\player_smeltbars.sqf","ItemGoldBar", 3, true, true, "", ""];
+		};
+	} else {
+		player removeAction s_smelt_bars;
+		s_smelt_bars = -1;
+	};
+	
+	_has10ozGoldBars = "ItemGoldBar10oz" in _magazinesPlayer;
+	// Smelt bars into coins
+	if (inflamed _cursorTarget and (_has10ozGoldBars) and !SmeltingInProgress) then {
+		if (s_smelt_10bars < 0) then {
+			s_smelt_10bars = player addAction [format["Smelt a 10oz Gold Bar into %1 %2", (SmeltingGoldBarsToCoinsRate * 10), CurrencyName], "custom\bank\convert\player_smeltbars.sqf","ItemGoldBar10oz", 3, true, true, "", ""];
+		};
+	} else {
+		player removeAction s_smelt_10bars;
+		s_smelt_10bars = -1;
+	}; 
+	
 	
 	//Fuel Pump
 	if(_typeOfCursorTarget in dayz_fuelpumparray) then {	
@@ -1069,7 +1118,9 @@ s_player_bankrob = -1;
 	s_player_fuelauto = -1;
 	player removeAction s_player_fuelauto2;
 	s_player_fuelauto2 = -1;
-};
+	
+
+	};
 
 
 
@@ -1102,3 +1153,14 @@ if (_dogHandle > 0) then {
 	s_player_calldog = 		-1;
 };
  
+ 
+_banker = _cursorTarget getVariable["BankerBot",0];
+
+if((_banker == 1) and (player distance _cursorTarget < 3)) then {		
+	if (s_bank_dialog3 < 0) then {
+		s_bank_dialog3 = player addAction ["Banker Menu", "custom\bank\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
+	};			
+} else {		
+	player removeAction s_bank_dialog3;
+	s_bank_dialog3 = -1;
+};

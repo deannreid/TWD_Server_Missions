@@ -88,11 +88,11 @@ switch true do
 {
     case (_humanity >= 5000)://hero 3
     {
-        _typeHumanity = "custom\GUI\status_humanity_inside_hero_1.paa";
+        _typeHumanity = "custom\GUI\status_humanity_hero_1.paa";
     };
     case (_humanity <= -5000)://bandit 1
     {
-        _typeHumanity = "custom\GUI\status_humanity_inside_bandit_1.paa";
+        _typeHumanity = "custom\GUI\status_humanity_bandit_1.paa";
     };
     default
     {

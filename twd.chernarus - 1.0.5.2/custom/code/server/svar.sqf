@@ -34,6 +34,8 @@
 	DZE_selfTransfuse = true;
 	DZE_snapBuilding = true;
 	DZE_teleport = [500000,0,0,500000,500000];
+	DZE_AntiWallLimit = 3;
+	DZE_AsReMix_PLAYER_HUD = false;	
 	
 	//TWD Vars
 	EnableZShield = 1;

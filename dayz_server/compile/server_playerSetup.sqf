@@ -5,6 +5,7 @@ private ["_characterID","_playerObj","_playerID","_dummy","_worldspace","_state"
 _characterID = _this select 0;
 _playerObj = _this select 1;
 _playerID = getPlayerUID _playerObj;
+_playerName = name _playerObj;
 
 if (isNull _playerObj) exitWith {
 	diag_log ("SETUP INIT FAILED: Exiting, player object null: " + str(_playerObj));
@@ -33,12 +34,17 @@ if ( _playerID != _dummy ) then {
 _worldspace = 	[];
 
 _state = 		[];
+//Soul start: SC Edit >>> initialize variables in main scope (helps avoiding scope issues within the file and avoids undeclared variable errors in rpt, aswell they server as default values if anything goes wrong)
+_cashMoney = 0;
+_bankMoney = 0;
+//Soul end: SC Edit
 
 //Do Connection Attempt
 _doLoop = 0;
 while {_doLoop < 5} do {
-    _key = format["CHILD:102:%1:",_characterID];
-    diag_log (_key);
+
+	_key = format["CHILD:102:%1:",_characterID];
+	diag_log (_key);
     _key = format["\cache\players\%1\%2-char.sqf", MyPlayerCounter, toLower(_playerID)];
     diag_log ("LOAD CHARACTER: "+_key);
     _res = preprocessFile _key;
@@ -50,11 +56,12 @@ while {_doLoop < 5} do {
         _res = preprocessFile _key;
         diag_log ("CHARACTER CACHE: "+_res);
     };
+
     if ((_res == "") or (isNil "_res")) then {
         _res = preprocessFile "\cache\players\default-char.sqf";
         diag_log ("CHARACTER DEFAULT CACHE: "+_res);
         if ((_res == "") or (isNil "_res")) then {
-            _primary = ["PASS",[],[0,0,0,0],[],[],2500,1];
+            _primary = ["PASS",[],[0,0,0,0],[],[],2500,1,0];
         } else {
             _primary = call compile _res;
         };
@@ -83,10 +90,17 @@ _stats =		_primary select 2;
 _state =		_primary select 3;
 _worldspace = 	_primary select 4;
 _humanity =		_primary select 5;
-_characterID =	_primary select 6;
-_lastinstance =	dayZ_instance;
+_lastinstance =	_primary select 6;
+//Soul start: SC Edit >>> loading player cash into variable / overwriting default 0 value with returned value.
+_cashMoney = 	_primary select 7;
+//Soul end: SC Edit
+
+//Set position
+_randomSpot = false;
+_lastinstance = dayZ_instance;
 
 diag_log format["_characterID: %1", _characterID];
+diag_log format["_cashMoney:%1:", _cashMoney]; // Shows that cashMoney is pulled from database
 
 //Set position
 _randomSpot = false;
@@ -95,7 +109,7 @@ diag_log ("WORLDSPACE: " + str(_worldspace));
 
 if (count _worldspace > 0) then {
 
-	_position = 	_worldspace select 1;
+	_position = _worldspace select 1;
 	if (count _position < 3) then {
 		//prevent debug world!
 		_randomSpot = true;
@@ -155,11 +169,11 @@ if (count _medical > 0) then {
 	
 } else {
 	//Reset Fractures
-	_playerObj setVariable ["hit_legs",0,true];
-	_playerObj setVariable ["hit_hands",0,true];
-	_playerObj setVariable ["USEC_injured",false,true];
-	_playerObj setVariable ["USEC_inPain",false,true];
-	_playerObj setVariable ["messing",[0,0],true];
+	_playerObj setVariable["hit_legs",0,true];
+	_playerObj setVariable["hit_hands",0,true];
+	_playerObj setVariable["USEC_injured",false,true];
+	_playerObj setVariable["USEC_inPain",false,true];
+	_playerObj setVariable["messing",[0,0],true];
 };
 	
 if (count _stats > 0) then {	
@@ -169,6 +183,9 @@ if (count _stats > 0) then {
 	_playerObj setVariable["humanKills",(_stats select 2),true];
 	_playerObj setVariable["banditKills",(_stats select 3),true];
 	_playerObj addScore (_stats select 1);
+	_playerObj setVariable["moneychanged",0,true];	
+	_playerObj setVariable["bankchanged",0,true];	
+	_playerObj setVariable["AsReMixhud", true,true];
 	
 	//Save Score
 	_score = score _playerObj;
@@ -193,6 +210,8 @@ if (count _stats > 0) then {
 	_playerObj setVariable["humanKills",0,true];
 	_playerObj setVariable["banditKills",0,true];
 	_playerObj setVariable["headShots",0,true];
+	_playerObj setVariable["friendlies",[],true];
+	_playerObj setVariable["AsReMixhud", true,true];
 	
 	//record for Server JIP checks
 	_playerObj setVariable["zombieKills_CHK",0];
@@ -260,15 +279,18 @@ dayz_players set [count dayz_players,_playerObj];
 _playerObj setVariable["CharacterID",_characterID,true];
 _playerObj setVariable["humanity",_humanity,true];
 _playerObj setVariable["humanity_CHK",_humanity];
-//_playerObj setVariable["worldspace",_worldspace,true];
-//_playerObj setVariable["state",_state,true];
 _playerObj setVariable["lastPos",getPosATL _playerObj];
-
+//Soul start: SC Edit >>> assigning player new variable for cashmoney and bankMoney
+_playerObj setVariable ["cashMoney",_cashMoney,true];
+_playerObj setVariable ["cashMoney_CHK",_cashMoney];
+//Soul end: SC Edit
 dayzPlayerLogin2 = [_worldspace,_state];
 
 // PVDZE_obj_Debris = DZE_LocalRoadBlocks;
 _clientID = owner _playerObj;
+
 if (!isNull _playerObj) then {
+
 	_clientID publicVariableClient "dayzPlayerLogin2";
 	
 	if (isNil "PVDZE_plr_SetDate") then {
@@ -282,6 +304,64 @@ if (!isNull _playerObj) then {
 //record time started
 _playerObj setVariable ["lastTime",time];
 //_playerObj setVariable ["model_CHK",typeOf _playerObj];
+
+//Do Connection Attempt
+_doLoop = 0;
+while {_doLoop < 5} do {
+
+	_key = format["CHILD:298:%1:", _playerID];
+	diag_log (_key);
+    _key = format["\cache\players\%1\%2-bank.sqf", MyPlayerCounter, toLower(_playerID)];
+    diag_log ("LOAD BANK: "+_key);
+	
+	// This is an artificial sleep function since Arma won't actually allow sleep here.
+	// This loop is necessary in order to give the writer.pl enough time to update the bank cache before this function "preprocessFile" loads it...
+	// Increase the number if your players BankSaldo does not update correctly after logging in.
+	// Don't ask...
+	_sleep_loop = 0;
+	while {_sleep_loop < 300} do {
+		_sleep_loop = _sleep_loop + 1;
+	};
+	
+    _res = preprocessFile _key;
+    diag_log ("BANK CACHE: "+_res);
+
+    if ((_res == "") or (isNil "_res")) then {
+        _key = format["\cache\players\%1\%2-bank.sqf", (MyPlayerCounter - 1), toLower(_playerID)];
+        diag_log ("BACKLOAD BANK: "+_key);
+        _res = preprocessFile _key;
+        diag_log ("BANK CACHE: "+_res);
+    };
+
+    if ((_res == "") or (isNil "_res")) then {
+        _res = preprocessFile "\cache\players\default-bank.sqf";
+        diag_log ("BANK DEFAULT CACHE: "+_res);
+        if ((_res == "") or (isNil "_res")) then {
+            _primary = ["PASS",0];
+        } else {
+            _primary = call compile _res;
+        };
+    } else {
+        _primary = call compile _res;
+    };
+    _res = nil;
+
+	if(count _primary > 0) then {
+		if((_primary select 0) != "ERROR") then {
+			_bankMoney = _primary select 1;
+			_playerObj setVariable["bankMoney",_bankMoney,true];
+			_playerObj setVariable["bankMoney_CHK",_bankMoney];
+			_doLoop = 9;
+		} else {
+			_playerObj setVariable["bankMoney",0,true];
+			_playerObj setVariable["bankMoney_CHK",0];
+		};
+	} else {
+		_playerObj setVariable["bankMoney",0,true];
+		_playerObj setVariable["bankMoney_CHK",0];
+	};
+    _doLoop = _doLoop + 1;
+};
 
 //diag_log ("LOGIN PUBLISHING: " + str(_playerObj) + " Type: " + (typeOf _playerObj));
 

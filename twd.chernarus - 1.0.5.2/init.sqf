@@ -51,6 +51,11 @@ if (!isDedicated) then
 					_playerMonitor =	[] execVM "\z\addons\dayz_code\system\player_monitor.sqf";
 										   execVM "custom\code\server\dedicated.sqf";
 };
+
+	if (DZE_AsReMix_PLAYER_HUD) then {
+		execVM "custom\bank\Player_Hud\playerHud.sqf"
+    };
+	
 diag_log "Finished Loading Dedicated Executions";
 
 diag_log "Finalizing Server Startup, Loading BIS_Effects";

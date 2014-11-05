@@ -1,4 +1,5 @@
-//execVM "\z\addons\dayz_server\buildings\balota.sqf";
+execVM "\z\addons\dayz_server\buildings\balota.sqf";
+execVM "\z\addons\dayz_server\buildings\bank.sqf";
 execVM "\z\addons\dayz_server\buildings\bash.sqf";
 execVM "\z\addons\dayz_server\buildings\camprocket.sqf";
 execVM "\z\addons\dayz_server\buildings\dean1.sqf";
@@ -13,6 +14,9 @@ execVM "\z\addons\dayz_server\buildings\neaf.sqf";
 execVM "\z\addons\dayz_server\buildings\qdoba.sqf";
 //execVM "\z\addons\dayz_server\buildings\qdobacrates.sqf";
 execVM "\z\addons\dayz_server\buildings\stary.sqf";
+execVM "\z\addons\dayz_server\buildings\skalisty.sqf";
 execVM "\z\addons\dayz_server\buildings\vybor.sqf";
 execVM "\z\addons\dayz_server\buildings\zelenogorsk.sqf";
 execVM "\z\addons\dayz_server\buildings\mine.sqf";
+execVM "\z\addons\dayz_server\buildings\island.sqf";
+execVM "\z\addons\dayz_server\buildings\ducks.sqf";
