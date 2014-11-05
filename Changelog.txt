@@ -1,6 +1,19 @@
 CHANGELOG
 ---------------------
 
+V6.5 (Next Release)
+··Added -: Single Currency Banking
+··Added -: Vehicle Painting
+
+··Fixed -: VL Antihack to 1.0.642882282 (Because unnecessary numbers are useful I guess)
+
+··Disabled -: Door Management (Waiting on Epoch Update)
+··Disabled -: Plot Management (Waiting on Epoch Update)
+··Disabled -: Group Management (Waiting on Epoch Update)
+··Disabled -: Vector Building (Waiting on Epoch Update)
+··Disabled -: Headless Client (Waiting on Epoch Update)
+
+
 V6 (Current) (Big Update)
 =========================================
 ··Added -: Starting to Re-Add Banking

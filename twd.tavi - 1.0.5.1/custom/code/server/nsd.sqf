@@ -1,1 +1,0 @@
-execVM "R3F_ARTY_AND_LOG\init.sqf"
