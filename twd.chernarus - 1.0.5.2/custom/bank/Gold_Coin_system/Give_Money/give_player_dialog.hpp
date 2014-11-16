@@ -35,7 +35,7 @@ class GivePlayerDialog
 			w = 0.3;
 			h = 0.2;
 		};
-		class RscTextT_10052 : RscTextT
+		class RscTextT_10052 : RscText
 		{
 			idc = 14001;
 			text = "";
@@ -77,7 +77,7 @@ class GivePlayerDialog
 			w = (6 / 40);
 			h = (1 / 25);
 		};
-		class RscTextT_10005 : RscTextT
+		class RscTextT_10005 : RscText
 		{
 			idc = 14003;
 			text = "";

@@ -340,29 +340,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	};
 	_lever = cursorTarget;
 
-//Zombie Shield
-	if (_cursorTarget isKindof TypeOfZShield) then {
-		if (EnableZShield == 1) then {
-			if (s_player_ZombieShield_on < 0) then {
-				s_player_ZombieShield_on = player addAction [format[("<t color=""#FFF700"">" + ("Zombie Shield On") +"</t>"),_adminText], "custom\zombie\shield\ZombieShield.sqf", [_lever, true], 6, true, true, "", ""];
-			};
-			if (s_player_ZombieShield_off < 0) then {
-				s_player_ZombieShield_off = player addAction [format[("<t color=""#FFF700"">" + ("Zombie Shield Off") +"</t>"),_adminText], "custom\zombie\shield\ZombieShield.sqf", [_lever, false], 6, false, true, "", ""];
-			};
-		} else {
-			if (s_player_ZombieShield_on < 0) then {
-				s_player_ZombieShield_on = player addAction [format[("<t color=""#FFF700"">" + ("Zombie Shields are disabled on this server") +"</t>"),_adminText], "", [], 6, false, true, "", ""];
-			};
-			player removeAction s_player_ZombieShield_off;
-			s_player_ZombieShield_off = -1;
-		};
-	} else {
-		player removeAction s_player_ZombieShield_on;
-		s_player_ZombieShield_on = -1;
-		player removeAction s_player_ZombieShield_off;
-		s_player_ZombieShield_off = -1;
-	};
-//End Shield
+
 	if (DZE_HeliLift) then {
 		_liftHeli = objNull;
 		_found = false;
@@ -418,6 +396,11 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 				if(_hasKey || _oldOwner) then {
 					_Unlock = player addAction [format[localize "STR_EPOCH_ACTIONS_UNLOCK",_text], "\z\addons\dayz_code\actions\unlock_veh.sqf",[_cursorTarget,(_temp_keys_names select (parseNumber _ownerID))], 2, true, true, "", ""];
 					s_player_lockunlock set [count s_player_lockunlock,_Unlock];
+					if (_typeOfCursorTarget in ColourVehicles) then {
+		private ["_paint"];
+		_paint = player addAction ["Paint Vehicle", "custom\Paint\player_paint_init.sqf",_cursorTarget, 2, true, true, "", ""];
+		s_player_lockunlock set [count s_player_lockunlock,_paint];
+	};
 					s_player_lockUnlock_crtl = 1;
 				} else {
 					if(_hasHotwireKit) then {
@@ -541,7 +524,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	// Study Body
 	if (_player_studybody) then {
 		if (s_player_studybody < 0) then {
-			s_player_studybody = player addAction [localize "str_action_studybody", "\z\addons\dayz_code\actions\study_body.sqf",_cursorTarget, 0, false, true, "",""];
+			s_player_studybody = player addAction ["Check Wallet", "custom\bank\Gold_Coin_system\Check_Wallet\check_wallet.sqf",_cursorTarget, 0, false, true, "",""];
 		};
 	} else {
 		player removeAction s_player_studybody;

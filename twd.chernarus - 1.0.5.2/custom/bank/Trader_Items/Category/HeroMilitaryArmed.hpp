@@ -29,4 +29,64 @@ class Category_562 {
 		buy[] ={400000,"Boobs"};
 		sell[] ={200000,"Boobs"};
 	};
+		class AAV {
+		type = "trade_any_vehicle";
+		buy[] ={1600000,"Boobs"};
+		sell[] ={800000,"Boobs"};
+	};
+		class LAV25_HQ {
+		type = "trade_any_vehicle";
+		buy[] ={1400000,"Boobs"};
+		sell[] ={600000,"Boobs"};
+	};
+	class LAV25 {
+		type = "trade_any_vehicle";
+		buy[] ={1500000,"Boobs"};
+		sell[] ={600000,"Boobs"};
+	};
+	class BRDM2_HQ_Gue {
+		type = "trade_any_vehicle";
+		buy[] ={1000000,"Boobs"};
+		sell[] ={500000,"Boobs"};
+	};
+	class M1A1 {
+		type = "trade_any_vehicle";
+		buy[] ={2000000,"Boobs"};
+		sell[] ={500000,"Boobs"};
+	};
+	class T34 {
+		type = "trade_any_vehicle";
+		buy[] ={1500000,"Boobs"};
+		sell[] ={500000,"Boobs"};
+	};
+	class T72_RU {
+		type = "trade_any_vehicle";
+		buy[] ={2000000,"Boobs"};
+		sell[] ={500000,"Boobs"};
+	};
+	class T34_TK_GUE_EP1 {
+		type = "trade_any_vehicle";
+		buy[] ={1500000,"Boobs"};
+		sell[] ={500000,"Boobs"};
+	};
+	class T55_TK_GUE_EP1 {
+		type = "trade_any_vehicle";
+		buy[] ={2000000,"Boobs"};
+		sell[] ={500000,"Boobs"};
+	};
+	class T72_TK_EP1 {
+		type = "trade_any_vehicle";
+		buy[] ={2000000,"Boobs"};
+		sell[] ={500000,"Boobs"};
+	};
+	class BTR40_MG_TK_GUE_EP1 {
+		type = "trade_any_vehicle";
+		buy[] ={200000,"Boobs"};
+		sell[] ={100000,"Boobs"};
+	};
+	class BRDM2_TK_GUE_EP1 {
+		type = "trade_any_vehicle";
+		buy[] ={1500000,"Boobs"};
+		sell[] ={600000,"Boobs"};
+	};
 };

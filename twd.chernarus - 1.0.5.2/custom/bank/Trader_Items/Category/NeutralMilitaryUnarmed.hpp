@@ -24,6 +24,11 @@ class Category_491 {
 		buy[] ={100000,"Boobs"};
 		sell[] ={50000,"Boobs"};
 	};
+	class BTR40_TK_GUE_EP1 {
+		type = "trade_any_vehicle";
+		buy[] ={50000,"Boobs"};
+		sell[] ={25000,"Boobs"};
+	};
 	class HMMWV_DZ {
 		type = "trade_any_vehicle";
 		buy[] ={40000,"Boobs"};

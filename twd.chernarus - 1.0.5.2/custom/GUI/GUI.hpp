@@ -1,3 +1,19 @@
+class RscTextGUIK {
+    type = 0;
+    idc = -1;
+    style = 0x02;
+    colorBackground[] = {0,0,0,0};
+    colorText[] = {1, 1, 1, 0.5};
+    //color[] = {1, 1, 1, 0.5};
+    font = "TahomaB";
+    size = 0.03;
+    sizeEx = 0.03;
+    x = 0;
+    y = 0;
+    w = 0.1;
+    h = 0.2;
+};
+
 class playerStatusGUI {
         idd = 6900;
         movingEnable = 0;
@@ -319,7 +335,7 @@ class playerStatusGUI {
             {
                 idc = 1404;
                 text = "(180-(round(serverTime/60)))";
-                x = 0.5 * safezoneW + safezoneX;
+                x = 0.4 * safezoneW + safezoneX;
                 y = 0.90 * safezoneH + safezoneY;
                 w = 0.10 * safezoneW;
                 h = 0.1 * safezoneH;
@@ -339,5 +355,58 @@ class playerStatusGUI {
                 size = 0.06;
                 sizeEx = 0.04;
             };
+			
+			
+	//Money and Banks
+	
+	//MoneyText
+            class RscPicture_1406: RscPictureGUI
+            {
+                idc = 1310;
+                text = "custom\GUI\wallet.paa";
+                x = 0.925 * safezoneW + safezoneX;
+                y = 0.70 * safezoneH + safezoneY;
+                w = 0.027 * safezoneW;
+                h = 0.037 * safezoneH;
+                colorText[] = {1,1,1,1};
+            };	
+	//Money Var
+            class RscText_1407: RscTextGUIK
+            {
+                idc = 1407;
+                text = "1000";
+                x = 0.955313 * safezoneW + safezoneX;
+                y = 0.70 * safezoneH + safezoneY;
+                w = 0.037 * safezoneW;
+                h = 0.047 * safezoneH;
+                colorText[] = {1,1,1,1.0};
+                size = 0.03;
+                sizeEx = 0.03;
+            };	
+	
+	//Bank Txt
+            class RscPicture_1408: RscPictureGUI
+            {
+                idc = 1310;
+                text = "custom\GUI\bank.paa";
+                x = 0.925 * safezoneW + safezoneX;
+                y = 0.75 * safezoneH + safezoneY;
+                w = 0.027 * safezoneW;
+                h = 0.037 * safezoneH;
+                colorText[] = {1,1,1,1};
+            };	
+	//Bank Var
+            class RscText_1409: RscTextGUIK
+            {
+                idc = 1409;
+                text = "1000";
+                x = 0.955313 * safezoneW + safezoneX;
+                y = 0.75 * safezoneH + safezoneY;
+                w = 0.037 * safezoneW;
+                h = 0.047 * safezoneH;
+                colorText[] = {1,1,1,1.0};
+                size = 0.03;
+                sizeEx = 0.03;
+            };		
         };
     };

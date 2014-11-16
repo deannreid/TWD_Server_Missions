@@ -39,4 +39,19 @@ class Category_493 {
 		buy[] ={500000,"Boobs"};
 		sell[] ={250000,"Boobs"};
 	};
+	class AH6J_EP1 {
+		type = "trade_any_vehicle";
+		buy[] ={500000,"Boobs"};
+		sell[] ={250000,"Boobs"};
+	};
+	class Mi17_rockets_RU {
+		type = "trade_any_vehicle";
+		buy[] ={800000,"Boobs"};
+		sell[] ={400000,"Boobs"};
+	};
+	class Ka60_GL_PMC {
+		type = "trade_any_vehicle";
+		buy[] ={500000,"Boobs"};
+		sell[] ={250000,"Boobs"};
+	};
 };

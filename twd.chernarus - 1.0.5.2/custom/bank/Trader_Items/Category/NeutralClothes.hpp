@@ -9,7 +9,7 @@ class Category_497 {
 		buy[] ={2000,"Boobs"};
 		sell[] ={1000,"Boobs"};
 	};
-	class Skin_Functionary1_EP1_DZ {
+	class Skin_RU_Hooker3 {
 		type = "trade_items";
 		buy[] ={2000,"Boobs"};
 		sell[] ={1000,"Boobs"};
@@ -96,7 +96,7 @@ class Category_628 {
 		buy[] ={2000,"Boobs"};
 		sell[] ={1000,"Boobs"};
 	};
-	class Skin_Functionary1_EP1_DZ {
+	class Skin_RU_Hooker3 {
 		type = "trade_items";
 		buy[] ={2000,"Boobs"};
 		sell[] ={1000,"Boobs"};
@@ -183,7 +183,7 @@ class Category_631 {
 		buy[] ={2000,"Boobs"};
 		sell[] ={1000,"Boobs"};
 	};
-	class Skin_Functionary1_EP1_DZ {
+	class Skin_RU_Hooker3 {
 		type = "trade_items";
 		buy[] ={2000,"Boobs"};
 		sell[] ={1000,"Boobs"};

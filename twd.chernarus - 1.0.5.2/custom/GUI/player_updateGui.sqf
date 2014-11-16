@@ -53,10 +53,20 @@ _ctrlhHeadshots = _display displayCtrl 1401;
 _ctrlbanditKills= _display displayCtrl 1402;
 _ctrlzombieKills= _display displayCtrl 1403;
 
+_ctrlMoneyBank = _display displayCtrl 1407;
+_ctrlMoneyWallet = _display displayCtrl 1409;
+
+
+
+
 _ctrlhumanKills  ctrlSetText str(player getVariable["humanKills", 0]);
 _ctrlbanditKills ctrlSetText str(player getVariable["banditKills", 0]);
 _ctrlzombieKills ctrlSetText str(player getVariable["zombieKills", 0]);
 _ctrlhHeadshots  ctrlSetText str(player getVariable["headShots", 0]);
+
+_ctrlMoneyBank  ctrlSetText str(player getVariable["bankMoney", 0]);
+_ctrlMoneyWallet  ctrlSetText str(player getVariable["cashMoney", 0]);
+
 
 switch true do
 {

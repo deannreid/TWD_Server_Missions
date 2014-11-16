@@ -1,6 +1,5 @@
 #include "custom\bank\Trader_Items\cfgServerTrader.hpp"
 
-
 respawn = "BASE";
 respawndelay = 5;
 onLoadMission= "The Wasteland Diaries";
@@ -32,35 +31,38 @@ diagHit = 1;
 //////////////////////////////////////////////
 /////////////DEAN CUSTOM HEADERS//////////////
 //////////////////////////////////////////////
-#include "custom\header\schw.hpp"
-#include "custom\custom_loot\Configs\CfgBuildingLoot.hpp"
-#include "custom\custom_loot\Configs\CfgLootSmall.hpp"
-#include "custom\custom_loot\Configs\CfgLoot.hpp"
-
 class RscStructuredText
 {
     class Attributes;
 };
 
-#include "custom\header\rscpicture.hpp"
-
-class RscTextGUIK {
-    type = 0;
-    idc = -1;
-    style = 0x02;
-    colorBackground[] = {0,0,0,0};
-    colorText[] = {1, 1, 1, 0.5};
-    //color[] = {1, 1, 1, 0.5};
-    font = "TahomaB";
-    size = 0.03;
-    sizeEx = 0.03;
-    x = 0;
-    y = 0;
-    w = 0.1;
-    h = 0.2;
+class RscTextT
+{
+	access = 0;
+	type = 0;
+	idc = -1;
+	colorBackground[] = {0,0,0,0};
+	colorText[] = {0.8784,0.8471,0.651,1};
+	text = "";
+	fixedWidth = 0;
+	x = 0;
+	y = 0;
+	h = 0.037;
+	w = 0.3;
+	style = 0;
+	shadow = 2;
+	font = "Zeppelin32";
+	SizeEx = 0.03921;
 };
 
+#include "custom\header\schw.hpp"
+#include "custom\custom_loot\Configs\CfgBuildingLoot.hpp"
+#include "custom\custom_loot\Configs\CfgLootSmall.hpp"
+#include "custom\custom_loot\Configs\CfgLoot.hpp"
+
+#include "custom\header\rscpicture.hpp"
 #include "custom\sounds\sounds.hpp"
+#include "custom\header\zupadefines.hpp"
 
 class RscTitles
 { 
@@ -175,3 +177,5 @@ class DayZ_loadingScreen
 #include "custom\header\lifecommon.hpp"
 #include "custom\bank\Gold_Coin_system\Bank_Dialog\bank_dialog.hpp"
 #include "custom\bank\Gold_Coin_system\Give_Money\give_player_dialog.hpp"
+#include "custom\Paint\vehiclecolour.hpp"
+#include "custom\bank\adminc\currency_dialog.hpp"

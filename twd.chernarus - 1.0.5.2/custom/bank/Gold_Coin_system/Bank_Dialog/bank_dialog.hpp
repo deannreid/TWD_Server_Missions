@@ -37,7 +37,7 @@ class BankDialog
 			h = 0.2;
 		};
 
-		class RscTextT_1005 : RscTextT
+		class RscTextT_1005 : RscText
 		{
 			idc = 13002;
 			text = "";
@@ -107,7 +107,7 @@ class BankDialog
 			h = 0.2;
 		};
 
-		class RscTextT_1004 : RscTextT
+		class RscTextT_1004 : RscText
 		{
 			idc = 13001;
 			text = "";
