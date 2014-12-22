@@ -1,0 +1,20 @@
+diag_log "==============================================";
+		execVM "R3F_ARTY_AND_LOG\init.sqf";
+	diag_log "R3F Arty & Logistics Loaded";
+		execVM "custom\bank\Gold_Coin_system\init.sqf";
+	diag_log "Gold Coin System Loaded";
+		execVM "custom\Crimbo\snowFarm.sqf";
+	diag_log "Snow Farms Loaded";
+diag_log "==============================================";
+
+[h1, "UH60"] call setNl;
+[h2, "AH64"] call setNl;
+[h3, "AH6"] call setNl;
+[h4, "AH1"] call setNl;
+[h5, "CH47"] call setNl;
+[h6, "V22"] call setNl;
+[h7, "A10"] call setNl;
+[h8, "C130"] call setNl;
+[h9, "F18"] call setNl;
+[h10, "F35"] call setNl;
+[hwmv, "HWMV"] call setNl;
