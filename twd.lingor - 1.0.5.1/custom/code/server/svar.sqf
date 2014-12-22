@@ -67,7 +67,6 @@ if (dayZ_instance == 11) then
 	DZE_PlotPole = [150,0];
 	DZE_R3F_WEIGHT = false;
 	DZE_StaticConstructionCount = 1;
-	execVM "custom\markers\init.sqf";
 };
 
 //Panthera

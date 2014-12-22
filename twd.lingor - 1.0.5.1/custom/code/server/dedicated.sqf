@@ -28,5 +28,7 @@ if (dayZ_instance == 11) then {
 	diag_log "Nav Lights Loaded";
 		[]execVM "custom\carradio\checkradio.sqf"
 	diag_log "Car Stereo Loaded";
+		execVM "custom\markers\init.sqf";
+	diag_log format "Markers Loaded %1",dayZ_instance;
 diag_log "==============================================";
 [] execvm "custom\Crimbo\snowInit.sqf";
