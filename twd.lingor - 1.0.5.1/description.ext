@@ -57,6 +57,8 @@ class RscTextT
 
 #include "custom\header\schw.hpp"
 #include "custom\custom_loot\Configs\CfgBuildingLoot.hpp"
+#include "custom\custom_loot\Configs\CfgLootSmall.hpp"
+#include "custom\custom_loot\Configs\CfgLoot.hpp"
 
 #include "custom\header\rscpicture.hpp"
 #include "custom\sounds\sounds.hpp"
