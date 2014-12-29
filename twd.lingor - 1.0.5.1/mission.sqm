@@ -77,7 +77,8 @@ class Mission
 		"american_law_enforcement",
 		"bb_mercenary",
 		"CYBP_Camels_Config",
-		"nissan_350z"	
+		"nissan_350z"
+		"ussr_cheytac"
 	};
 	addOnsAuto[]=
 	{
@@ -1231,7 +1232,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=37;
+		items=30;
 		class Item0
 		{
 			position[]={4078.8516,30.836605,4757.7241};
@@ -1316,27 +1317,19 @@ class Mission
 			name="RaceTrack";
 			text="Rommelo's Raceway";
 			type="mil_dot";
-			colorName="ColorBlack";
+			colorName="ColorGreen";
 			fillName="Border";
 			drawBorder=1;
 		};
 		class Item14
 		{
-			position[]={6539.8096,20.420567,6868.8203};
-			name="RepairGuy";
-			text="Axles Repair Shop";
-			type="mil_box";
-			colorName="ColorGreen";
-		};
-		class Item15
-		{
-			position[]={7026.7695,11.873646,7105.6934};
+			position[]={7027.19,11.873646,7104.2};
 			name="PlaneVendor";
-			text="AWOL's Planes";
+			text="AWOL's Aircrafts";
 			type="mil_dot";
 			colorName="ColorGreen";
 		};
-		class Item16
+		class Item15
 		{
 			position[]={3054.834,14.806208,8032.8389};
 			name="Wholesale";
@@ -1344,23 +1337,23 @@ class Mission
 			type="mil_dot";
 			colorName="ColorBlack";
 		};
-		class Item17
+		class Item16
 		{
-			position[]={3608.7268,235.08131,3685.8149};
-			name="HighWeapons/ammo";
-			text="Jim and Joe's Weapons/Ammo";
+			position[]={1141.55,235.08131,1879.96};
+			name="GeneralSupplies";
+			text="Drassen Good's n' Gun's";
 			type="mil_dot";
 			colorName="ColorGreen";
 		};
-		class Item18
+		class Item17
 		{
-			position[]={4245.8931,46.366299,4486.48};
-			name="Parts";
-			text="Whiskey's Parts";
+			position[]={7601.0,46.366299,2946.23};
+			name="GeneralSupplies";
+			text="Mongo's Flee Market";
 			type="mil_box";
 			colorName="ColorBlack";
 		};
-		class Item19
+		class Item18
 		{
 			position[]={4138.7852,23.635477,1492.9089};
 			name="Choppers";
@@ -1368,39 +1361,15 @@ class Mission
 			type="mil_dot";
 			colorName="ColorGreen";
 		};
+		class Item19
+		{
+			position[]={2938.84,10.998494,6728.0};
+			name="GeneralSupploes";
+			text="Crazy Eddie's Traders";
+			type="mil_dot";
+			colorName="ColorGreen";
+		};
 		class Item20
-		{
-			position[]={7553.0757,11.996795,3028.4924};
-			name="lowEndCars";
-			text="Used Cars";
-			type="mil_dot";
-			colorName="ColorBlack";
-		};
-		class Item21
-		{
-			position[]={7514.9941,10.998494,2953.7041};
-			name="LowEndWeapons";
-			text="Chuck and Buck's Weapons/Ammo";
-			type="mil_dot";
-			colorName="ColorBlack";
-		};
-		class Item22
-		{
-			position[]={3024.4265,45.493584,5956.77};
-			name="HighEndCars";
-			text="Green's Quality Cars";
-			type="mil_dot";
-			colorName="ColorGreen";
-		};
-		class Item23
-		{
-			position[]={895.26929,29.506145,5271.8955};
-			name="MedicalandBags";
-			text="Alejandria and Melly's Medica/Survival Shop";
-			type="mil_dot";
-			colorName="ColorGreen";
-		};
-		class Item24
 		{
 			position[]={8357.583,23.403641,8740.0039};
 			name="Wholesaler";
@@ -1408,23 +1377,15 @@ class Mission
 			type="mil_dot";
 			colorName="ColorBlack";
 		};
-		class Item25
+		class Item21
 		{
-			position[]={4178.8506,12.651016,2342.1643};
-			name="BagsNFood";
-			text="Bag lady Gina";
-			type="mil_dot";
-			colorName="ColorBlack";
-		};
-		class Item26
-		{
-			position[]={728.23462,41.254562,1571.2231};
+			position[]={1461.24,2.59748,1449.72};
 			name="Wholesalers";
 			text="Wholesaler Santos";
 			type="mil_dot";
-			colorName="ColorBlack";
+			colorName="ColorGreen";
 		};
-		class Item27
+		class Item22
 		{
 			position[]={1724.5925,42.225693,4137.6128};
 			name="DirtTrackVendor";
@@ -1432,63 +1393,47 @@ class Mission
 			type="mil_dot";
 			colorName="ColorGreen";
 		};
-		class Item28
+		class Item23
 		{
-			position[]={2376.5916,56.980717,4120.5234};
-			name="OffRoad4x4";
-			text="MotoDrom 4x4 Offroad";
-			type="mil_dot";
-			colorName="ColorGreen";
-		};
-		class Item29
-		{
-			position[]={4015.4907,4.2447982,5216.2656};
+			position[]={3921.837,4.2447982,5245.13};
 			name="BoatVendor";
 			text="Big Bob's Boats";
 			type="mil_triangle";
-			colorName="ColorBlack";
+			colorName="ColorGreen";
 		};
-		class Item30
+		class Item24
 		{
-			position[]={5523.2813,2.2458067,4412.8027};
+			position[]={5487.95,2.2458067,4386.33};
 			name="BoatVendor1";
 			text="Juan's Tour Boats";
 			type="mil_triangle";
-			colorName="ColorBlack";
+			colorName="ColorGreen";
 		};
-		class Item31
+		class Item25
 		{
-			position[]={3881.48,2.41427,2236.43};
+			position[]={3852.18,2.41427,2241.18};
 			name="BoatVendor2";
 			text="Jd's Armed boats";
 			type="mil_triangle";
 			colorName="ColorGreen";
 		};
-		class Item32
+		class Item26
 		{
 			position[]={6673.0313,52.049561,6355.9775};
 			name="BagVendor1";
 			text="Stella's Stop";
 			type="mil_dot";
-			colorName="ColorBlack";
+			colorName="ColorGreen";
 		};
-		class Item33
+		class Item27
 		{
 			position[]={4238.8086,48.201847,4842.0874};
 			name="BagVendor2";
 			text="Samish Shop";
 			type="mil_dot";
-			colorName="ColorBlack";
+			colorName="ColorGreen";
 		};
-		class Item34
-		{
-			position[]={6679.3359,26.402266,4296.9727};
-			name="Doctor2";
-			text="Mad Scientist";
-			type="mil_dot";
-			colorName="ColorBlack";
-		};
-		class Item35
+		class Item28
 		{
 			position[]={4099.8286,16.890327,9242.6455};
 			name="BanditTrader";
@@ -1496,7 +1441,7 @@ class Mission
 			type="mil_dot";
 			colorName="ColorRed";
 		};
-		class Item36
+		class Item29
 		{
 			position[]={4139.7085,23.635477,1465.8002};
 			name="HeroTrader";
