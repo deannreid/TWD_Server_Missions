@@ -31,4 +31,3 @@ if (dayZ_instance == 11) then {
 		execVM "custom\markers\init.sqf";
 	diag_log format "Markers Loaded %1",dayZ_instance;
 diag_log "==============================================";
-[] execvm "custom\Crimbo\snowInit.sqf";

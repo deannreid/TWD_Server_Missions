@@ -56,7 +56,7 @@ class Category_685 {
 	};
 	class DZ_LargeGunBag_EP1 {
 		type = "trade_backpacks";
-		buy[] = {15000};
+		buy[] = {25000};
 		sell[] = {7500};
 	};
 };
@@ -118,7 +118,7 @@ class Category_496 {
 	};
 	class DZ_LargeGunBag_EP1 {
 		type = "trade_backpacks";
-		buy[] = {15000};
+		buy[] = {25000};
 		sell[] = {7500};
 	};
 };
@@ -180,7 +180,7 @@ class Category_632 {
 	};
 	class DZ_LargeGunBag_EP1 {
 		type = "trade_backpacks";
-		buy[] = {15000};
+		buy[] = {25000};
 		sell[] = {7500};
 	};
 };

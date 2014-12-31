@@ -91,7 +91,7 @@ class Category_663 {
 	};
 	class ItemKeyKit {
 		type = "trade_weapons";
-		buy[] = {9000};
+		buy[] = {2000};
 		sell[] = {4500};
 	};
 };
@@ -188,7 +188,7 @@ class Category_510 {
 	};
 	class ItemKeyKit {
 		type = "trade_weapons";
-		buy[] = {9000};
+		buy[] = {20000};
 		sell[] = {4500};
 	};
 };
