@@ -14,10 +14,10 @@
 	dayz_tameDogs = true;	
 	dayz_fullMoonNights = true;
 	dayz_zedsAttackVehicles = false;
-	dayz_maxLocalZombies = 15;
+	dayz_maxLocalZombies = 30;
 	dayz_maxGlobalZombiesInit = 8;
 	dayz_maxGlobalZombiesIncrease = 3;
-	dayz_maxZeds = 400;
+	dayz_maxZeds = 600;
 	DayZ_UseSteamID = true;	
 
 	// DayZ Epoch Config										
@@ -85,7 +85,7 @@ if (dayZ_instance == 16) then
 	DZE_vehicleAmmo	= 2;
 	DZE_requireplot = 1;
 	DZE_GodModeBase = false;
-	DZE_R3F_WEIGHT = true;	
+	DZE_R3F_WEIGHT = false;	
 };
 
 //Lingor
@@ -102,7 +102,7 @@ if (dayZ_instance == 7) then
 	DZE_ForceNameTags = true;
 	DZE_PlayerZed   = false;
 	DZE_vehicleAmmo	= 1;
-	DZE_requireplot = 0;
+	DZE_requireplot = 1;
 	DZE_GodModeBase = false;
 	DZE_R3F_WEIGHT = true;	
 };
