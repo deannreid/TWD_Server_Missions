@@ -51,12 +51,12 @@ class Category_477 {
 	};
 	class BAF_AS50_scoped {
 		type = "trade_weapons";
-		buy[] = {1000000};
+		buy[] = {2000000};
 		sell[] = {150000};
 	};
 	class BAF_AS50_TWS {
 		type = "trade_weapons";
-		buy[] = {2000000};
+		buy[] = {2500000};
 		sell[] = {500000};
 	};
 	class FHQ_ACR_BLK_TWS {

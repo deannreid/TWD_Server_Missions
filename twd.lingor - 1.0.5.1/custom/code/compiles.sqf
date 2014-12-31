@@ -6,7 +6,6 @@ diag_log "==============================================";
 		player_selectSlot =			compile preprocessFileLineNumbers "custom\code\ui_selectSlot.sqf";
 		local_lockUnlock =			compile preprocessFileLineNumbers "custom\code\local_lockUnlock.sqf";
 		player_switchModel =		compile preprocessFileLineNumbers "custom\code\player_switchModel.sqf";
-		player_temp_calculation	=	compile preprocessFileLineNumbers "custom\Crimbo\fn_temperatur.sqf";
 	RB_refuelmenu = compile preprocessFileLineNumbers "custom\refuelgui\refuel_vehicle_menu.sqf";
 	RB_refuelSubMenuCancel = compile preprocessFileLineNumbers "custom\refuelgui\refuel_cancel.sqf";
 diag_log "==============================================";

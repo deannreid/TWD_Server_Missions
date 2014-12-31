@@ -24,6 +24,16 @@ class Category_621 {
 		buy[] = {60};
 		sell[] = {30};
 	};
+	class FHQ_rem_30Rnd_680x43_ACR {
+		type = "trade_items";
+		buy[] = {240};
+		sell[] = {120};
+	};
+	class FHQ_rem_30Rnd_680x43_ACR_SD {
+		type = "trade_items";
+		buy[] = {900};
+		sell[] = {300};
+	};
 };
 class Category_480 {
 	class 30Rnd_556x45_Stanag {
@@ -50,5 +60,15 @@ class Category_480 {
 		type = "trade_items";
 		buy[] = {60};
 		sell[] = {30};
+	};
+	class FHQ_rem_30Rnd_680x43_ACR {
+		type = "trade_items";
+		buy[] = {240};
+		sell[] = {120};
+	};
+	class FHQ_rem_30Rnd_680x43_ACR_SD {
+		type = "trade_items";
+		buy[] = {900};
+		sell[] = {300};
 	};
 };

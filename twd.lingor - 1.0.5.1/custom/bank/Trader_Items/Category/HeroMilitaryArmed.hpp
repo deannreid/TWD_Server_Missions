@@ -56,42 +56,32 @@ class Category_562 {
 	};
 	class M113_TK_EP1 {
 		type = "trade_any_vehicle";
-		buy[] = {400000};
+		buy[] = {600000};
 		sell[] = {100000};
 	};
 	class LAV25_DZE {
 		type = "trade_any_vehicle";
-		buy[] = {1000000};
+		buy[] = {2000000};
 		sell[] = {108000};
 	};
 	class LAV25_HQ_DZE {
 		type = "trade_any_vehicle";
-		buy[] = {700000};
+		buy[] = {1700000};
 		sell[] = {108000};
 	};	
 	class BRDM2_TK_EP1 {
 		type = "trade_any_vehicle";
-		buy[] = {600000};
+		buy[] = {150000};
 		sell[] = {108000};
 	};	
 	class BRDM2_HQ_TK_GUE_EP1 {
 		type = "trade_any_vehicle";
-		buy[] = {600000};
+		buy[] = {100000};
 		sell[] = {108000};
-	};
-	class M1126_ICV_M2_EP1 {
-		type = "trade_any_vehicle";
-		buy[] = {500000};
-		sell[] = {108000};
-	};
-	class M1128_MGS_EP1 {
-		type = "trade_any_vehicle";
-		buy[] = {600000};
-		sell[] = {250000};
 	};
 	class M113_UN_EP1 {
 		type = "trade_any_vehicle";
-		buy[] = {432000};
+		buy[] = {632000};
 		sell[] = {108000};
 	};	
 	class BAF_Jackal2_L2A1_w {
@@ -99,19 +89,14 @@ class Category_562 {
 		buy[] = {432000};
 		sell[] = {108000};
 	};
-	class BAF_FV510_D {
-		type = "trade_any_vehicle";
-		buy[] = {2000000};
-		sell[] = {650000};
-	};
 	class BMP2_UN_EP1 {
 		type = "trade_any_vehicle";
-		buy[] = {520000};
+		buy[] = {720000};
 		sell[] = {108000};
 	};
 	class BMP2_INS {
 		type = "trade_any_vehicle";
-		buy[] = {520000};
+		buy[] = {720000};
 		sell[] = {108000};
 	};
 	class URAL_ZU23_CDF {
@@ -121,13 +106,8 @@ class Category_562 {
 	};
 	class T34 {
 		type = "trade_any_vehicle";
-		buy[] = {750000};
+		buy[] = {3000000};
 		sell[] = {250000};
-	};
-	class ZSU_INS {
-		type = "trade_any_vehicle";
-		buy[] = {1200000};
-		sell[] = {300000};
 	};
 	class HMMWV_TOW {
 		type = "trade_any_vehicle";
@@ -136,12 +116,7 @@ class Category_562 {
 	};
 	class GAZ_Vodnik_HMG {
 		type = "trade_any_vehicle";
-		buy[] = {600000};
-		sell[] = {100000};
-	};
-	class M6_EP1 {
-		type = "trade_any_vehicle";
-		buy[] = {1500000};
+		buy[] = {900000};
 		sell[] = {100000};
 	};
 	class HMMWV_M998_crows_M2_DES_EP1 {
@@ -149,14 +124,9 @@ class Category_562 {
 		buy[] = {500000};
 		sell[] = {100000};
 	};
-	class BTR90 {
-		type = "trade_any_vehicle";
-		buy[] = {1200000};
-		sell[] = {100000};
-	};
 	class BTR90_HQ {
 		type = "trade_any_vehicle";
-		buy[] = {800000};
+		buy[] = {2000000};
 		sell[] = {100000};
 	};
 };

@@ -1,9 +1,4 @@
 class Category_493 {
-	class Ka137_MG_PMC {
-		type = "trade_any_vehicle";
-		buy[] = {75000};
-		sell[] = {42000};
-	};
 	class AH6J_EP1 {
 		type = "trade_any_vehicle";
 		buy[] = {416000};
@@ -69,19 +64,14 @@ class Category_493 {
 		buy[] = {432000};
 		sell[] = {108000};
 	};
-	class AW159_Lynx_BAF {
-		type = "trade_any_vehicle";
-		buy[] = {648000};
-		sell[] = {216000};
-	};
 	class Ka60_GL_PMC {
 		type = "trade_any_vehicle";
-		buy[] = {648000};
+		buy[] = {1788000};
 		sell[] = {216000};
 	};
 	class Ka60_PMC {
 		type = "trade_any_vehicle";
-		buy[] = {648000};
+		buy[] = {1048000};
 		sell[] = {216000};
 	};
 	class UH60M_EP1_DZ {
@@ -118,15 +108,5 @@ class Category_493 {
 		type = "trade_any_vehicle";
 		buy[] = {432000};
 		sell[] = {108000};
-	};
-	class F35B {
-		type = "trade_any_vehicle";
-		buy[] = {3000000};
-		sell[] = {650000};
-	};
-	class AH1Z {
-		type = "trade_any_vehicle";
-		buy[] = {3000000};
-		sell[] = {100000};
 	};
 };
