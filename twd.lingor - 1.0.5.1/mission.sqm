@@ -78,8 +78,9 @@ class Mission
 		"bb_mercenary",
 		"CYBP_Camels_Config",
 		"nissan_350z",
-		"ussr_cheytac",
+		"ussr_cheytac"
 	};
+	
 	addOnsAuto[]=
 	{
 		"dayz_weapons",
