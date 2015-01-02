@@ -35,7 +35,10 @@
 	DZE_snapBuilding = true;
 	DZE_teleport = [500000,0,0,500000,500000];
 	DZE_AntiWallLimit = 3;
-	DZE_AsReMix_PLAYER_HUD = false;	
+	DZE_AsReMix_PLAYER_HUD = false;
+    DZE_APlotforLife = true;
+    DZE_PlotOwnership = true;	
+	DZE_checkNearbyRadius = 90
 
 	//TWD_overPoch = true; //Is Server Overpoch?
 	

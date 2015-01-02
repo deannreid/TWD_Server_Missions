@@ -1,5 +1,10 @@
 //Custom Compiles
-
+/*Plot*/
+PlotGetFriends      = compile preprocessFileLineNumbers "plotManagement\plotGetFriends.sqf";
+PlotNearbyHumans    = compile preprocessFileLineNumbers "plotManagement\plotNearbyHumans.sqf";
+PlotAddFriend       = compile preprocessFileLineNumbers "plotManagement\plotAddFriend.sqf";
+PlotRemoveFriend    = compile preprocessFileLineNumbers "plotManagement\plotRemoveFriend.sqf";
+/*Plot End*/
 	diag_log "Initialising VL Compiles";
 diag_log "==============================================";
 	fnc_usec_selfActions =			compile preprocessFileLineNumbers "custom\code\fn_selfActions.sqf";
