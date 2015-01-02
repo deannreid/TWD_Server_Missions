@@ -103,6 +103,7 @@ if (dayZ_instance == 7) then
 	DZE_PlayerZed   = false;
 	DZE_vehicleAmmo	= 1;
 	DZE_requireplot = 1;
+	DZE_PlotPole = [90,0];
 	DZE_GodModeBase = false;
 	DZE_R3F_WEIGHT = true;	
 };

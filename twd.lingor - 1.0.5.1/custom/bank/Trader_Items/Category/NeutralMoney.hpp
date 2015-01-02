@@ -1,4 +1,4 @@
-class Category_700 {
+class Category_702 {
 	class ItemBriefcase100oz {
 		type = "trade_items";
 		buy[] ={90000,"Boobs"};
