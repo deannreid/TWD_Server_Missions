@@ -1,17 +1,7 @@
 disableSerialization;
-
-//----------------------------------- Configs Start ---------------------------------//
-CurrencyName = "Boobs"; // name of your currency
-Bank_Object = ["Laptop_EP1"]; // Object to get option to bank
-LimitOnBank = false; // false = no limits, true = banks are limited on the value below
-MaxBankMoney = 500000; // limit on bank for normal players
-DonatorBank = [""]; // Bigger banks, Players ID
-MaxDonatorBankMoney = 1000000; // Bank size for donators
-InstantTrading = true; // (True = No Animation / False = Animation)
-AllBankersOnServer = [];
-SmeltingGoldBarsToCoinsRate = 900; // How many gold coins are in a gold bar
-//----------------------------------- Configs End -----------------------------------//
-
+if (isNil "DayZ_UseSteamID") then {
+	DayZ_UseSteamID = true;
+};
 //Model Variables
 Bandit1_DZ = 	"Bandit1_DZ";
 Bandit2_DZ = 	"Bandit2_DZ";
@@ -200,10 +190,12 @@ dayz_locationsActive = [];
 Dayz_GUI_R = 0.38; // 0.7
 Dayz_GUI_G = 0.63; // -0.63
 Dayz_GUI_B = 0.26; // -0.26
+if (isNil "Dayz_Dark_UI") then {
+	Dayz_Dark_UI = false;
+};
 
 //Player self-action handles
 dayz_resetSelfActions = {
-    s_player_plotManagement = -1;
 	s_player_fire =			-1;
 	s_player_cook =			-1;
 	s_player_boil =			-1;
@@ -217,6 +209,7 @@ dayz_resetSelfActions = {
 	s_player_fillwater2 = 	-1;
 	s_player_fillfuel = 	-1;
 	s_player_grabflare = 	-1;
+	s_player_dropflare =	-1;
 	s_player_callzombies = 	-1;
 	s_player_showname = 	-1;
 	s_player_debuglootpos = 	-1;
@@ -264,16 +257,13 @@ dayz_resetSelfActions = {
 	s_player_heli_lift = -1;
 	s_player_heli_detach = -1;
 	s_player_lockUnlock_crtl = -1;
-		s_player_refuelTop_crtl = -1;
-	s_player_refuelSub_crtl = -1;
-	s_player_refuelActionsSub = [];
-	mv22_fold = -1;
-    mv22_unfold = -1;
-    mv22_open = -1;
-    mv22_close = -1;
-    suv_close = -1;
-    suv_open = -1;
-s_player_plotManagement = -1;
+	s_player_toggleSnap = -1;
+    s_player_toggleSnapSelect = -1;
+    s_player_toggleSnapSelectPoint=[];
+    snapActions = -1;
+	s_player_plot_boundary_on = -1;
+	s_player_plot_boundary_off = -1;
+	s_player_plot_take_ownership = -1;
 };
 call dayz_resetSelfActions;
 
@@ -286,6 +276,10 @@ s_player_lockunlock = [];
 s_player_madsci 		= 	[];
 s_player_parts 			= 	[];
 s_player_combi 			= 	[];
+
+//Modular player_build
+snapGizmos = [];
+snapGizmosNearby = [];
 
 //Initialize Medical Variables
 r_interrupt = 			false;
@@ -551,6 +545,24 @@ if(isNil "DZE_StaticConstructionCount") then {
 if (isNil "DZE_selfTransfuse_Values") then {
 	DZE_selfTransfuse_Values = [12000, 15, 300];
 };
+if (isNil "helperDetach") then {
+	helperDetach = false;
+};
+if (isNil "DZE_modularBuild") then {
+	DZE_modularBuild = false;
+};
+if (isNil "DZE_snapExtraRange") then {
+	DZE_snapExtraRange = 0;
+};
+if (isNil "DZE_APlotforLife") then {
+	DZE_APlotforLife = false;
+};
+if (isNil "DZE_PlotOwnership") then {
+	DZE_PlotOwnership = false;
+};
+if (isNil "DZE_checkNearbyRadius") then {
+	DZE_checkNearbyRadius = 30;
+};
 
 // needed on server
 if(isNil "DZE_PlotPole") then {
@@ -559,6 +571,8 @@ if(isNil "DZE_PlotPole") then {
 if(isNil "DZE_maintainRange") then {
 	DZE_maintainRange = ((DZE_PlotPole select 0)+20);
 };
+
+DZE_snap_build_file = "";
 
 DZE_REPLACE_WEAPONS = [["Crossbow","ItemMatchbox","ItemHatchet"],["Crossbow_DZ","ItemMatchbox_DZE","ItemHatchet_DZE"]];
 
@@ -576,7 +590,7 @@ if(isNil "dayz_zedsAttackVehicles") then {
 dayz_updateObjects = ["Plane","Tank","Car", "Helicopter", "Motorcycle", "Ship", "TentStorage", "VaultStorage","LockboxStorage","OutHouse_DZ","Wooden_shed_DZ","WoodShack_DZ","StorageShed_DZ","GunRack_DZ","WoodCrate_DZ","Scaffolding_DZ"];
 dayz_disallowedVault = ["TentStorage", "BuiltItems","ModularItems","DZE_Base_Object"];
 dayz_reveal = ["AllVehicles","WeaponHolder","Land_A_tent","BuiltItems","ModularItems","DZE_Base_Object"];
-dayz_allowedObjects = ["HeliHRescue","MetalFloor_Preview_DZ","TentStorage","TentStorageDomed","TentStorageDomed2", "VaultStorageLocked", "Hedgehog_DZ", "Sandbag1_DZ","BagFenceRound_DZ","TrapBear","Fort_RazorWire","WoodGate_DZ","Land_HBarrier1_DZ","Land_HBarrier3_DZ","Land_HBarrier5_DZ","Fence_corrugated_DZ","M240Nest_DZ","CanvasHut_DZ","ParkBench_DZ","MetalGate_DZ","OutHouse_DZ","Wooden_shed_DZ","WoodShack_DZ","StorageShed_DZ","Plastic_Pole_EP1_DZ","Generator_DZ","StickFence_DZ","LightPole_DZ","FuelPump_DZ","DesertCamoNet_DZ","ForestCamoNet_DZ","DesertLargeCamoNet_DZ","ForestLargeCamoNet_DZ","SandNest_DZ","DeerStand_DZ","MetalPanel_DZ","WorkBench_DZ","WoodFloor_DZ","WoodLargeWall_DZ","WoodLargeWallDoor_DZ","WoodLargeWallWin_DZ","WoodSmallWall_DZ","WoodSmallWallWin_DZ","WoodSmallWallDoor_DZ","LockboxStorageLocked","WoodFloorHalf_DZ","WoodFloorQuarter_DZ","WoodStairs_DZ","WoodStairsSans_DZ","WoodStairsRails_DZ","WoodSmallWallThird_DZ","WoodLadder_DZ","Land_DZE_GarageWoodDoor","Land_DZE_LargeWoodDoor","Land_DZE_WoodDoor","Land_DZE_GarageWoodDoorLocked","Land_DZE_LargeWoodDoorLocked","Land_DZE_WoodDoorLocked","CinderWallHalf_DZ","CinderWall_DZ","CinderWallDoorway_DZ","CinderWallDoor_DZ","CinderWallDoorLocked_DZ","CinderWallSmallDoorway_DZ","CinderWallDoorSmall_DZ","CinderWallDoorSmallLocked_DZ","MetalFloor_DZ","WoodRamp_DZ","GunRack_DZ","FireBarrel_DZ","WoodCrate_DZ","Scaffolding_DZ"];
+dayz_allowedObjects = ["TentStorage","TentStorageDomed","TentStorageDomed2", "VaultStorageLocked", "Hedgehog_DZ", "Sandbag1_DZ","BagFenceRound_DZ","TrapBear","Fort_RazorWire","WoodGate_DZ","Land_HBarrier1_DZ","Land_HBarrier3_DZ","Land_HBarrier5_DZ","Fence_corrugated_DZ","M240Nest_DZ","CanvasHut_DZ","ParkBench_DZ","MetalGate_DZ","OutHouse_DZ","Wooden_shed_DZ","WoodShack_DZ","StorageShed_DZ","Plastic_Pole_EP1_DZ","Generator_DZ","StickFence_DZ","LightPole_DZ","FuelPump_DZ","DesertCamoNet_DZ","ForestCamoNet_DZ","DesertLargeCamoNet_DZ","ForestLargeCamoNet_DZ","SandNest_DZ","DeerStand_DZ","MetalPanel_DZ","WorkBench_DZ","WoodFloor_DZ","WoodLargeWall_DZ","WoodLargeWallDoor_DZ","WoodLargeWallWin_DZ","WoodSmallWall_DZ","WoodSmallWallWin_DZ","WoodSmallWallDoor_DZ","LockboxStorageLocked","WoodFloorHalf_DZ","WoodFloorQuarter_DZ","WoodStairs_DZ","WoodStairsSans_DZ","WoodStairsRails_DZ","WoodSmallWallThird_DZ","WoodLadder_DZ","Land_DZE_GarageWoodDoor","Land_DZE_LargeWoodDoor","Land_DZE_WoodDoor","Land_DZE_GarageWoodDoorLocked","Land_DZE_LargeWoodDoorLocked","Land_DZE_WoodDoorLocked","CinderWallHalf_DZ","CinderWall_DZ","CinderWallDoorway_DZ","CinderWallDoor_DZ","CinderWallDoorLocked_DZ","CinderWallSmallDoorway_DZ","CinderWallDoorSmall_DZ","CinderWallDoorSmallLocked_DZ","MetalFloor_DZ","WoodRamp_DZ","GunRack_DZ","FireBarrel_DZ","WoodCrate_DZ","Scaffolding_DZ"];
 
 DZE_LockableStorage = ["VaultStorage","VaultStorageLocked","LockboxStorageLocked","LockboxStorage"];
 DZE_LockedStorage = ["VaultStorageLocked","LockboxStorageLocked"];
@@ -599,6 +613,10 @@ DZE_fueltruckarray = ["KamazRefuel_DZ","UralRefuel_TK_EP1_DZ","MtvrRefuel_DES_EP
 dayz_fuelsources = ["Land_Ind_TankSmall","Land_fuel_tank_big","Land_fuel_tank_stairs","Land_fuel_tank_stairs_ep1","Land_wagon_tanker","Land_fuelstation","Land_fuelstation_army","land_fuelstation_w","Land_benzina_schnell"];
 
 DZE_Lock_Door = "";
+
+if (isNil "DZE_plotOwnershipExclusions") then {
+	DZE_plotTakeOwnershipItems = dayz_allowedObjects - (DZE_LockableStorage + ["Plastic_Pole_EP1_DZ","TentStorage","TentStorageDomed","TentStorageDomed2"]);
+};
 
 //init global arrays for Loot Chances
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\loot_init.sqf";
@@ -706,18 +724,24 @@ if(!isDedicated) then {
 	dayz_spawnZombies = 0;
 	dayz_swarmSpawnZombies = 0;
 //Max local
-	dayz_maxLocalZombies = 30; // max quantity of Z controlled by local gameclient, used by player_spawnCheck. Below this limit we can spawn Z
-//Current NearBy
 	dayz_CurrentNearByZombies = 0;
 //Max NearBy
-	dayz_maxNearByZombies = 60; // max quantity of Z controlled by local gameclient, used by player_spawnCheck. Below this limit we can spawn Z
+	if (isNil "dayz_maxNearByZombies") then {
+		dayz_maxNearByZombies = 60; // max quantity of Z controlled by local gameclient, used by player_spawnCheck. Below this limit we can spawn Z
 //Current total
+	};
 	dayz_currentGlobalZombies = 0;
 //Max global zeds.
-	dayz_maxGlobalZeds = 3000;
-	dayz_spawnDelay =		120;
-	dayz_spawnWait =		-120;
-	dayz_lootDelay =		3;
+	if (isNil "dayz_maxGlobalZeds") then {
+		dayz_maxGlobalZeds = 3000;
+	};
+	if (isNil "dayz_spawnDelay") then {
+		dayz_spawnDelay =		120;
+	};
+	dayz_spawnWait =		-(dayz_spawnDelay);
+	if (isNil "dayz_lootDelay") then {
+		dayz_lootDelay =		3;
+	};
 	dayz_lootWait =			-300;
 	//used to count global zeds around players
 	dayz_CurrentZombies = 0;
@@ -793,6 +817,8 @@ if(!isDedicated) then {
 	DZE_5 = false;
 	DZE_4 = false;
 	DZE_6 = false;
+	
+	DZE_F = false;
 
 	DZE_cancelBuilding = false;
 	DZE_PZATTACK = false;
@@ -805,75 +831,4 @@ if(!isDedicated) then {
 	DZE_InRadiationZone = false;
 
 	DZE_SaveTime = 30;
-	
-		// Array of fixed and mobile (fuel truck) fuel sources.
-	DZE_RB_AllFuelSources = ["Land_Ind_TankSmall","Land_fuel_tank_big","Land_fuel_tank_stairs","Land_fuel_tank_stairs_ep1","Land_wagon_tanker","Land_fuelstation","Land_fuelstation_army","land_fuelstation_w","Land_benzina_schnell","KamazRefuel_DZ","UralRefuel_TK_EP1_DZ","MtvrRefuel_DES_EP1_DZ","V3S_Refuel_TK_GUE_EP1_DZ","MtvrRefuel_DZ","KamazRefuel_DZE","UralRefuel_TK_EP1_DZE","MtvrRefuel_DES_EP1_DZE","V3S_Refuel_TK_GUE_EP1_DZE","MtvrRefuel_DZE"];
-
-	// Realistic Vehicle capacity array [[classname],[capacity]]
-	DZE_RB_FuelCapArray = [["AH6X_DZ","MH6J_DZ","AN2_DZ","RBX","RHIB","BAF_Merlin_DZE","C130J_US_EP1","CH_47F_EP1_DZ","CH_47F_EP1_DZE","CH53_DZ","CH53_DZE","Mi17_DZ","Mi17_DZE","Mi17_Civilian_DZ","MV22_DZ","UH1Y_DZ","UH1Y_DZE","MH60S_DZ","UH60M_base_EP1","UH60M_EP1_DZ","MH60S_DZE","UH60M_EP1_DZE"],[242,242,757,23,250,3222,34095,4043,4043,3849,3849,1870,1870,1870,6513,1333,1333,1360,1360,1360,1360,1360]];
-
-	// Vehicles that can be flood fill refuelled by a fuel truck)
-	DZE_RB_floodfill = ["BAF_Merlin_DZE","C130J_US_EP1","CH_47F_EP1_DZ","CH_47F_EP1_DZE","CH53_DZ","CH53_DZE","Mi17_DZ","Mi17_DZE","Mi17_Civilian_DZ","MV22_DZ","UH1Y_DZ","UH1Y_DZE","MH60S_DZ","UH60M_base_EP1","UH60M_EP1_DZ","MH60S_DZE","UH60M_EP1_DZE"];
-
-	// Refuelling range
-	DZE_RefuelRange = 90;
-	
-	// Fuel truck pump speed
-	DZE_RB_pumpspeed_truck = 40;
-
-	// Fixed fuel pump speed 
-	DZE_RB_pumpspeed_fixed = 50;
-	
-	// Flood fill fuel pump speed 
-	DZE_RB_pumpspeed_flood = 400;	
-	
-	// Variable to show if fuel trucks can be used as fuel pump fuel sources.
-	DZE_RB_PumpSourceTruck =	false;
-	DZE_RB_AllowFloodRefuel =	True;
-	DZE_RB_RealisticFuelCapacity = 	True;
-	RefuelCursorTarget = nil;
 };
-ColourVehicles = [
-	"ATV_CZ_EP1",
-	"ATV_US_EP1",
-	"SUV_TK_CIV_EP1",
-	"Mi17_Civilian_DZ",
-	"UH60M_EP1_DZE",
-	"Ka52",
-	"Ka52Black",
-	"UH1H_TK_EP1",
-	"UH60M_MEV_EP1",
-	"HMMWV_M998A2_SOV_DES_EP1_DZE",
-	"HMMWV_M1151_M2_CZ_DES_EP1_DZE",
-	"UAZ_MG_TK_EP1_DZE",
-	"Ural_CDF",
-	"Ural_TK_CIV_EP1",
-	"Ural_UN_EP1",
-	"V3S_Open_TK_CIV_EP1",
-	"Kamaz",
-	"MTVR_DES_EP1", 
-	"MH6J_DZ",
-	"AH6X_DZ",
-	"HMMWV_M1035_DES_EP1",
-	"HMMWV_Ambulance",
-	"HMMWV_Ambulance_CZ_DES_EP1",
-	"HMMWV_DES_EP1",
-	"HMMWV_DZ",
-	"hilux1_civil_3_open_EP1",
-	"hilux1_civil_1_open",
-	"datsun1_civil_1_open",
-	"Pickup_PK_GUE_DZE",
-	"Pickup_PK_INS_DZE",
-	"Pickup_PK_TK_GUE_EP1_DZE",
-	"Offroad_DSHKM_Gue_DZE",
-	"LAV25_HQ",
-	"BTR90_HQ_DZE",
-	"M1133_MEV_EP1",
-	"pook_H13_amphib",
-	"pook_H13_civ",
-	"pook_H13_medevac_CIV",
-	"pook_H13_transport",
-	"pook_H13_gunship_PMC",
-	"pook_H13_transport_INS",
-	"VWGolf"
-	];

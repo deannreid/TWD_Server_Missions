@@ -180,3 +180,5 @@ class DayZ_loadingScreen
 #include "custom\Paint\vehiclecolour.hpp"
 #include "custom\bank\adminc\currency_dialog.hpp"
 #include "custom\header\radio.hpp"
+#include "custom\snap_pro\snappoints.hpp"
+#include "custom\plotManagement\plotManagement.hpp"

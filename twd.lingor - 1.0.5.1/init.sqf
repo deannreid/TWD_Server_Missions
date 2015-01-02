@@ -16,16 +16,16 @@ execVM "custom\code\server\config.sqf";
 diag_log "==============================================";
 
 diag_log "Loading Epoch Compiled Functions";
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";
+call compile preprocessFileLineNumbers "Custom\A_Plot_for_Life\init\variables.sqf";
 diag_log "Loaded Variables";
 progressLoadingScreen 0.1;
-call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";
+call compile preprocessFileLineNumbers "Custom\A_Plot_for_Life\init\publicEH.sqf";
 diag_log "Loaded Public EventHandlers";
 progressLoadingScreen 0.2;
 call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";
 diag_log "Loaded Medical Functions";
 progressLoadingScreen 0.4;
-call compile preprocessFileLineNumbers "custom\code\defaultcompiles.sqf";
+call compile preprocessFileLineNumbers "Custom\A_Plot_for_Life\init\compiles.sqf";
 diag_log "Finished Loading Epoch Compiled Functions";
 
 progressLoadingScreen 0.5;
@@ -46,7 +46,7 @@ diag_log "==============================================";
 
 diag_log "Loading Server Monitor & Server Executions!";
 if (isServer) then  {
-						_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
+						_serverMonitor = [] execVM "custom\system\server_monitor.sqf";
 											   execVM "custom\code\server\server.sqf";
 					};
 diag_log "Finished Loading Server Monitor & Server Executions!";
