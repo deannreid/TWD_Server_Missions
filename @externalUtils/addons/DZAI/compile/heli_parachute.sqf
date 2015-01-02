@@ -20,7 +20,7 @@ if (!surfaceIsWater _vehPos) then {
 	private ["_unitsAlive","_trigger","_weapongrade","_units","_waypointCount"];
 	_weapongrade = _unitGroup getVariable ["weapongrade",1];
 	_units = units _unitGroup;
-	if (((_vehPos select 2) > 60) or {(random 1) < 0.40}) then {
+	if (((_vehPos select 2) > 60) or {(0.40 call DZAI_chance)}) then {
 		{
 			if (alive _x) then {
 				_health = _x getVariable ["unithealth",[]];
@@ -62,7 +62,7 @@ if (!surfaceIsWater _vehPos) then {
 			_trigger setVariable ["maxUnits",[_unitsAlive,0]];
 			_trigger setVariable ["respawn",false]; //landed AI units should never respawn
 			_trigger setVariable ["permadelete",true]; //units should be permanently despawned
-			_trigger call DZAI_updStaticSpawnCount;
+			[_trigger,"DZAI_staticTriggerArray"] call DZAI_updateSpawnCount;
 			0 = [_trigger] spawn fnc_despawnBandits;
 
 			_unitGroup setVariable ["unitType","static"];

@@ -314,15 +314,6 @@ if (true) then
   _this setPos [12938.81, 12747.765];
 };
 
-_vehicle_109 = objNull;
-if (true) then
-{
-  _this = createVehicle ["Land_hut_old02", [12907.715, 12778.202, -0.23488703], [], 0, "CAN_COLLIDE"];
-  _vehicle_109 = _this;
-  _this setDir 449.59454;
-  _this setPos [12907.715, 12778.202, -0.23488703];
-};
-
 _vehicle_110 = objNull;
 if (true) then
 {
@@ -795,15 +786,6 @@ if (true) then
   _vehicle_267 = _this;
   _this setDir -77.747803;
   _this setPos [12935.502, 12778.09, -0.00010681152];
-};
-
-_vehicle_275 = objNull;
-if (true) then
-{
-  _this = createVehicle ["Hanged", [12914.781, 12782.197, -0.50076163], [], 0, "CAN_COLLIDE"];
-  _vehicle_275 = _this;
-  _this setDir -49.720215;
-  _this setPos [12914.781, 12782.197, -0.50076163];
 };
 
 _vehicle_279 = objNull;

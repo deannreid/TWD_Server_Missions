@@ -49,24 +49,15 @@ _needUpdate = _object in needUpdate_objects;
 
 // TODO ----------------------
 _object_position = {
-	private["_position","_worldspace","_fuel","_key","_colour","_colour2"];
+	private["_position","_worldspace","_fuel","_key"];
 		_position = getPosATL _object;
+		_worldspace = [
+			round(direction _object),
+			_position
+		];
+		_fuel = 0;
 		if (_object isKindOf "AllVehicles") then {
-			_colour = _object getVariable ["Colour","0"];
-			_colour2 = _object getVariable ["Colour2","0"];
-			_worldspace = [
-				round(direction _object),
-				_position,
-				_colour,
-				_colour2
-			];
 			_fuel = fuel _object;
-		} else {
-			_worldspace = [
-				round(direction _object),
-				_position
-			];
-			_fuel = 0;
 		};
 		diag_log format["CHILD:305:%1:%2:%3:",_objectID,_worldspace,_fuel];
 };

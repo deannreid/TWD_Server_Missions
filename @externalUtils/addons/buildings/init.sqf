@@ -1,3 +1,4 @@
+if (dayZ_instance == 11) then {	
 execVM "\z\addons\dayz_server\buildings\balota.sqf";
 execVM "\z\addons\dayz_server\buildings\bank.sqf";
 execVM "\z\addons\dayz_server\buildings\bash.sqf";
@@ -19,4 +20,4 @@ execVM "\z\addons\dayz_server\buildings\vybor.sqf";
 execVM "\z\addons\dayz_server\buildings\zelenogorsk.sqf";
 execVM "\z\addons\dayz_server\buildings\mine.sqf";
 execVM "\z\addons\dayz_server\buildings\island.sqf";
-execVM "\z\addons\dayz_server\buildings\ducks.sqf";
+execVM "\z\addons\dayz_server\buildings\ducks.sqf";};

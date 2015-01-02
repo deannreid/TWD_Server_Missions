@@ -21,13 +21,8 @@ if (dayZ_instance == 11) then {
 		watermark_1 = compile preprocessFileLineNumbers "custom\code\twd.sqf";
 		player spawn watermark_1;
 	diag_log "Watermark Loaded";
-		null = [this, 20] execVM "custom\vehicleloadoutselector\f2f_alss_init.sqf"
-		null = [this] execVM "custom\vehicleloadoutselector\f2f_exe\f2f_exe_vecInit_clrWeps.sqf";
-	diag_log "Vehicle Loadout Selector Loaded";
-		_nul = [this] execVM "custom\NavLights\scripts\actions.sqf";
-	diag_log "Nav Lights Loaded";
 		[]execVM "custom\carradio\checkradio.sqf"
 	diag_log "Car Stereo Loaded";
 		execVM "custom\markers\init.sqf";
-	diag_log format "Markers Loaded %1",dayZ_instance;
+	diag_log format "Markers Loaded";
 diag_log "==============================================";

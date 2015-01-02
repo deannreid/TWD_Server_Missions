@@ -7,11 +7,6 @@
 
 #include "spawn_markers\markers_trinity.sqf"	//Load manual spawn point definitions file.
 
-if ((DZAI_maxHeliPatrols > 0) or {(DZAI_maxLandPatrols > 0)}) then {
-	"DZAI_centerMarker" setMarkerPos [7183.8403, 7067.4727];
-	"DZAI_centerMarker" setMarkerSize [5250, 5250];
-};
-
 waitUntil {sleep 0.1; !isNil "DZAI_classnamesVerified"};	//Wait for DZAI to finish verifying classname arrays or finish building classname arrays if verification is disabled.
 
 if (DZAI_staticAI) then {
@@ -71,5 +66,6 @@ if (DZAI_staticAI) then {
 
 #include "custom_markers\cust_markers_trinity.sqf"
 #include "custom_spawns\cust_spawns_trinity.sqf"
-
+//----------------------------Do not edit anything below this line -----------------------------------------
+DZAI_customSpawnsReady = true;
 diag_log "Trinity Island static spawn configuration loaded.";

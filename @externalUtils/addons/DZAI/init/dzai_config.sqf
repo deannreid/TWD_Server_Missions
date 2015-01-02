@@ -3,7 +3,7 @@
 	
 	Description: Contains all configurable settings of DZAI. Contains settings for debugging, customization of AI units, spawning, and loot.
 	
-	Last updated: 6:25 AM 6/17/2014
+
 */
 
 diag_log "[DZAI] Reading DZAI configuration file.";
@@ -18,9 +18,12 @@ DZAI_debugLevel = 0;
 //Frequency of server monitor update to RPT log in seconds. The monitor periodically reports number of max/current AI units and dynamically spawned triggers into RPT log. (Default: 300, 0 = Disable reporting)										
 DZAI_monitorRate = 300;
 
-//Enable or disable verification of classname tables used by DZAI. If invalid entries are found, they are removed and logged into the RPT log.
-//If disabled, any invalid classnames will not be removed and clients may crash if AI bodies with invalid items are looted. Disable ONLY if a previous scan shows no invalid classnames (Default: true).										
+//Enable or disable verification and error-correction of classname tables used by DZAI. If invalid entries are found, they are removed and logged into the RPT log.
+//If disabled, any invalid classnames will not be removed and clients may crash if AI bodies with invalid items are looted. Only disable if a previous scan shows no invalid classnames (Default: true).										
 DZAI_verifyTables = true;
+
+//(Feature in development) Enables additional checking and error-correction of certain classname tables. (Default: false)
+DZAI_extendedVerify = false;
 
 //Enable to have server spawn in objects/buildings normally spawned clientside by DayZ's CfgTownGenerator. Prevents AI from walking/shooting through clutter and other objects. (Default: true)	
 //If running DayZ Mod ("vanilla DayZ") or DayZ Overwatch, it is highly recommended to enable this option, as many added buildings are handled by the CfgTownGenerator. Not used with Epoch.							
@@ -30,23 +33,9 @@ DZAI_objPatch = true;
 //Note: Other cleanup scripts might interfere by cleaning up dead AI bodies/vehicles!									
 DZAI_cleanupDelay = 900;									
 
-
-/*
-
-	DZAI_modName value	|	Enables additional settings for...	|	Automatically detected by DZAI? (If Yes, editing DZAI_modName is not needed)
-	--------------------------------------------------------------------------------------------------------------------
-	""						Automatically detect mod 						N/A
-	"default"				Force default settings							N/A
-	"2017"					DayZ 2017/Namalsk 2017						No - Must set DZAI_modName = "2017" to enable additional settings.
-	"epoch"					DayZ Epoch 									Yes - Adds bar currency to AI loot tables, AI skins, Epoch foods, replaces toolbelt items with Epoch versions.
-	"overwatch"				DayZ Overwatch 								Yes - Adds Overwatch skins for AI.
-	"huntinggrounds"		DayZ Hunting Grounds 						Yes - Enables additional static AI spawns for expanded Lingor map, AI skins, and backpacks.
-	"unleashed"				DayZ Unleashed								Yes - Enables Unleashed static AI spawns and AI skins.
-	
-*/
-
-//(Optional) In most cases this setting should be left unchanged. This setting should only be changed if DZAI is detecting the wrong DayZ mod automatically. (Default: "")
-DZAI_modName = "";
+//Enable auto detection of DayZ mod type ran by server. If additional support exists for the mod type, DZAI will load additional classnames (example: weapons, skins, or other items)
+//Additional support exists for the following DayZ mods: Epoch, Overwatch, Unleashed, Hunting Grounds, 2017. (Default: true)
+DZAI_modAutoDetect = true;
 
 
 /*	AI Unit Settings
@@ -70,22 +59,22 @@ DZAI_lowBloodLevel = 5000;
 
 //Enable or disable zombie attraction to AI weapon sounds. No effect if DZAI_zombieEnemy is set to false. Enabling this option may impact server performance as a script is run for each AI bullet fired.
 //Note: AI cannot be attacked or damaged by zombies.(Default: false)		
-DZAI_weaponNoise = false;
+DZAI_weaponNoise = true;
 
 //If enabled, AI group will attempt to track down player responsible for killing a group member. Players with radios will be given text warnings if they are being pursued (Default: true)
 DZAI_findKiller = true;	
 
 //If normal probability check for spawning NVGs fails, then give AI temporary NVGs only if they are spawned with weapongrade 1 or higher (applies only during nighttime hours). Temporary NVGs are unlootable and will be removed at death (Default: false).									
-DZAI_tempNVGs = false;	
+DZAI_tempNVGs = true;	
 
 //Amount of humanity to reward player for killing an AI unit (Default: 0)									
-DZAI_humanityGain = 0;										
+DZAI_humanityGain = 50;										
 
 //If enabled, players with radios will be given text warnings if they are being pursued by AI groups. (Default: true)
 DZAI_radioMsgs = true;
 
 //If enabled, last surviving unit of a group will be granted slightly boosted skills. No effect if unit is spawned alone (Default: false)
-DZAI_lastManStanding = false;
+DZAI_lastManStanding = true;
 
 
 /*DZAI client-side addon settings. 
@@ -99,7 +88,10 @@ DZAI_clientRadio = false;
 DZAI_zombieEnemy = false;	
 
 //Maximum distance (in meters) for AI group leader to detect zombies. Increasing range beyond default may negatively impact server performance. (Default: 150)							
-DZAI_zDetectRange = 150;									
+DZAI_zDetectRange = 150;
+
+//Enable or disable AI death messages. Messages will be sent only to player responsible for killing the unit. Messages will be sent in System chat in the format "(Unit name) was killed." (Default: false)
+DZAI_deathMessages = false;									
 
 
 /*	Static AI Spawning Settings
@@ -116,10 +108,16 @@ DZAI_respawnTimeMax = 600;
 DZAI_despawnWait = 120;										
 
 //Respawn limits. Set to -1 for unlimited respawns. (Default: -1 for each).
-DZAI_respawnLimit0 = -1; //Respawn limit for low level AI found in low-value areas (Default: -1)
-DZAI_respawnLimit1 = -1; //Respawn limit for mid level AI found in cities and other mid-value areas (Default: -1)
-DZAI_respawnLimit2 = -1; //Respawn limit for high level AI found in places with military loot (Default: -1)
-DZAI_respawnLimit3 = -1; //Respawn limit for very high level AI in places with high-grade military loot (Default: -1)
+DZAI_respawnLimit0 = -1; 	//Respawn limit for low level AI found in low-value areas (Default: -1)
+DZAI_respawnLimit1 = -1; 	//Respawn limit for mid level AI found in cities and other mid-value areas (Default: -1)
+DZAI_respawnLimit2 = -1; 	//Respawn limit for high level AI found in places with military loot (Default: -1)
+DZAI_respawnLimit3 = -1; 	//Respawn limit for very high level AI in places with high-grade military loot (Default: -1)
+
+//Spawn probabilities
+DZAI_spawnChance0 = 0.40;	//Spawn chance for low-skill AI typically found in small towns (Default: 0.40)
+DZAI_spawnChance1 = 0.60;	//Spawn chance for mid-level AI typically found in cities and large towns (Default: 0.60)
+DZAI_spawnChance2 = 0.80;	//Spawn chance for high-level AI typically found in places with military-grade loot (Default: 0.80)
+DZAI_spawnChance3 = 0.90;	//Spawn chance for expert-level AI found in areas with high-grade military loot (Default: 0.90)
 
 
 /*	Dynamic AI Spawning Settings
@@ -128,11 +126,11 @@ DZAI_respawnLimit3 = -1; //Respawn limit for very high level AI in places with h
 //Enable or disable dynamic AI spawns. If enabled, AI spawn locations will be generated for randomly selected players at randomized intervals (Default: true)									
 DZAI_dynAISpawns = true;
 
-//Time (seconds) required to reach maximum spawn probability per player, after which the probability is reset to 0%. Lower number = More frequent spawns, Higher Number = Less frequent. (Recommended range: 1200-2700, Default: 1800)
-DZAI_maxSpawnTime = 1800;
+//Time (seconds) required to reach maximum spawn probability per player, after which the probability is reset to 0%. Lower number = More frequent spawns, Higher Number = Less frequent. (Recommended range: 1200-2700, Default: 1200)
+DZAI_maxSpawnTime = 1200;
 
-//Time (seconds) to allow each player to retain maximum spawn probability. (Default: 1800).
-DZAI_keepMaxSpawnTime = 1800;
+//Time (seconds) to allow each player to retain maximum spawn probability. (Default: 1200).
+DZAI_keepMaxSpawnTime = 1200;
 
 //Probability for dynamic AI to actively hunt a targeted player. If probability check fails, dynamic AI will patrol the area instead of hunting (Default: 0.50)
 DZAI_huntingChance = 0.50;
@@ -144,25 +142,43 @@ DZAI_heliReinforceChance = 0.50;
 //Epoch: DZAI will automatically set up 200m-radius blacklist areas around each trader area.
 DZAI_dynAreaBlacklist = [];
 
-//Time to wait before despawning all AI units in dynamic trigger area when no players are present. (Default: 120)
+//Time to wait before despawning all AI units in dynamic spawn area when no players are present. (Default: 120)
 DZAI_dynDespawnWait = 120;
 
 //Enable or disable dynamic spawn-free zones of 600m radius around player spawn areas. (Default: false)
 DZAI_freshSpawnSafeArea = false;
 
 
+/*	Random AI Spawning Settings (Feature in development)
+--------------------------------------------------------------------------------------------------------------------*/		
+
+//Maximum number of placed random spawns on map
+DZAI_maxRandomSpawns = 5;
+
+//Time to wait before despawning all AI units in random spawn area when no players are present. (Default: 120)
+DZAI_randDespawnWait = 120;
+
+//Array of area blacklist markers. Players within marker areas will not be targeted for random AI spawns (Example: ["BlacklistArea1","BlacklistArea2","BlacklistArea3"])
+//Epoch: DZAI will automatically set up 200m-radius blacklist areas around each trader area.
+//Tip: To use dynamic-spawn blacklist areas for random-spawn blacklist areas, simply set DZAI_randAreaBlacklist = DZAI_dynAreaBlacklist;
+DZAI_randAreaBlacklist = [];
+
+
 /*	AI Air vehicle patrol settings. These AI vehicles will randomly travel between different cities and towns.
 --------------------------------------------------------------------------------------------------------------------*/		
 
 //Global maximum number of active AI air vehicle patrols. Set at 0 to disable (Default: 0).							
-DZAI_maxHeliPatrols = 0;
+DZAI_maxHeliPatrols = 2;
 
 //Set minimum and maximum wait time in seconds to respawn an AI vehicle patrol after vehicle is destroyed or disabled. (Default: Min 600, Max 900).
 DZAI_respawnTMinA = 600;
 DZAI_respawnTMaxA = 900;
 
-//Classnames of air vehicle types to use, with the maximum amount of each type to spawn. Default: [["UH1H_DZ",1]]
-DZAI_heliList = [["UH1H_DZ",1]];
+//Classnames of air vehicle types to use, with the maximum amount of each type to spawn.
+DZAI_heliList = [
+	["UH1H_DZ",5],
+	["Mi17_DZ",5]
+];
 
 //Difficulty level of air vehicle patrol units. Difficulty level also affects unit loadout and loot. Possible values: 0 to 3 (Default: 3)
 DZAI_heliUnitLevel = 3;
@@ -186,14 +202,17 @@ DZAI_airWeapons = [
 --------------------------------------------------------------------------------------------------------------------*/	
 
 //Global maximum number of active AI land vehicle patrols. Set at 0 to disable (Default: 0).	
-DZAI_maxLandPatrols = 0;
+DZAI_maxLandPatrols = 2;
 
 //Set minimum and maximum wait time in seconds to respawn an AI vehicle patrol after vehicle is destroyed or disabled. (Default: Min 600, Max 900).
 DZAI_respawnTMinL = 600;
 DZAI_respawnTMaxL = 900;
 
-//Classnames of land vehicle types to use, with the maximum amount of each type to spawn. Default: [["UAZ_Unarmed_TK_EP1",1]]
-DZAI_vehList = [["UAZ_Unarmed_TK_EP1",1]];
+//Classnames of land vehicle types to use, with the maximum amount of each type to spawn.
+DZAI_vehList = [
+	["UAZ_Unarmed_TK_EP1",5],
+	["SUV_TK_CIV_EP1",5]
+];
 
 //Difficulty level of land vehicle patrol units. Difficulty level also affects unit loadout and loot. Possible values: 0 to 3 (Default: 3)
 DZAI_vehUnitLevel = 3;
@@ -222,7 +241,7 @@ DZAI_dynamicWeaponList = true;
 
 //Determines whether DZAI reads from default DayZ loot tables for dynamic AI weapon generation or from user-installed custom loot tables. (Default: false)
 //No effect if DZAI_dynamicWeaponList is 'false'. If DZAI is unable to find custom loot tables installed, default loot tables will be used instead. If no loot tables are found, DZAI will use prebuilt weapon tables.
-DZAI_customLootTables = false;
+DZAI_customLootTables = true;
 
 //List of classnames of weapons that AI should never use. By default, AI may carry any lootable weapon. (Only if DZAI_dynamicWeaponList = true)  
 //Example: DZAI_banAIWeapons = ["M107_DZ","BAF_AS50_scoped"] will remove the M107 and AS50 from AI weapon tables if dynamic weapon list is enabled.								
@@ -405,12 +424,13 @@ DZAI_skill9 = nil;
 DZAI_Pistols0 = ["Makarov","Colt1911","revolver_EP1"]; 				//Weapongrade 0 pistols
 DZAI_Pistols1 = ["M9","M9SD","MakarovSD","UZI_EP1","glock17_EP1"]; 	//Weapongrade 1 pistols
 DZAI_Pistols2 = ["M9SD","MakarovSD","UZI_EP1","glock17_EP1"]; 		//Weapongrade 2 pistols
-DZAI_Pistols3 = ["M9SD","MakarovSD","UZI_EP1","glock17_EP1"]; 		//Weapongrade 3 pistols
+DZAI_Pistols3 = ["Makarov","Colt1911","revolver_EP1","revolver_gold_EP1","M9","M9SD","MakarovSD","UZI_EP1","UZI_SD_EP1","glock17_EP1","Sa61_EP1","RH_anac","RH_anacg","RH_bull","RH_g17","RH_g17sd","RH_g18","RH_g19","RH_g19t","RH_deagle","RH_Deagleg","RH_Deagles","RH_Deaglem","RH_Deaglemz","RH_Deaglemzb","RH_m1911","RH_m1911sd","RH_m1911old","RH_m9","RH_m9sd","RH_m9c","RH_m9csd","RH_mk22","RH_mk22sd","RH_mk22v","RH_mk22vsd","RH_mk2","RH_muzi","RH_python","RH_browninghp","RH_p226","RH_p226s","RH_p38","RH_ppk","RH_usp","RH_usp","RH_uspsd","RH_uspm","RH_tt33","RH_vz61","RH_tec9","vil_USP","vil_USPSD","vil_USP45","vil_USP45SD","vil_APS","vil_apssd","Vil_PYA"];
 
-DZAI_Rifles0 = ["LeeEnfield","Winchester1866","MR43","huntingrifle","LeeEnfield","Winchester1866","MR43"]; //Weapongrade 0 rifles
+DZAI_Rifles0 = ["gms_k98","gms_k98_rg","gms_k98_knife","gms_k98zf39","Remington870","RH_m93r","RH_hk416","RH_hk416s","RH_hk416saim","RH_hk416seotech","RH_hk416sacog","RH_hk416sd","RH_hk416sdaim","RH_hk416sdeotech", "RH_hk416aim","RH_hk416eotech","RH_hk416acog","RH_hk416gl","RH_hk416glaim","RH_hk416gleotech","RH_hk416glacog","RH_hk416sgl","RH_hk416sglaim","RH_hk416sgleotech","RH_hk416sglacog","RH_hk416sdgl", "RH_hk416sdglaim","RH_hk416sdgleotech","RH_hk417","RH_hk417aim","RH_hk417eotech","RH_hk417acog","RH_hk417sp","RH_hk417s","RH_hk417saim","RH_hk417seotech","RH_hk417sacog","RH_hk417sd","RH_hk417sdaim", "RH_hk417sdeotech","RH_hk417sdacog","RH_hk417sdsp","RH_hk417sgl","RH_hk417sglaim","RH_hk417sgleotech","RH_hk417sglacog","RH_ctar21","RH_ctar21glacog","RH_ctar21m","RH_ctar21mgl","RH_star21","RH_mas","RH_masaim", "RH_maseotech","RH_masacog","RH_massd","RH_massdaim","RH_massdeotech","RH_massdacog","RH_masb","RH_masbaim","RH_masbeotech","RH_masbacog","RH_masbsd","RH_masbsdaim","RH_masbsdeotech","RH_masbsdacog","RH_acr", "RH_acraim","RH_acreotech","RH_acracog","RH_acrgl","RH_acrglaim","RH_acrgleotech","RH_acrglacog","RH_acrb","RH_acrbaim","RH_acrbeotech","RH_acrbacog","RH_acrbgl","RH_acrbglaim","RH_acrbgleotech","RH_acrbglacog","RH_m14", "RH_m14acog","RH_m14aim","RH_m14eot","RH_m21","RH_sc2","RH_sc2acog","RH_sc2aim","RH_sc2eot","RH_sc2shd","RH_sc2sp","RH_m1s","RH_m1sacog","RH_m1saim","RH_m1seot","RH_m1sshd","RH_m1ssp","RH_m1st","RH_m1stacog","RH_m1staim", "RH_m1steot","RH_m1stshd","RH_m1stsp","FHQ_ACR_WDL_IRN","FHQ_ACR_WDL_IRN_F","FHQ_ACR_WDL_IRN_SD","FHQ_ACR_WDL_IRN_SD_F","FHQ_ACR_WDL_IRN_GL","FHQ_ACR_WDL_IRN_GL_F","FHQ_ACR_WDL_IRN_GL_SD","FHQ_ACR_WDL_IRN_GL_SD_F", "FHQ_ACR_WDL_CCO","FHQ_ACR_WDL_CCO_F","FHQ_ACR_WDL_CCO_SD","FHQ_ACR_WDL_CCO_SD_F","FHQ_ACR_WDL_CCO_GL","FHQ_ACR_WDL_CCO_GL_F","FHQ_ACR_WDL_CCO_GL_SD","FHQ_ACR_WDL_CCO_GL_SD_F","FHQ_ACR_WDL_RCO","FHQ_ACR_WDL_RCO_F", "FHQ_ACR_WDL_RCO_SD","FHQ_ACR_WDL_RCO_SD_F","FHQ_ACR_WDL_RCO_GL","FHQ_ACR_WDL_RCO_GL_F","FHQ_ACR_WDL_RCO_GL_SD","FHQ_ACR_WDL_RCO_GL_SD_F","FHQ_ACR_WDL_HWS","FHQ_ACR_WDL_HWS_F","FHQ_ACR_WDL_HWS_GL","FHQ_ACR_WDL_HWS_GL_F", "FHQ_ACR_WDL_HWS_SD","FHQ_ACR_WDL_HWS_SD_F","FHQ_ACR_WDL_HWS_GL_SD","FHQ_ACR_WDL_HWS_GL_SD_F","FHQ_ACR_WDL_G33","FHQ_ACR_WDL_G33_F","FHQ_ACR_WDL_G33_SD","FHQ_ACR_WDL_G33_SD_F","FHQ_ACR_WDL_G33_GL","FHQ_ACR_WDL_G33_GL_F","FHQ_ACR_WDL_G33_GL_SD","FHQ_ACR_WDL_G33_GL_SD_F","FHQ_ACR_WDL_HAMR","FHQ_ACR_WDL_HAMR_F","FHQ_ACR_WDL_HAMR_SD","FHQ_ACR_WDL_HAMR_SD_F","FHQ_ACR_WDL_HAMR_GL","FHQ_ACR_WDL_HAMR_GL_F","FHQ_ACR_WDL_HAMR_GL_SD","FHQ_ACR_WDL_HAMR_GL_SD_F","FHQ_ACR_WDL_TWS","FHQ_ACR_WDL_TWS_F","FHQ_ACR_WDL_TWS_SD","FHQ_ACR_WDL_TWS_SD_F","FHQ_ACR_WDL_TWS_GL","FHQ_ACR_WDL_TWS_GL_F","FHQ_ACR_WDL_TWS_GL_SD","FHQ_ACR_WDL_TWS_GL_SD_F","FHQ_ACR_BLK_IRN","FHQ_ACR_BLK_IRN_F","FHQ_ACR_BLK_IRN_SD","FHQ_ACR_BLK_IRN_SD_F","FHQ_ACR_BLK_IRN_GL","FHQ_ACR_BLK_IRN_GL_F","FHQ_ACR_BLK_IRN_GL_SD","FHQ_ACR_BLK_IRN_GL_SD_F","FHQ_ACR_BLK_CCO","FHQ_ACR_BLK_CCO_F","FHQ_ACR_BLK_CCO_SD","FHQ_ACR_BLK_CCO_SD_F","FHQ_ACR_BLK_CCO_GL","FHQ_ACR_BLK_CCO_GL_F","FHQ_ACR_BLK_CCO_GL_SD","FHQ_ACR_BLK_CCO_GL_SD_F","FHQ_ACR_BLK_RCO","FHQ_ACR_BLK_RCO_F","FHQ_ACR_BLK_RCO_SD","FHQ_ACR_BLK_RCO_SD_F","FHQ_ACR_BLK_RCO_GL","FHQ_ACR_BLK_RCO_GL_F","FHQ_ACR_BLK_RCO_GL_SD","FHQ_ACR_BLK_RCO_GL_SD_F","FHQ_ACR_BLK_HWS","FHQ_ACR_BLK_HWS_F","FHQ_ACR_BLK_HWS_GL","FHQ_ACR_BLK_HWS_GL_F","FHQ_ACR_BLK_HWS_SD","FHQ_ACR_BLK_HWS_SD_F","FHQ_ACR_BLK_HWS_GL_SD","FHQ_ACR_BLK_HWS_GL_SD_F","FHQ_ACR_BLK_G33","FHQ_ACR_BLK_G33_F","FHQ_ACR_BLK_G33_SD","FHQ_ACR_BLK_G33_SD_F","FHQ_ACR_BLK_G33_GL","FHQ_ACR_BLK_G33_GL_F","FHQ_ACR_BLK_G33_GL_SD","FHQ_ACR_BLK_G33_GL_SD_F","FHQ_ACR_BLK_HAMR","FHQ_ACR_BLK_HAMR_F","FHQ_ACR_BLK_HAMR_SD","FHQ_ACR_BLK_HAMR_SD_F","FHQ_ACR_BLK_HAMR_GL","FHQ_ACR_BLK_HAMR_GL_F","FHQ_ACR_BLK_HAMR_GL_SD","FHQ_ACR_BLK_HAMR_GL_SD_F","FHQ_ACR_BLK_TWS","FHQ_ACR_BLK_TWS_F","FHQ_ACR_BLK_TWS_SD","FHQ_ACR_BLK_TWS_SD_F","FHQ_ACR_BLK_TWS_GL","FHQ_ACR_BLK_TWS_GL_F","FHQ_ACR_BLK_TWS_GL_SD","FHQ_ACR_BLK_TWS_GL_SD_F","FHQ_ACR_TAN_IRN","FHQ_ACR_TAN_IRN_F","FHQ_ACR_TAN_IRN_SD","FHQ_ACR_TAN_IRN_SD_F","FHQ_ACR_TAN_IRN_GL","FHQ_ACR_TAN_IRN_GL_F","FHQ_ACR_TAN_IRN_GL_SD","FHQ_ACR_TAN_IRN_GL_SD_F","FHQ_ACR_TAN_CCO","FHQ_ACR_TAN_CCO_F","FHQ_ACR_TAN_CCO_SD","FHQ_ACR_TAN_CCO_SD_F","FHQ_ACR_TAN_CCO_GL","FHQ_ACR_TAN_CCO_GL_F","FHQ_ACR_TAN_CCO_GL_SD","FHQ_ACR_TAN_CCO_GL_SD_F","FHQ_ACR_TAN_RCO","FHQ_ACR_TAN_RCO_F","FHQ_ACR_TAN_RCO_SD","FHQ_ACR_TAN_RCO_SD_F","FHQ_ACR_TAN_RCO_GL","FHQ_ACR_TAN_RCO_GL_F","FHQ_ACR_TAN_RCO_GL_SD","FHQ_ACR_TAN_RCO_GL_SD_F","FHQ_ACR_TAN_HWS","FHQ_ACR_TAN_HWS_F","FHQ_ACR_TAN_HWS_GL","FHQ_ACR_TAN_HWS_GL_F","FHQ_ACR_TAN_HWS_SD","FHQ_ACR_TAN_HWS_SD_F","FHQ_ACR_TAN_HWS_GL_SD","FHQ_ACR_TAN_HWS_GL_SD_F","FHQ_ACR_TAN_G33","FHQ_ACR_TAN_G33_F","FHQ_ACR_TAN_G33_SD","FHQ_ACR_TAN_G33_SD_F","FHQ_ACR_TAN_G33_GL","FHQ_ACR_TAN_G33_GL_F","FHQ_ACR_TAN_G33_GL_SD","FHQ_ACR_TAN_G33_GL_SD_F","FHQ_ACR_TAN_HAMR","FHQ_ACR_TAN_HAMR_F","FHQ_ACR_TAN_HAMR_SD","FHQ_ACR_TAN_HAMR_SD_F","FHQ_ACR_TAN_HAMR_GL","FHQ_ACR_TAN_HAMR_GL_F","FHQ_ACR_TAN_HAMR_GL_SD","FHQ_ACR_TAN_HAMR_GL_SD_F","FHQ_ACR_TAN_TWS","FHQ_ACR_TAN_TWS_F","FHQ_ACR_TAN_TWS_SD","FHQ_ACR_TAN_TWS_SD_F","FHQ_ACR_TAN_TWS_GL","FHQ_ACR_TAN_TWS_GL_F","FHQ_ACR_TAN_TWS_GL_SD","FHQ_ACR_TAN_TWS_GL_SD_F","FHQ_ACR_SNW_IRN","FHQ_ACR_SNW_IRN_F","FHQ_ACR_SNW_IRN_SD","FHQ_ACR_SNW_IRN_SD_F","FHQ_ACR_SNW_IRN_GL","FHQ_ACR_SNW_IRN_GL_F","FHQ_ACR_SNW_IRN_GL_SD","FHQ_ACR_SNW_IRN_GL_SD_F","FHQ_ACR_SNW_CCO","FHQ_ACR_SNW_CCO_F","FHQ_ACR_SNW_CCO_SD","FHQ_ACR_SNW_CCO_SD_F","FHQ_ACR_SNW_CCO_GL","FHQ_ACR_SNW_CCO_GL_F","FHQ_ACR_SNW_CCO_GL_SD","FHQ_ACR_SNW_CCO_GL_SD_F","FHQ_ACR_SNW_RCO","FHQ_ACR_SNW_RCO_F","FHQ_ACR_SNW_RCO_SD","FHQ_ACR_SNW_RCO_SD_F","FHQ_ACR_SNW_RCO_GL","FHQ_ACR_SNW_RCO_GL_F","FHQ_ACR_SNW_RCO_GL_SD","FHQ_ACR_SNW_RCO_GL_SD_F","FHQ_ACR_SNW_HWS","FHQ_ACR_SNW_HWS_F","FHQ_ACR_SNW_HWS_GL","FHQ_ACR_SNW_HWS_GL_F","FHQ_ACR_SNW_HWS_SD","FHQ_ACR_SNW_HWS_SD_F","FHQ_ACR_SNW_HWS_GL_SD","FHQ_ACR_SNW_HWS_GL_SD_F","FHQ_ACR_SNW_G33","FHQ_ACR_SNW_G33_F","FHQ_ACR_SNW_G33_SD","FHQ_ACR_SNW_G33_SD_F","FHQ_ACR_SNW_G33_GL","FHQ_ACR_SNW_G33_GL_F","FHQ_ACR_SNW_G33_GL_SD","FHQ_ACR_SNW_G33_GL_SD_F","FHQ_ACR_SNW_HAMR","FHQ_ACR_SNW_HAMR_F","FHQ_ACR_SNW_HAMR_SD","FHQ_ACR_SNW_HAMR_SD_F","FHQ_ACR_SNW_HAMR_GL","FHQ_ACR_SNW_HAMR_GL_F","FHQ_ACR_SNW_HAMR_GL_SD","FHQ_ACR_SNW_HAMR_GL_SD_F","FHQ_ACR_SNW_TWS","FHQ_ACR_SNW_TWS_F","FHQ_ACR_SNW_TWS_SD","FHQ_ACR_SNW_TWS_SD_F","FHQ_ACR_SNW_TWS_GL","FHQ_ACR_SNW_TWS_GL_F","FHQ_ACR_SNW_TWS_GL_SD","FHQ_ACR_SNW_TWS_GL_SD_F","FHQ_MSR_DESERT","FHQ_rem_7Rnd_338Lapua_MSR_NT","FHQ_MSR_SD_DESERT","FHQ_MSR_NV_DESERT","FHQ_rem_7Rnd_338Lapua_MSR_NT","FHQ_MSR_NV_SD_DESERT","FHQ_MSR_TWS_DESERT","FHQ_rem_7Rnd_338Lapua_MSR_NT","FHQ_MSR_TWS_SD_DESERT","FHQ_RSASS_TAN","FHQ_RSASS_TWS_TAN","FHQ_RSASS_SD_TAN","FHQ_RSASS_TWS_SD_TAN","FHQ_XM2010_DESERT","FHQ_XM2010_SD_DESERT","FHQ_XM2010_NV_DESERT","FHQ_XM2010_NV_SD_DESERT","FHQ_XM2010_TWS_DESERT","FHQ_XM2010_TWS_SD_DESERT","FHQ_XM2010_WDL_CAMO", "vil_SKS","vil_Tt33","vil_PKP","vil_PKP_EOT","vil_PK","vil_zastava_m84","vil_PKM_N","vil_PKM","vil_RPK","vil_RPK75","vil_RPK75_Romania","vil_RPK75_M72","vil_RPD","vil_RPK74","vil_RPK74M_P29","vil_RPK74M","vil_RPK74M_N","vil_VSS_PSO","vil_VSS_N","vil_VAL","vil_VAL_C","vil_VAL_N","vil_Vikhr","vil_9a91","vil_9a91_c","vil_9a91_csd","vil_vsk94","vil_Groza_HG","vil_Groza_SC","vil_Groza_GL","vil_Groza_SD","vil_AKS_47","vil_AK_47_49","vil_AK_47","vil_AKMSB","vil_AKM","vil_AKM_GL","vil_AKMS","vil_AKMS_GP25","vil_AK_47_m1","vil_AK_nato_m1","vil_M70","vil_M70B","vil_M64","vil_ASH82","vil_AMD","vil_AMD63","vil_PMI","vil_PMIS","vil_MPi","vil_AK_nato_m80","vil_AKs_74_u","vil_AKs_74_u45","Vil_AKS_74_UN_kobra","Vil_AKS_74_UB","vil_AK_74","vil_AK_74_N","vil_AKS_74","vil_AKS_74_gp","vil_AKS_74p","vil_AKS_74p_45","vil_AK_74P","vil_AKS_74p_gp","vil_AK_74m","vil_AK_74M_N","vil_AK_74M_PSO","vil_AK_74m_k","vil_AK_74m_EOT","vil_AK_74m_EOT_Alfa","vil_AK_74m_EOT_FSB","vil_AK_74m_EOT_FSB_45","vil_AK_74m_EOT_FSB_60","vil_AK_74m_c","vil_AK_74m_p29","vil_AK_74m_gp_29","vil_AK_74m_gp","vil_type88_1","vil_PMI74S","vil_Rak74sgl","vil_AK_101","vil_AK_103","vil_AK_105","Vil_AK_105_c","vil_AK_107","Vil_AK_107_c","vil_SVU_A","vil_SVU","vil_PSL1","vil_M76","vil_M91","vil_SVD_63","vil_SVD_N","vil_SVD_S","vil_SVD_M","vil_SVD_P21","vil_SVDK","vil_10Rnd_SVDK","vil_SV_98","vil_SV_98_69","vil_SV_98_SD", "vil_Abakan","vil_Abakan_gp","vil_Abakan_P29","vil_ak12","vil_ak12_ap","vil_ak12_gp","vil_AEK1","vil_AEK2","vil_AEK_GL","vil_AeK_3","vil_AeK_23","vil_AeK_3_K","vil_B_HP","vil_MP5_EOTech","vil_MP5SD_EOTech", "vil_G3a3","vil_G3a2","vil_G3a4","vil_G3a4b","vil_G3an","vil_G3anb","vil_G3ZF","vil_G3zfb","vil_G3SG1","vil_G3sg1b","vil_G3TGS","vil_G3TGSb","vil_AG3","vil_AG3EOT","skavil_M60","skavil_M60e3","vil_Mg3", "vil_M249_Para","vil_Minimi","vil_M240_B","vil_MG4","vil_MG4E","vil_SR25","vil_M110","vil_HK417s","vil_SR25SD","vil_M110sd","vil_M21","vil_M21G","vil_m40a3","vil_M24b", "vil_M14","vil_M14G","vil_Fal","vil_Fal_Para","vil_sg540","vil_sg542","vil_sg542f","vil_Insas","vil_Insas_lmg","vil_M16A1","VIL_M4","vil_M4_EOT","VIL_M4_aim","vil_HK33","vil_Galil","vil_Galil_arm","vil_G36KVA4", "vil_G36KA4","vil_G36E","vil_G36a2","vil_AG36","vil_AG36A2","vil_AG36KV","vil_AG36KA4","vil_G36VA4","vil_G36VA4Eot","vil_G36KVZ","vil_G36KSK","vil_G36KSKdes","vil_G36KSKdesES","vil_G36CC","vil_G36KSKES","vil_G36KES", "vil_G36KV3","vil_G36KV3Des","vil_HK416_Aim","vil_HK416_IS","vil_HK416_EOT","vil_HK416_GL","VIL_HK416_EDR","AA12_PMC","AK_107_GL_Kobra","AK_107_GL_PSO","AK_107_Kobra","AK_107_PSO","AK_47_M","AK_47_S","AK_47_S","AK_74","AK_74","AK_74_GL","AK_74_GL_kobra","AKS_74","AKS_74_GOSHAWK","AKS_74_Kobra","AKS_74_NSPU","AKS_74_PSO","AKS_74_U","AKS_74_UN_Kobra","AKS_GOLD","BAF_AS50_scoped","BAF_AS50_TWS","BAF_L110A1_Aim","BAF_L7A2_GPMG","BAF_L85A2_RIS_ACOG","BAF_L85A2_RIS_CWS","BAF_L85A2_RIS_Holo","BAF_L85A2_RIS_SUSAT","BAF_L85A2_UGL_ACOG","BAF_L85A2_UGL_Holo","BAF_L85A2_UGL_SUSAT","BAF_L86A2_ACOG","BAF_LRR_scoped","BAF_LRR_scoped_W","bizon","Bizon_Silenced","DMR","FN_FAL","FN_FAL_ANPVS4","G36_C_SD_camo","G36_C_SD_Eotech","G36A","G36A_camo","G36C","G36C","G36C_camo","G36K","G36K_camo","Huntingrifle","ksvk","KSVK_DZE","LeeEnfield","M1014","m107","M107_DZ","m107_TWS_EP1","M110_NVG_EP1","M110_TWS_EP1","M14_EP1","M16A2","M16A2GL","m16a4","m16a4_acg","M16A4_ACG_GL","M16A4_GL","M24","M24_des_EP1","M240","M240_DZ","m240_scoped_EP1","m240_scoped_EP1_DZE","M249","M249_EP1","M249_EP1_DZ","M249_m145_EP1","M249_m145_EP1_DZE","M249_TWS_EP1","M40A3","M4A1","M4A1_AIM","M4A1_AIM_CAMO","M4A1_AIM_SD_CAMO","M4A1_HWS_GL","M4A1_HWS_GL_CAMO","M4A1_HWS_GL_SD_CAMO","M4A1_RCO_GL","M4A3_CCO_EP1","M4A3_RCO_GL_EP1","M4SPR","m8_Carbine","m8_CarbineGL","m8_Compact","m8_compact_pmc","m8_holo_sd","m8_SAW","m8_Sharpshooter","m8_tws","m8_tws_sd","MG36","MG36_camo","MK_48","Mk_48_DES_EP1","Mk_48_DZ","MP5A5","MP5SD","Pecheneg","Pecheneg_DZ","PK","PMC_AS50_scoped","PMC_AS50_TWS","Remington870_lamp","RPK_74","Sa58P_EP1","Sa58V_CCO_EP1","Sa58V_EP1","Sa58V_RCO_EP1","Saiga12K","SCAR_H_CQC_CCO","SCAR_H_CQC_CCO_SD","SCAR_H_LNG_Sniper","SCAR_H_LNG_Sniper_SD","SCAR_H_STD_EGLM_Spect","SCAR_H_STD_TWS_SD","SCAR_L_CQC","SCAR_L_CQC_CCO_SD","SCAR_L_CQC_EGLM_Holo","SCAR_L_CQC_Holo","SCAR_L_STD_EGLM_RCO","SCAR_L_STD_EGLM_TWS","SCAR_L_STD_HOLO","SCAR_L_STD_Mk4CQT","SVD","SVD","SVD_Camo","SVD_des_EP1","SVD_NSPU_EP1","VSS_Vintorez","Winchester1866"];
 DZAI_Rifles1 = ["M16A2","M16A2GL","AK_74","M4A1_Aim","AKS_74_kobra","AKS_74_U","AK_47_M","M24","M1014","DMR_DZ","M4A1","M14_EP1","Remington870_lamp","MP5A5","MP5SD","M4A3_CCO_EP1"]; //Weapongrade 1 rifles
 DZAI_Rifles2 = ["M16A2","M16A2GL","M249_DZ","AK_74","M4A1_Aim","AKS_74_kobra","AKS_74_U","AK_47_M","M24","SVD_CAMO","M1014","DMR_DZ","M4A1","M14_EP1","Remington870_lamp","M240_DZ","M4A1_AIM_SD_camo","M16A4_ACG","M4A1_HWS_GL_camo","Mk_48_DZ","M4A3_CCO_EP1","Sa58V_RCO_EP1","Sa58V_CCO_EP1","M40A3","Sa58P_EP1","Sa58V_EP1"]; //Weapongrade 2 rifles
 DZAI_Rifles3 = ["FN_FAL","FN_FAL_ANPVS4","Mk_48_DZ","M249_DZ","BAF_L85A2_RIS_Holo","G36C","G36C_camo","G36A_camo","G36K_camo","AK_47_M","AKS_74_U","M14_EP1","bizon_silenced","DMR_DZ","RPK_74"]; //Weapongrade 3 rifles
+
 
 	
 /*
@@ -470,10 +490,5 @@ DZAI_gadgets0 = [["binocular",0.40],["NVGoggles",0.00]];
 DZAI_gadgets1 = [["binocular",0.60],["NVGoggles",0.05]];
 
 
-
 //NOTHING TO EDIT BEYOND THIS POINT
-
-//Load custom DZAI settings file.
-if ((!isNil "DZAI_overrideEnabled") && {DZAI_overrideEnabled}) then {call compile preprocessFileLineNumbers format ["%1\DZAI_settings_override.sqf",DZAI_directory]};
-
 diag_log "[DZAI] DZAI configuration file loaded.";

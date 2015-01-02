@@ -78,12 +78,16 @@ if (isServer && isNil "sm_done") then {
 		_wsDone = false;
 		if (count _worldspace >= 2) then
 		{
+			if ((typeName (_worldspace select 0)) == "STRING") then {
+				_worldspace set [0, call compile (_worldspace select 0)];
+				_worldspace set [1, call compile (_worldspace select 1)];
+			};
 			_dir = _worldspace select 0;
 			if (count (_worldspace select 1) == 3) then {
 				_pos = _worldspace select 1;
 				_wsDone = true;
 			}
-		};			
+		};	 		
 		
 		if (!_wsDone) then {
 			if (count _worldspace >= 1) then { _dir = _worldspace select 0; };
@@ -205,30 +209,13 @@ if (isServer && isNil "sm_done") then {
 			};	
 			
 			if (_object isKindOf "AllVehicles") then {
-			private ["_colour","_colour2","_clrinit","_clrinit2"];
 				{
 					_selection = _x select 0;
 					_dam = _x select 1;
 					if (_selection in dayZ_explosiveParts && _dam > 0.8) then {_dam = 0.8};
 					[_object,_selection,_dam] call object_setFixServer;
 				} count _hitpoints;
-if(count _worldspace >= 4) then{	
-        if (((typeName(_worldspace select 2)) == "STRING") and ((typeName(_worldspace select 3)) == "STRING")) then {
-		_colour = _worldspace select 2;
-		_colour2 = _worldspace select 3;
-					
-		if (_colour != "0") then {
-			_object setVariable ["Colour",_colour,true];
-			_clrinit = format ["#(argb,8,8,3)color(%1)",_colour];
-			_object setVehicleInit "this setObjectTexture [0,"+str _clrinit+"];";
-		};
-		if (_colour2 != "0") then {			
-			_object setVariable ["Colour2",_colour2,true];
-			_clrinit2 = format ["#(argb,8,8,3)color(%1)",_colour2];
-			_object setVehicleInit "this setObjectTexture [1,"+str _clrinit2+"];";
-		};
-	};
-};
+
 				_object setFuel _fuel;
 
 				if (!((typeOf _object) in dayz_allowedObjects)) then {
@@ -366,6 +353,9 @@ if(count _worldspace >= 4) then{
 		
 		endLoadingScreen;
 	};
+			[] ExecVM "\z\addons\dayz_server\DZMS\DZMSInit.sqf";
+	[] call compile preprocessFileLineNumbers "\z\addons\dayz_server\DZAI\init\dzai_initserver.sqf";
+	[] ExecVM "\z\addons\dayz_server\WAI\init.sqf";
 	allowConnection = true;	
 	sm_done = true;
 	publicVariable "sm_done";

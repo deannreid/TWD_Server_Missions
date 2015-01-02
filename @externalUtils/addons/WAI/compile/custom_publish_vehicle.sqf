@@ -74,10 +74,11 @@ if (isServer) then {
 				sleep 1;
 				_key 		= format["CHILD:388:%1:",_uid];
 				//_result 	= _key call server_hiveReadWrite;
-				_outcome 	= _result select 0;
+				
 				diag_log ("HIVE: WRITE: "+ str(_key));
 
-				if (_outcome == "PASS") then {
+				_outcome = true;
+				if (_outcome) then {
 					_oid 	= _result select 1;
 					_object setVariable ["ObjectID", _oid, true];
 

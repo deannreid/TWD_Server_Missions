@@ -41,14 +41,16 @@ call {
 		[_victim,_killer,_unitGroup,_groupIsEmpty] call DZAI_AI_killed_dynamic;
 		0 = [_victim,_killer,_unitGroup,_unitType,_unitsAlive] call DZAI_AI_killed_all;
 	};
+	if (_unitType == "randomspawn") exitWith {
+		[_victim,_killer,_unitGroup,_groupIsEmpty] call DZAI_AI_killed_random;
+		0 = [_victim,_killer,_unitGroup,_unitType,_unitsAlive] call DZAI_AI_killed_all;
+	};
 	if (_unitType in ["air","aircustom"]) exitWith {
 		[_victim,_unitGroup] call DZAI_AI_killed_air;
 	};
 	if (_unitType in ["land","landcustom"]) exitWith {
 		0 = [_victim,_killer,_unitGroup,_unitType] call DZAI_AI_killed_all;
-		if (_groupIsEmpty) then {
-			[_unitGroup] call DZAI_AI_killed_land; //Only run this if entire group has been killed
-		};
+		[_victim,_unitGroup,_groupIsEmpty] call DZAI_AI_killed_land;
 	};
 	if (_unitType == "aircrashed") exitWith {};
 	if (_groupIsEmpty) then {
@@ -76,16 +78,19 @@ if !(isNull _victim) then {
 		_victim removeWeapon "NVGoggles";
 	};
 
-	if (_unitGroup getVariable ["CombatModeBlue",false]) then {_unitGroup setCombatMode "RED"};
-
 	_victim spawn DZAI_deathFlies;
-	_victim setVariable ["bodyName",_victim getVariable ["bodyName","unknown"],true];		//Broadcast the unit's name (was previously a private variable).
+	_bodyName = _victim getVariable ["bodyName","unknown"];
+	_victim setVariable ["bodyName",_bodyName,true];		//Broadcast the unit's name (was previously a private variable).
 	_victim setVariable ["deathType",_deathType,true];
 	_victim setVariable ["DZAI_deathTime",diag_tickTime];
 	_victim setVariable ["unconscious",true];
-	[_victim] joinSilent grpNull;
 	if (_vehicle == (_unitGroup getVariable ["assignedVehicle",objNull])) then {
 		_victim setPosASL (getPosASL _victim);
+	};
+	if ((combatMode _unitGroup) == "BLUE") then {_unitGroup setCombatMode "RED"};
+	[_victim] joinSilent grpNull;
+	if (DZAI_deathMessages && {isPlayer _killer}) then {
+		_nul = [_killer,_bodyName] spawn DZAI_sendKillMessage;
 	};
 };
 

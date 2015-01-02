@@ -7,11 +7,6 @@
 
 #include "spawn_markers\markers_fallujah.sqf"	//Load manual spawn point definitions file.
 
-if ((DZAI_maxHeliPatrols > 0) or {(DZAI_maxLandPatrols > 0)}) then {
-	"DZAI_centerMarker" setMarkerPos [5139.8008, 4092.6797];
-	"DZAI_centerMarker" setMarkerSize [4000, 4000];
-};
-
 waitUntil {sleep 0.1; !isNil "DZAI_classnamesVerified"};	//Wait for DZAI to finish verifying classname arrays or finish building classname arrays if verification is disabled.
 
 if (DZAI_staticAI) then {
@@ -292,5 +287,6 @@ if (DZAI_staticAI) then {
 
 #include "custom_markers\cust_markers_fallujah.sqf"
 #include "custom_spawns\cust_spawns_fallujah.sqf"
-
+//----------------------------Do not edit anything below this line -----------------------------------------
+DZAI_customSpawnsReady = true;
 diag_log "Fallujah static spawn configuration loaded.";
