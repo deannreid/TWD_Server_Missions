@@ -67,9 +67,7 @@ diag_log "==============================================";
 diag_log "Finalizing Server Startup, Loading BIS_Effects";
 #include "\z\addons\dayz_code\system\BIS_Effects\init.sqf";
 execVM "custom\code\server\nsd.sqf";
-diag_log "Finished Loading BIS_Effects! Server Loaded Successfully";
-
-#include "custom\NavLights\scripts\functions.sqf"
+diag_log "Finished Loading BIS_Effects!";
 diag_log "==============================================";
 diag_log "Mission Loaded Successfully";
 diag_log "==============================================";
