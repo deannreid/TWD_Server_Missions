@@ -181,8 +181,8 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 
 	if (_canDo && (speed player <= 1) && (_cursorTarget isKindOf "Plastic_Pole_EP1_DZ")) then {
 		 if (s_player_maintain_area < 0) then {
-		  	s_player_maintain_area = player addAction [format["<t color='#ff0000'>%1</t>",localize "STR_EPOCH_ACTIONS_MAINTAREA"], "Scripts\Gold_Coin_system\Maintain\maintain_area.sqf", "maintain", 5, false];
-		 	s_player_maintain_area_preview = player addAction [format["<t color='#ff0000'>%1</t>",localize "STR_EPOCH_ACTIONS_MAINTPREV"], "Scripts\Gold_Coin_system\Maintain\maintain_area.sqf", "preview", 5, false];
+		  	s_player_maintain_area = player addAction [format["<t color='#ff0000'>%1</t>",localize "STR_EPOCH_ACTIONS_MAINTAREA"], "custom\bank\Gold_Coin_system\Maintain\maintain_area.sqf", "maintain", 5, false];
+		 	s_player_maintain_area_preview = player addAction [format["<t color='#ff0000'>%1</t>",localize "STR_EPOCH_ACTIONS_MAINTPREV"], "custom\bank\Gold_Coin_system\Maintain\maintain_area.sqf", "preview", 5, false];
 		 };
 	} else {
     		player removeAction s_player_maintain_area;
@@ -394,7 +394,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 
 	if (_player_studybody) then {
 		if (s_player_studybody < 0) then {
-				s_player_studybody = player addAction [("<t color=""#FF0000"">"+("Check Wallet") + "</t>"), "Scripts\Gold_Coin_system\Check_Wallet\check_wallet.sqf",_cursorTarget, 0, false, true, "",""];
+				s_player_studybody = player addAction [("<t color=""#FF0000"">"+("Check Wallet") + "</t>"), "custom\bank\Gold_Coin_system\Check_Wallet\check_wallet.sqf",_cursorTarget, 0, false, true, "",""];
 		};
 	} else {
 		player removeAction s_player_studybody;
@@ -494,7 +494,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 
 	if(_typeOfCursorTarget in DZE_UnLockedStorage and (player distance _cursorTarget < 3)) then {
 		if (s_bank_dialog < 0) then {
-				s_bank_dialog = player addAction ["Online Banking", "Scripts\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];	
+				s_bank_dialog = player addAction ["Online Banking", "custom\bank\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];	
 		};
 	} else {
      	player removeAction s_bank_dialog;
@@ -503,7 +503,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 
 	if(_typeOfCursorTarget in Bank_Object and (player distance _cursorTarget < 3)) then {		
 		if (s_bank_dialog2 < 0) then {
-			s_bank_dialog2 = player addAction ["Bank ATM", "Scripts\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
+			s_bank_dialog2 = player addAction ["Bank ATM", "custom\bank\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
 		};			
 	} else {		
 		player removeAction s_bank_dialog2;
@@ -536,10 +536,10 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		player removeAction s_player_information;
 		s_player_information = -1;
 	};
-	
+
 	if (_isMan and _isAlive and !_isZombie and !_isAnimal and !(_traderType in serverTraders)) then {
 		if (s_givemoney_dialog < 0) then {
-			s_givemoney_dialog = player addAction [format["Give Money to %1", (name _cursorTarget)], "Scripts\Gold_Coin_system\Give_Money\give_player_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
+			s_givemoney_dialog = player addAction [format["Give Money to %1", (name _cursorTarget)], "custom\bank\Gold_Coin_system\Give_Money\give_player_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
 		};
 	} else {
 		player removeAction s_givemoney_dialog;
@@ -885,12 +885,11 @@ if (_dogHandle > 0) then {
 	s_player_calldog = 		-1;
 };
 
-
-_banker = _cursorTarget getVariable["BankerBot",0];
+	if (!isNull _cursorTarget) then { _banker = _cursorTarget getVariable["BankerBot",0]; };
 
 if((_banker == 1) and (player distance _cursorTarget < 3)) then {		
 	if (s_bank_dialog3 < 0) then {
-		s_bank_dialog3 = player addAction ["Banker Menu", "Scripts\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
+		s_bank_dialog3 = player addAction ["Banker Menu", "custom\bank\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
 	};			
 } else {		
 	player removeAction s_bank_dialog3;

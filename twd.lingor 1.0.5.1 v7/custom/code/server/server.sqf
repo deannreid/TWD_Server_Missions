@@ -28,7 +28,7 @@ if (dayZ_instance == 7) then
 		{
 			call compile preprocessFileLineNumbers "\z\addons\dayz_server\missions\DayZ_Epoch_7.Lingor\dynamic_vehicle.sqf";
 			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_7.Lingor\mission.sqf";
-			call compile preprocessFileLineNumbers "custom\code\traders\7.sqf";
+			
 		};
 };
 

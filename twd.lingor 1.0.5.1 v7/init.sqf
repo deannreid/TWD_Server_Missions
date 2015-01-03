@@ -26,6 +26,7 @@ diag_log "==============================================";
 diag_log "Loading Custom TWD Files";
 diag_log "==============================================";
 	diag_log "Loading Compiles";
+	call compile preprocessFileLineNumbers "custom\code\traders\7.sqf";
 		call compile preprocessFileLineNumbers "custom\code\compiles.sqf";
 	diag_log "Custom Compiles Loaded";
 		call compile preprocessFileLineNumbers "custom\code\variables.sqf"; 
