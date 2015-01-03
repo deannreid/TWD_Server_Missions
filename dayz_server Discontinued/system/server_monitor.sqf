@@ -78,12 +78,16 @@ if (isServer && isNil "sm_done") then {
 		_wsDone = false;
 		if (count _worldspace >= 2) then
 		{
+			if ((typeName (_worldspace select 0)) == "STRING") then {
+				_worldspace set [0, call compile (_worldspace select 0)];
+				_worldspace set [1, call compile (_worldspace select 1)];
+			};
 			_dir = _worldspace select 0;
 			if (count (_worldspace select 1) == 3) then {
 				_pos = _worldspace select 1;
 				_wsDone = true;
 			}
-		};			
+		};	 		
 		
 		if (!_wsDone) then {
 			if (count _worldspace >= 1) then { _dir = _worldspace select 0; };
@@ -100,6 +104,9 @@ if (isServer && isNil "sm_done") then {
 			_object = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];
 			_object setVariable ["lastUpdate",time];
 			_object setVariable ["ObjectID", _idKey, true];
+			if (typeOf (_object) == "Plastic_Pole_EP1_DZ") then {
+			_object setVariable ["plotfriends", _intentory, true];
+			};
 
 			_lockable = 0;
 			if(isNumber (configFile >> "CfgVehicles" >> _type >> "lockable")) then {
@@ -153,7 +160,7 @@ if (isServer && isNil "sm_done") then {
 				
 			};
 
-			if (count _intentory > 0) then {
+			if ((count _intentory > 0) && !(typeOf( _object) == "Plastic_Pole_EP1_DZ")) then {
 				if (_type in DZE_LockedStorage) then {
 					// Fill variables with loot
 					_object setVariable ["WeaponCargo", (_intentory select 0),true];
@@ -349,7 +356,9 @@ if (isServer && isNil "sm_done") then {
 		
 		endLoadingScreen;
 	};
-
+			[] ExecVM "\z\addons\dayz_server\DZMS\DZMSInit.sqf";
+	[] call compile preprocessFileLineNumbers "\z\addons\dayz_server\DZAI\init\dzai_initserver.sqf";
+	[] ExecVM "\z\addons\dayz_server\WAI\init.sqf";
 	allowConnection = true;	
 	sm_done = true;
 	publicVariable "sm_done";

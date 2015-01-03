@@ -1,3 +1,4 @@
+
 _unit_2 = objNull;
 if (true) then
 {
@@ -221,7 +222,7 @@ if (true) then
 _unit_20 = objNull;
 if (true) then
 {
-  _this = createAgent ["TK_CIV_Worker01_EP1", [6013.0737, 6629.2124, 1.5258789e-005], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Worker2", [6013.0737, 6629.2124, 1.5258789e-005], [], 0, "CAN_COLLIDE"];
   _unit_20 = _this;
   _this setDir 138.41472;
   _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;";
@@ -1983,7 +1984,7 @@ if (true) then
 _unit_113 = objNull;
 if (true) then
 {
-  _this = createAgent ["ibr_lingorman4", [5509.2041, 4392.7847, 3.3642137], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["ibr_lingorman4", [5511.9951, 4394.8013, 4.1448889], [], 0, "CAN_COLLIDE"];
   _unit_113 = _this;
   _this setDir 25.054167;
   _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;";

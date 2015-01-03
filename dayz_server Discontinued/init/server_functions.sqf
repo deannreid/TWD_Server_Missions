@@ -1,3 +1,4 @@
+#include "\twd\addons\var.sqf";
 waituntil {!isnil "bis_fnc_init"};
 
 BIS_MPF_remoteExecutionServer = {
@@ -925,3 +926,4 @@ server_logUnlockLockEvent = {
 		diag_log format["SAFE %5: ID:%1 UID:%2 BY %3(%4)", _objectID, _objectUID, (name _player), (getPlayerUID _player), _statusText];
 	};
 };
+ExecVM "\z\addons\dayz_server\buildings\init.sqf";
