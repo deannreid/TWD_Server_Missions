@@ -1,126 +1,111 @@
-class Category_498 {
-	class ItemSodaR4z0r {
-		type = "trade_items";
-		buy[] ={5000,"Boobs"};
-		sell[] ={2500,"Boobs"};
-	};
+class Category_684 {
 	class ItemSodaCoke {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
+	};
+	class ItemSodaPepsi {
+		type = "trade_items";
+		buy[] = {2};
+		sell[] = {1};
 	};
 	class ItemSodaMdew {
 		type = "trade_items";
-		buy[] ={3000,"Boobs"};
-		sell[] ={1500,"Boobs"};
+		buy[] = {5400};
+		sell[] = {2700};
 	};
-	class ItemSodaOrangeSherbet {
+	class ItemSodaR4z0r {
 		type = "trade_items";
-		buy[] ={5000,"Boobs"};
-		sell[] ={2500,"Boobs"};
-	};
-        class ItemSodaPepsi {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-        class ItemSodaRbull {
-		type = "trade_items";
-		buy[] ={6000,"Boobs"};
-		sell[] ={3000,"Boobs"};
-	};
-	class ItemWaterbottle {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {5400};
+		sell[] = {2700};
 	};
 	class ItemWaterbottleUnfilled {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {90};
+		sell[] = {30};
+	};
+	class ItemSodaRbull {
+		type = "trade_items";
+		buy[] = {5400};
+		sell[] = {2700};
+	};
+	class ItemSodaOrangeSherbet {
+		type = "trade_items";
+		buy[] = {3600};
+		sell[] = {1800};
 	};
 };
-class Category_601 {
-	class ItemSodaR4z0r {
-		type = "trade_items";
-		buy[] ={5000,"Boobs"};
-		sell[] ={2500,"Boobs"};
-	};
+class Category_498 {
 	class ItemSodaCoke {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
+	};
+	class ItemSodaPepsi {
+		type = "trade_items";
+		buy[] = {2};
+		sell[] = {1};
 	};
 	class ItemSodaMdew {
 		type = "trade_items";
-		buy[] ={3000,"Boobs"};
-		sell[] ={1500,"Boobs"};
+		buy[] = {5400};
+		sell[] = {2700};
 	};
-	class ItemSodaOrangeSherbet {
+	class ItemSodaR4z0r {
 		type = "trade_items";
-		buy[] ={5000,"Boobs"};
-		sell[] ={2500,"Boobs"};
-	};
-        class ItemSodaPepsi {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-        class ItemSodaRbull {
-		type = "trade_items";
-		buy[] ={6000,"Boobs"};
-		sell[] ={3000,"Boobs"};
-	};
-	class ItemWaterbottle {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {5400};
+		sell[] = {2700};
 	};
 	class ItemWaterbottleUnfilled {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {90};
+		sell[] = {30};
+	};
+	class ItemSodaRbull {
+		type = "trade_items";
+		buy[] = {5400};
+		sell[] = {2700};
+	};
+	class ItemSodaOrangeSherbet {
+		type = "trade_items";
+		buy[] = {3600};
+		sell[] = {1800};
 	};
 };
 class Category_633 {
-	class ItemSodaR4z0r {
-		type = "trade_items";
-		buy[] ={5000,"Boobs"};
-		sell[] ={2500,"Boobs"};
-	};
 	class ItemSodaCoke {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
+	};
+	class ItemSodaPepsi {
+		type = "trade_items";
+		buy[] = {2};
+		sell[] = {1};
 	};
 	class ItemSodaMdew {
 		type = "trade_items";
-		buy[] ={3000,"Boobs"};
-		sell[] ={1500,"Boobs"};
+		buy[] = {5400};
+		sell[] = {2700};
 	};
-	class ItemSodaOrangeSherbet {
+	class ItemSodaR4z0r {
 		type = "trade_items";
-		buy[] ={5000,"Boobs"};
-		sell[] ={2500,"Boobs"};
-	};
-        class ItemSodaPepsi {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-        class ItemSodaRbull {
-		type = "trade_items";
-		buy[] ={6000,"Boobs"};
-		sell[] ={3000,"Boobs"};
-	};
-	class ItemWaterbottle {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {5400};
+		sell[] = {2700};
 	};
 	class ItemWaterbottleUnfilled {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {90};
+		sell[] = {30};
+	};
+	class ItemSodaRbull {
+		type = "trade_items";
+		buy[] = {5400};
+		sell[] = {2700};
+	};
+	class ItemSodaOrangeSherbet {
+		type = "trade_items";
+		buy[] = {3600};
+		sell[] = {1800};
 	};
 };

@@ -1,33 +1,33 @@
-class Category_700 {
+class Category_777 {
 	class ItemBriefcase100oz {
 		type = "trade_items";
-		buy[] ={100000,"Boobs"};
-		sell[] ={100000,"Boobs"};
+		buy[] ={90000,"Boobs"};
+		sell[] ={90000,"Boobs"};
 	};
 	class ItemGoldBar10oz {
 		type = "trade_items";
-		buy[] ={10000,"Boobs"};
-		sell[] ={10000,"Boobs"};
+		buy[] ={9000,"Boobs"};
+		sell[] ={9000,"Boobs"};
 	};
 	class ItemGoldBar {
 		type = "trade_items";
-		buy[] ={1000,"Boobs"};
-		sell[] ={1000,"Boobs"};
+		buy[] ={900,"Boobs"};
+		sell[] ={900,"Boobs"};
 	};
 	class ItemBriefcaseS100oz {
 		type = "trade_items";
-		buy[] ={1000,"Boobs"};
-		sell[] ={1000,"Boobs"};
+		buy[] ={900,"Boobs"};
+		sell[] ={900,"Boobs"};
 	};
 	class ItemSilverBar10oz {
 		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={100,"Boobs"};
+		buy[] ={90,"Boobs"};
+		sell[] ={90,"Boobs"};
 	};
 	class ItemSilverBar {
 		type = "trade_items";
-		buy[] ={10,"Boobs"};
-		sell[] ={10,"Boobs"};
+		buy[] ={9,"Boobs"};
+		sell[] ={9,"Boobs"};
 	};
 	class ItemCopperBar10oz {
 		type = "trade_items";

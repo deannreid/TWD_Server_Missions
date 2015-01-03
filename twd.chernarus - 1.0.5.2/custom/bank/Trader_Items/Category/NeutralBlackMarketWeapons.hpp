@@ -1,92 +1,187 @@
 class Category_526 {
+	class Saiga12K {
+		type = "trade_weapons";
+		buy[] = {4500};
+		sell[] = {2700};
+	};
+	class m8_compact {
+		type = "trade_weapons";
+		buy[] = {3600};
+		sell[] = {1800};
+	};
+	class m8_sharpshooter {
+		type = "trade_weapons";
+		buy[] = {5400};
+		sell[] = {2700};
+	};
+	class m8_holo_sd {
+		type = "trade_weapons";
+		buy[] = {7200};
+		sell[] = {3600};
+	};
+	class m8_carbine {
+		type = "trade_weapons";
+		buy[] = {4500};
+		sell[] = {1800};
+	};
 	class M24_des_EP1 {
 		type = "trade_weapons";
-		buy[] ={12000,"Boobs"};
-		sell[] ={6000,"Boobs"};
+		buy[] = {9000};
+		sell[] = {5400};
 	};
 	class VSS_vintorez {
 		type = "trade_weapons";
-		buy[] ={7000,"Boobs"};
-		sell[] ={3500,"Boobs"};
+		buy[] = {7200};
+		sell[] = {3600};
 	};
 	class SVD_des_EP1 {
 		type = "trade_weapons";
-		buy[] ={11000,"Boobs"};
-		sell[] ={5500,"Boobs"};
+		buy[] = {9000};
+		sell[] = {5400};
 	};
 	class SVD {
 		type = "trade_weapons";
-		buy[] ={11000,"Boobs"};
-		sell[] ={5500,"Boobs"};
+		buy[] = {9000};
+		sell[] = {5400};
+	};
+	class M8_SAW {
+		type = "trade_weapons";
+		buy[] = {9000};
+		sell[] = {5400};
 	};
 	class MG36 {
 		type = "trade_weapons";
-		buy[] ={10000,"Boobs"};
-		sell[] ={5000,"Boobs"};
-	};
-	class MG36_camo {
-		type = "trade_weapons";
-		buy[] ={10000,"Boobs"};
-		sell[] ={5000,"Boobs"};
+		buy[] = {9000};
+		sell[] = {5400};
 	};
 	class RPK_74 {
 		type = "trade_weapons";
-		buy[] ={15000,"Boobs"};
-		sell[] ={7500,"Boobs"};
+		buy[] = {9000};
+		sell[] = {5400};
 	};
 	class M60A4_EP1_DZE {
 		type = "trade_weapons";
-		buy[] ={20000,"Boobs"};
-		sell[] ={10000,"Boobs"};
-	};
-	class M249_DZ {
-		type = "trade_weapons";
-		buy[] ={10000,"Boobs"};
-		sell[] ={5000,"Boobs"};
-	};
-	class M249_EP1_DZ {
-		type = "trade_weapons";
-		buy[] ={10000,"Boobs"};
-		sell[] ={5000,"Boobs"};
-	};
-	class M249_m145_EP1_DZE {
-		type = "trade_weapons";
-		buy[] ={20000,"Boobs"};
-		sell[] ={10000,"Boobs"};
-	};
-	class M240_DZ {
-		type = "trade_weapons";
-		buy[] ={20000,"Boobs"};
-		sell[] ={10000,"Boobs"};
+		buy[] = {18000};
+		sell[] = {9000};
 	};
 	class m240_scoped_EP1_DZE {
 		type = "trade_weapons";
-		buy[] ={40000,"Boobs"};
-		sell[] ={20000,"Boobs"};
+		buy[] = {9000};
+		sell[] = {5400};
+	};
+	class M249_m145_EP1_DZE {
+		type = "trade_weapons";
+		buy[] = {9000};
+		sell[] = {5400};
+	};
+	class MG36_camo {
+		type = "trade_weapons";
+		buy[] = {9000};
+		sell[] = {5400};
+	};
+	class bizon {
+		type = "trade_weapons";
+		buy[] = {9000};
+		sell[] = {4500};
 	};
 	class M4A1_HWS_GL_SD_Camo {
 		type = "trade_weapons";
-		buy[] ={5000,"Boobs"};
-		sell[] ={2500,"Boobs"};
-	};
-	class DMR_DZ {
-		type = "trade_weapons";
-		buy[] ={75000,"Boobs"};
-		sell[] ={37500,"Boobs"};
+		buy[] = {18000};
+		sell[] = {9000};
 	};
 	class KSVK_DZE {
 		type = "trade_weapons";
-		buy[] ={120000,"Boobs"};
-		sell[] ={60000,"Boobs"};
+		buy[] = {27000};
+		sell[] = {9000};
 	};
-	class BAF_LRR_scoped {
+	class SCAR_L_STD_Mk4CQT {
 		type = "trade_weapons";
-		buy[] ={150000,"Boobs"};
-		sell[] ={50000,"Boobs"};
+		buy[] = {5700};
+		sell[] = {2700};
 	};
-	class BAF_LRR_scoped_W {
+	class SCAR_L_STD_EGLM_RCO {
 		type = "trade_weapons";
-		buy[] ={150000,"Boobs"};
-		sell[] ={50000,"Boobs"};
+		buy[] = {5700};
+		sell[] = {2700};
+	};
+	class SCAR_H_STD_EGLM_Spect {
+		type = "trade_weapons";
+		buy[] = {27000};
+		sell[] = {10000};
+	};
+	class DMR {
+		type = "trade_weapons";
+		buy[] = {35000};
+		sell[] = {12000};
+	};
+	class SMAW {
+		type = "trade_weapons";
+		buy[] = {50000};
+		sell[] = {12000};
+	};
+	class Javelin {
+		type = "trade_weapons";
+		buy[] = {50000};
+		sell[] = {12000};
+	};
+	class Stinger {
+		type = "trade_weapons";
+		buy[] = {50000};
+		sell[] = {12000};
+	};
+	class RPG7V {
+		type = "trade_weapons";
+		buy[] = {50000};
+		sell[] = {12000};
+	};
+	class Strela {
+		type = "trade_weapons";
+		buy[] = {50000};
+		sell[] = {12000};
+	};
+	class RPG18 {
+		type = "trade_weapons";
+		buy[] = {50000};
+		sell[] = {12000};
+	};
+	class MetisLauncher {
+		type = "trade_weapons";
+		buy[] = {50000};
+		sell[] = {12000};
+	};
+	class Igla {
+		type = "trade_weapons";
+		buy[] = {50000};
+		sell[] = {12000};
+	};
+	class M136 {
+		type = "trade_weapons";
+		buy[] = {50000};
+		sell[] = {12000};
+	};
+	class MAAWS {
+		type = "trade_weapons";
+		buy[] = {50000};
+		sell[] = {12000};
+	};
+	class BAF_NLAW_Launcher {
+		type = "trade_weapons";
+		buy[] = {50000};
+		sell[] = {12000};
+	};
+	class M47Launcher_EP1 {
+		type = "trade_weapons";
+		buy[] = {50000};
+		sell[] = {12000};
+	};
+	class M79_EP1 {
+		type = "trade_weapons";
+		buy[] = {50000};
+		sell[] = {12000};
+	};
+	class M32_EP1 {
+		type = "trade_weapons";
+		buy[] = {50000};
+		sell[] = {12000};
 	};
 };

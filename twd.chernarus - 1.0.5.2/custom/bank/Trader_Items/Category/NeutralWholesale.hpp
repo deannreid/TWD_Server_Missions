@@ -1,47 +1,186 @@
-class Category_636 {
+class Category_675 {
+	class bulk_15Rnd_9x19_M9SD {
+		type = "trade_items";
+		buy[] = {9000};
+		sell[] = {9000};
+	};
+	class bulk_17Rnd_9x19_glock17 {
+		type = "trade_items";
+		buy[] = {2700};
+		sell[] = {2700};
+	};
+	class bulk_30Rnd_556x45_StanagSD {
+		type = "trade_items";
+		buy[] = {2700};
+		sell[] = {2700};
+	};
+	class bulk_30Rnd_9x19_MP5SD {
+		type = "trade_items";
+		buy[] = {900};
+		sell[] = {900};
+	};
 	class bulk_ItemSandbag {
 		type = "trade_items";
-		buy[] ={20000,"Boobs"};
-		sell[] ={10000,"Boobs"};
+		buy[] = {18000};
+		sell[] = {18000};
 	};
 	class bulk_ItemTankTrap {
 		type = "trade_items";
-		buy[] ={10000,"Boobs"};
-		sell[] ={5000,"Boobs"};
+		buy[] = {2700};
+		sell[] = {2700};
 	};
 	class bulk_ItemWire {
 		type = "trade_items";
-		buy[] ={10000,"Boobs"};
-		sell[] ={5000,"Boobs"};
+		buy[] = {600};
+		sell[] = {600};
 	};
 	class bulk_PartGeneric {
 		type = "trade_items";
-		buy[] ={10000,"Boobs"};
-		sell[] ={5000,"Boobs"};
+		buy[] = {2700};
+		sell[] = {2700};
 	};
 	class CinderBlocks {
 		type = "trade_items";
-		buy[] ={5000,"Boobs"};
-		sell[] ={2500,"Boobs"};
+		buy[] = {9000};
+		sell[] = {450};
 	};
 	class PartPlywoodPack {
 		type = "trade_items";
-		buy[] ={600,"Boobs"};
-		sell[] ={300,"Boobs"};
+		buy[] = {600};
+		sell[] = {300};
 	};
 	class MortarBucket {
 		type = "trade_items";
-		buy[] ={2500,"Boobs"};
-		sell[] ={1250,"Boobs"};
+		buy[] = {900};
+		sell[] = {450};
 	};
 	class PartPlankPack {
 		type = "trade_items";
-		buy[] ={300,"Boobs"};
-		sell[] ={150,"Boobs"};
+		buy[] = {300};
+		sell[] = {150};
 	};
-	class ItemFuelBarrelEmpty {
+};
+class Category_636 {
+	class bulk_15Rnd_9x19_M9SD {
 		type = "trade_items";
-		buy[] ={3000,"Boobs"};
-		sell[] ={1500,"Boobs"};
+		buy[] = {9000};
+		sell[] = {9000};
+	};
+	class bulk_17Rnd_9x19_glock17 {
+		type = "trade_items";
+		buy[] = {2700};
+		sell[] = {2700};
+	};
+	class bulk_30Rnd_556x45_StanagSD {
+		type = "trade_items";
+		buy[] = {2700};
+		sell[] = {2700};
+	};
+	class bulk_30Rnd_9x19_MP5SD {
+		type = "trade_items";
+		buy[] = {900};
+		sell[] = {900};
+	};
+	class bulk_ItemSandbag {
+		type = "trade_items";
+		buy[] = {18000};
+		sell[] = {18000};
+	};
+	class bulk_ItemTankTrap {
+		type = "trade_items";
+		buy[] = {2700};
+		sell[] = {2700};
+	};
+	class bulk_ItemWire {
+		type = "trade_items";
+		buy[] = {600};
+		sell[] = {600};
+	};
+	class bulk_PartGeneric {
+		type = "trade_items";
+		buy[] = {2700};
+		sell[] = {2700};
+	};
+	class CinderBlocks {
+		type = "trade_items";
+		buy[] = {9000};
+		sell[] = {450};
+	};
+	class PartPlywoodPack {
+		type = "trade_items";
+		buy[] = {600};
+		sell[] = {300};
+	};
+	class MortarBucket {
+		type = "trade_items";
+		buy[] = {900};
+		sell[] = {450};
+	};
+	class PartPlankPack {
+		type = "trade_items";
+		buy[] = {300};
+		sell[] = {150};
+	};
+};
+class Category_555 {
+	class bulk_15Rnd_9x19_M9SD {
+		type = "trade_items";
+		buy[] = {9000};
+		sell[] = {9000};
+	};
+	class bulk_17Rnd_9x19_glock17 {
+		type = "trade_items";
+		buy[] = {2700};
+		sell[] = {2700};
+	};
+	class bulk_30Rnd_556x45_StanagSD {
+		type = "trade_items";
+		buy[] = {2700};
+		sell[] = {2700};
+	};
+	class bulk_30Rnd_9x19_MP5SD {
+		type = "trade_items";
+		buy[] = {900};
+		sell[] = {900};
+	};
+	class bulk_ItemSandbag {
+		type = "trade_items";
+		buy[] = {18000};
+		sell[] = {18000};
+	};
+	class bulk_ItemTankTrap {
+		type = "trade_items";
+		buy[] = {2700};
+		sell[] = {2700};
+	};
+	class bulk_ItemWire {
+		type = "trade_items";
+		buy[] = {600};
+		sell[] = {600};
+	};
+	class bulk_PartGeneric {
+		type = "trade_items";
+		buy[] = {2700};
+		sell[] = {2700};
+	};
+	class CinderBlocks {
+		type = "trade_items";
+		buy[] = {9000};
+		sell[] = {450};
+	};
+	class PartPlywoodPack {
+		type = "trade_items";
+		buy[] = {600};
+		sell[] = {300};
+	};
+	class MortarBucket {
+		type = "trade_items";
+		buy[] = {900};
+		sell[] = {450};
+	};
+	class PartPlankPack {
+		type = "trade_items";
+		buy[] = {300};
+		sell[] = {150};
 	};
 };

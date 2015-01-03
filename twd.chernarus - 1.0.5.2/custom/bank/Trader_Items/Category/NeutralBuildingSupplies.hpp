@@ -1,276 +1,174 @@
-class Category_508 {
-	class ItemSandbag {
-		type = "trade_items";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
-	};
-	class ItemTankTrap {
-		type = "trade_items";
-		buy[] ={1000,"Boobs"};
-		sell[] ={500,"Boobs"};
-	};
-	class ItemTentOld {
-		type = "trade_items";
-		buy[] ={1200,"Boobs"};
-		sell[] ={600,"Boobs"};
-	};
-	class ItemWire {
-		type = "trade_items";
-		buy[] ={1200,"Boobs"};
-		sell[] ={600,"Boobs"};
-	};
-	class 30m_plot_kit {
-		type = "trade_items";
-		buy[] ={100000,"Boobs"};
-		sell[] ={50000,"Boobs"};
-	};
-	class ItemVault {
-		type = "trade_items";
-		buy[] ={250000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ItemTentDomed {
-		type = "trade_items";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
-	};
-	class ItemTentDomed2 {
-		type = "trade_items";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
-	};
-	class ItemLightBulb {
-		type = "trade_items";
-		buy[] ={600,"Boobs"};
-		sell[] ={300,"Boobs"};
-	};
-	class ItemGenerator {
-		type = "trade_items";
-		buy[] ={6000,"Boobs"};
-		sell[] ={3000,"Boobs"};
-	};
-	class ItemComboLock {
-		type = "trade_items";
-		buy[] ={10000,"Boobs"};
-		sell[] ={5000,"Boobs"};
-	};
-	class ItemLockbox {
-		type = "trade_items";
-		buy[] ={50000,"Boobs"};
-		sell[] ={25000,"Boobs"};
-	};
-	class ChainSaw {
-		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ChainSawB {
-		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ChainSawG {
-		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ChainSawP {
-		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ChainSawR {
-		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ItemMixOil {
-		type = "trade_items";
-		buy[] ={10000,"Boobs"};
-		sell[] ={5000,"Boobs"};
-	};
-};
-class Category_530 {
-	class ItemSandbag {
-		type = "trade_items";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
-	};
-	class ItemTankTrap {
-		type = "trade_items";
-		buy[] ={1000,"Boobs"};
-		sell[] ={500,"Boobs"};
-	};
-	class ItemTentOld {
-		type = "trade_items";
-		buy[] ={1200,"Boobs"};
-		sell[] ={600,"Boobs"};
-	};
-	class ItemWire {
-		type = "trade_items";
-		buy[] ={1200,"Boobs"};
-		sell[] ={600,"Boobs"};
-	};
-	class 30m_plot_kit {
-		type = "trade_items";
-		buy[] ={100000,"Boobs"};
-		sell[] ={50000,"Boobs"};
-	};
-	class ItemVault {
-		type = "trade_items";
-		buy[] ={250000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ItemTentDomed {
-		type = "trade_items";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
-	};
-	class ItemTentDomed2 {
-		type = "trade_items";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
-	};
-	class ItemLightBulb {
-		type = "trade_items";
-		buy[] ={600,"Boobs"};
-		sell[] ={300,"Boobs"};
-	};
-	class ItemGenerator {
-		type = "trade_items";
-		buy[] ={6000,"Boobs"};
-		sell[] ={3000,"Boobs"};
-	};
-	class ItemComboLock {
-		type = "trade_items";
-		buy[] ={10000,"Boobs"};
-		sell[] ={5000,"Boobs"};
-	};
-	class ItemLockbox {
-		type = "trade_items";
-		buy[] ={50000,"Boobs"};
-		sell[] ={25000,"Boobs"};
-	};
-	class ChainSaw {
-		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ChainSawB {
-		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ChainSawG {
-		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ChainSawP {
-		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ChainSawR {
-		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ItemMixOil {
-		type = "trade_items";
-		buy[] ={10000,"Boobs"};
-		sell[] ={5000,"Boobs"};
-	};
-};
 class Category_662 {
 	class ItemSandbag {
 		type = "trade_items";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
+		buy[] = {1800};
+		sell[] = {600};
 	};
 	class ItemTankTrap {
 		type = "trade_items";
-		buy[] ={1000,"Boobs"};
-		sell[] ={500,"Boobs"};
+		buy[] = {300};
+		sell[] = {150};
 	};
 	class ItemTentOld {
 		type = "trade_items";
-		buy[] ={1200,"Boobs"};
-		sell[] ={600,"Boobs"};
+		buy[] = {120};
+		sell[] = {60};
 	};
 	class ItemWire {
 		type = "trade_items";
-		buy[] ={1200,"Boobs"};
-		sell[] ={600,"Boobs"};
+		buy[] = {60};
+		sell[] = {30};
 	};
 	class 30m_plot_kit {
 		type = "trade_items";
-		buy[] ={100000,"Boobs"};
-		sell[] ={50000,"Boobs"};
+		buy[] = {54000};
+		sell[] = {54000};
 	};
 	class ItemVault {
 		type = "trade_items";
-		buy[] ={250000,"Boobs"};
-		sell[] ={100000,"Boobs"};
+		buy[] = {100000};
+		sell[] = {54000};
 	};
 	class ItemTentDomed {
 		type = "trade_items";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
+		buy[] = {180};
+		sell[] = {90};
 	};
 	class ItemTentDomed2 {
 		type = "trade_items";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
+		buy[] = {180};
+		sell[] = {90};
 	};
 	class ItemLightBulb {
 		type = "trade_items";
-		buy[] ={600,"Boobs"};
-		sell[] ={300,"Boobs"};
+		buy[] = {600};
+		sell[] = {300};
 	};
 	class ItemGenerator {
 		type = "trade_items";
-		buy[] ={6000,"Boobs"};
-		sell[] ={3000,"Boobs"};
+		buy[] = {5400};
+		sell[] = {2700};
 	};
 	class ItemComboLock {
 		type = "trade_items";
-		buy[] ={10000,"Boobs"};
-		sell[] ={5000,"Boobs"};
-	};
-	class ItemLockbox {
-		type = "trade_items";
-		buy[] ={50000,"Boobs"};
-		sell[] ={25000,"Boobs"};
+		buy[] = {9000};
+		sell[] = {2500};
 	};
 	class ChainSaw {
 		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
+		buy[] = {9000};
+		sell[] = {4500};
 	};
-	class ChainSawB {
-		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ChainSawG {
-		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ChainSawP {
-		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ChainSawR {
-		type = "trade_weapons";
-		buy[] ={350000,"Boobs"};
-		sell[] ={100000,"Boobs"};
-	};
-	class ItemMixOil {
+	class ItemCorrugated {
 		type = "trade_items";
-		buy[] ={10000,"Boobs"};
-		sell[] ={5000,"Boobs"};
+		buy[] = {1800};
+		sell[] = {900};
+	};
+	class ItemPole {
+		type = "trade_items";
+		buy[] = {300};
+		sell[] = {150};
+	};
+	class MortarBucket {
+		type = "trade_items";
+		buy[] = {900};
+		sell[] = {100};
+	};
+	class ItemLockbox {
+		type = "trade_items";
+		buy[] = {36000};
+		sell[] = {10000};
+	};
+	class CinderBlocks {
+		type = "trade_items";
+		buy[] = {9000};
+		sell[] = {2500};
+	};
+};
+class Category_508 {
+	class ItemSandbag {
+		type = "trade_items";
+		buy[] = {1800};
+		sell[] = {600};
+	};
+	class ItemTankTrap {
+		type = "trade_items";
+		buy[] = {300};
+		sell[] = {150};
+	};
+	class ItemTentOld {
+		type = "trade_items";
+		buy[] = {120};
+		sell[] = {60};
+	};
+	class ItemWire {
+		type = "trade_items";
+		buy[] = {60};
+		sell[] = {30};
+	};
+	class 30m_plot_kit {
+		type = "trade_items";
+		buy[] = {54000};
+		sell[] = {54000};
+	};
+	class ItemVault {
+		type = "trade_items";
+		buy[] = {100000};
+		sell[] = {54000};
+	};
+	class ItemTentDomed {
+		type = "trade_items";
+		buy[] = {180};
+		sell[] = {90};
+	};
+	class ItemTentDomed2 {
+		type = "trade_items";
+		buy[] = {180};
+		sell[] = {90};
+	};
+	class ItemLightBulb {
+		type = "trade_items";
+		buy[] = {600};
+		sell[] = {300};
+	};
+	class ItemGenerator {
+		type = "trade_items";
+		buy[] = {5400};
+		sell[] = {2700};
+	};
+	class ItemComboLock {
+		type = "trade_items";
+		buy[] = {9000};
+		sell[] = {2500};
+	};
+	class ChainSaw {
+		type = "trade_weapons";
+		buy[] = {9000};
+		sell[] = {4500};
+	};
+	class ItemCorrugated {
+		type = "trade_items";
+		buy[] = {1800};
+		sell[] = {900};
+	};
+	class ItemPole {
+		type = "trade_items";
+		buy[] = {300};
+		sell[] = {150};
+	};
+	class MortarBucket {
+		type = "trade_items";
+		buy[] = {900};
+		sell[] = {100};
+	};
+	class ItemLockbox {
+		type = "trade_items";
+		buy[] = {36000};
+		sell[] = {10000};
+	};
+	class CinderBlocks {
+		type = "trade_items";
+		buy[] = {9000};
+		sell[] = {2500};
 	};
 };
