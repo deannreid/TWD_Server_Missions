@@ -21,7 +21,7 @@ diag_log "==============================================";
 	progressLoadingScreen 0.2;
 		call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";
 	progressLoadingScreen 0.4;
-		call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\compiles.sqf";
+		call compile preprocessFileLineNumbers "custom\code\defaultcompiles.sqf";
 	progressLoadingScreen 0.5;
 diag_log "Loading Custom TWD Files";
 diag_log "==============================================";

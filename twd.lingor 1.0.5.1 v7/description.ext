@@ -24,6 +24,12 @@ class Header
 aiKills = 1;
 diagRadio = 1;
 diagHit = 1;
-
-
+#include "custom\hpp\Trader_Items\cfgServerTrader.hpp"
 #include "custom\hpp\serverstart.hpp"
+
+
+#include "custom\hpp\hw.hpp"
+#include "custom\hpp\defines.hpp"
+#include "custom\hpp\common.hpp"
+#include "custom\hpp\bank_dialog.hpp"
+#include "custom\hpp\give_player_dialog.hpp"
