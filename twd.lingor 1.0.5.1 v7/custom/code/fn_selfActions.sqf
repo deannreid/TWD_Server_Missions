@@ -885,6 +885,7 @@ if (_dogHandle > 0) then {
 	s_player_calldog = 		-1;
 };
 
+
 _banker = _cursorTarget getVariable["BankerBot",0];
 
 if((_banker == 1) and (player distance _cursorTarget < 3)) then {		

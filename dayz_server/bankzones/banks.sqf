@@ -1953,66 +1953,6 @@ if (true) then
   _this setPos [8658.2109, 6526.2061, -0.13095093];
 };
 
-_vehicle_523 = objNull;
-if (true) then
-{
-  _this = createVehicle ["WarfareBunkerSign", [6762.4893, 2502.8083, -7.6293945e-006], [], 0, "CAN_COLLIDE"];
-  _vehicle_523 = _this;
-  _this setDir -48.497234;
-    _this setVehicleInit "this setObjectTexture [0, ""zupa.jpg""]";
-  _this setPos [6762.4893, 2502.8083, -7.6293945e-006];
-};
-
-_vehicle_525 = objNull;
-if (true) then
-{
-  _this = createVehicle ["WarfareBunkerSign", [998.73145, 2224.1206, 3.0517578e-005], [], 0, "CAN_COLLIDE"];
-  _vehicle_525 = _this;
-  _this setDir -67.313019;
-    _this setVehicleInit "this setObjectTexture [0, ""zupa.jpg""]";
-  _this setPos [998.73145, 2224.1206, 3.0517578e-005];
-};
-
-_vehicle_527 = objNull;
-if (true) then
-{
-  _this = createVehicle ["WarfareBunkerSign", [8656.7568, 6518.8223, 9.1552734e-005], [], 0, "CAN_COLLIDE"];
-  _vehicle_527 = _this;
-  _this setDir -60.400795;
-    _this setVehicleInit "this setObjectTexture [0, ""zupa.jpg""]";
-  _this setPos [8656.7568, 6518.8223, 9.1552734e-005];
-};
-
-_vehicle_529 = objNull;
-if (true) then
-{
-  _this = createVehicle ["WarfareBunkerSign", [13335.498, 5475.1123, -5.2452087e-006], [], 0, "CAN_COLLIDE"];
-  _vehicle_529 = _this;
-  _this setDir -138.74821;
-    _this setVehicleInit "this setObjectTexture [0, ""zupa.jpg""]";
-  _this setPos [13335.498, 5475.1123, -5.2452087e-006];
-};
-
-_vehicle_531 = objNull;
-if (true) then
-{
-  _this = createVehicle ["WarfareBunkerSign", [10014.546, 1852.9315, 4.2915344e-006], [], 0, "CAN_COLLIDE"];
-  _vehicle_531 = _this;
-  _this setDir 87.686577;
-    _this setVehicleInit "this setObjectTexture [0, ""zupa.jpg""]";
-  _this setPos [10014.546, 1852.9315, 4.2915344e-006];
-};
-
-_vehicle_533 = objNull;
-if (true) then
-{
-  _this = createVehicle ["WarfareBunkerSign", [12201.858, 9722.418, 6.6757202e-006], [], 0, "CAN_COLLIDE"];
-  _vehicle_533 = _this;
-  _this setDir -76.433128;
-    _this setVehicleInit "this setObjectTexture [0, ""zupa.jpg""]";
-  _this setPos [12201.858, 9722.418, 6.6757202e-006];
-};
-
 _vehicle_609 = objNull;
 if (true) then
 {
@@ -2021,26 +1961,6 @@ if (true) then
   _this setDir 312.10669;
   _this setPos [-1358.1731, 10527.877, -0.4083178];
 };
-
-/*
-_vehicle_739 = objNull;
-if (true) then
-{
-  _this = createVehicle ["SmallTable", [3653.2356, 8532.0977, 3.0517578e-005], [], 0, "CAN_COLLIDE"];
-  _vehicle_739 = _this;
-  _this setDir -54.5294;
-  _this setPos [3653.2356, 8532.0977, 3.0517578e-005];
-};
-
-_vehicle_740 = objNull;
-if (true) then
-{
-  _this = createVehicle ["Laptop_EP1", [3653.125, 8532.1699, 0.78723145], [], 0, "CAN_COLLIDE"];
-  _vehicle_740 = _this;
-  _this setDir 127.61597;
-  _this setPos [3653.125, 8532.1699, 0.78723145];
-};
-*/
 
 _unit_2600 = objNull;
 if (true) then
@@ -2395,15 +2315,6 @@ if (true) then
   _this setPos [3663.8564, 8538.1309, -0.16820285];
 };
 
-_vehicle_780 = objNull;
-if (true) then
-{
-  _this = createVehicle ["WarfareBunkerSign", [3640.3611, 8532.2871, 0.21392822], [], 0, "CAN_COLLIDE"];
-  _vehicle_780 = _this;
-  _this setDir -141.20993;
-    _this setVehicleInit "this setObjectTexture [0, ""zupa.jpg""]";
-  _this setPos [3640.3611, 8532.2871, 0.21392822];
-};
 
 AllBankersOnServer = AllBankersOnServer + [_unit_2000] + [_unit_2100] + [_unit_2200] + [_unit_2300] + [_unit_2400] + [_unit_2500] + [_unit_2600];
 publicVariable "AllBankersOnServer";
