@@ -1,6 +1,6 @@
 // DayZ Epoch TRADERS for 6
 serverTraders = ["RU_Worker1","Dr_Annie_Baker_EP1","CIV_EuroWoman01_EP1","ibr_lingorman2s","Worker2","TK_CIV_Woman03_EP1","ibr_lingorman3s","ibr_lingorman5s","ibr_lingorman4","ibr_lingorman2","Citizen2_EP1","Worker1","RU_Madam3","Pilot","CIV_EuroMan02_EP1","CIV_EuroMan01_EP1","ibr_lingorman7s","Damsel3","Rocker4","Worker4","ibr_lingorman7","ibr_lingorman5","Citizen3_EP1","ibr_lingorman6","ibr_lingorman6s","TK_CIV_Woman02_EP1","Pilot_EP1","TK_CIV_Worker01_EP1","RU_Doctor","Functionary1","TK_CIV_Takistani04_EP1"];
-		// START PER TRADER CONFIG
+
 // Whiskey's Parts Shop
 menu_RU_Worker1 = [
 	[["Building Supplies",508],["Toolbelt Items",510],["Vehicle Parts",509]],
@@ -9,7 +9,7 @@ menu_RU_Worker1 = [
 ];
 // Melly's Medical
 menu_Dr_Annie_Baker_EP1 = [
-	[["Chem-lites/Flares",542],["Medical Supplies",541],["Smoke Grenades",543]],
+	[["Chem-lites/Flares",669],["Medical Supplies",670],["Smoke Grenades",671]],
 	[["FoodBioMeat","ItemZombieParts",1,1,"buy","Zombie Parts","Bio Meat",101]],
 	"friendly"
 ];
@@ -175,14 +175,18 @@ menu_RU_Doctor = [
 	[["FoodBioMeat","ItemZombieParts",1,1,"buy","Zombie Parts","Bio Meat",101]],
 	"neutral"
 ];
+//------------------------------------------------------------------------------------------------
+//----------------------------------------Humanity Traders----------------------------------------
+//------------------------------------------------------------------------------------------------
 // Bandit Trader
 menu_TK_CIV_Takistani04_EP1 = [
-	[["Ammunition",577],["Clothing",575],["Helicopter Armed",512],["Military Armed",569],["Trucks Armed",534],["Weapons",627]],
+	[["Ammunition",577],["Clothes",575],["Helicopter Armed",512],["Military Armed",569],["Trucks Armed",534],["Weapons",627],["ACR Variants",693],["ACR SD Variants",694],["AK Variants",695],["G3 Variants",696],["HK416/417 Variants",697],["SMG Variants",698],["LMG Variants",699],["TAR/MAS/DMR Variants",841],["SCAR Variants",701],["Sniper Variants",702],["Sidearms",703],["Spare Weapons",704],["Gun Ammo",705],["Sidearm Ammo",706]],
 	[],
 	"hostile"
 ];
+// Hero Trader
 menu_Functionary1 = [
-	[["Ammunition",478],["Clothes",476],["Helicopter Armed",493],["Military Armed",562],["Trucks Armed",479],["Weapons",477]],
+	[["Ammunition",478],["Clothes",476],["Helicopter Armed",493],["Military Armed",562],["Trucks Armed",479],["Weapons",477],["ACR Variants",693],["ACR SD Variants",694],["AK Variants",695],["G3 Variants",696],["HK416/417 Variants",697],["SMG Variants",698],["LMG Variants",699],["TAR/MAS/DMR Variants",841],["SCAR Variants",701],["Sniper Variants",702],["Sidearms",703],["Spare Weapons",704],["Gun Ammo",705],["Sidearm Ammo",706]],
 	[],
 	"hero"
 ];

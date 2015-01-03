@@ -3,19 +3,26 @@ class Mission
 {
 	addOns[]=
 	{
-		"brg_africa",
+//Map Specific
+		//"chernarus",
+		//"namalsk",
+		"ibr_lingor",
+
+//ArmA
+		"ca_modules_animals",
+		"cacharacters_pmc",
+		"ca_modules_functions",		
 		"CABuildings",
 		"CABuildings2",
 		"CAMisc",
 		"CAMisc2",
 		"CARocks2",
 		"CAStructures",
-		"mbg_buildings_2",
-		"CAStructures",
-		"ibr_plants",
-		"ibr_hangars",
-		"ibr_airports",
-		"ca_modules_animals",
+		"CAAir2_UH1Y",
+		"CAAir2_MV22",
+		"CAAir",
+		
+//DayZ
 		"dayz_anim",
 		"dayz_code",
 		"dayz_communityassets",
@@ -23,18 +30,57 @@ class Mission
 		"dayz_equip",
 		"dayz_epoch",
 		"dayz_vehicles",
-		"cacharacters_pmc",
-		"ca_modules_functions",
-		"ibr_lingor",
-		"ibr_lcivilian_patch",
-		"chn_crocodile",
-		"warfarebuildings",
+		
+//Epoch
+		"map_eu",
 		"glt_m300t",
 		"pook_h13",
 		"csj_gyroac",
-		"map_eu",
-		"jetskiyanahuiaddon"
+		"jetskiyanahuiaddon",
+		"warfarebuildings",
+		"mbg_killhouses",	
+		"mbg_african_buildings",
+		"mbg_buildings_3",
+		"mbg_buildings_2",	
+		"warehouse",
+		"buildings3",
+		"aif_arma1buildings",
+		"kpfswaysigns",
+		
+//Lingor
+		"ibr_plants",
+		"ibr_hangars",
+		"ibr_airports",
+		"ibr_lcivilian_patch",
+		"chn_crocodile",
+
+//Overwatch
+		"RH_m14",
+		"FHQ_Remington",
+		"FHQ_Remington_ammo",
+		"FHQ_Remington_msr",
+		"FHQ_Remington_xm2010",
+		"FHQ_Remington_acr",
+		"FHQ_Remington_rsass",
+		"VILAS_WWP",
+		"VILAS_RW_Forces",
+		"VILAS_WWP_CO",
+		"VILAS_RW_Forces_CO",
+		"ddopp_taserpack",
+		"CSJ_GyroAC",
+		"JetSkiYanahuiAddon",
+		"smk_anims_lite",
+		"MicroAirVehicles",
+		"oz_is_objects",
+		"monaro",
+		"gsc_units_stalker_patch",
+		"american_law_enforcement",
+		"bb_mercenary",
+		"CYBP_Camels_Config",
+		"nissan_350z",
+		"ussr_cheytac"
 	};
+	
 	addOnsAuto[]=
 	{
 		"dayz_weapons",
@@ -44,8 +90,8 @@ class Mission
 	randomSeed=11171215;
 	class Intel
 	{
-		briefingName="DayZ Epoch Lingor";
-		briefingDescription="DayZ Epoch Lingor Private Server";
+		briefingName="The Wasteland Diaries V7";
+		briefingDescription="TWD Overpoch Lingor";
 		startWeather=0.067362607;
 		forecastWeather=0.52341133;
 		year=2008;
