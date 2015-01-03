@@ -415,8 +415,11 @@ if (!isDedicated) then {
 	// recent murders menu code
 	call compile preprocessFileLineNumbers "\z\addons\dayz_code\compile\player_murderMenu.sqf";
 
+        Zupa_LoadingMessage = ["Loading up server."];	// innitial message before the server ever sends a message to the client.
+	"PVDZE_Z_LoadMessage" addPublicVariableEventHandler {Zupa_LoadingMessage = _this select 1;};
+
 	//This is still needed but the fsm should terminate if any errors pop up.
-	[] spawn {
+     [] spawn {
         private["_timeOut","_display","_control1","_control2"];
         disableSerialization;
         _timeOut = 0;
@@ -433,11 +436,10 @@ if (!isDedicated) then {
 
         // 120 sec timeout (12000 * 0.01)
         while { _timeOut < 12000 } do {
-										if (dayz_clientPreload && dayz_authed) exitWith 
-										{
-										endLoadingScreen;
-										diag_log "PLOGIN: Login loop completed!";
-										};
+            if (dayz_clientPreload && dayz_authed) exitWith { 
+					diag_log "PLOGIN: Login loop completed!"; 
+					endLoadingScreen;
+				 };
             if (!isNil "_display") then {
                 if ( isNull _display ) then {
                         waitUntil { !dialog; };
@@ -446,16 +448,15 @@ if (!isDedicated) then {
                         _control1 = _display displayctrl 8400;
                         _control2 = _display displayctrl 102;
                 };
-
-                if ( dayz_loadScreenMsg != "" ) then {
-                        _control1 ctrlSetText dayz_loadScreenMsg;
-                        dayz_loadScreenMsg = "";
-                };
-
-                _control2 ctrlSetText format["%1",round(_timeOut*0.01)];
+                 _control1 ctrlSetText format["TWD Loading Info: %1 & %2.",Zupa_LoadingMessage select 0 ,dayz_loadScreenMsg];             
+                 _control2 ctrlSetText format["%1",round(_timeOut*0.01)];
             };
-
-            _timeOut = _timeOut + 1;
+			
+	    if( Zupa_LoadingMessage select 0 != "Server running")then{
+		    _timeOut = 0;
+		}else{
+                    _timeOut = _timeOut + 1;
+	    };
 
             if (_timeOut >= 12000) then {
                 1 cutText [localize "str_player_login_timeout", "PLAIN DOWN"];
@@ -466,7 +467,7 @@ if (!isDedicated) then {
 
             sleep 0.01;
         };
-	};
+     };
 
 	dayz_meleeMagazineCheck = {
                 private["_meleeNum","_magType"];

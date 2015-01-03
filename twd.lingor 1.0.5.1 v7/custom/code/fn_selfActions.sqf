@@ -1,5 +1,9 @@
 scriptName "Functions\misc\fn_selfActions.sqf";
-
+/***********************************************************
+	ADD ACTIONS FOR SELF
+	- Function
+	- [] call fnc_usec_selfActions;
+************************************************************/
 private ["_isWreckBuilding","_temp_keys","_magazinesPlayer","_isPZombie","_vehicle","_inVehicle","_hasFuelE","_hasRawMeat","_hasKnife","_hasToolbox","_onLadder","_nearLight","_canPickLight","_canDo","_text","_isHarvested","_isVehicle","_isVehicletype","_isMan","_traderType","_ownerID","_isAnimal","_isDog","_isZombie","_isDestructable","_isTent","_isFuel","_isAlive","_Unlock","_lock","_buy","_dogHandle","_lieDown","_warn","_hastinitem","_allowedDistance","_menu","_menu1","_humanity_logic","_low_high","_cancel","_metals_trader","_traderMenu","_isWreck","_isRemovable","_isDisallowRepair","_rawmeat","_humanity","_speed","_dog","_hasbottleitem","_isAir","_isShip","_playersNear","_findNearestGens","_findNearestGen","_IsNearRunningGen","_cursorTarget","_isnewstorage","_itemsPlayer","_ownerKeyId","_typeOfCursorTarget","_hasKey","_oldOwner","_combi","_key_colors","_player_deleteBuild","_player_flipveh","_player_lockUnlock_crtl","_player_butcher","_player_studybody","_player_cook","_player_boil","_hasFuelBarrelE","_hasHotwireKit","_player_SurrenderedGear","_isSurrendered","_isModular","_isModularDoor","_ownerKeyName","_temp_keys_names","_hasAttached","_allowTow","_liftHeli","_found","_posL","_posC","_height","_liftHelis","_attached"];
 
 if (DZE_ActionInProgress) exitWith {}; // Do not allow if any script is running.
@@ -433,19 +437,19 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		player removeAction s_player_butcher;
 		s_player_butcher = -1;
 	};
-
-	// Study Body
-// Study Body
-	if (_player_studybody) then {
-		if (s_player_studybody < 0) then {
-		 // --------ZUPA - Check Wallet --------
-				s_player_studybody = player addAction [("<t color=""#FF0000"">"+("Check Wallet") + "</t>"), "custom\bank\Gold_Coin_system\Check_Wallet\check_wallet.sqf",_cursorTarget, 0, false, true, "",""];
-			// ---- ZUPA END ---
+	
+//Banking
+	if (_player_studybody) then 
+	{
+		if (s_player_studybody < 0) then 
+		{
+			s_player_studybody = player addAction [("<t color=""#FF0000"">"+("Check Wallet") + "</t>"), "custom\bank\Gold_Coin_system\Check_Wallet\check_wallet.sqf",_cursorTarget, 0, false, true, "",""];
 		};
 	} else {
 		player removeAction s_player_studybody;
 		s_player_studybody = -1;
 	};
+//Banking End
 
 	// logic vars
 	_player_cook = false;
@@ -545,28 +549,32 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		{player removeAction _x} count s_player_combi;s_player_combi = [];
 		s_player_unlockvault = -1;
 	};
-
-	if(_typeOfCursorTarget in DZE_UnLockedStorage and (player distance _cursorTarget < 3)) then {
-		if (s_bank_dialog < 0) then {
+	
+	//Banking
+	if(_typeOfCursorTarget in DZE_UnLockedStorage and (player distance _cursorTarget < 3)) then 
+	{
+		if (s_bank_dialog < 0) then 
+		{
 				s_bank_dialog = player addAction ["Online Banking", "custom\bank\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
 		};
 	} else {
      	player removeAction s_bank_dialog;
 		s_bank_dialog = -1;
 	};
-
-	// banking atm
-
-	if(_typeOfCursorTarget in DZE_ATM  and (player distance _cursorTarget < 3)) then {
-		if (s_bank_dialog2 < 0) then {
+	
+	if(_typeOfCursorTarget in DZE_ATM  and (player distance _cursorTarget < 3)) then 
+	{
+		if (s_bank_dialog2 < 0) then 
+		{
 			s_bank_dialog2 = player addAction ["Bank ATM", "custom\bank\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
 		};
 	} else {
 		player removeAction s_bank_dialog2;
 		s_bank_dialog2 = -1;
 	};
-
+	//Banking End
 	
+
 	//Allow owner to pack vault
 	if(_typeOfCursorTarget in DZE_UnLockedStorage && _ownerID != "0" && (player distance _cursorTarget < 3)) then {
 
@@ -597,14 +605,18 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		s_player_information = -1;
 	};
 	
-if (_isMan and _isAlive and !_isZombie and !_isAnimal and !(_traderType in serverTraders)) then {
-    if (s_givemoney_dialog < 0) then {
-        s_givemoney_dialog = player addAction [format["Give Money to %1", (name _cursorTarget)], "custom\bank\Gold_Coin_system\Give_Money\give_player_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
-    };
-} else {
-    player removeAction s_givemoney_dialog;
-    s_givemoney_dialog = -1;
-};
+	
+	//Banking
+	if (_isMan and _isAlive and !_isZombie and !_isAnimal and !(_traderType in serverTraders)) then 
+	{
+		if (s_givemoney_dialog < 0) then {
+			s_givemoney_dialog = player addAction [format["Give Money to %1", (name _cursorTarget)], "custom\bank\Gold_Coin_system\Give_Money\give_player_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
+		};
+	} else {
+			player removeAction s_givemoney_dialog;
+			s_givemoney_dialog = -1;
+	};
+	//Banking End
 	
 	
 	//Fuel Pump
@@ -725,23 +737,6 @@ if (_isMan and _isAlive and !_isZombie and !_isAnimal and !(_traderType in serve
 		player removeAction s_player_fillgen;
 		s_player_fillgen = -1;
 	};
-
-	//Towing with tow truck
-	/*
-	if(_typeOfCursorTarget == "TOW_DZE") then {
-		if (s_player_towing < 0) then {
-			if(!(_cursorTarget getVariable ["DZEinTow", false])) then {
-				s_player_towing = player addAction [localize "STR_EPOCH_ACTIONS_ATTACH" "\z\addons\dayz_code\actions\tow_AttachStraps.sqf",_cursorTarget, 0, false, true, "",""];				
-			} else {
-				s_player_towing = player addAction [localize "STR_EPOCH_ACTIONS_DETACH", "\z\addons\dayz_code\actions\tow_DetachStraps.sqf",_cursorTarget, 0, false, true, "",""];				
-			};
-		};
-	} else {
-		player removeAction s_player_towing;
-		s_player_towing = -1;
-	};
-	*/
-
 
     //Sleep
 	if(_isTent && _ownerID == dayz_characterID) then {
@@ -960,14 +955,15 @@ if (_isMan and _isAlive and !_isZombie and !_isAnimal and !(_traderType in serve
 	s_player_fuelauto = -1;
 	player removeAction s_player_fuelauto2;
 	s_player_fuelauto2 = -1;
-	player removeAction s_givemoney_dialog;
-	s_givemoney_dialog = -1;
+	//Banking
 	player removeAction s_bank_dialog;
 	s_bank_dialog = -1;
 	player removeAction s_bank_dialog2;
 	s_bank_dialog2 = -1;
 	player removeAction s_bank_dialog3;
 	s_bank_dialog3 = -1;
+	//Banking End
+	
 };
 
 
@@ -1001,13 +997,17 @@ if (_dogHandle > 0) then {
 	s_player_calldog = 		-1;
 };
 
+//Banking
 _banker = _cursorTarget getVariable["BankerBot",0];
 
-if((_banker == 1) and (player distance _cursorTarget < 3)) then {		
-		if (s_bank_dialog9 < 0) then {
-			s_bank_dialog9 = player addAction ["DYCORE Bank Menu", "custom\bank\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
+	if((_banker == 1) and (player distance _cursorTarget < 3)) then 
+	{		
+		if (s_bank_dialog9 < 0) then 
+		{
+			s_bank_dialog9 = player addAction ["Bank Menu", "custom\bank\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
 		};			
 	} else {		
-		player removeAction s_bank_dialog9;
-		s_bank_dialog9 = -1;
+			player removeAction s_bank_dialog9;
+			s_bank_dialog9 = -1;
 	};
+//Banking End

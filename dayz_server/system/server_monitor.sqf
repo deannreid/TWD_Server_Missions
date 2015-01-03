@@ -46,6 +46,8 @@ if(isnil "MaxMineVeins") then {
 // Custon Configs End
 
 if (isServer && isNil "sm_done") then {
+	PVDZE_Z_LoadMessage = ["Getting Objects from Hive"];
+	publicVariable "PVDZE_Z_LoadMessage";
 	serverVehicleCounter = [];
 	diag_log ("LOAD OBJECTS");
 
@@ -61,6 +63,14 @@ if (isServer && isNil "sm_done") then {
         diag_log format["FOUND %1 OBJECTS", str(count _objectArray)];
 	
 	// # NOW SPAWN OBJECTS #
+		
+			_ammountOfObject = count (_objectArray); 	
+			_theMessage = format ["Spawning %1 objects and vehicles", _ammountOfObject];
+			PVDZE_Z_LoadMessage = [_theMessage];
+			publicVariable "PVDZE_Z_LoadMessage";
+        _currentCount = 0;
+        _newMileStone = 50;
+
 	_totalvehicles = 0;
 	{
 		_idKey = 		_x select 1;
@@ -233,12 +243,23 @@ if (isServer && isNil "sm_done") then {
 			//Monitor the object
 			PVDZE_serverObjectMonitor set [count PVDZE_serverObjectMonitor,_object];
 		};
+	if( _currentCount == _newMileStone)then
+	{
+		_newMileStone = _newMileStone + 20; // every 50 items loaded refresh message
+		_theMessage = format ["Spawned %1 of %2 objects",_currentCount, _ammountOfObject];
+		PVDZE_Z_LoadMessage = [_theMessage];
+		publicVariable "PVDZE_Z_LoadMessage";
+	};
+_currentCount = _currentCount + 1;		
 	} count _objectArray;
 	// # END SPAWN OBJECTS #
 
 	// preload server traders menu data into cache
 	if !(DZE_ConfigTrader) then {
 		{
+	_theMessage = "Loading trader data";
+	PVDZE_Z_LoadMessage = [_theMessage];
+	publicVariable "PVDZE_Z_LoadMessage";
 			// get tids
 			_traderData = call compile format["menu_%1;",_x];
 			if (!isNil "_traderData") then {
@@ -272,6 +293,9 @@ if (isServer && isNil "sm_done") then {
 
 	//  spawn_vehicles
 	_vehLimit = MaxVehicleLimit - _totalvehicles;
+	_theMessage = format["Spawning %1 new vehicles", _vehLimit];
+	PVDZE_Z_LoadMessage = [_theMessage];
+	publicVariable "PVDZE_Z_LoadMessage";
 	if (_vehLimit > 0) then {
 	    diag_log ("HIVE: Spawning # of Vehicles: " + str(_vehLimit));
 	    for "_x" from 1 to _vehLimit do {
@@ -280,6 +304,9 @@ if (isServer && isNil "sm_done") then {
 	} else {
 	    diag_log "HIVE: Vehicle Spawn limit reached!";
 	};
+	_theMessage = "Finishing up server initialisation ";
+	PVDZE_Z_LoadMessage = [_theMessage];
+	publicVariable "PVDZE_Z_LoadMessage";
 	
 	//  spawn_roadblocks
 	diag_log ("HIVE: Spawning # of Debris: " + str(MaxDynamicDebris));
@@ -307,7 +334,6 @@ if (isServer && isNil "sm_done") then {
 		OldHeliCrash = false;
 	};
 
-	// [_guaranteedLoot, _randomizedLoot, _frequency, _variance, _spawnChance, _spawnMarker, _spawnRadius, _spawnFire, _fadeFire]
 	if(OldHeliCrash) then {
 		_nul = [3, 4, (50 * 60), (15 * 60), 0.75, 'center', HeliCrashArea, true, false] spawn server_spawnCrashSite;
 	};
@@ -346,7 +372,9 @@ if (isServer && isNil "sm_done") then {
 			
 		};
 		diag_log format["Total Number of spawn locations %1", actualSpawnMarkerCount];
-		
+	_theMessage = format["Server running", _vehLimit];
+	PVDZE_Z_LoadMessage = [_theMessage];
+	publicVariable "PVDZE_Z_LoadMessage";
 		endLoadingScreen;
 	};
 

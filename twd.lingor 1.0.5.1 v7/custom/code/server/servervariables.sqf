@@ -46,8 +46,6 @@
 	InstantTrading = true; // (True = No Animation / False = Animation)
 	AllBankersOnServer = [];
 	
-	//TWD_overPoch = true; //Is Server Overpoch? ==DEPRICATED== 
-
 //SERVER ONLY VARIABLES
 // Chernarus
 if (dayZ_instance == 11) then

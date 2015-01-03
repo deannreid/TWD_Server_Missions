@@ -4,7 +4,30 @@ diag_log "==============================================";
 		player_switchModel   =			compile preprocessFileLineNumbers "custom\code\player_switchModel.sqf";
 		
 diag_log "==============================================";
-	diag_log "Loading the Bucks";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	diag_log "Loading the Banks";
 	SC_fnc_removeCoins=
 	{
 	private ["_player","_amount","_wealth","_newwealth", "_result"];
@@ -50,4 +73,9 @@ diag_log "==============================================";
 			_result
 	};
 		BIS_fnc_numberDigits = compile preprocessFileLineNumbers "custom\bank\Player_Hud\numberDigits.sqf";
-diag_log "Finished Loading Bucks"
+		BIS_fnc_numberText = compile preprocessFileLineNumbers "custom\bank\Player_Hud\numberText.sqf"; 
+		call compile preprocessFileLineNumbers "custom\bank\Gold_Coin_system\Trading_Stuff\player_traderMenu.sqf";
+diag_log "Finished Loading Banks"
+diag_log "==============================================";
+	diag_log "Finished Initialising VL Compiles";
+diag_log "==============================================";

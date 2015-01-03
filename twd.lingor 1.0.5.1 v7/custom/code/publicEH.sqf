@@ -50,6 +50,7 @@ if (isServer) then {
 	"PVDZE_plr_Died"		addPublicVariableEventHandler {_id = (_this select 1) spawn server_playerDied};
 	"PVDZE_plr_Save"		addPublicVariableEventHandler {_id = (_this select 1) spawn server_playerSync;};
 	"PVDZE_obj_Publish"		addPublicVariableEventHandler {(_this select 1) call server_publishObj};
+	"PVDZE_fullobj_Publish"		addPublicVariableEventHandler {(_this select 1) call server_publishFullObject};	
 	"PVDZE_veh_Update"		addPublicVariableEventHandler {_id = (_this select 1) spawn server_updateObject};
 	"PVDZE_plr_Login"		addPublicVariableEventHandler {_id = (_this select 1) spawn server_playerLogin};
 	"PVDZE_plr_Login2"		addPublicVariableEventHandler {(_this select 1) call server_playerSetup};
@@ -75,11 +76,6 @@ if (isServer) then {
 
 //Client only
 if (!isDedicated) then {
-	/* VASP edit start */
-	//"PVDZE_plr_SetDate"		addPublicVariableEventHandler {setDate (_this select 1)};
-	"PVDZE_plr_SetDate"		addPublicVariableEventHandler {if (!(player getVariable["Preview",false])) then {setDate (_this select 1);};};
-	/* VASP edit end */
-	
 	"PVDZE_plr_SetDate"		addPublicVariableEventHandler {setDate (_this select 1)};
 	"PVDZE_plr_SetSaveTime"	addPublicVariableEventHandler {DZE_SaveTime = (_this select 1)};
 	"PVDZE_obj_RoadFlare"	addPublicVariableEventHandler {(_this select 1) spawn object_roadFlare};

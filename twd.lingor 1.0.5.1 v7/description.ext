@@ -33,3 +33,5 @@ diagHit = 1;
 #include "custom\hpp\common.hpp"
 #include "custom\hpp\bank_dialog.hpp"
 #include "custom\hpp\give_player_dialog.hpp"
+#include "custom\snap_pro\snappoints.hpp"
+#include "custom\plotManagement\plotManagement.hpp"
