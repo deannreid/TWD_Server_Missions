@@ -24,7 +24,7 @@ class Header
 aiKills = 1;
 diagRadio = 1;
 diagHit = 1;
-#include "custom\hpp\Trader_Items\cfgServerTrader.hpp"
+#include "custom\bank\Trader_Items\cfgServerTrader.hpp"
 #include "custom\hpp\serverstart.hpp"
 
 
