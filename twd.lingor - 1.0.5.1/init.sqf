@@ -46,7 +46,7 @@ diag_log "==============================================";
 
 diag_log "Loading Server Monitor & Server Executions!";
 if (isServer) then  {
-						_serverMonitor = [] execVM "custom\system\server_monitor.sqf";
+						_serverMonitor = [] execVM " \z\addons\dayz_code\system\server_monitor.sqf";
 											   execVM "custom\code\server\server.sqf";
 					};
 diag_log "Finished Loading Server Monitor & Server Executions!";

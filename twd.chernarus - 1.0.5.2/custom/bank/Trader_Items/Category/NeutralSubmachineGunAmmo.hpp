@@ -1,96 +1,64 @@
-class Category_483 {
+class Category_648 {
 	class 30rnd_9x19_MP5 {
 		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
+		buy[] = {60};
+		sell[] = {30};
 	};
 	class 30Rnd_9x19_MP5SD {
 		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
+		buy[] = {120};
+		sell[] = {60};
 	};
 	class 30Rnd_9x19_UZI {
 		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
+		buy[] = {90};
+		sell[] = {60};
 	};
 	class 64Rnd_9x19_SD_Bizon {
 		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
+		buy[] = {60};
+		sell[] = {30};
 	};
 	class 30Rnd_9x19_UZI_SD {
 		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
+		buy[] = {180};
+		sell[] = {90};
 	};
 	class 20Rnd_B_765x17_Ball {
 		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
+		buy[] = {60};
+		sell[] = {30};
 	};
 };
 class Category_612 {
 	class 30rnd_9x19_MP5 {
 		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
+		buy[] = {60};
+		sell[] = {30};
 	};
 	class 30Rnd_9x19_MP5SD {
 		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
+		buy[] = {120};
+		sell[] = {60};
 	};
 	class 30Rnd_9x19_UZI {
 		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
+		buy[] = {90};
+		sell[] = {60};
 	};
 	class 64Rnd_9x19_SD_Bizon {
 		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
+		buy[] = {60};
+		sell[] = {30};
 	};
 	class 30Rnd_9x19_UZI_SD {
 		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
+		buy[] = {180};
+		sell[] = {90};
 	};
 	class 20Rnd_B_765x17_Ball {
 		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
-	};
-};
-class Category_648 {
-	class 30rnd_9x19_MP5 {
-		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
-	};
-	class 30Rnd_9x19_MP5SD {
-		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
-	};
-	class 30Rnd_9x19_UZI {
-		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
-	};
-	class 64Rnd_9x19_SD_Bizon {
-		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
-	};
-	class 30Rnd_9x19_UZI_SD {
-		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
-	};
-	class 20Rnd_B_765x17_Ball {
-		type = "trade_items";
-		buy[] ={100,"Boobs"};
-		sell[] ={50,"Boobs"};
+		buy[] = {60};
+		sell[] = {30};
 	};
 };

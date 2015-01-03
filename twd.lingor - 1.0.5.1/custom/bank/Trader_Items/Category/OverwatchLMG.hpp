@@ -10,6 +10,7 @@ class vil_RPK75_Romania { type = "trade_weapons"; buy[] = {10000}; sell[] = {500
 class vil_RPK75_M72 { type = "trade_weapons"; buy[] = {10000}; sell[] = {5000}; };
 class vil_RPD { type = "trade_weapons"; buy[] = {16000}; sell[] = {8000}; };
 class vil_RPK74 { type = "trade_weapons"; buy[] = {10000}; sell[] = {5000}; };
+class RPK_74 { type = "trade_weapons"; buy[] = {10000}; sell[] = {5000}; };
 class vil_RPK74M_P29 { type = "trade_weapons"; buy[] = {10000}; sell[] = {5000}; };
 class vil_RPK74M { type = "trade_weapons"; buy[] = {10000}; sell[] = {5000}; };
 class skavil_M60 { type = "trade_weapons"; buy[] = {12000}; sell[] = {6000}; };

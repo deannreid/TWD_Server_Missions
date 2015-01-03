@@ -1,47 +1,47 @@
 class Category_577 {
 	class 30Rnd_556x45_StanagSD {
 		type = "trade_items";
-		buy[] ={400,"Boobs"};
-		sell[] ={200,"Boobs"};
+		buy[] = {600};
+		sell[] = {150};
 	};
 	class 5Rnd_86x70_L115A1 {
 		type = "trade_items";
-		buy[] ={4000,"Boobs"};
-		sell[] ={2000,"Boobs"};
+		buy[] = {1200};
+		sell[] = {250};
 	};
 	class 100Rnd_762x51_M240 {
 		type = "trade_items";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
+		buy[] = {1800};
+		sell[] = {600};
 	};
 	class 20Rnd_762x51_FNFAL {
 		type = "trade_items";
-		buy[] ={400,"Boobs"};
-		sell[] ={200,"Boobs"};
+		buy[] = {600};
+		sell[] = {180};
 	};
 	class 20Rnd_762x51_SB_SCAR {
 		type = "trade_items";
-		buy[] ={1000,"Boobs"};
-		sell[] ={500,"Boobs"};
+		buy[] = {1800};
+		sell[] = {600};
 	};
-	class  100Rnd_127x99_M2 {
+	class 10Rnd_127x99_m107 {
 		type = "trade_items";
-		buy[] ={100000,"Boobs"};
-		sell[] ={50000,"Boobs"};
-	}; 
-	class  2000Rnd_762x51_L94A1 {
+		buy[] = {6000};
+		sell[] = {1600};
+	};
+	class 5Rnd_127x99_as50 {
 		type = "trade_items";
-		buy[] ={100000,"Boobs"};
-		sell[] ={50000,"Boobs"};
-	}; 
-	class  32Rnd_40mm_GMG {
+		buy[] = {7100};
+		sell[] = {1800};
+	};
+	class FHQ_rem_30Rnd_680x43_ACR {
 		type = "trade_items";
-		buy[] ={100000,"Boobs"};
-		sell[] ={50000,"Boobs"};
-	}; 
-	class  48Rnd_40mm_MK19 {
+		buy[] = {240};
+		sell[] = {120};
+	};
+	class FHQ_rem_30Rnd_680x43_ACR_SD {
 		type = "trade_items";
-		buy[] ={100000,"Boobs"};
-		sell[] ={50000,"Boobs"};
+		buy[] = {900};
+		sell[] = {300};
 	};
 };

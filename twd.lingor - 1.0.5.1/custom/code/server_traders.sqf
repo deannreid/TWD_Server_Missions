@@ -15,13 +15,13 @@ menu_Dr_Annie_Baker_EP1 = [
 ];
 // Alejandria's General Supplies
 menu_CIV_EuroWoman01_EP1 = [
-	[["Backpacks",538],["Clothes",628],["Cooked Meats",630],["Drinks",601],["Packaged Food",629],["Money Money Money!",702]],
+	[["Backpacks",538],["Clothes",628],["Cooked Meats",630],["Drinks",601],["Packaged Food",629],["Money Money Money!",777]],
 	[["ItemTinBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Tin Bar",101]],
 	"neutral"
 ];
 // Blivion's Wholesale Items
 menu_ibr_lingorman2s = [
-	[["Wholesale",555],["Money Money Money!",702]],
+	[["Wholesale",555],["Money Money Money!",777]],
 	[],
 	"neutral"
 ];
@@ -33,13 +33,13 @@ menu_Worker2 = [
 ];
 // Stella's General Goods
 menu_TK_CIV_Woman03_EP1 = [
-	[["Backpacks",632],["Clothes",631],["Cooked Meats",634],["Drinks",633],["Packaged Food",635],["Money Money Money!",702]],
+	[["Backpacks",632],["Clothes",631],["Cooked Meats",634],["Drinks",633],["Packaged Food",635],["Money Money Money!",777]],
 	[["ItemTinBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Tin Bar",101]],
 	"neutral"
 ];
 // Clive's Wholesale
 menu_ibr_lingorman3s = [
-	[["Wholesale",636],["Money Money Money!",702]],
+	[["Wholesale",636],["Money Money Money!",777]],
 	[],
 	"neutral"
 ];
@@ -75,7 +75,7 @@ menu_Worker1 = [
 ];
 // Bag Lady Gina
 menu_RU_Madam3 = [
-	[["Backpacks",496],["Clothes",497],["Cooked Meats",580],["Drinks",498],["Packaged Food",579],["Money Money Money!",702]],
+	[["Backpacks",496],["Clothes",497],["Cooked Meats",580],["Drinks",498],["Packaged Food",579],["Money Money Money!",777]],
 	[["ItemTinBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Tin Bar",101]],
 	"neutral"
 ];
@@ -87,13 +87,13 @@ menu_Pilot = [
 ];
 // Jim's Ammo
 menu_CIV_EuroMan02_EP1 = [
-	[["Assault Rifle Ammo",480],["Light Machine Gun Ammo",481],["Pistol Ammo",484],["Shotguns and Single-shot Ammo",573],["Sniper Rifle Ammo",482],["Submachine Gun Ammo",483]],
+	[["Black Market Ammo",527],["Assault Rifle Ammo",480],["Light Machine Gun Ammo",481],["Pistol Ammo",484],["Shotguns and Single-shot Ammo",573],["Sniper Rifle Ammo",482],["Submachine Gun Ammo",483]],
 	[],
 	"neutral"
 ];
 // Joe's Weapons
 menu_CIV_EuroMan01_EP1 = [
-	[["Assault Rifle",615],["Light Machine Gun",616],["Pistols",617],["Shotguns and Single-shot",620],["Sniper Rifle",619],["Submachine Guns",618],["ACR Variants",693],["ACR SD Variants",694],["AK Variants",695],["G3 Variants",696],["HK416/417 Variants",697],["SMG Variants",698],["LMG Variants",699],["TAR/MAS/DMR Variants",841],["SCAR Variants",701],["Sniper Variants",702]],
+	[["Black Market Weapons",526],["Assault Rifle",615],["Light Machine Gun",616],["Pistols",617],["Shotguns and Single-shot",620],["Sniper Rifle",619],["Submachine Guns",618],["ACR Variants",693],["ACR SD Variants",694],["AK Variants",695],["G3 Variants",696],["HK416/417 Variants",697],["SMG Variants",698],["LMG Variants",699],["TAR/MAS/DMR Variants",700],["SCAR Variants",701],["Sniper Variants",702]],
 	[],
 	"neutral"
 ];
@@ -105,7 +105,7 @@ menu_ibr_lingorman7s = [
 ];
 // Tina's Tarts
 menu_Damsel3 = [
-	[["Backpacks",496],["Clothes",497],["Cooked Meats",690],["Drinks",691],["Packaged Food",692],["Money Money Money!",702]],
+	[["Backpacks",496],["Clothes",497],["Cooked Meats",690],["Drinks",691],["Packaged Food",692],["Money Money Money!",777]],
 	[["ItemTinBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Tin Bar",101]],
 	"neutral"
 ];
@@ -123,7 +123,7 @@ menu_Worker4 = [
 ];
 // Chucks Weapons
 menu_ibr_lingorman7 = [
-	[["Assault Rifle",602],["Light Machine Gun",603],["Pistols",606],["Shotguns and Single-shot",607],["Sniper Rifle",605],["Submachine Guns",604],["ACR Variants",693],["ACR SD Variants",694],["AK Variants",695],["G3 Variants",696],["HK416/417 Variants",697],["SMG Variants",698],["LMG Variants",699],["TAR/MAS/DMR Variants",841],["SCAR Variants",701],["Sniper Variants",702]],
+	[["Assault Rifle",602],["Light Machine Gun",603],["Pistols",606],["Shotguns and Single-shot",607],["Sniper Rifle",605],["Submachine Guns",604],["ACR Variants",693],["ACR SD Variants",694],["AK Variants",695],["G3 Variants",696],["HK416/417 Variants",697],["SMG Variants",698],["LMG Variants",699],["TAR/MAS/DMR Variants",700],["SCAR Variants",701],["Sniper Variants",702]],
 	[],
 	"neutral"
 ];
@@ -135,7 +135,7 @@ menu_ibr_lingorman5 = [
 ];
 // Santo's Wholesale
 menu_Citizen3_EP1 = [
-	[["Wholesale",675],["Money Money Money!",702]],
+	[["Wholesale",675],["Money Money Money!",777]],
 	[],
 	"neutral"
 ];
@@ -153,7 +153,7 @@ menu_ibr_lingorman6s = [
 ];
 // Samish Shop
 menu_TK_CIV_Woman02_EP1 = [
-	[["Cooked Meats",686],["Drinks",684],["Packaged Food",687],["Money Money Money!",702]],
+	[["Cooked Meats",686],["Drinks",684],["Packaged Food",687],["Money Money Money!",777]],
 	[["ItemTinBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Tin Bar",101]],
 	"neutral"
 ];
@@ -180,13 +180,13 @@ menu_RU_Doctor = [
 //------------------------------------------------------------------------------------------------
 // Bandit Trader
 menu_TK_CIV_Takistani04_EP1 = [
-	[["Ammunition",577],["Clothes",575],["Helicopter Armed",512],["Military Armed",569],["Trucks Armed",534],["Weapons",627],["ACR Variants",693],["ACR SD Variants",694],["AK Variants",695],["G3 Variants",696],["HK416/417 Variants",697],["SMG Variants",698],["LMG Variants",699],["TAR/MAS/DMR Variants",841],["SCAR Variants",701],["Sniper Variants",702],["Sidearms",703],["Spare Weapons",704],["Gun Ammo",705],["Sidearm Ammo",706],["Money Money Money!",702]],
+	[["Ammunition",577],["Clothes",575],["Helicopter Armed",512],["Military Armed",569],["Trucks Armed",534],["Weapons",627],["ACR Variants",693],["ACR SD Variants",694],["AK Variants",695],["G3 Variants",696],["HK416/417 Variants",697],["SMG Variants",698],["LMG Variants",699],["TAR/MAS/DMR Variants",700],["SCAR Variants",701],["Sniper Variants",702],["Sidearms",703],["Spare Weapons",704],["Gun Ammo",705],["Sidearm Ammo",706],["Money Money Money!",777]],
 	[],
 	"hostile"
 ];
 // Hero Trader
 menu_Functionary1 = [
-	[["Ammunition",478],["Clothes",476],["Helicopter Armed",493],["Military Armed",562],["Trucks Armed",479],["Weapons",477],["ACR Variants",693],["ACR SD Variants",694],["AK Variants",695],["G3 Variants",696],["HK416/417 Variants",697],["SMG Variants",698],["LMG Variants",699],["TAR/MAS/DMR Variants",841],["SCAR Variants",701],["Sniper Variants",702],["Sidearms",703],["Spare Weapons",704],["Gun Ammo",705],["Sidearm Ammo",706],["Money Money Money!",702]],
+	[["Ammunition",478],["Clothes",476],["Helicopter Armed",493],["Military Armed",562],["Trucks Armed",479],["Weapons",477],["ACR Variants",693],["ACR SD Variants",694],["AK Variants",695],["G3 Variants",696],["HK416/417 Variants",697],["SMG Variants",698],["LMG Variants",699],["TAR/MAS/DMR Variants",700],["SCAR Variants",701],["Sniper Variants",702],["Sidearms",703],["Spare Weapons",704],["Gun Ammo",705],["Sidearm Ammo",706],["Money Money Money!",777]],
 	[],
 	"hero"
 ];

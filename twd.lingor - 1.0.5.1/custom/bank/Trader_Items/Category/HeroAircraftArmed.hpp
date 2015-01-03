@@ -89,6 +89,11 @@ class Category_493 {
 		buy[] = {432000};
 		sell[] = {216000};
 	};
+	class Mi17_CDF {
+		type = "trade_any_vehicle";
+		buy[] = {432000};
+		sell[] = {216000};
+	};
 	class Mi17_INS {
 		type = "trade_any_vehicle";
 		buy[] = {432000};

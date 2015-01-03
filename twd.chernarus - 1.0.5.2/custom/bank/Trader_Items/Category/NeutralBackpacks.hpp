@@ -1,171 +1,186 @@
+class Category_685 {
+	class DZ_Patrol_Pack_EP1 {
+		type = "trade_backpacks";
+		buy[] = {5};
+		sell[] = {3};
+	};
+	class CZ_VestPouch_EP1 {
+		type = "trade_backpacks";
+		buy[] = {60};
+		sell[] = {30};
+	};
+	class DZ_ALICE_Pack_EP1 {
+		type = "trade_backpacks";
+		buy[] = {600};
+		sell[] = {300};
+	};
+	class DZ_Assault_Pack_EP1 {
+		type = "trade_backpacks";
+		buy[] = {30};
+		sell[] = {5};
+	};
+	class DZ_Backpack_EP1 {
+		type = "trade_backpacks";
+		buy[] = {9000};
+		sell[] = {6300};
+	};
+	class DZ_British_ACU {
+		type = "trade_backpacks";
+		buy[] = {3600};
+		sell[] = {1800};
+	};
+	class DZ_CivilBackpack_EP1 {
+		type = "trade_backpacks";
+		buy[] = {5400};
+		sell[] = {3600};
+	};
+	class DZ_Czech_Vest_Puch {
+		type = "trade_backpacks";
+		buy[] = {10};
+		sell[] = {5};
+	};
+	class DZ_TK_Assault_Pack_EP1 {
+		type = "trade_backpacks";
+		buy[] = {600};
+		sell[] = {300};
+	};
+	class DZ_TerminalPack_EP1 {
+		type = "trade_backpacks";
+		buy[] = {600};
+		sell[] = {10};
+	};
+	class DZ_GunBag_EP1 {
+		type = "trade_backpacks";
+		buy[] = {7200};
+		sell[] = {5400};
+	};
+	class DZ_LargeGunBag_EP1 {
+		type = "trade_backpacks";
+		buy[] = {25000};
+		sell[] = {7500};
+	};
+};
 class Category_496 {
 	class DZ_Patrol_Pack_EP1 {
 		type = "trade_backpacks";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {5};
+		sell[] = {3};
 	};
 	class CZ_VestPouch_EP1 {
 		type = "trade_backpacks";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {60};
+		sell[] = {30};
 	};
 	class DZ_ALICE_Pack_EP1 {
 		type = "trade_backpacks";
-		buy[] ={3000,"Boobs"};
-		sell[] ={1500,"Boobs"};
+		buy[] = {600};
+		sell[] = {300};
 	};
 	class DZ_Assault_Pack_EP1 {
 		type = "trade_backpacks";
-		buy[] ={3000,"Boobs"};
-		sell[] ={1500,"Boobs"};
+		buy[] = {30};
+		sell[] = {5};
 	};
 	class DZ_Backpack_EP1 {
 		type = "trade_backpacks";
-		buy[] ={8000,"Boobs"};
-		sell[] ={4000,"Boobs"};
+		buy[] = {9000};
+		sell[] = {6300};
 	};
 	class DZ_British_ACU {
 		type = "trade_backpacks";
-		buy[] ={4000,"Boobs"};
-		sell[] ={2000,"Boobs"};
+		buy[] = {3600};
+		sell[] = {1800};
 	};
 	class DZ_CivilBackpack_EP1 {
 		type = "trade_backpacks";
-		buy[] ={6000,"Boobs"};
-		sell[] ={3000,"Boobs"};
+		buy[] = {5400};
+		sell[] = {3600};
 	};
 	class DZ_Czech_Vest_Puch {
 		type = "trade_backpacks";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {10};
+		sell[] = {5};
 	};
 	class DZ_TK_Assault_Pack_EP1 {
 		type = "trade_backpacks";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
+		buy[] = {600};
+		sell[] = {300};
 	};
 	class DZ_TerminalPack_EP1 {
 		type = "trade_backpacks";
-		buy[] ={600,"Boobs"};
-		sell[] ={300,"Boobs"};
+		buy[] = {600};
+		sell[] = {10};
 	};
 	class DZ_GunBag_EP1 {
 		type = "trade_backpacks";
-		buy[] ={6000,"Boobs"};
-		sell[] ={3000,"Boobs"};
+		buy[] = {7200};
+		sell[] = {5400};
 	};
-};
-class Category_538 {
-	class DZ_Patrol_Pack_EP1 {
+	class DZ_LargeGunBag_EP1 {
 		type = "trade_backpacks";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class CZ_VestPouch_EP1 {
-		type = "trade_backpacks";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class DZ_ALICE_Pack_EP1 {
-		type = "trade_backpacks";
-		buy[] ={3000,"Boobs"};
-		sell[] ={1500,"Boobs"};
-	};
-	class DZ_Assault_Pack_EP1 {
-		type = "trade_backpacks";
-		buy[] ={3000,"Boobs"};
-		sell[] ={1500,"Boobs"};
-	};
-	class DZ_Backpack_EP1 {
-		type = "trade_backpacks";
-		buy[] ={8000,"Boobs"};
-		sell[] ={4000,"Boobs"};
-	};
-	class DZ_British_ACU {
-		type = "trade_backpacks";
-		buy[] ={4000,"Boobs"};
-		sell[] ={2000,"Boobs"};
-	};
-	class DZ_CivilBackpack_EP1 {
-		type = "trade_backpacks";
-		buy[] ={6000,"Boobs"};
-		sell[] ={3000,"Boobs"};
-	};
-	class DZ_Czech_Vest_Puch {
-		type = "trade_backpacks";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class DZ_TK_Assault_Pack_EP1 {
-		type = "trade_backpacks";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
-	};
-	class DZ_TerminalPack_EP1 {
-		type = "trade_backpacks";
-		buy[] ={600,"Boobs"};
-		sell[] ={300,"Boobs"};
-	};
-	class DZ_GunBag_EP1 {
-		type = "trade_backpacks";
-		buy[] ={6000,"Boobs"};
-		sell[] ={3000,"Boobs"};
+		buy[] = {25000};
+		sell[] = {7500};
 	};
 };
 class Category_632 {
 	class DZ_Patrol_Pack_EP1 {
 		type = "trade_backpacks";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {5};
+		sell[] = {3};
 	};
 	class CZ_VestPouch_EP1 {
 		type = "trade_backpacks";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {60};
+		sell[] = {30};
 	};
 	class DZ_ALICE_Pack_EP1 {
 		type = "trade_backpacks";
-		buy[] ={3000,"Boobs"};
-		sell[] ={1500,"Boobs"};
+		buy[] = {600};
+		sell[] = {300};
 	};
 	class DZ_Assault_Pack_EP1 {
 		type = "trade_backpacks";
-		buy[] ={3000,"Boobs"};
-		sell[] ={1500,"Boobs"};
+		buy[] = {30};
+		sell[] = {5};
 	};
 	class DZ_Backpack_EP1 {
 		type = "trade_backpacks";
-		buy[] ={8000,"Boobs"};
-		sell[] ={4000,"Boobs"};
+		buy[] = {9000};
+		sell[] = {6300};
 	};
 	class DZ_British_ACU {
 		type = "trade_backpacks";
-		buy[] ={4000,"Boobs"};
-		sell[] ={2000,"Boobs"};
+		buy[] = {3600};
+		sell[] = {1800};
 	};
 	class DZ_CivilBackpack_EP1 {
 		type = "trade_backpacks";
-		buy[] ={6000,"Boobs"};
-		sell[] ={3000,"Boobs"};
+		buy[] = {5400};
+		sell[] = {3600};
 	};
 	class DZ_Czech_Vest_Puch {
 		type = "trade_backpacks";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {10};
+		sell[] = {5};
 	};
 	class DZ_TK_Assault_Pack_EP1 {
 		type = "trade_backpacks";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
+		buy[] = {600};
+		sell[] = {300};
 	};
 	class DZ_TerminalPack_EP1 {
 		type = "trade_backpacks";
-		buy[] ={600,"Boobs"};
-		sell[] ={300,"Boobs"};
+		buy[] = {600};
+		sell[] = {10};
 	};
 	class DZ_GunBag_EP1 {
 		type = "trade_backpacks";
-		buy[] ={6000,"Boobs"};
-		sell[] ={3000,"Boobs"};
+		buy[] = {7200};
+		sell[] = {5400};
+	};
+	class DZ_LargeGunBag_EP1 {
+		type = "trade_backpacks";
+		buy[] = {25000};
+		sell[] = {7500};
 	};
 };

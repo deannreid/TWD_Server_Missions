@@ -1,126 +1,111 @@
+class Category_687 {
+	class FoodCanBakedBeans {
+		type = "trade_items";
+		buy[] = {2};
+		sell[] = {1};
+	};
+	class FoodCanFrankBeans {
+		type = "trade_items";
+		buy[] = {2};
+		sell[] = {1};
+	};
+	class FoodCanPasta {
+		type = "trade_items";
+		buy[] = {2};
+		sell[] = {1};
+	};
+	class FoodCanSardines {
+		type = "trade_items";
+		buy[] = {2};
+		sell[] = {1};
+	};
+	class FoodMRE {
+		type = "trade_items";
+		buy[] = {10};
+		sell[] = {5};
+	};
+	class FoodPistachio {
+		type = "trade_items";
+		buy[] = {2};
+		sell[] = {1};
+	};
+	class FoodNutmix {
+		type = "trade_items";
+		buy[] = {2};
+		sell[] = {1};
+	};
+};
 class Category_579 {
 	class FoodCanBakedBeans {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
 	};
 	class FoodCanFrankBeans {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
 	};
 	class FoodCanPasta {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
 	};
 	class FoodCanSardines {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
 	};
 	class FoodMRE {
 		type = "trade_items";
-		buy[] ={200,"Boobs"};
-		sell[] ={100,"Boobs"};
+		buy[] = {10};
+		sell[] = {5};
 	};
 	class FoodPistachio {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
 	};
 	class FoodNutmix {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class FoodCanUnlabeled {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-};
-class Category_629 {
-	class FoodCanBakedBeans {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class FoodCanFrankBeans {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class FoodCanPasta {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class FoodCanSardines {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class FoodMRE {
-		type = "trade_items";
-		buy[] ={200,"Boobs"};
-		sell[] ={100,"Boobs"};
-	};
-	class FoodPistachio {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class FoodNutmix {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class FoodCanUnlabeled {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
 	};
 };
 class Category_635 {
 	class FoodCanBakedBeans {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
 	};
 	class FoodCanFrankBeans {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
 	};
 	class FoodCanPasta {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
 	};
 	class FoodCanSardines {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
 	};
 	class FoodMRE {
 		type = "trade_items";
-		buy[] ={200,"Boobs"};
-		sell[] ={100,"Boobs"};
+		buy[] = {10};
+		sell[] = {5};
 	};
 	class FoodPistachio {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
 	};
 	class FoodNutmix {
 		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class FoodCanUnlabeled {
-		type = "trade_items";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {2};
+		sell[] = {1};
 	};
 };

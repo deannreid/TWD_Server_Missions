@@ -1,261 +1,194 @@
-class Category_510 {
-	class ItemCompass {
-		type = "trade_weapons";
-		buy[] ={200,"Boobs"};
-		sell[] ={100,"Boobs"};
-	};
-	class Binocular {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class Binocular_Vector {
-		type = "trade_weapons";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
-	};
-	class ItemEtool {
-		type = "trade_weapons";
-		buy[] = {3000,"Boobs"};
-		sell[] ={1500,"Boobs"};
-	};
-	class ItemFlashlight {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={1,"Boobs"};
-	};
-	class ItemFlashlightRed {
-		type = "trade_weapons";
-		buy[] ={300,"Boobs"};
-		sell[] ={150,"Boobs"};
-	};
-	class ItemGPS {
-		type = "trade_weapons";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
-	};
-	class ItemHatchet_DZE {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class ItemKnife {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class ItemMap {
-		type = "trade_weapons";
-		buy[] ={180,"Boobs"};
-		sell[] ={1,"Boobs"};
-	};
-	class ItemMatchbox_DZE {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class ItemToolbox {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class ItemWatch {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class NVGoggles {
-		type = "trade_weapons";
-		buy[] ={4000,"Boobs"};
-		sell[] ={2000,"Boobs"};
-	};
-	class ItemCrowbar {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class ItemMachete {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class ItemFishingPole {
-		type = "trade_weapons";
-		buy[] ={600,"Boobs"};
-		sell[] ={300,"Boobs"};
-	};
-};
-class Category_532 {
-	class ItemCompass {
-		type = "trade_weapons";
-		buy[] ={200,"Boobs"};
-		sell[] ={100,"Boobs"};
-	};
-	class Binocular {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class Binocular_Vector {
-		type = "trade_weapons";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
-	};
-	class ItemEtool {
-		type = "trade_weapons";
-		buy[] = {3000,"Boobs"};
-		sell[] ={1500,"Boobs"};
-	};
-	class ItemFlashlight {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={1,"Boobs"};
-	};
-	class ItemFlashlightRed {
-		type = "trade_weapons";
-		buy[] ={300,"Boobs"};
-		sell[] ={150,"Boobs"};
-	};
-	class ItemGPS {
-		type = "trade_weapons";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
-	};
-	class ItemHatchet_DZE {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class ItemKnife {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class ItemMap {
-		type = "trade_weapons";
-		buy[] ={180,"Boobs"};
-		sell[] ={1,"Boobs"};
-	};
-	class ItemMatchbox_DZE {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class ItemToolbox {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class ItemWatch {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class NVGoggles {
-		type = "trade_weapons";
-		buy[] ={4000,"Boobs"};
-		sell[] ={2000,"Boobs"};
-	};
-	class ItemCrowbar {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class ItemMachete {
-		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
-	};
-	class ItemFishingPole {
-		type = "trade_weapons";
-		buy[] ={600,"Boobs"};
-		sell[] ={300,"Boobs"};
-	};
-};
 class Category_663 {
 	class ItemCompass {
 		type = "trade_weapons";
-		buy[] ={200,"Boobs"};
-		sell[] ={100,"Boobs"};
+		buy[] = {60};
+		sell[] = {30};
 	};
 	class Binocular {
 		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {20};
+		sell[] = {10};
 	};
 	class Binocular_Vector {
 		type = "trade_weapons";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
+		buy[] = {900};
+		sell[] = {600};
 	};
 	class ItemEtool {
 		type = "trade_weapons";
-		buy[] = {3000,"Boobs"};
-		sell[] ={1500,"Boobs"};
+		buy[] = {3600};
+		sell[] = {1800};
 	};
 	class ItemFlashlight {
 		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={1,"Boobs"};
+		buy[] = {30};
+		sell[] = {5};
 	};
 	class ItemFlashlightRed {
 		type = "trade_weapons";
-		buy[] ={300,"Boobs"};
-		sell[] ={150,"Boobs"};
+		buy[] = {300};
+		sell[] = {150};
 	};
 	class ItemGPS {
 		type = "trade_weapons";
-		buy[] ={2000,"Boobs"};
-		sell[] ={1000,"Boobs"};
+		buy[] = {1800};
+		sell[] = {900};
 	};
 	class ItemHatchet_DZE {
 		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {8};
+		sell[] = {4};
 	};
 	class ItemKnife {
 		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {30};
+		sell[] = {5};
 	};
 	class ItemMap {
 		type = "trade_weapons";
-		buy[] ={180,"Boobs"};
-		sell[] ={1,"Boobs"};
+		buy[] = {60};
+		sell[] = {30};
 	};
 	class ItemMatchbox_DZE {
 		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {5};
+		sell[] = {3};
 	};
 	class ItemToolbox {
 		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {60};
+		sell[] = {30};
 	};
 	class ItemWatch {
 		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {60};
+		sell[] = {30};
 	};
 	class NVGoggles {
 		type = "trade_weapons";
-		buy[] ={4000,"Boobs"};
-		sell[] ={2000,"Boobs"};
+		buy[] = {1800};
+		sell[] = {900};
 	};
 	class ItemCrowbar {
 		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {30};
+		sell[] = {20};
 	};
 	class ItemMachete {
 		type = "trade_weapons";
-		buy[] ={60,"Boobs"};
-		sell[] ={30,"Boobs"};
+		buy[] = {30};
+		sell[] = {20};
 	};
 	class ItemFishingPole {
 		type = "trade_weapons";
-		buy[] ={600,"Boobs"};
-		sell[] ={300,"Boobs"};
+		buy[] = {300};
+		sell[] = {150};
+	};
+	class ItemSledge {
+		type = "trade_weapons";
+		buy[] = {900};
+		sell[] = {450};
+	};
+	class ItemKeyKit {
+		type = "trade_weapons";
+		buy[] = {2000};
+		sell[] = {4500};
+	};
+};
+class Category_510 {
+	class ItemCompass {
+		type = "trade_weapons";
+		buy[] = {60};
+		sell[] = {30};
+	};
+	class Binocular {
+		type = "trade_weapons";
+		buy[] = {20};
+		sell[] = {10};
+	};
+	class Binocular_Vector {
+		type = "trade_weapons";
+		buy[] = {900};
+		sell[] = {600};
+	};
+	class ItemEtool {
+		type = "trade_weapons";
+		buy[] = {3600};
+		sell[] = {1800};
+	};
+	class ItemFlashlight {
+		type = "trade_weapons";
+		buy[] = {30};
+		sell[] = {5};
+	};
+	class ItemFlashlightRed {
+		type = "trade_weapons";
+		buy[] = {300};
+		sell[] = {150};
+	};
+	class ItemGPS {
+		type = "trade_weapons";
+		buy[] = {1800};
+		sell[] = {900};
+	};
+	class ItemHatchet_DZE {
+		type = "trade_weapons";
+		buy[] = {8};
+		sell[] = {4};
+	};
+	class ItemKnife {
+		type = "trade_weapons";
+		buy[] = {30};
+		sell[] = {5};
+	};
+	class ItemMap {
+		type = "trade_weapons";
+		buy[] = {60};
+		sell[] = {30};
+	};
+	class ItemMatchbox_DZE {
+		type = "trade_weapons";
+		buy[] = {5};
+		sell[] = {3};
+	};
+	class ItemToolbox {
+		type = "trade_weapons";
+		buy[] = {60};
+		sell[] = {30};
+	};
+	class ItemWatch {
+		type = "trade_weapons";
+		buy[] = {60};
+		sell[] = {30};
+	};
+	class NVGoggles {
+		type = "trade_weapons";
+		buy[] = {1800};
+		sell[] = {900};
+	};
+	class ItemCrowbar {
+		type = "trade_weapons";
+		buy[] = {30};
+		sell[] = {20};
+	};
+	class ItemMachete {
+		type = "trade_weapons";
+		buy[] = {30};
+		sell[] = {20};
+	};
+	class ItemFishingPole {
+		type = "trade_weapons";
+		buy[] = {300};
+		sell[] = {150};
+	};
+	class ItemSledge {
+		type = "trade_weapons";
+		buy[] = {900};
+		sell[] = {450};
+	};
+	class ItemKeyKit {
+		type = "trade_weapons";
+		buy[] = {20000};
+		sell[] = {4500};
 	};
 };
