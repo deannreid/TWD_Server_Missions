@@ -1,4 +1,4 @@
-private ["_nul","_result","_pos","_wsDone","_dir","_isOK","_countr","_objWpnTypes","_objWpnQty","_dam","_selection","_totalvehicles","_object","_idKey","_type","_ownerID","_worldspace","_intentory","_hitPoints","_fuel","_damage","_key","_vehLimit","_hiveResponse","_objectCount","_codeCount","_data","_status","_val","_traderid","_retrader","_traderData","_id","_lockable","_debugMarkerPosition","_vehicle_0","_bQty","_vQty","_BuildingQueue","_objectQueue","_superkey","_shutdown","_res","_hiveLoaded"];
+private ["_nul","_result","_pos","_wsDone","_dir","_isOK","_countr","_objWpnTypes","_objWpnQty","_dam","_selection","_totalvehicles","_object","_idKey","_type","_ownerID","_worldspace","_intentory","_hitPoints","_fuel","_damage","_key","_vehLimit","_hiveResponse","_objectCount","_codeCount","_data","_status","_val","_traderid","_retrader","_traderData","_id","_lockable","_debugMarkerPosition","_vehicle_0","_bQty","_vQty","_BuildingQueue","_objectQueue","_superkey","_shutdown","_res","_hiveLoaded","_ownerPUID"];
 
 dayz_versionNo = 		getText(configFile >> "CfgMods" >> "DayZ" >> "version");
 dayz_hiveVersionNo = 	getNumber(configFile >> "CfgMods" >> "DayZ" >> "hiveVersion");
@@ -46,7 +46,7 @@ if(isnil "MaxMineVeins") then {
 // Custon Configs End
 
 if (isServer && isNil "sm_done") then {
-	PVDZE_Z_LoadMessage = ["Getting Objects from Hive"];
+	PVDZE_Z_LoadMessage = ["Searching for Objects"];
 	publicVariable "PVDZE_Z_LoadMessage";
 	serverVehicleCounter = [];
 	diag_log ("LOAD OBJECTS");
@@ -65,9 +65,10 @@ if (isServer && isNil "sm_done") then {
 	// # NOW SPAWN OBJECTS #
 		
 			_ammountOfObject = count (_objectArray); 	
-			_theMessage = format ["Spawning %1 objects and vehicles", _ammountOfObject];
-			PVDZE_Z_LoadMessage = [_theMessage];
-			publicVariable "PVDZE_Z_LoadMessage";
+	
+	_theMessage = format ["Spawning %1 objects and vehicles", _ammountOfObject];
+	PVDZE_Z_LoadMessage = [_theMessage];
+	publicVariable "PVDZE_Z_LoadMessage";
         _currentCount = 0;
         _newMileStone = 50;
 
@@ -102,7 +103,12 @@ if (isServer && isNil "sm_done") then {
 			diag_log ("MOVED OBJ: " + str(_idKey) + " of class " + _type + " to pos: " + str(_pos));
 		};
 		
-
+		if (count _worldspace < 3) then
+		{
+			_worldspace set [count _worldspace, "0"];
+		};		
+		_ownerPUID = _worldspace select 2;
+		
 		if (_damage < 1) then {
 			//diag_log format["OBJ: %1 - %2", _idKey,_type];
 			
@@ -110,7 +116,14 @@ if (isServer && isNil "sm_done") then {
 			_object = createVehicle [_type, _pos, [], 0, "CAN_COLLIDE"];
 			_object setVariable ["lastUpdate",time];
 			_object setVariable ["ObjectID", _idKey, true];
+			_object setVariable ["OwnerPUID", _ownerPUID, true];
 
+			if (typeOf (_object) == "Plastic_Pole_EP1_DZ") then {
+				_object setVariable ["plotfriends", _intentory, true];
+			};
+
+
+			
 			_lockable = 0;
 			if(isNumber (configFile >> "CfgVehicles" >> _type >> "lockable")) then {
 				_lockable = getNumber(configFile >> "CfgVehicles" >> _type >> "lockable");
@@ -163,7 +176,7 @@ if (isServer && isNil "sm_done") then {
 				
 			};
 
-			if (count _intentory > 0) then {
+if ((count _intentory > 0) && !(typeOf( _object) == "Plastic_Pole_EP1_DZ")) then {
 				if (_type in DZE_LockedStorage) then {
 					// Fill variables with loot
 					_object setVariable ["WeaponCargo", (_intentory select 0),true];
@@ -243,23 +256,23 @@ if (isServer && isNil "sm_done") then {
 			//Monitor the object
 			PVDZE_serverObjectMonitor set [count PVDZE_serverObjectMonitor,_object];
 		};
-	if( _currentCount == _newMileStone)then
-	{
-		_newMileStone = _newMileStone + 20; // every 50 items loaded refresh message
-		_theMessage = format ["Spawned %1 of %2 objects",_currentCount, _ammountOfObject];
-		PVDZE_Z_LoadMessage = [_theMessage];
-		publicVariable "PVDZE_Z_LoadMessage";
-	};
-_currentCount = _currentCount + 1;		
+	if( _currentCount == _newMileStone)then{ // to reduce bandwith
+    _newMileStone = _newMileStone + 20; // every 50 items loaded refresh message
+    _theMessage = format ["Spawned %1 of %2 objects",_currentCount, _ammountOfObject];
+    PVDZE_Z_LoadMessage = [_theMessage];
+    publicVariable "PVDZE_Z_LoadMessage";
+};
+_currentCount = _currentCount + 1;
 	} count _objectArray;
 	// # END SPAWN OBJECTS #
 
 	// preload server traders menu data into cache
 	if !(DZE_ConfigTrader) then {
+		_theMessage = "Loading Trader Items";
+		PVDZE_Z_LoadMessage = [_theMessage];
+		publicVariable "PVDZE_Z_LoadMessage";
 		{
-	_theMessage = "Loading trader data";
-	PVDZE_Z_LoadMessage = [_theMessage];
-	publicVariable "PVDZE_Z_LoadMessage";
+		
 			// get tids
 			_traderData = call compile format["menu_%1;",_x];
 			if (!isNil "_traderData") then {
@@ -293,20 +306,23 @@ _currentCount = _currentCount + 1;
 
 	//  spawn_vehicles
 	_vehLimit = MaxVehicleLimit - _totalvehicles;
+	if (_vehLimit > 0) then {
 	_theMessage = format["Spawning %1 new vehicles", _vehLimit];
 	PVDZE_Z_LoadMessage = [_theMessage];
 	publicVariable "PVDZE_Z_LoadMessage";
-	if (_vehLimit > 0) then {
-	    diag_log ("HIVE: Spawning # of Vehicles: " + str(_vehLimit));
+	diag_log ("HIVE: Spawning # of Vehicles: " + str(_vehLimit));
 	    for "_x" from 1 to _vehLimit do {
 	        [] spawn spawn_vehicles;
 	    };
 	} else {
-	    diag_log "HIVE: Vehicle Spawn limit reached!";
-	};
-	_theMessage = "Finishing up server initialisation ";
+	_theMessage = format["No new vehicles Spawned", _vehLimit];
 	PVDZE_Z_LoadMessage = [_theMessage];
 	publicVariable "PVDZE_Z_LoadMessage";
+	    diag_log "HIVE: Vehicle Spawn limit reached!";
+	};
+	_theMessage = "Finishing up the server shizzle";
+PVDZE_Z_LoadMessage = [_theMessage];
+publicVariable "PVDZE_Z_LoadMessage";
 	
 	//  spawn_roadblocks
 	diag_log ("HIVE: Spawning # of Debris: " + str(MaxDynamicDebris));
@@ -372,9 +388,9 @@ _currentCount = _currentCount + 1;
 			
 		};
 		diag_log format["Total Number of spawn locations %1", actualSpawnMarkerCount];
-	_theMessage = format["Server running", _vehLimit];
-	PVDZE_Z_LoadMessage = [_theMessage];
-	publicVariable "PVDZE_Z_LoadMessage";
+		_theMessage = format["Server running, Please Wait!", _vehLimit];
+PVDZE_Z_LoadMessage = [_theMessage];
+publicVariable "PVDZE_Z_LoadMessage";
 		endLoadingScreen;
 	};
 
