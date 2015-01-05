@@ -4,10 +4,6 @@ _charID =		_this select 0;
 _object = 		_this select 1;
 _worldspace = 	_this select 2;
 _class = 		_this select 3;
-_inventory =	_this select 4;
-_hitpoints =	_this select 5;
-_damage =		_this select 6;
-_fuel =			_this select 7;
 
 _allowed = [_object, "Server"] call check_publishobject;
 if (!_allowed) exitWith { deleteVehicle _object; };
@@ -18,7 +14,7 @@ if (!_allowed) exitWith { deleteVehicle _object; };
 _uid = _worldspace call dayz_objectUID2;
 
 //Send request
-diag_log format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance, _class, _damage, _charID, _worldspace, _inventory, _hitpoints, _fuel,_uid];
+diag_log format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance, _class, 0 , _charID, _worldspace, [], [], 0,_uid];
 
 _object setVariable ["lastUpdate",time];
 _object setVariable ["ObjectUID", _uid,true];
