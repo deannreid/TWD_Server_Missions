@@ -37,15 +37,6 @@
 	DZE_AntiWallLimit = 3;
 	DZE_AsReMix_PLAYER_HUD = false;	
 
-	CurrencyName = "Boobs"; // name of your currency
-	Bank_Object = ["Laptop_EP1"]; // Object to get option to bank
-	LimitOnBank = false; // false = no limits, true = banks are limited on the value below
-	MaxBankMoney = 500000; // limit on bank for normal players
-	DonatorBank = [""]; // Bigger banks, Players ID
-	MaxDonatorBankMoney = 1000000; // Bank size for donators
-	InstantTrading = true; // (True = No Animation / False = Animation)
-	AllBankersOnServer = [];
-	
 //SERVER ONLY VARIABLES
 // Chernarus
 if (dayZ_instance == 11) then
@@ -103,6 +94,7 @@ if (dayZ_instance == 7) then
 	DZE_vehicleAmmo	= 1;
 	DZE_requireplot = 1;
 	DZE_PlotPole = [90,0];
+	DZE_StaticConstructionCount = 1;
 	DZE_GodModeBase = false;
 	DZE_R3F_WEIGHT = true;	
 };
