@@ -1,4 +1,4 @@
-private ["_display","_ctrlBloodOuter","_ctrlBlood","_ctrlBleed","_bloodVal","_ctrlFood","_ctrlThirst","_thirstVal","_foodVal","_ctrlTemp","_ctrlFoodBorder","_ctrlThirstBorder","_ctrlTempBorder","_tempVal","_array","_ctrlEar","_ctrlEye","_ctrlFracture","_visual","_audible","_uiNumber","_bloodText","_blood","_thirstLvl","_foodLvl","_tempImg","_bloodLvl","_tempLvl","_thirst","_food","_temp","_playerUID"];
+private ["_display","_ctrlBloodOuter","_ctrlBlood","_ctrlBleed","_bloodVal","_ctrlFood","_ctrlThirst","_thirstVal","_foodVal","_ctrlTemp","_ctrlFoodBorder","_ctrlThirstBorder","_ctrlTempBorder","_tempVal","_array","_ctrlEar","_ctrlEye","_ctrlFracture","_visual","_audible","_uiNumber","_bloodText","_blood","_thirstLvl","_foodLvl","_tempImg","_bloodLvl","_tempLvl","_thirst","_food","_temp","_playerUID","r_player_bloodpersec"];
 
 disableSerialization;
 
@@ -125,10 +125,14 @@ _food = "";
 _temp = "";
 _tempImg = 0;
 
+
+
 //If it Breaks, Remove This..
+
+/*
 if !(isNil "r_player_bloodpersec") then {
 r_player_bloodpersec = 0;
-};
+};*/
 
 player setVariable["USEC_BloodQty", r_player_blood, true];
 

@@ -1017,6 +1017,12 @@ if (_dogHandle > 0) then {
 	player removeAction s_player_calldog;
 	s_player_calldog = 		-1;
 };
+
+
+if !(isNil "_cursorTarget") then {
+_cursorTarget = 0;
+};
+
 //Banking
 _banker = _cursorTarget getVariable["BankerBot",0];
 
