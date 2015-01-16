@@ -6,50 +6,12 @@ diag_log "==============================================";
 		RB_refuelmenu = compile preprocessFileLineNumbers "custom\better_fuelling\refuel_vehicle_menu.sqf";
 		RB_refuelSubMenuCancel = compile preprocessFileLineNumbers "custom\better_fuelling\refuel_cancel.sqf";
 		player_updateGui =			compile preprocessFileLineNumbers "custom\GUI\player_updateGui.sqf";
-diag_log "==============================================";
-		
-diag_log "==============================================";
-	diag_log "Loading Build Snapping and A Plot for Life";
-	dayz_spaceInterrupt =		compile preprocessFileLineNumbers "custom\snap_pro\dayz_spaceInterrupt.sqf";
-	DZE_snap_build_file = 		"custom\snap_pro\snap_build.sqf"; // Set as a global variable as it is also referenced in snapbuild.sqf
-	snap_build = 				compile preprocessFileLineNumbers DZE_snap_build_file;
-	
-	fnc_usec_damageActions =	compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Compile\fn_damageActions.sqf";
-	player_packTent =			compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Compile\player_packTent.sqf";
-	player_packVault =			compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Compile\player_packVault.sqf";
-	player_unlockVault =		compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Compile\player_unlockVault.sqf";
-	player_lockVault =			compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Compile\player_lockVault.sqf";
-	player_updateGui =			compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Compile\player_updateGui.sqf";
-	player_tentPitch =			compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Action\tent_pitch.sqf";
-	player_vaultPitch =			compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Action\vault_pitch.sqf";
-	player_build =				compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Action\modular_build.sqf";
-	player_build_countNearby =	compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Action\player_build_countNearby.sqf";
-	player_build_states =		compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Action\player_build_states.sqf";
-	player_build_needNearby =	compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Action\player_build_needNearby.sqf";
-	player_build_getConfig =	compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Action\player_build_getConfig.sqf";
-	player_build_plotCheck =	compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Action\player_build_plotCheck.sqf";
-	player_build_buildReq =		compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Action\player_build_buildReq.sqf";
-	player_build_create =		compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Action\player_build_create.sqf";
-	player_build_controls =		compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Action\player_build_controls.sqf";
-	player_build_publish =		compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Action\player_build_publish.sqf";
-	FNC_check_owner =			compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Compile\fn_check_owner.sqf";
-	FNC_find_plots =			compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Compile\fn_find_plots.sqf";
-	player_plotPreview = 		compile preprocessFileLineNumbers "custom\A_Plot_for_Life\Action\object_showPlotRadius.sqf";
-	diag_log "Finished loading Build Snapping and A Plot for Life";
+		player_selectSlot = compile preprocessFileLineNumbers "custom\code\ui_selectSlot.sqf";
 diag_log "==============================================";
 
-	diag_log "PlotManagement & Door Management";
-	PlotGetFriends      = compile preprocessFileLineNumbers "custom\plotManagement\plotGetFriends.sqf";
-	PlotNearbyHumans    = compile preprocessFileLineNumbers "custom\plotManagement\plotNearbyHumans.sqf";
-	PlotAddFriend       = compile preprocessFileLineNumbers "custom\plotManagement\plotAddFriend.sqf";
-	PlotRemoveFriend    = compile preprocessFileLineNumbers "custom\plotManagement\plotRemoveFriend.sqf";
-	diag_log "PlotManagement & Door Management";
-diag_log "==============================================";
-
-
-
-
-
+    player_build = compile preprocessFileLineNumbers "custom\snap_pro\player_build.sqf";
+    snap_build = compile preprocessFileLineNumbers "custom\snap_pro\snap_build.sqf";
+    dayz_spaceInterrupt = compile preprocessFileLineNumbers "custom\snap_pro\dayz_spaceInterrupt.sqf";
 
 
 

@@ -1233,7 +1233,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=31;
+		items=30;
 		class Item0
 		{
 			position[]={4078.8516,30.836605,4757.7241};
@@ -1352,7 +1352,7 @@ class Mission
 			name="GeneralSupplies";
 			text="Mongo's Flee Market";
 			type="mil_box";
-			colorName="ColorGreen";
+			colorName="ColorBlack";
 		};
 		class Item18
 		{
@@ -1449,14 +1449,6 @@ class Mission
 			text="Hero Trader";
 			type="mil_dot";
 			colorName="ColorBlue";
-		};
-		class Item30
-		{
-			position[]={937.935,6.87288,9207.35};
-			name="PrisonZone";
-			text="Vox Loo Penitentiary";
-			type="mil_circle";
-			colorName="ColorRed";
 		};
 	};
 };

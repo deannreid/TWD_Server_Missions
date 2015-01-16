@@ -44,6 +44,7 @@ if (count _muzzles > 1) then {
 player setPosATL dayz_spawnPos;
 
 _oldUnit = player;
+_oldGroup = group player;
 _group = createGroup west;
 _newUnit = _group createUnit [_class,dayz_spawnPos,[],0,"NONE"];
 _newUnit setPosATL _position;
@@ -106,6 +107,7 @@ _switchUnit = {
 	addSwitchableUnit _newUnit;
 	setPlayable _newUnit;
 	selectPlayer _newUnit;
+	if ((count units _oldGroup > 1) && (!isNil "PVDZE_plr_LoginRecord")) then {[player] join _oldGroup;deleteGroup _group;};
 	removeAllWeapons _oldUnit;
 	{_oldUnit removeMagazine _x;} count  magazines _oldUnit;
 	deleteVehicle _oldUnit;

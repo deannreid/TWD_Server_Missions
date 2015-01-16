@@ -2506,4 +2506,3 @@ if (true) then
 };
 
 processInitCommands;
-
