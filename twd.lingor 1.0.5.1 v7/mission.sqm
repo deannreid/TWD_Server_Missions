@@ -1384,7 +1384,7 @@ class Mission
 			name="Wholesalers";
 			text="Wholesaler Santos";
 			type="mil_dot";
-			colorName="ColorGreen";
+			colorName="ColorBlack";
 		};
 		class Item22
 		{
