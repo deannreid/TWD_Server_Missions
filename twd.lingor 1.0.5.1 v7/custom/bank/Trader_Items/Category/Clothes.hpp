@@ -1,60 +1,80 @@
-class Category_302 {
-	class Skin_Bandit1_DZ {
+class Category_304 {
+	class Skin_Rocker2_DZ {
 		type = "trade_items";
 		buy[] = {1800};
 		sell[] = {900};
 	};
-	class Skin_Bandit2_DZ {
+	class Skin_SurvivorW2_DZ {
 		type = "trade_items";
 		buy[] = {1800};
 		sell[] = {900};
 	};
-	class Skin_GUE_Commander_DZ {
+	class Skin_Functionary1_EP1_DZ {
 		type = "trade_items";
 		buy[] = {1800};
 		sell[] = {900};
 	};
-	class Skin_GUE_Soldier_2_DZ {
+	class Skin_Haris_Press_EP1_DZ {
 		type = "trade_items";
 		buy[] = {1800};
 		sell[] = {900};
 	};
-	class Skin_GUE_Soldier_CO_DZ {
+	class Skin_Priest_DZ {
 		type = "trade_items";
 		buy[] = {1800};
 		sell[] = {900};
 	};
-	class Skin_GUE_Soldier_Crew_DZ {
+	class Skin_SurvivorWpink_DZ {
 		type = "trade_items";
 		buy[] = {1800};
 		sell[] = {900};
 	};
-	class Skin_GUE_Soldier_Sniper_DZ {
+	class Skin_SurvivorWurban_DZ {
 		type = "trade_items";
 		buy[] = {1800};
 		sell[] = {900};
 	};
-	class Skin_Ins_Soldier_GL_DZ {
+	class Skin_SurvivorWcombat_DZ {
 		type = "trade_items";
 		buy[] = {1800};
 		sell[] = {900};
 	};
-	class Skin_TK_INS_Soldier_EP1_DZ {
+	class Skin_SurvivorWdesert_DZ {
 		type = "trade_items";
 		buy[] = {1800};
 		sell[] = {900};
 	};
-	class Skin_TK_INS_Warlord_EP1_DZ {
+	class Skin_Survivor2_DZ {
 		type = "trade_items";
 		buy[] = {1800};
 		sell[] = {900};
 	};
-	class Skin_BanditW1_DZ {
+	class Skin_Rocker1_DZ {
 		type = "trade_items";
 		buy[] = {1800};
 		sell[] = {900};
 	};
-	class Skin_BanditW2_DZ {
+	class Skin_Rocker3_DZ {
+		type = "trade_items";
+		buy[] = {1800};
+		sell[] = {900};
+	};
+	class Skin_RU_Policeman_DZ {
+		type = "trade_items";
+		buy[] = {1800};
+		sell[] = {900};
+	};
+	class Skin_Pilot_EP1_DZ {
+		type = "trade_items";
+		buy[] = {1800};
+		sell[] = {900};
+	};
+	class Skin_Rocker4_DZ {
+		type = "trade_items";
+		buy[] = {1800};
+		sell[] = {900};
+	};
+	class Skin_SurvivorW3_DZ {
 		type = "trade_items";
 		buy[] = {1800};
 		sell[] = {900};

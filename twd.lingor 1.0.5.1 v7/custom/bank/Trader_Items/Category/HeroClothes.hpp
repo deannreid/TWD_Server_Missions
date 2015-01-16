@@ -1,4 +1,4 @@
-class Category_476 {
+class Category_309 {
 	class Skin_Drake_Light_DZ {
 		type = "trade_items";
 		buy[] = {1800};
