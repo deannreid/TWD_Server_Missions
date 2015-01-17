@@ -1,5 +1,5 @@
 class Category_628 {
-class Saiga12K { type = "trade_weapons"; buy[] = {3000}; sell[] = {1000}; };
+class Saiga12K { type = "trade_weapons"; buy[] = {4500}; sell[] = {2700}; };
 	class Winchester1866 {
 		type = "trade_weapons";
 		buy[] = {600};

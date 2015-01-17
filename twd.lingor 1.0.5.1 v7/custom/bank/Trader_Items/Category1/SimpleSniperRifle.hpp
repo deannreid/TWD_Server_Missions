@@ -1,8 +1,8 @@
 class Category_606 {
 	class SVD_CAMO {
 		type = "trade_weapons";
-		buy[] = {9000};
-		sell[] = {5400};
+		buy[] = {16000};
+		sell[] = {8000};
 	};
 	class M40A3 {
 		type = "trade_weapons";
@@ -26,8 +26,8 @@ class Category_606 {
 	};
 	class SVD {
 		type = "trade_weapons";
-		buy[] = {9000};
-		sell[] = {5400};
+		buy[] = {16000};
+		sell[] = {8000};
 	};
 	class SVD_des_EP1 {
 		type = "trade_weapons";

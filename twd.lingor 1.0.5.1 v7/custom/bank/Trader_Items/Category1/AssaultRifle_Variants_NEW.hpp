@@ -39,7 +39,6 @@ class FN_FAL_ANPVS4 { type = "trade_weapons"; buy[] = {5400}; sell[] = {3000}; }
 class M16A4 { type = "trade_weapons"; buy[] = {1800}; sell[] = {900}; };
 class M16A4_ACG_GL { type = "trade_weapons"; buy[] = {1800}; sell[] = {900}; };
 class M16A4_GL { type = "trade_weapons"; buy[] = {1800}; sell[] = {900}; };
-class M4A1 { type = "trade_weapons"; buy[] = {1300}; sell[] = {900}; };
 class M4A1_Aim_camo { type = "trade_weapons"; buy[] = {1800}; sell[] = {900}; };
 class M4A1_HWS_GL_SD_Camo { type = "trade_weapons"; buy[] = {8800}; sell[] = {2000}; };
 class M4A1_HWS_GL { type = "trade_weapons"; buy[] = {6800}; sell[] = {900}; };

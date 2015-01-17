@@ -1,4 +1,4 @@
-class Category_### {
+class Category_622 {
 class vil_PKP { type = "trade_weapons"; buy[] = {18000}; sell[] = {9000}; };
 class vil_PKP_EOT { type = "trade_weapons"; buy[] = {20000}; sell[] = {10000}; };
 class vil_PK { type = "trade_weapons"; buy[] = {18000}; sell[] = {9000}; };
@@ -23,16 +23,16 @@ class vil_M240_B { type = "trade_weapons"; buy[] = {12000}; sell[] = {6000}; };
 class vil_MG4 { type = "trade_weapons"; buy[] = {12000}; sell[] = {6000}; };
 class vil_MG4E { type = "trade_weapons"; buy[] = {12000}; sell[] = {6000}; };
 class M249_EP1_DZ { type = "trade_weapons";	buy[] = {9000};	sell[] = {5400}; };
-	class M240_DZ {	type = "trade_weapons";	buy[] = {9000};	sell[] = {5400}; };
-	class Mk_48_DZ { type = "trade_weapons"; buy[] = {9000}; sell[] = {5400}; };
-	class Pecheneg_DZ {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
-	class M60A4_EP1 {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
-	class Mk_48_DES_EP1 {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
-	class m240_scoped_EP1 {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
-	class PK_DZ { type = "trade_weapons"; buy[] = {18000}; sell[] = {9000};	};
-	class M249_m145_EP1 {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
-	class MG36_camo {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
-	class MG36 {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
-	class PK {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
-	class M8_SAW {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
+class M240_DZ {	type = "trade_weapons";	buy[] = {9000};	sell[] = {5400}; };
+class Mk_48_DZ { type = "trade_weapons"; buy[] = {9000}; sell[] = {5400}; };
+class Pecheneg_DZ {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
+class M60A4_EP1 {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
+class Mk_48_DES_EP1 {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
+class m240_scoped_EP1 {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
+class PK_DZ { type = "trade_weapons"; buy[] = {18000}; sell[] = {9000};	};
+class M249_m145_EP1 {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
+class MG36_camo {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
+class MG36 {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
+class PK {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
+class M8_SAW {	type = "trade_weapons";	buy[] = {18000}; sell[] = {9000}; };
 };	

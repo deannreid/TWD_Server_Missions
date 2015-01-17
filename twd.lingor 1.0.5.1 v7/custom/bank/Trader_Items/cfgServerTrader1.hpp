@@ -1,6 +1,6 @@
 class CfgTraderCategory {
-#include "Category\AMilitaryLand.hpp"
-//#include "Category\Armed_Aircraft.hpp"
+#include "Category\MilitaryLand.hpp"
+#include "Category\Armed_Aircraft.hpp"
 #include "Category\AssaultRifle_Variants_NEW.hpp"
 #include "Category\Assault_Rifle_Ammo_NEW.hpp"
 #include "Category\Backpacks.hpp"

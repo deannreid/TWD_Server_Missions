@@ -49,9 +49,4 @@ class Category_504 {
 		buy[] = {5400};
 		sell[] = {2700};
 	};
-	class JetSkiYanahui_Red {
-		type = "trade_any_boat";
-		buy[] = {5400};
-		sell[] = {2700};
-	};
 };
