@@ -1,7 +1,7 @@
 class Category_614 {
 class RH_20Rnd_762x51_SD_hk417 { type = "trade_items"; buy[] = {240}; sell[] = {120}; };
 class RH_20Rnd_762x51_hk417 { type = "trade_items"; buy[] = {180}; sell[] = {90}; };
-class 20Rnd_762x51_DMR { type = "trade_items"; buy[] = {600}; sell[] = {1}; };
+class 20Rnd_762x51_DMR { type = "trade_items"; buy[] = {900}; sell[] = {600}; };
 class FHQ_rem_7Rnd_338Lapua_MSR_NT { type = "trade_items"; buy[] = {1200}; sell[] = {400}; };
 class FHQ_rem_7Rnd_338Lapua_MSR_NT_SD { type = "trade_items"; buy[] = {1800}; sell[] = {600}; };
 class FHQ_rem_20Rnd_762x51_PMAG_NT { type = "trade_items"; buy[] = {1200}; sell[] = {400}; };

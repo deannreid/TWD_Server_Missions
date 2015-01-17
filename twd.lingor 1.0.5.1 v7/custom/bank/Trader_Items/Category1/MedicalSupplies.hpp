@@ -11,8 +11,8 @@ class Category_307 {
 	};
 	class ItemBloodbag {
 		type = "trade_items";
-		buy[] = {60};
-		sell[] = {30};
+		buy[] = {900};
+		sell[] = {300};
 	};
 	class ItemEpinephrine {
 		type = "trade_items";
@@ -26,8 +26,8 @@ class Category_307 {
 	};
 	class ItemMorphine {
 		type = "trade_items";
-		buy[] = {60};
-		sell[] = {30};
+		buy[] = {500};
+		sell[] = {300};
 	};
 	class ItemPainkiller {
 		type = "trade_items";
