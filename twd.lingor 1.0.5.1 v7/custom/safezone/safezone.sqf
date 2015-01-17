@@ -2,9 +2,9 @@
    by: http://infiSTAR.de || http://DayzAntiHack.com
    *updated on 25.06.2014
 */
-USE_CANBUILD = true;		// if you don't want to define your own positions
+USE_CANBUILD = false;		// if you don't want to define your own positions
 USE_TraderCity = false;	//	if you don't want to define your own positions (Epoch 1.0.5)
-USE_POSITIONS = false;	// to use own positions and radius
+USE_POSITIONS = true;	// to use own positions and radius
 USE_AI_REMOVER = true;	// use this to remove Missionbots (AI) within 100m of a player if the player is in a SafeZone
 USE_AntiSteal = true;	// use this to block opening gear if another player is within 3m!
 USE_SIGNS = false;		// use this to build signs around the SafeZone

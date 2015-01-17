@@ -55,8 +55,8 @@ class playerStatusGUI {
                 text = "\z\addons\dayz_code\gui\status\status_bg.paa";
                 x = 0.5 * safezoneW + safezoneX;
                 y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
             class RscPicture_1201: RscPictureGUI
             {
@@ -64,8 +64,8 @@ class playerStatusGUI {
                 text = "\z\addons\dayz_code\gui\status\status_food_border_ca.paa";
                 x = 0.5 * safezoneW + safezoneX;
                 y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
 			
 //Blood Image/BG
@@ -75,16 +75,16 @@ class playerStatusGUI {
                 text = "\z\addons\dayz_code\gui\status\status_bg.paa";
                 x = 0.366666666666667 * safezoneW + safezoneX;
                 y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
             class RscPicture_1200: RscPictureGUI
             {
                 idc = 1200;
                 x = 0.366666666666667 * safezoneW + safezoneX;
                 y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
 
 //Thirst Image/BG
@@ -94,8 +94,8 @@ class playerStatusGUI {
                 text = "\z\addons\dayz_code\gui\status\status_bg.paa";
                 x = 0.433333333333333 * safezoneW + safezoneX;
                 y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
             class RscPicture_1202: RscPictureGUI
             {
@@ -103,8 +103,8 @@ class playerStatusGUI {
                 text = "\z\addons\dayz_code\gui\status\status_thirst_border_ca.paa";
                 x = 0.433333333333333 * safezoneW + safezoneX;
                 y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
 			
 //Temp Image/BG
@@ -114,8 +114,8 @@ class playerStatusGUI {
                 text = "\z\addons\dayz_code\gui\status\status_bg.paa";
                 x = 0.566666666666667 * safezoneW + safezoneX;
                 y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
             class RscPicture_1208: RscPictureGUI
             {
@@ -123,8 +123,8 @@ class playerStatusGUI {
                 text = "\z\addons\dayz_code\gui\status\status_temp_outside_ca.paa";
                 x = 0.566666666666667 * safezoneW + safezoneX;
                 y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
 			
 //Broken Leg Image
@@ -134,8 +134,8 @@ class playerStatusGUI {
                 text = "\z\addons\dayz_code\gui\status\status_effect_brokenleg.paa";
                 x = 0.816666666666667 * safezoneW + safezoneX;
                 y = 0.740740740740741 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
                 colorText[] = {1,1,1,1};
             };
 			
@@ -146,8 +146,8 @@ class playerStatusGUI {
                 text = "\z\addons\dayz_code\gui\status\status_connection_ca.paa";
                 x = 0.816666666666667 * safezoneW + safezoneX;
                 y = 0.740740740740741 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
                 colorText[] = {1,1,1,1};
             };
 
@@ -158,8 +158,8 @@ class playerStatusGUI {
                 text = "\z\addons\dayz_code\gui\status\status_bg.paa";
                 x = 0 * safezoneW + safezoneX;
                 y = 0.266666666666667 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
 
 //Vision BG
@@ -168,11 +168,11 @@ class playerStatusGUI {
                 idc = 1206;
                 text = "\z\addons\dayz_code\gui\status\status_bg.paa";
                 x = 0 * safezoneW + safezoneX;
-                y = 0.414814814814815 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                y = 0.1333333333333337 * safezoneH + safezoneY;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
-      /*  
+        
 //is(Player) Survivor?		
 			class RscPicture_1307: RscPictureGUI
             {
@@ -220,7 +220,7 @@ class playerStatusGUI {
                 h = 0.037 * safezoneH;
                 colorText[] = {1,1,1,1};
             };
-        */
+        
 		};
 		
         class Controls {
@@ -231,8 +231,8 @@ class playerStatusGUI {
                 idc = 1300;
                 x = 0.366666666666667 * safezoneW + safezoneX;
                 y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
 //Bleeding Control
             class RscPicture_1303: RscPictureGUI
@@ -241,8 +241,8 @@ class playerStatusGUI {
                 text = "\z\addons\dayz_code\gui\status\status_bleeding_ca.paa";
                 x = 0.366666666666667 * safezoneW + safezoneX;
                 y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
                 colorText[] = {1,1,1,0.5};
             };
 			
@@ -252,8 +252,8 @@ class playerStatusGUI {
                 idc = 1301;
                 x = 0.5 * safezoneW + safezoneX;
                 y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
 			
 //Thirst Control
@@ -262,8 +262,8 @@ class playerStatusGUI {
                 idc = 1302;
                 x = 0.433333333333333 * safezoneW + safezoneX;
                 y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
 			
 //Noise Control
@@ -273,8 +273,8 @@ class playerStatusGUI {
                 text = "\z\addons\dayz_code\gui\status\status_noise.paa";
                 x = 0 * safezoneW + safezoneX;
                 y = 0.266666666666667 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
 			
 //Visibility Control
@@ -283,9 +283,9 @@ class playerStatusGUI {
                 idc = 1305;
                 text = "\z\addons\dayz_code\gui\status\status_visible.paa";
                 x = 0 * safezoneW + safezoneX;
-                y = 0.414814814814815 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                y = 0.1333333333333337 * safezoneH + safezoneY;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
 			
 //Temperature Control
@@ -294,8 +294,8 @@ class playerStatusGUI {
                 idc = 1306;
                 x = 0.566666666666667 * safezoneW + safezoneX;
                 y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.05 * safezoneW;
-                h = 0.0888888888888889 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
             };
 
 //Survivor Kills BG
@@ -411,8 +411,8 @@ class playerStatusGUI {
                 text = "custom\GUI\restart.paa";
                 x = 0 * safezoneW + safezoneX;
                 y = 0 * safezoneH + safezoneY;
-                w = 0.0333333333333333 * safezoneW;
-                h = 0.0592592592592593 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
                 colorText[] = {1,1,1,1};
             };	
 	
@@ -437,8 +437,8 @@ class playerStatusGUI {
                 text = "custom\GUI\wallet.paa";
                 x = 0.5 * safezoneW + safezoneX;
                 y = 0 * safezoneH + safezoneY;
-                w = 0.0333333333333333 * safezoneW;
-                h = 0.0592592592592593 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
                 colorText[] = {1,1,1,1};
             };	
 	
@@ -449,8 +449,8 @@ class playerStatusGUI {
                 text = "1000";
                 x = 0.483333333333333 * safezoneW + safezoneX;
                 y = 0.0592592592592593 * safezoneH + safezoneY;
-                w = 0.0666666666666667 * safezoneW;
-                h = 0.0296296296296296 * safezoneH;
+                w = 0.0416666666666667 * safezoneW;
+                h = 0.0740740740740741 * safezoneH;
                 colorText[] = {1,1,1,1.0};
                 size = 0.03;
                 sizeEx = 0.03;
@@ -463,8 +463,8 @@ class playerStatusGUI {
                 text = "custom\GUI\bank.paa";
                 x = 0.433333333333333 * safezoneW + safezoneX;
                 y = 0 * safezoneH + safezoneY;
-                w = 0.0333333333333333 * safezoneW;
-                h = 0.0592592592592593 * safezoneH;
+                w = 0.0316666666666667 * safezoneW;
+                h = 0.0640740740740741 * safezoneH;
                 colorText[] = {1,1,1,1};
             };	
 	
@@ -475,8 +475,8 @@ class playerStatusGUI {
                 text = "1000";
                 x = 0.416666666666667 * safezoneW + safezoneX;
                 y = 0.0592592592592593 * safezoneH + safezoneY;
-                w = 0.0666666666666667 * safezoneW;
-                h = 0.0296296296296296 * safezoneH;
+                w = 0.0416666666666667 * safezoneW;
+                h = 0.0740740740740741 * safezoneH;
                 colorText[] = {1,1,1,1.0};
                 size = 0.03;
                 sizeEx = 0.03;
@@ -488,10 +488,10 @@ class playerStatusGUI {
             {
                 idc = 1410;
                 text = "custom\GUI\watermark.paa";
-                x = 0.666666666666666 * safezoneW + safezoneX;
+                x = 0.758333333333333 * safezoneW + safezoneX;
                 y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.2796875 * safezoneW;
-                h = 0.0916666666666667 * safezoneH;
+                w = 0.233333333333333 * safezoneW;
+                h = 0.0740740740740741 * safezoneH;
                 colorText[] = {1,1,1,1};
             };	
 	
@@ -499,7 +499,7 @@ class playerStatusGUI {
             class RscText_1411: RscTextT
             {
                 idc = 1411;
-                text = "Teamspeak: voice.vlhosting.co.uk";
+                text = "teamspeak: voice.vlhosting.co.uk";
                 x = 0 * safezoneW + safezoneX;
                 y = 0.948148148148148 * safezoneH + safezoneY;
                 w = 0.183333333333333 * safezoneW;
