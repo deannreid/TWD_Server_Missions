@@ -14,19 +14,6 @@ diag_log "==============================================";
 		execVM "custom\code\server\config.sqf"; //Instance Select
 diag_log "==============================================";
 		
-diag_log "==============================================";
-		diag_log "Checking Server Version";
-		//Checking server version for auto update.
-	private ["_sVer"]
-	_sVer = productVersion;
-	if(_sVer < 103718) then
-	{
-		diag_log format['Server Update Required, (%1), twdSUpdateStart',_sVer];
-	};
-		diag_log "Finished checking server version!";
-diag_log "==============================================";
-		
-		
 	diag_log "Loading Default Epoch Files";
 		call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";
 	progressLoadingScreen 0.1;
