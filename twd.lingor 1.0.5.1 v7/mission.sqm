@@ -1332,7 +1332,7 @@ class Mission
 		};
 		class Item15
 		{
-			position[]={3054.834,14.806208,8032.8389};
+			position[]={3404.16,14.806208,8245.95};
 			name="Wholesale";
 			text="Wholesaler Blivion";
 			type="mil_dot";
@@ -1340,7 +1340,7 @@ class Mission
 		};
 		class Item16
 		{
-			position[]={1141.55,235.08131,1879.96};
+			position[]={1412.7,235.08131,1879.12};
 			name="GeneralSupplies";
 			text="Drassen Good's n' Gun's";
 			type="mil_dot";
