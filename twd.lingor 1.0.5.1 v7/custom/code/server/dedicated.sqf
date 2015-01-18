@@ -6,3 +6,5 @@ diag_log "KillMessages Loaded";
 diag_log "Zombie Mode Loaded";
 	call compile preprocessFileLineNumbers "custom\logistic\init.sqf";
 diag_log "Logistics Loaded";
+    execVM "custom\service_point\service_point.sqf";
+diag_log "Service Points Loaded";

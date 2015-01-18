@@ -3,8 +3,6 @@ diag_log "==============================================";
 		fnc_usec_selfActions =						compile preprocessFileLineNumbers "custom\code\fn_selfActions.sqf";
 		player_switchModel   =						compile preprocessFileLineNumbers "custom\code\player_switchModel.sqf";
 		player_death =								compile preprocessFileLineNumbers "custom\dean\skinrecover\player_death.sqf";
-		RB_refuelmenu =								compile preprocessFileLineNumbers "custom\better_fuelling\refuel_vehicle_menu.sqf";
-		RB_refuelSubMenuCancel = 					compile preprocessFileLineNumbers "custom\better_fuelling\refuel_cancel.sqf";
 		player_updateGui =							compile preprocessFileLineNumbers "custom\GUI\player_updateGui.sqf";
 		player_selectSlot = 						compile preprocessFileLineNumbers "custom\code\ui_selectSlot.sqf";
 diag_log "==============================================";
