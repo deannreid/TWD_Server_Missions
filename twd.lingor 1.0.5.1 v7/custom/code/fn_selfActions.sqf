@@ -4,7 +4,7 @@ scriptName "Functions\misc\fn_selfActions.sqf";
 	- Function
 	- [] call fnc_usec_selfActions;
 ************************************************************/
-private ["_isWreckBuilding","_temp_keys","_magazinesPlayer","_isPZombie","_vehicle","_inVehicle","_hasFuelE","_hasRawMeat","_hasKnife","_hasToolbox","_onLadder","_nearLight","_canPickLight","_canDo","_text","_isHarvested","_isVehicle","_isVehicletype","_isMan","_traderType","_ownerID","_isAnimal","_isDog","_isZombie","_isDestructable","_isTent","_isFuel","_isAlive","_Unlock","_lock","_buy","_dogHandle","_lieDown","_warn","_hastinitem","_allowedDistance","_menu","_menu1","_humanity_logic","_low_high","_cancel","_metals_trader","_traderMenu","_isWreck","_isRemovable","_isDisallowRepair","_rawmeat","_humanity","_speed","_dog","_hasbottleitem","_isAir","_isShip","_playersNear","_findNearestGens","_findNearestGen","_IsNearRunningGen","_cursorTarget","_isnewstorage","_itemsPlayer","_ownerKeyId","_typeOfCursorTarget","_hasKey","_oldOwner","_combi","_key_colors","_player_deleteBuild","_player_flipveh","_player_lockUnlock_crtl","_player_butcher","_player_studybody","_player_cook","_player_boil","_hasFuelBarrelE","_hasHotwireKit","_player_SurrenderedGear","_isSurrendered","_isModular","_isModularDoor","_ownerKeyName","_temp_keys_names","_hasAttached","_allowTow","_liftHeli","_found","_posL","_posC","_height","_liftHelis","_attached"];
+  private ["_isWreckBuilding","_temp_keys","_magazinesPlayer","_isPZombie","_vehicle","_inVehicle","_hasFuelE","_hasRawMeat","_hasKnife","_hasToolbox","_onLadder","_nearLight","_canPickLight","_canDo","_text","_isHarvested","_isVehicle","_isVehicletype","_isMan","_traderType","_ownerID","_isAnimal","_isDog","_isZombie","_isDestructable","_isTent","_isFuel","_isAlive","_Unlock","_lock","_buy","_dogHandle","_lieDown","_warn","_hastinitem","_allowedDistance","_menu","_menu1","_humanity_logic","_low_high","_cancel","_traderMenu","_isWreck","_isRemovable","_isDisallowRepair","_rawmeat","_humanity","_speed","_dog","_hasbottleitem","_isAir","_isShip","_playersNear","_findNearestGens","_findNearestGen","_IsNearRunningGen","_cursorTarget","_isnewstorage","_itemsPlayer","_ownerKeyId","_typeOfCursorTarget","_hasKey","_oldOwner","_combi","_key_colors","_player_deleteBuild","_player_flipveh","_player_lockUnlock_crtl","_player_butcher","_player_studybody","_player_cook","_player_boil","_hasFuelBarrelE","_hasHotwireKit","_player_SurrenderedGear","_isSurrendered","_isModular","_isModularDoor","_ownerKeyName","_temp_keys_names","_hasAttached","_allowTow","_liftHeli","_found","_posL","_posC","_height","_liftHelis","_attached","_unit","_adminText","_lever","_bankrobbery","_hasNOSitems","_hasNOSinstalled","_isCopcar","_isaCar","_isNOSinstalled"];
 
 if (DZE_ActionInProgress) exitWith {}; // Do not allow if any script is running.
 
@@ -15,6 +15,7 @@ _inVehicle = (_vehicle != player);
 _onLadder =		(getNumber (configFile >> "CfgMovesMaleSdr" >> "States" >> (animationState player) >> "onLadder")) == 1;
 _canDo = (!r_drag_sqf && !r_player_unconscious && !_onLadder);
 
+ 
 _nearLight = 	nearestObject [player,"LitObject"];
 _canPickLight = false;
 if (!isNull _nearLight) then {
@@ -23,6 +24,22 @@ if (!isNull _nearLight) then {
 	};
 };
 
+//Sirens
+_isCopcar = typeOf _vehicle in ["SUV_TK_CIV_EP1","SUV_TK_CIV_EP1_DZE1","SUV_TK_CIV_EP1_DZE2","SUV_TK_CIV_EP1_DZE3","SUV_TK_CIV_EP1_DZE4","policecar"];
+
+if (_inVehicle and _isCopcar and (driver _vehicle == player)) then {
+        dayz_addsirens = _vehicle;
+    if (s_player_sirens_on < 0) then {
+        s_player_sirens_on = dayz_addsirens addAction ["Sirens on","custom\sirens\sirens_on.sqf",dayz_addsirens,2,false,true,"",""];
+        s_player_sirens_off = dayz_addsirens addAction ["Sirens off","custom\sirens\sirens_off.sqf",dayz_addsirens,2,false,true,"",""];
+        };
+    } else {
+        dayz_addsirens removeAction s_player_sirens_on;
+        dayz_addsirens removeAction s_player_sirens_off;
+        s_player_sirens_on = -1;
+        s_player_sirens_off = -1;
+    };
+	
 //Grab Flare
 if (_canPickLight && !dayz_hasLight && !_isPZombie) then {
 	if (s_player_grabflare < 0) then {
@@ -37,6 +54,62 @@ if (_canPickLight && !dayz_hasLight && !_isPZombie) then {
 	s_player_removeflare = -1;
 };
 
+if (_inVehicle && (_vehicle isKindOf "MV22")) then {
+   if (isEngineOn _vehicle) then {[_vehicle,0] call mv22_pack;};
+   if (mv22_fold < 0) then {
+     themv22 = _vehicle;
+     if !(isEngineOn themv22) then {
+       mv22_fold = themv22 addAction ["Fold","custom\anim\mv22\mv22_fold.sqf","",5,false,true];
+       mv22_unfold = themv22 addAction ["UnFold","custom\anim\mv22\mv22_unfold.sqf","",5,false,true];
+       mv22_open = themv22 addAction ["Open Ramp","custom\anim\mv22\mv22_open.sqf","",5,false,true];
+       mv22_close = themv22 addAction ["Close Ramp","custom\anim\mv22\mv22_close.sqf","",5,false,true];
+     };
+   };
+   if (isEngineOn themv22) then {
+     themv22 removeAction mv22_fold;
+     mv22_fold = -1;
+     themv22 removeAction mv22_unfold;
+     mv22_unfold = -1;
+     themv22 removeAction mv22_open;
+     mv22_open = -1;
+     themv22 removeAction mv22_close;
+     mv22_close = -1;
+   };
+} else {
+    if (!isNil "themv22") then {
+       themv22 removeAction mv22_fold;
+       mv22_fold = -1;
+       themv22 removeAction mv22_unfold;
+       mv22_unfold = -1;
+       themv22 removeAction mv22_open;
+       mv22_open = -1;
+       themv22 removeAction mv22_close;
+       mv22_close = -1;
+   };
+};
+
+if (_inVehicle && (_vehicle isKindOf "ArmoredSUV_Base_PMC")) then {
+   if ((_vehicle animationPhase "HideGun_01") == 1) then {
+     _unit = _vehicle turretUnit [0];
+     if (!(isNull _unit)) then {
+       _unit action ["moveToCargo",_vehicle,2];
+       titleText ["\n\nYou must open the hatch first.","PLAIN DOWN"];titleFadeOut 4;
+     };
+   };
+   if (suv_close < 0) then {
+     thesuv = _vehicle;
+     suv_close = thesuv addAction ["Close Hatch","custom\anim\suv\suv_close.sqf","",5,false,true];
+     suv_open = thesuv addAction ["Open Hatch","custom\anim\suv\suv_open.sqf","",5,false,true];
+   };
+} else {
+    if (!isNil "thesuv") then {
+        thesuv removeAction suv_close;
+        suv_close = -1;
+        thesuv removeAction suv_open;
+        suv_open = -1;
+    };
+};
+ 
 if (DZE_HeliLift) then {
 	_hasAttached = _vehicle getVariable["hasAttached",false];
 	if(_inVehicle && (_vehicle isKindOf "Air") && ((([_vehicle] call FNC_getPos) select 2) < 30) && (speed _vehicle < 5) && (typeName _hasAttached == "OBJECT")) then {
@@ -195,8 +268,6 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 			if(_cursorTarget isKindOf _x) exitWith {_isFuel = true;};
 		} count dayz_fuelsources;
 	};
-
-	// diag_log ("OWNERID = " + _ownerID + " CHARID = " + dayz_characterID + " " + str(_ownerID == dayz_characterID));
 	
 	// logic vars
 	_player_flipveh = false;
@@ -265,7 +336,9 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		player removeAction s_player_deleteBuild;
 		s_player_deleteBuild = -1;
 	};
-	
+	_lever = cursorTarget;
+
+
 	if (DZE_HeliLift) then {
 		_liftHeli = objNull;
 		_found = false;
@@ -321,6 +394,11 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 				if(_hasKey || _oldOwner) then {
 					_Unlock = player addAction [format[localize "STR_EPOCH_ACTIONS_UNLOCK",_text], "\z\addons\dayz_code\actions\unlock_veh.sqf",[_cursorTarget,(_temp_keys_names select (parseNumber _ownerID))], 2, true, true, "", ""];
 					s_player_lockunlock set [count s_player_lockunlock,_Unlock];
+					if (_typeOfCursorTarget in ColourVehicles) then {
+		private ["_paint"];
+		_paint = player addAction ["Paint Vehicle", "custom\Paint\player_paint_init.sqf",_cursorTarget, 2, true, true, "", ""];
+		s_player_lockunlock set [count s_player_lockunlock,_paint];
+	};
 					s_player_lockUnlock_crtl = 1;
 				} else {
 					if(_hasHotwireKit) then {
@@ -352,6 +430,9 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 				s_player_forceSave = player addAction [format[localize "str_actions_save",_text], "\z\addons\dayz_code\actions\forcesave.sqf",_cursorTarget, 1, true, true, "", ""];
 			};
 		} else {
+			s_player_ZombieShield_on = -1;
+			player removeAction s_player_ZombieShield_off;
+			s_player_ZombieShield_off = -1;
 			player removeAction s_player_forceSave;
 			s_player_forceSave = -1;
 		};
@@ -422,18 +503,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 			};
 		};
 	};
-//Banking
-	if (_player_studybody) then 
-	{
-		if (s_player_studybody < 0) then 
-		{
-			s_player_studybody = player addAction [("<t color=""#FF0000"">"+("Check Wallet") + "</t>"), "custom\bank\Gold_Coin_system\Check_Wallet\check_wallet.sqf",_cursorTarget, 0, false, true, "",""];
-		};
-	} else {
-		player removeAction s_player_studybody;
-		s_player_studybody = -1;
-	};
-//Banking End
+
 
 	// Human Gut animal || zombie
 	if (_player_butcher) then {
@@ -452,7 +522,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	// Study Body
 	if (_player_studybody) then {
 		if (s_player_studybody < 0) then {
-			s_player_studybody = player addAction [localize "str_action_studybody", "\z\addons\dayz_code\actions\study_body.sqf",_cursorTarget, 0, false, true, "",""];
+			s_player_studybody = player addAction ["Check Wallet", "custom\bank\Gold_Coin_system\Check_Wallet\check_wallet.sqf",_cursorTarget, 0, false, true, "",""];
 		};
 	} else {
 		player removeAction s_player_studybody;
@@ -558,38 +628,23 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		s_player_unlockvault = -1;
 	};
 
-		if(_typeOfCursorTarget in Fast_Med  and (player distance _cursorTarget < 3)) then {		
-		if (s_fast_med_dialog1 < 0) then {
-			s_fast_med_dialog1 = player addAction ["<t color='#0059FF'>Pay for treatment</t>", "custom\Medical\FastMed.sqf",_cursorTarget, 3, true, true, "", ""];
-		};
-	} else {		
-		player removeAction s_fast_med_dialog1;
-		s_fast_med_dialog1 = -1;
-	};
-	
-		//Banking
-	if(_typeOfCursorTarget in DZE_UnLockedStorage and (player distance _cursorTarget < 3)) then 
-	{
-		if (s_bank_dialog < 0) then 
-		{
-				s_bank_dialog = player addAction ["Online Banking", "custom\bank\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
+	if(_typeOfCursorTarget in DZE_UnLockedStorage and (player distance _cursorTarget < 3)) then {
+		if (s_bank_dialog < 0) then {
+				s_bank_dialog = player addAction ["Online Banking", "custom\bank\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];	
 		};
 	} else {
      	player removeAction s_bank_dialog;
 		s_bank_dialog = -1;
 	};
-	
-	if(_typeOfCursorTarget in DZE_ATM  and (player distance _cursorTarget < 3)) then 
-	{
-		if (s_bank_dialog2 < 0) then 
-		{
-			s_bank_dialog2 = player addAction ["Bank ATM", "custom\bank\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
-		};
-	} else {
+
+	if(_typeOfCursorTarget in Bank_Object and (player distance _cursorTarget < 3)) then {		
+		if (s_bank_dialog2 < 0) then {
+			s_bank_dialog2 = player addAction ["Bank ATM", "custom\bank\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
+		};			
+	} else {		
 		player removeAction s_bank_dialog2;
 		s_bank_dialog2 = -1;
 	};
-	//Banking End
 	
 	//Allow owner to pack vault
 	if(_typeOfCursorTarget in DZE_UnLockedStorage && _ownerID != "0" && (player distance _cursorTarget < 3)) then {
@@ -620,6 +675,63 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		player removeAction s_player_information;
 		s_player_information = -1;
 	};
+	
+	if (_isMan and _isAlive and !_isZombie and !_isAnimal and !(_traderType in serverTraders)) then {
+		if (s_givemoney_dialog < 0) then {
+			s_givemoney_dialog = player addAction [format["Give Money to %1", (name _cursorTarget)], "custom\bank\Gold_Coin_system\Give_Money\give_player_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
+		};
+	} else {
+	        player removeAction s_smelt_coins;
+				s_smelt_coins = -1;
+			player removeAction s_smelt_bars;
+				s_smelt_bars = -1;
+			player removeAction s_smelt_10bars;
+				s_smelt_10bars = -1;
+		player removeAction s_givemoney_dialog;
+		s_givemoney_dialog = -1;
+	};
+	
+	if (isNil "SmeltingInProgress") then {
+		SmeltingInProgress = false;
+	};
+
+	_player_money = player getVariable["cashMoney",0];
+	// Smelt gold coins
+	if (inflamed _cursorTarget and (_player_money > SmeltingGoldBarsToCoinsRate) and !SmeltingInProgress) then {
+		if (s_smelt_coins < 0) then {
+			if (_player_money > 10000) then {
+				s_smelt_coins = player addAction [format["Smelt %1 %2 into a 10oz Gold Bar", (SmeltingGoldBarsToCoinsRate * 10), CurrencyName], "custom\bank\convert\player_smeltcoins.sqf","ItemGoldBar10oz", 3, true, true, "", ""];
+			} else {
+				s_smelt_coins = player addAction [format["Smelt %1 %2 into a Gold Bar", SmeltingGoldBarsToCoinsRate, CurrencyName], "custom\bank\convert\player_smeltcoins.sqf","ItemGoldBar", 3, true, true, "", ""];
+			};
+		};
+	} else {
+		player removeAction s_smelt_coins;
+		s_smelt_coins = -1;
+	};
+
+	_hasGoldBars = "ItemGoldBar" in _magazinesPlayer;
+	// Smelt bars into coins
+	if (inflamed _cursorTarget and (_hasGoldBars) and !SmeltingInProgress) then {
+		if (s_smelt_bars < 0) then {
+			s_smelt_bars = player addAction [format["Smelt a Gold Bar into %1 %2", SmeltingGoldBarsToCoinsRate, CurrencyName], "custom\bank\convert\player_smeltbars.sqf","ItemGoldBar", 3, true, true, "", ""];
+		};
+	} else {
+		player removeAction s_smelt_bars;
+		s_smelt_bars = -1;
+	};
+	
+	_has10ozGoldBars = "ItemGoldBar10oz" in _magazinesPlayer;
+	// Smelt bars into coins
+	if (inflamed _cursorTarget and (_has10ozGoldBars) and !SmeltingInProgress) then {
+		if (s_smelt_10bars < 0) then {
+			s_smelt_10bars = player addAction [format["Smelt a 10oz Gold Bar into %1 %2", (SmeltingGoldBarsToCoinsRate * 10), CurrencyName], "custom\bank\convert\player_smeltbars.sqf","ItemGoldBar10oz", 3, true, true, "", ""];
+		};
+	} else {
+		player removeAction s_smelt_10bars;
+		s_smelt_10bars = -1;
+	}; 
+	
 	
 	//Fuel Pump
 	if(_typeOfCursorTarget in dayz_fuelpumparray) then {	
@@ -740,23 +852,6 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		s_player_fillgen = -1;
 	};
 
-	//Towing with tow truck
-	/*
-	if(_typeOfCursorTarget == "TOW_DZE") then {
-		if (s_player_towing < 0) then {
-			if(!(_cursorTarget getVariable ["DZEinTow", false])) then {
-				s_player_towing = player addAction [localize "STR_EPOCH_ACTIONS_ATTACH" "\z\addons\dayz_code\actions\tow_AttachStraps.sqf",_cursorTarget, 0, false, true, "",""];				
-			} else {
-				s_player_towing = player addAction [localize "STR_EPOCH_ACTIONS_DETACH", "\z\addons\dayz_code\actions\tow_DetachStraps.sqf",_cursorTarget, 0, false, true, "",""];				
-			};
-		};
-	} else {
-		player removeAction s_player_towing;
-		s_player_towing = -1;
-	};
-	*/
-
-
     //Sleep
 	if(_isTent && _ownerID == dayz_characterID) then {
 		if ((s_player_sleep < 0) && (player distance _cursorTarget < 3)) then {
@@ -772,7 +867,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		if (s_player_repair_crtl < 0) then {
 			dayz_myCursorTarget = _cursorTarget;
 			_menu = dayz_myCursorTarget addAction [localize "STR_EPOCH_PLAYER_REPAIRV", "\z\addons\dayz_code\actions\repair_vehicle.sqf",_cursorTarget, 0, true, false, "",""];
-			_menu1 = dayz_myCursorTarget addAction [localize "STR_EPOCH_PLAYER_SALVAGEV", "\z\addons\dayz_code\actions\salvage_vehicle.sqf",_cursorTarget, 0, true, false, "",""];
+			_menu1 = dayz_myCursorTarget addAction [localize "STR_EPOCH_PLAYER_SALVAGEV", "fuckingfixes\salvage_vehicle.sqf",_cursorTarget, 0, true, false, "",""];
 			s_player_repairActions set [count s_player_repairActions,_menu];
 			s_player_repairActions set [count s_player_repairActions,_menu1];
 			s_player_repair_crtl = 1;
@@ -803,7 +898,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 				_humanity_logic = (_humanity > -5000);
 			};
 			if((_traderMenu select 2) == "hero") then {
-				_humanity_logic = (_humanity < 5000);
+				_humanity_logic = (_humanity < 7500);
 			};
 			if(_humanity_logic) then {
 				_cancel = player addAction [format[localize "STR_EPOCH_ACTIONS_HUMANITY",_low_high], "\z\addons\dayz_code\actions\trade_cancel.sqf",["na"], 0, true, false, "",""];
@@ -818,6 +913,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 				
 				} count (_traderMenu select 1);
 				// Database menu
+				LastTraderMenu = (_traderMenu select 0);
 				_buy = player addAction [localize "STR_EPOCH_PLAYER_289", "\z\addons\dayz_code\actions\show_dialog.sqf",(_traderMenu select 0), 999, true, false, "",""];
 				s_player_parts set [count s_player_parts,_buy];
 
@@ -887,6 +983,21 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 		};
 	};
 
+if (dayZ_instance == 11) then 
+{
+	_bankrobbery = cursorTarget isKindOf "Notebook";
+	if ((speed player <= 1) && _bankrobbery && (player distance cursorTarget < 5)) then 
+	{
+		if (s_player_bankrob < 0) then 
+		{
+			s_player_bankrob = player addAction ["Rob the bank","custom\bank\rob\robbank.sqf",cursorTarget, 0, false, true, "",""];
+		};
+	} else {
+		player removeAction s_player_bankrob;
+		s_player_bankrob = -1;
+	};
+};
+	
 } else {
 	//Engineering
 	{dayz_myCursorTarget removeAction _x} count s_player_repairActions;s_player_repairActions = [];
@@ -974,18 +1085,9 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	s_player_fuelauto = -1;
 	player removeAction s_player_fuelauto2;
 	s_player_fuelauto2 = -1;
-		
-	//Banking
-	player removeAction s_bank_dialog;
-	s_bank_dialog = -1;
-	player removeAction s_bank_dialog2;
-	s_bank_dialog2 = -1;
-	player removeAction s_bank_dialog3;
-	s_bank_dialog3 = -1;
-	//Banking End
-	player removeAction s_fast_med_dialog1;
-	s_fast_med_dialog1 = -1;
-};
+	
+
+	};
 
 
 
@@ -1017,23 +1119,15 @@ if (_dogHandle > 0) then {
 	player removeAction s_player_calldog;
 	s_player_calldog = 		-1;
 };
-
-
-if !(isNil "_cursorTarget") then {
-_cursorTarget = 0;
-};
-
-//Banking
+ 
+ 
 _banker = _cursorTarget getVariable["BankerBot",0];
 
-	if((_banker == 1) and (player distance _cursorTarget < 3)) then 
-	{		
-		if (s_bank_dialog9 < 0) then 
-		{
-			s_bank_dialog9 = player addAction ["Bank Menu", "custom\bank\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
-		};			
-	} else {		
-			player removeAction s_bank_dialog9;
-			s_bank_dialog9 = -1;
-	};
-//Banking End
+if((_banker == 1) and (player distance _cursorTarget < 3)) then {		
+	if (s_bank_dialog3 < 0) then {
+		s_bank_dialog3 = player addAction ["Banker Menu", "custom\bank\Gold_Coin_system\Bank_Dialog\bank_dialog.sqf",_cursorTarget, 3, true, true, "", ""];
+	};			
+} else {		
+	player removeAction s_bank_dialog3;
+	s_bank_dialog3 = -1;
+};

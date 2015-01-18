@@ -1,24 +1,29 @@
 	diag_log "Initialising VL Compiles";
 diag_log "==============================================";
-		fnc_usec_selfActions =			compile preprocessFileLineNumbers "custom\code\fn_selfActions.sqf";
-		player_switchModel   =			compile preprocessFileLineNumbers "custom\code\player_switchModel.sqf";
-		player_death =				compile preprocessFileLineNumbers "custom\dean\skinrecover\player_death.sqf";
-		RB_refuelmenu = compile preprocessFileLineNumbers "custom\better_fuelling\refuel_vehicle_menu.sqf";
-		RB_refuelSubMenuCancel = compile preprocessFileLineNumbers "custom\better_fuelling\refuel_cancel.sqf";
-		player_updateGui =			compile preprocessFileLineNumbers "custom\GUI\player_updateGui.sqf";
-		player_selectSlot = compile preprocessFileLineNumbers "custom\code\ui_selectSlot.sqf";
+		fnc_usec_selfActions =						compile preprocessFileLineNumbers "custom\code\fn_selfActions.sqf";
+		player_switchModel   =						compile preprocessFileLineNumbers "custom\code\player_switchModel.sqf";
+		player_death =								compile preprocessFileLineNumbers "custom\dean\skinrecover\player_death.sqf";
+		RB_refuelmenu =								compile preprocessFileLineNumbers "custom\better_fuelling\refuel_vehicle_menu.sqf";
+		RB_refuelSubMenuCancel = 					compile preprocessFileLineNumbers "custom\better_fuelling\refuel_cancel.sqf";
+		player_updateGui =							compile preprocessFileLineNumbers "custom\GUI\player_updateGui.sqf";
+		player_selectSlot = 						compile preprocessFileLineNumbers "custom\code\ui_selectSlot.sqf";
 diag_log "==============================================";
-
-    player_build = compile preprocessFileLineNumbers "custom\snap_pro\player_build.sqf";
-    snap_build = compile preprocessFileLineNumbers "custom\snap_pro\snap_build.sqf";
-    dayz_spaceInterrupt = compile preprocessFileLineNumbers "custom\snap_pro\dayz_spaceInterrupt.sqf";
-
-
-
-
-
-
-
+		player_build = 								compile preprocessFileLineNumbers "custom\snap_pro\player_build.sqf";
+		snap_build = 								compile preprocessFileLineNumbers "custom\snap_pro\snap_build.sqf";
+		dayz_spaceInterrupt = 						compile preprocessFileLineNumbers "custom\snap_pro\dayz_spaceInterrupt.sqf";
+diag_log "==============================================";
+	diag_log "Initialising Custom Zeds";
+		building_spawnZombies =						compile preprocessFileLineNumbers "custom\custom_loot\compile\building_spawnZombies.sqf";
+		zombie_generate = 							compile preprocessFileLineNumbers "custom\custom_loot\compile\zombie_generate.sqf";
+		wild_spawnZombies = 						compile preprocessFileLineNumbers "custom\custom_loot\compile\wild_spawnZombies.sqf";
+	diag_log "Finished initialising Custom Zeds";	
+diag_log "==============================================";
+	diag_log "Initialising Custom Loot";
+		building_spawnLoot =						compile preprocessFileLineNumbers "custom\custom_loot\compile\building_spawnLoot.sqf";	
+		spawn_loot =                				compile preprocessFileLineNumbers "custom\custom_loot\compile\spawn_loot.sqf";
+		spawn_loot_small =              			compile preprocessFileLineNumbers "custom\custom_loot\compile\spawn_loot_small.sqf";
+		player_spawnCheck = 						compile preprocessFileLineNumbers "custom\custom_loot\compile\player_spawnCheck.sqf";	
+	diag_log "Finished initialising Custom Loot";
 
 
 
