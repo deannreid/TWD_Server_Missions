@@ -48,8 +48,7 @@ class playerStatusGUI {
         name = "statusBorder";
         onLoad = "uiNamespace setVariable ['DAYZ_GUI_display', _this select 0];";
         class ControlsBackground {
-		if (twdGUIBTFH == true) then 
-		{
+
 //Food Image/BG
             class RscPicture_1901: RscPictureGUI
             {
@@ -128,7 +127,6 @@ class playerStatusGUI {
                 w = 0.0416666666666667 * safezoneW;
                 h = 0.0740740740740741 * safezoneH;
             };
-		};
 //Broken Leg Image
             class RscPicture_1203: RscPictureGUI
             {
@@ -152,7 +150,6 @@ class playerStatusGUI {
                 h = 0.0740740740740741 * safezoneH;
                 colorText[] = {1,1,1,1};
             };
-		if (twdGUIHardcore == false) {
 //Noise BG
             class RscPicture_1205: RscPictureGUI
             {
@@ -173,13 +170,10 @@ class playerStatusGUI {
                 y = 0.37037037037037 * safezoneH + safezoneY;
                 w = 0.0416666666666667 * safezoneW;
                 h = 0.0740740740740741 * safezoneH;
-            };  
-		};			
+            };  		
 	};
 		
         class Controls {
-	if (twdGUIBTFH == true) then
-		{
 //Blood Control
             class RscPicture_1300: RscPictureGUI
             {
@@ -229,9 +223,6 @@ class playerStatusGUI {
                 w = 0.0316666666666667 * safezoneW;
                 h = 0.0640740740740741 * safezoneH;
             };			
-		};
-		
-		if (twdGUIHardcore == false) {
 //Noise Control
             class RscPicture_1304: RscPictureGUI
             {
@@ -253,7 +244,6 @@ class playerStatusGUI {
                 w = 0.0416666666666667 * safezoneW;
                 h = 0.0740740740740741 * safezoneH;
             };
-		};
 //RestartText
             class RscPicture_1405: RscPictureGUI
             {
@@ -279,7 +269,6 @@ class playerStatusGUI {
                 size = 0.03;
                 sizeEx = 0.03;
             };		
-		if (twdGUIMoney == true) {
 //MoneyText
             class RscPicture_1406: RscPictureGUI
             {
@@ -331,7 +320,6 @@ class playerStatusGUI {
                 size = 0.03;
                 sizeEx = 0.03;
             };
-		};
 
 //wmark
             class RscPicture_1410: RscPictureGUI
