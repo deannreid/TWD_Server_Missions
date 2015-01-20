@@ -249,8 +249,8 @@ class playerStatusGUI {
             {
                 idc = 1405;
                 text = "custom\GUI\restart.paa";
-                x = 0.00833333333333333 * safezoneW + safezoneX;
-                y = 0.0296296296296296 * safezoneH + safezoneY;
+                x = 0 * safezoneW + safezoneX;
+                y = 0.196296296296296 * safezoneH + safezoneY;
                 w = 0.0333333333333333 * safezoneW;
                 h = 0.0592592592592593 * safezoneH;
                 colorText[] = {1,1,1,1};
@@ -261,8 +261,8 @@ class playerStatusGUI {
             {
                 idc = 1404;
                 text = "(180-(round(serverTime/60)))";
-                x = 0.00833333333333333 * safezoneW + safezoneX;
-                y = 0.0888888888888889 * safezoneH + safezoneY;
+                x = 0 * safezoneW + safezoneX;
+                y = 0.1888888888888889 * safezoneH + safezoneY;
                 w = 0.0333333333333333 * safezoneW;
                 h = 0.0296296296296296 * safezoneH;
                 colorText[] = {1,1,1,1.0};
