@@ -1,5 +1,13 @@
 disableSerialization;
-
+CurrencyName = "Boobs"; // name of your currency
+Bank_Object = ["Laptop_EP1"]; // Object to get option to bank
+LimitOnBank = false; // false = no limits, true = banks are limited on the value below
+MaxBankMoney = 500000; // limit on bank for normal players
+DonatorBank = [""]; // Bigger banks, Players ID
+MaxDonatorBankMoney = 1000000; // Bank size for donators
+InstantTrading = true; // (True = No Animation / False = Animation)
+AllBankersOnServer = [];
+SmeltingGoldBarsToCoinsRate = 1000; // How many gold coins are in a gold bar
 //Model Variables
 Bandit1_DZ = 	"Bandit1_DZ";
 Bandit2_DZ = 	"Bandit2_DZ";
