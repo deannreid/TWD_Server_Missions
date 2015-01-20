@@ -209,7 +209,7 @@ class playerStatusGUI {
             class RscPicture_1302: RscPictureGUI
             {
                 idc = 1302;
-                x = 0.558333333333333 * safezoneW + safezoneX;
+                x = 0.441666666666667 * safezoneW + safezoneX;
                 y = 0.933333333333333 * safezoneH + safezoneY;
                 w = 0.0416666666666667 * safezoneW;
                 h = 0.0740740740740741 * safezoneH;
@@ -218,10 +218,10 @@ class playerStatusGUI {
             class RscPicture_1306: RscPictureGUI
             {
                 idc = 1306;
-                x = 0.566666666666667 * safezoneW + safezoneX;
-                y = 0.918518518518519 * safezoneH + safezoneY;
-                w = 0.0316666666666667 * safezoneW;
-                h = 0.0640740740740741 * safezoneH;
+                x = 0.558333333333333 * safezoneW + safezoneX;
+                y = 0.933333333333333 * safezoneH + safezoneY;
+                w = 0.0416666666666667 * safezoneW;
+                h = 0.0740740740740741 * safezoneH;
             };			
 //Noise Control
             class RscPicture_1304: RscPictureGUI
@@ -229,9 +229,9 @@ class playerStatusGUI {
                 idc = 1304;
                 text = "\z\addons\dayz_code\gui\status\status_noise.paa";
                 x = 0 * safezoneW + safezoneX;
-                y = 0.266666666666667 * safezoneH + safezoneY;
-                w = 0.0316666666666667 * safezoneW;
-                h = 0.0640740740740741 * safezoneH;
+                y = 0.251851851851852 * safezoneH + safezoneY;
+                w = 0.0416666666666667 * safezoneW;
+                h = 0.0740740740740741 * safezoneH;
             };
 			
 //Visibility Control
@@ -274,10 +274,10 @@ class playerStatusGUI {
             {
                 idc = 1310;
                 text = "custom\GUI\wallet.paa";
-                x = 0.5 * safezoneW + safezoneX;
-                y = 0 * safezoneH + safezoneY;
-                w = 0.0316666666666667 * safezoneW;
-                h = 0.0640740740740741 * safezoneH;
+                x = 0.533333333333333 * safezoneW + safezoneX;
+                y = 0.0444444444444444 * safezoneH + safezoneY;
+                w = 0.0333333333333333 * safezoneW;
+                h = 0.0592592592592593 * safezoneH;
                 colorText[] = {1,1,1,1};
             };	
 	
@@ -286,10 +286,10 @@ class playerStatusGUI {
             {
                 idc = 1407;
                 text = "1000";
-                x = 0.483333333333333 * safezoneW + safezoneX;
-                y = 0.0592592592592593 * safezoneH + safezoneY;
-                w = 0.0416666666666667 * safezoneW;
-                h = 0.0740740740740741 * safezoneH;
+                x = 0.525 * safezoneW + safezoneX;
+                y = 0.103703703703704 * safezoneH + safezoneY;
+                w = 0.05 * safezoneW;
+                h = 0.0296296296296296 * safezoneH;
                 colorText[] = {1,1,1,1.0};
                 size = 0.03;
                 sizeEx = 0.03;
