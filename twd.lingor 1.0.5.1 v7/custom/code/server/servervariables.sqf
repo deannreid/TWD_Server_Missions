@@ -37,6 +37,10 @@
 	DZE_AntiWallLimit = 3;
 	DZE_AsReMix_PLAYER_HUD = false;	
 
+	twdGUIMoney = true;
+	twdGUIBTFH = true;
+	twdGUIHardcore = false;
+	
 //SERVER ONLY VARIABLES
 // Chernarus
 if (dayZ_instance == 11) then

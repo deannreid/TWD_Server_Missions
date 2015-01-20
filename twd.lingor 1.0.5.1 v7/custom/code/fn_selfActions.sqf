@@ -1085,8 +1085,12 @@ if (dayZ_instance == 11) then
 	s_player_fuelauto = -1;
 	player removeAction s_player_fuelauto2;
 	s_player_fuelauto2 = -1;
-	
-
+	player removeAction s_player_sirens_on;
+	s_player_sirens_on = -1;
+	player removeAction s_player_sirens_off;
+    s_player_sirens_off = -1;
+	player removeAction s_bank_dialog3;
+	s_bank_dialog3 = -1;
 	};
 
 
