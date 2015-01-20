@@ -100,6 +100,7 @@ menu_CIV_EuroMan01_EP1 = [
 // Rodger's 4x4
 menu_ibr_lingorman7s = [
 	[["Bikes and ATV",501],["Buses and Vans",503],["Cargo Trucks",502],["Fuel Trucks",506],["Military Unarmed",804],["Trucks",505],["Used Cars",508],["Utility Vehicles",507]],
+	[],
 	"friendly"
 ];
 // Tina's Tarts
