@@ -8,3 +8,5 @@ diag_log "Zombie Mode Loaded";
 diag_log "Logistics Loaded";
     execVM "custom\service_point\service_point.sqf";
 diag_log "Service Points Loaded";
+	execVM "custom\markers\init.sqf";
+diag_log "Markers Loaded";
