@@ -40,6 +40,7 @@ class CfgTraderCategory {
 #include "Category\Overwatch_ACR_NEW.hpp"
 #include "Category\PackagedFood.hpp"
 #include "Category\Pistols.hpp"
+#include "Category\PistolAmmo.hpp"
 #include "Category\SimpleSniperRifle.hpp"
 #include "Category\SingleShot_Shotgun_Variants_NEW.hpp"
 #include "Category\SmokeGrenades.hpp"

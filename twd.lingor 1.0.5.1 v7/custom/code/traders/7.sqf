@@ -89,7 +89,6 @@ menu_Pilot = [
 menu_CIV_EuroMan02_EP1 = [
 	[["Assault Rifle Ammo",600],["Light Machine Gun Ammo",613],["Pistol Ammo",601],["SMG, Shotguns and Single-shot Ammo",612],["Sniper Rifle Ammo",614],["Black Market Ammo",420]],
 	[],
-	[],
 	"friendly"
 ];
 // Joe's Weapons
@@ -105,7 +104,7 @@ menu_ibr_lingorman7s = [
 ];
 // Tina's Tarts
 menu_Damsel3 = [
-	[["Cooked Meats",305],["Drinks",311],["Packaged Food",308],["Chem-lites/Flares",303],["Medical Supplies",307]],
+	[["Cooked Meats",305],["Drinks",311],["Packaged Food",308],["Chem-lites/Flares",303],["Money Money Money!",700]],
 	[["ItemTinBar","TrashJackDaniels",1,1,"buy","Empty Whiskey Bottle","Tin Bar",101]],
 	"friendly"
 ];
