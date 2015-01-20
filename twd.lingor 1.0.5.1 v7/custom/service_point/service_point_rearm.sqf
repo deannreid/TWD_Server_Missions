@@ -12,9 +12,9 @@ _magazineCount = _args select 2;
 _weapon = _args select 3;
 
 //if !([_costs] call player_checkAndRemoveItems) exitWith {};
-if !([[[_costs select 0, _costs select 1]],0] call epoch_returnChange) then {
-	_textMissing = getText(configFile >> "CfgMagazines" >> _costs select 0 >> "displayName");
-	cutText [format[(localize "STR_EPOCH_ACTIONS_12"), _costs select 1, _textMissing], "PLAIN DOWN"];
+if !([ player,_costs select 1] call SC_fnc_removeCoins) then {
+    _repair_cost = _costs select 1;
+    cutText [format["You need %1 %2",_repair_cost,CurrencyName] , "PLAIN DOWN"];
 } else {
 
 	_type = typeOf _vehicle;

@@ -32,7 +32,7 @@ diagHit = 1;
 #include "custom\hpp\defines.hpp"
 #include "custom\hpp\ebaydefines.hpp"
 #include "custom\hpp\ebayicons.hpp"
-
+#include "custom\hpp\admin.hpp"
 #include "custom\custom_loot\Configs\CfgBuildingLoot.hpp"
 #include "custom\custom_loot\Configs\CfgLootSmall.hpp"
 #include "custom\custom_loot\Configs\CfgLoot.hpp"

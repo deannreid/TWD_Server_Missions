@@ -110,11 +110,11 @@ if (isServer) then {
 			_fuel 	= fuel _vehicle;
 			_uid 	= _worldspace call dayz_objectUID2;
 
-			_key 	= format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance,_class,_damage,_characterID,_worldspace,[],_array,_fuel,_uid];
+			diag_log format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:",dayZ_instance,_class,_damage,_characterID,_worldspace,[],_array,_fuel,_uid];
 
 			if(debug_mode) then { diag_log ("HIVE: WRITE: "+ str(_key)); };
 
-			_key call server_hiveWrite;
+			//_key call server_hiveWrite;
 			
 			[_vehicle,_uid,_fuel,_damage,_array,_characterID,_class] call {
 

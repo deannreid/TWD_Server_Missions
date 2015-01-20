@@ -10,3 +10,4 @@ diag_log "Logistics Loaded";
 diag_log "Service Points Loaded";
 	execVM "custom\markers\init.sqf";
 diag_log "Markers Loaded";
+	execVM "custom\avehiclespawn\init.sqf";
