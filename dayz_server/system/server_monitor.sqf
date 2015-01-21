@@ -382,7 +382,7 @@ PVDZE_Z_LoadMessage = [_theMessage];
 publicVariable "PVDZE_Z_LoadMessage";
 		endLoadingScreen;
 	};
-	[] call compile preprocessFileLineNumbers "\z\addons\dayz_server\DZAI\init\dzai_initserver.sqf";
+//	[] call compile preprocessFileLineNumbers "\z\addons\dayz_server\DZAI\init\dzai_initserver.sqf";
 	ExecVM "\z\addons\dayz_server\WAI\init.sqf";
 	[] ExecVM "\z\addons\dayz_server\DZMS\DZMSInit.sqf";
 	allowConnection = true;	

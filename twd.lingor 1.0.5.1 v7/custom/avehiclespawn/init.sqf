@@ -6,7 +6,7 @@ _SAdmins = [
 "76561198030454440", //Drty
 "76561198068756413", //ChooChooAdrian
 "76561197970475174", //James
-"76561198007584311", //Chicken
+"76561198007584311" //Chicken
 ];
 if ((getPlayerUID player) in _SAdmins) then 
 {

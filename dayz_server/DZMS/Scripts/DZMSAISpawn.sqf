@@ -43,7 +43,7 @@ for "_x" from 1 to _unitcount do {
 	_unit enableAI "FSM";
 	_unit setCombatMode "YELLOW";
 	_unit setBehaviour "COMBAT";
-    _cash = round(random 20) * 1000; // number between 0 and 20 000
+    _cash = round(random 1) * 500; // number between 0 and 20 000
 	_unit setVariable["CashMoney",_cash ,true];
 	//Remove the items he spawns with by default
 	removeAllWeapons _unit;

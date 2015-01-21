@@ -22,9 +22,13 @@ diag_log "==============================================";
 		spawn_loot_small =              			compile preprocessFileLineNumbers "custom\custom_loot\compile\spawn_loot_small.sqf";
 		player_spawnCheck = 						compile preprocessFileLineNumbers "custom\custom_loot\compile\player_spawnCheck.sqf";	
 	diag_log "Finished initialising Custom Loot";
-
-
-
+diag_log "==============================================";
+	diag_log "Loading Animations";	
+		if (!isDedicated) then 
+		{
+			mv22_pack = compile preprocessFileLineNumbers "\ca\air2\mv22\scripts\pack.sqf";
+		};
+diag_log "Finished Loading Animations";
 diag_log "==============================================";
 	diag_log "Loading the Banks";
 	SC_fnc_removeCoins=

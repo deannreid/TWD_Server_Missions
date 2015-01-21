@@ -3,7 +3,9 @@
 private ["_folder","_servicePointClasses","_maxDistance","_actionTitleFormat","_actionCostsFormat","_costsFree","_message","_messageShown","_refuel_enable","_refuel_costs","_refuel_updateInterval","_refuel_amount","_repair_enable","_repair_costs","_repair_repairTime","_rearm_enable","_rearm_costs","_rearm_magazineCount","_lastVehicle","_lastRole","_fnc_removeActions","_fnc_getCosts","_fnc_actionTitle","_fnc_isArmed","_fnc_getWeapons"];
  
 // ---------------- CONFIG START ----------------
- 
+ if (isNil "CurrencyName") then {
+	CurrencyName = "Boobs";
+};
 // -- Single Currency Prices -- //
 _coinsRepairAir = 5000;
 _coinsRepairVehicles = 2000;

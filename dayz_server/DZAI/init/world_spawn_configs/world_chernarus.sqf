@@ -40,7 +40,8 @@ if (DZAI_staticAI) then {
 	["DZAI_Berezino4",[2,1],[],1] call DZAI_static_spawn;
 	["DZAI_Khelm",[0,1],[],1] call DZAI_static_spawn;
 	["DZAI_Olsha",[0,1],[],1] call DZAI_static_spawn;
-	["DZAI_NEAF",[2,2],['NEAF1','NEAF2','NEAF3','NEAF4','NEAF5'],2] call DZAI_static_spawn;
+	//Get Rid of ai at NEAF.
+	//["DZAI_NEAF",[2,2],['NEAF1','NEAF2','NEAF3','NEAF4','NEAF5'],2] call DZAI_static_spawn;
 	["DZAI_Krasnostav",[1,1],[],2] call DZAI_static_spawn;
 	["DZAI_Gvozdno",[0,2],[],2] call DZAI_static_spawn;
 	["DZAI_Pavlovo",[0,1],[],0] call DZAI_static_spawn;

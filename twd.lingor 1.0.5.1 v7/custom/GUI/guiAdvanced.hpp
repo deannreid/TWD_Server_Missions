@@ -1,55 +1,14 @@
-class RscPictureGUI
-{
-	access=0;
-	type=0;
-	idc=-1;
-	colorBackground[]={0,0,0,0};
-	colorText[]={0.38,0.63,0.25999999,0.75};
-	font="TahomaB";
-	sizeEx=0;
-	lineSpacing=0;
-	text="";
-	style="0x30 + 0x100";
-	x=0;
-	y=0;
-	w=0.2;
-	h=0.15000001;
-};
-class RscPicture 
-{
-	type = CT_STATIC;
-	idc = -1;
-	style = ST_PICTURE;
-	colorBackground[] = {0, 0, 0, 0};
-	colorText[] = {1, 1, 1, 1};
-	font = "Bitstream"; //Typeface
-	sizeEx = 0;
-};
-
-class RscTextGUIK {
-    type = 0;
-    idc = -1;
-    style = 0x02;
-    colorBackground[] = {0,0,0,0};
-    colorText[] = {1, 1, 1, 0.5};
-    font = "TahomaB";
-    size = 0.03;
-    sizeEx = 0.03;
-    x = 0;
-    y = 0;
-    w = 0.1;
-    h = 0.2;
-};
-
-class playerStatusGUI {
+	class playerStatusGUI 
+	{
         idd = 6900;
         movingEnable = 0;
         duration = 100000;
         name = "statusBorder";
         onLoad = "uiNamespace setVariable ['DAYZ_GUI_display', _this select 0];";
-        class ControlsBackground {
+        class ControlsBackground 
+		{
 
-//Food Image/BG
+			//Food Image/BG
             class RscPicture_1901: RscPictureGUI
             {
                 idc = 1901;
@@ -69,7 +28,7 @@ class playerStatusGUI {
                 h = 0.0740740740740741 * safezoneH;
             };
 			
-//Blood Image/BG
+			//Blood Image/BG
             class RscPicture_1900: RscPictureGUI
             {
                 idc = 1900;
@@ -88,7 +47,7 @@ class playerStatusGUI {
                 h = 0.0740740740740741 * safezoneH;
             };
 
-//Thirst Image/BG
+			//Thirst Image/BG
             class RscPicture_1902: RscPictureGUI
             {
                 idc = 1902;
@@ -108,7 +67,7 @@ class playerStatusGUI {
                 h = 0.0740740740740741 * safezoneH;
             };
 			
-//Temp Image/BG
+			//Temp Image/BG
             class RscPicture_1908: RscPictureGUI
             {
                 idc = 1908;
@@ -127,7 +86,7 @@ class playerStatusGUI {
                 w = 0.0416666666666667 * safezoneW;
                 h = 0.0740740740740741 * safezoneH;
             };
-//Broken Leg Image
+			//Broken Leg Image
             class RscPicture_1203: RscPictureGUI
             {
                 idc = 1203;
@@ -139,7 +98,7 @@ class playerStatusGUI {
                 colorText[] = {1,1,1,1};
             };
 			
-//Connection Image
+			//Connection Image
             class RscPicture_1204: RscPictureGUI
             {
                 idc = 1204;
@@ -150,7 +109,7 @@ class playerStatusGUI {
                 h = 0.0740740740740741 * safezoneH;
                 colorText[] = {1,1,1,1};
             };
-//Noise BG
+			//Noise BG
             class RscPicture_1205: RscPictureGUI
             {
                 idc = 1205;
@@ -161,7 +120,7 @@ class playerStatusGUI {
                 h = 0.0740740740740741 * safezoneH;
             };
 
-//Vision BG
+			//Vision BG
             class RscPicture_1206: RscPictureGUI
             {
                 idc = 1206;
@@ -171,10 +130,10 @@ class playerStatusGUI {
                 w = 0.0416666666666667 * safezoneW;
                 h = 0.0740740740740741 * safezoneH;
             };  		
-	};
-		
-        class Controls {
-//Blood Control
+		};	
+		class Controls 
+		{
+			//Blood Control
             class RscPicture_1300: RscPictureGUI
             {
                 idc = 1300;
@@ -183,7 +142,7 @@ class playerStatusGUI {
                 w = 0.0416666666666667 * safezoneW;
                 h = 0.0740740740740741 * safezoneH;
             };
-//Bleeding Control
+			//Bleeding Control
             class RscPicture_1303: RscPictureGUI
             {
                 idc = 1303;
@@ -195,7 +154,7 @@ class playerStatusGUI {
                 colorText[] = {1,1,1,0.5};
             };
 			
-//Food Control
+			//Food Control
             class RscPicture_1301: RscPictureGUI
             {
                 idc = 1301;
@@ -205,7 +164,7 @@ class playerStatusGUI {
                 h = 0.0740740740740741 * safezoneH;
             };
 			
-//Thirst Control
+			//Thirst Control
             class RscPicture_1302: RscPictureGUI
             {
                 idc = 1302;
@@ -214,7 +173,7 @@ class playerStatusGUI {
                 w = 0.0416666666666667 * safezoneW;
                 h = 0.0740740740740741 * safezoneH;
             };
-//Temperature Control
+			//Temperature Control
             class RscPicture_1306: RscPictureGUI
             {
                 idc = 1306;
@@ -223,7 +182,7 @@ class playerStatusGUI {
                 w = 0.0416666666666667 * safezoneW;
                 h = 0.0740740740740741 * safezoneH;
             };			
-//Noise Control
+			//Noise Control
             class RscPicture_1304: RscPictureGUI
             {
                 idc = 1304;
@@ -234,7 +193,7 @@ class playerStatusGUI {
                 h = 0.0740740740740741 * safezoneH;
             };
 			
-//Visibility Control
+			//Visibility Control
             class RscPicture_1305: RscPictureGUI
             {
                 idc = 1305;
@@ -244,32 +203,32 @@ class playerStatusGUI {
                 w = 0.0416666666666667 * safezoneW;
                 h = 0.0740740740740741 * safezoneH;
             };
-//RestartText
+			//RestartText
             class RscPicture_1405: RscPictureGUI
             {
                 idc = 1405;
                 text = "custom\GUI\restart.paa";
                 x = 0 * safezoneW + safezoneX;
-                y = 0.196296296296296 * safezoneH + safezoneY;
+                y = 0.096296296296296 * safezoneH + safezoneY;
                 w = 0.0333333333333333 * safezoneW;
                 h = 0.0592592592592593 * safezoneH;
                 colorText[] = {1,1,1,1};
             };	
 	
-//Restart Count
+			//Restart Count
             class RscText_1404: RscTextGUIK
             {
                 idc = 1404;
                 text = "(180-(round(serverTime/60)))";
                 x = 0 * safezoneW + safezoneX;
-                y = 0.1888888888888889 * safezoneH + safezoneY;
+                y = 0.1777777777777779 * safezoneH + safezoneY;
                 w = 0.0333333333333333 * safezoneW;
                 h = 0.0296296296296296 * safezoneH;
                 colorText[] = {1,1,1,1.0};
                 size = 0.03;
                 sizeEx = 0.03;
             };		
-//MoneyText
+			//MoneyText
             class RscPicture_1406: RscPictureGUI
             {
                 idc = 1310;
@@ -281,7 +240,7 @@ class playerStatusGUI {
                 colorText[] = {1,1,1,1};
             };	
 	
-//Money Cnt
+			//Money Cnt
             class RscText_1407: RscTextGUIK
             {
                 idc = 1407;
@@ -295,7 +254,7 @@ class playerStatusGUI {
                 sizeEx = 0.03;
             };	
 
-//Bank Txt
+			//Bank Txt
             class RscPicture_1408: RscPictureGUI
             {
                 idc = 1310;
@@ -307,7 +266,7 @@ class playerStatusGUI {
                 colorText[] = {1,1,1,1};
             };	
 	
-//Bank Cnt
+			//Bank Cnt
             class RscText_1409: RscTextGUIK
             {
                 idc = 1409;
@@ -321,7 +280,7 @@ class playerStatusGUI {
                 sizeEx = 0.03;
             };
 
-//wmark
+			//wmark
             class RscPicture_1410: RscPictureGUI
             {
                 idc = 1410;
@@ -333,7 +292,7 @@ class playerStatusGUI {
                 colorText[] = {1,1,1,1};
             };	
 	
-//tsip
+			//tsip
             class RscText_1411: RscTextT
             {
                 idc = 1411;
@@ -346,5 +305,5 @@ class playerStatusGUI {
                 size = 0.03;
                 sizeEx = 0.03;
             };		
-        };
-    };
+		};
+	};

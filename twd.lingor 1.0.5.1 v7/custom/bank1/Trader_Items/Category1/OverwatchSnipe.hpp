@@ -1,0 +1,27 @@
+class Category_702 {
+class USSR_cheytacM200 { type = "trade_weapons"; buy[] = {80000}; sell[] = {40000}; };
+class USSR_cheytacM200_sd { type = "trade_weapons"; buy[] = {108000}; sell[] = {54000}; };
+class FHQ_MSR_DESERT { type = "trade_weapons"; buy[] = {30000}; sell[] = {15000}; };
+class FHQ_MSR_SD_DESERT { type = "trade_weapons"; buy[] = {35000}; sell[] = {17500}; };
+class FHQ_MSR_NV_DESERT { type = "trade_weapons"; buy[] = {30000}; sell[] = {15000}; };
+class FHQ_MSR_NV_SD_DESERT { type = "trade_weapons"; buy[] = {35000}; sell[] = {17500}; };
+class FHQ_RSASS_TAN { type = "trade_weapons"; buy[] = {24000}; sell[] = {12000}; };
+class FHQ_RSASS_SD_TAN { type = "trade_weapons"; buy[] = {30000}; sell[] = {15000}; };
+class FHQ_XM2010_DESERT { type = "trade_weapons"; buy[] = {28000}; sell[] = {14000}; };
+class FHQ_XM2010_SD_DESERT { type = "trade_weapons"; buy[] = {35000}; sell[] = {17500}; };
+class FHQ_XM2010_NV_DESERT { type = "trade_weapons"; buy[] = {28000}; sell[] = {14000}; };
+class FHQ_XM2010_NV_SD_DESERT { type = "trade_weapons"; buy[] = {35000}; sell[] = {17500}; };
+class vil_SVD_63 { type = "trade_weapons"; buy[] = {16000}; sell[] = {8000}; };
+class vil_SVD_N { type = "trade_weapons"; buy[] = {16000}; sell[] = {8000}; };
+class vil_SVD_S { type = "trade_weapons"; buy[] = {16000}; sell[] = {8000}; };
+class vil_SVD_M { type = "trade_weapons"; buy[] = {16000}; sell[] = {8000}; };
+class vil_SVD_P21 { type = "trade_weapons"; buy[] = {16000}; sell[] = {8000}; };
+class vil_SVDK { type = "trade_weapons"; buy[] = {20000}; sell[] = {10000}; };
+class vil_SV_98 { type = "trade_weapons"; buy[] = {20000}; sell[] = {10000}; };
+class vil_SV_98_69 { type = "trade_weapons"; buy[] = {20000}; sell[] = {10000}; };
+class vil_SV_98_SD { type = "trade_weapons"; buy[] = {20000}; sell[] = {10000}; };
+class gms_k98 { type = "trade_weapons"; buy[] = {1200}; sell[] = {600}; };
+class gms_k98_rg { type = "trade_weapons"; buy[] = {1200}; sell[] = {600}; };
+class gms_k98_knife { type = "trade_weapons"; buy[] = {1200}; sell[] = {600}; };
+class gms_k98zf39 { type = "trade_weapons"; buy[] = {1200}; sell[] = {600}; };
+};

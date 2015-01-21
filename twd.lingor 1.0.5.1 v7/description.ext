@@ -39,6 +39,7 @@ diagHit = 1;
 
 class RscTitles
 { 
+#include "custom\hpp\guiClass.hpp"
 #include "custom\GUI\GUI.hpp"
 };
 
@@ -50,3 +51,4 @@ class RscTitles
 #include "custom\hpp\extra_rc.hpp"
 #include "custom\snap_pro\snappoints.hpp"
 #include "custom\groups\groupManagement.hpp"
+#include "custom\sounds\sounds.hpp"
