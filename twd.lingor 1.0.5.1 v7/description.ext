@@ -32,7 +32,6 @@ diagHit = 1;
 #include "custom\hpp\defines.hpp"
 #include "custom\hpp\ebaydefines.hpp"
 #include "custom\hpp\ebayicons.hpp"
-#include "custom\hpp\admin.hpp"
 #include "custom\custom_loot\Configs\CfgBuildingLoot.hpp"
 #include "custom\custom_loot\Configs\CfgLootSmall.hpp"
 #include "custom\custom_loot\Configs\CfgLoot.hpp"
@@ -40,7 +39,7 @@ diagHit = 1;
 class RscTitles
 { 
 #include "custom\hpp\guiClass.hpp"
-#include "custom\GUI\GUI.hpp"
+#include "custom\GUI\guiAdvanced.hpp"
 };
 
 #include "custom\hpp\serverstart.hpp"
