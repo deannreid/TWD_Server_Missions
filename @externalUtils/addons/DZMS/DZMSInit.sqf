@@ -64,11 +64,11 @@ if ( (isnil("DZAI_isActive")) && (isnil("SAR_version")) && (isnil("WAIconfigload
 };
 
 // Let's Load the Mission Configuration
-call compile preprocessFileLineNumbers "\z\addons\dayz_server\DZMS\DZMSConfig.sqf";
+call compile preprocessFileLineNumbers "\z\addons\twd_server\DZMS\DZMSConfig.sqf";
 
 // These are Extended configuration files the user can adjust if wanted
-call compile preprocessFileLineNumbers "\z\addons\dayz_server\DZMS\ExtConfig\DZMSWeaponCrateList.sqf";
-call compile preprocessFileLineNumbers "\z\addons\dayz_server\DZMS\ExtConfig\DZMSAIConfig.sqf";
+call compile preprocessFileLineNumbers "\z\addons\twd_server\DZMS\ExtConfig\DZMSWeaponCrateList.sqf";
+call compile preprocessFileLineNumbers "\z\addons\twd_server\DZMS\ExtConfig\DZMSAIConfig.sqf";
 
 // Report the version
 diag_log text format ["[DZMS]: Currently Running Version: %1", DZMSVersion];
@@ -96,7 +96,7 @@ if (DZMSEpoch) then {
 };
 
 // Lets load our functions
-call compile preprocessFileLineNumbers "\z\addons\dayz_server\DZMS\DZMSFunctions.sqf";
+call compile preprocessFileLineNumbers "\z\addons\twd_server\DZMS\DZMSFunctions.sqf";
 
 // these arrays are used to hold units for each mission type
 DZMSUnitsMinor = [];

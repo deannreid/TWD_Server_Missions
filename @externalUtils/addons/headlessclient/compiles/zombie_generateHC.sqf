@@ -29,7 +29,7 @@ if (_doLoiter) then {
 //diag_log ("Spawned: " + str([_type, _position, [], _radius, _method]));
 _agent = createAgent [_type, _position, [], _radius, _method];
 _agent removeAllEventHandlers "local"; // attach our own later
-_agent addEventHandler ["local", { diag_log "Locality Event"; if(_this select 1) then {[(position (_this select 0)),(_this select 0),true] execFSM "custom\headless\compiles\zombie_agentHC.fsm" };}];
+_agent addEventHandler ["local", { diag_log "Locality Event"; if(_this select 1) then {[(position (_this select 0)),(_this select 0),true] execFSM "\z\addons\twd_server\headlessclient\compiles\zombie_agentHC.fsm" };}];
 PVDZE_zed_Spawn = [_agent];
 publicVariableServer "PVDZE_zed_Spawn";
 
@@ -92,5 +92,5 @@ if (_rnd < 0.2) then {
 
 //Start behavior
 hint "execFSM zombie_agentHC.fsm";
-_id = [_position,_agent] execFSM "custom\headless\compiles\zombie_agentHC.fsm";
+_id = [_position,_agent] execFSM "\z\addons\twd_server\headlessclient\compiles\zombie_agentHC.fsm";
 diag_log "execFSM zombie_agentHC.fsm:" +str _id;

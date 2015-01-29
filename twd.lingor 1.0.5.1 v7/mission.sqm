@@ -6,7 +6,8 @@ class Mission
 //Map Specific
 		//"chernarus",
 		//"namalsk",
-		"ibr_lingor",
+		//"ibr_lingor",
+		"tavi",
 
 //ArmA
 		"ca_modules_animals",
@@ -48,12 +49,26 @@ class Mission
 		"kpfswaysigns",
 		
 //Lingor
-		"ibr_plants",
+/*		"ibr_plants",
 		"ibr_hangars",
 		"ibr_airports",
 		"ibr_lcivilian_patch",
 		"chn_crocodile",
-
+*/
+// Origins Taviana
+		"ori_submarine",
+		"ori_flying_fortress",
+		"ori_pragacopter",
+		"origins_pack_cars",
+		"ori_scraptank",
+		"ori_bigraft",
+		"ori_smallraft",
+		"ori_titanic",
+		"ori_scrapbuggy",
+		"ori_vil_pack",
+		"vil_ori_autogyro",
+		"ori_dc3",
+		
 //Overwatch
 		"RH_m14",
 		"FHQ_Remington",
@@ -85,7 +100,7 @@ class Mission
 	{
 		"dayz_weapons",
 		"ca_modules_functions",
-		"ibr_lingor"
+		"tavi"
 	};
 	randomSeed=11171215;
 	class Intel
@@ -1464,11 +1479,11 @@ class Intro
 {
 	addOns[]=
 	{
-		"ibr_lingor"
+		"tavi"
 	};
 	addOnsAuto[]=
 	{
-		"ibr_lingor"
+		"tavi"
 	};
 	randomSeed=6913869;
 	class Intel
@@ -1486,11 +1501,11 @@ class OutroWin
 {
 	addOns[]=
 	{
-		"ibr_lingor"
+		"tavi"
 	};
 	addOnsAuto[]=
 	{
-		"ibr_lingor"
+		"tavi"
 	};
 	randomSeed=4081731;
 	class Intel
@@ -1508,11 +1523,11 @@ class OutroLoose
 {
 	addOns[]=
 	{
-		"ibr_lingor"
+		"tavi"
 	};
 	addOnsAuto[]=
 	{
-		"ibr_lingor"
+		"tavi"
 	};
 	randomSeed=4975929;
 	class Intel

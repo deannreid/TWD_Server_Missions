@@ -105,7 +105,8 @@ while {(!isNull _unitGroup) && {(_unitGroup getVariable ["GroupSize",-1]) > 0}} 
 	//_debugStartTime = diag_tickTime;
 	//_leader = leader _unitGroup;
 	_unitType = (_unitGroup getVariable ["unitType",""]);
-	_unitList = +(units _unitGroup);
+	_unitList = (units _unitGroup);
+	_leaderPos = getPosASL (leader _unitGroup);
 	
 	call {
 		//Zed hostility check
@@ -117,7 +118,7 @@ while {(!isNull _unitGroup) && {(_unitGroup getVariable ["GroupSize",-1]) > 0}} 
 						_unitGroup = _this;
 						if !(isNull _unitGroup) then {
 							_detectRange = if ((_unitGroup getVariable ["pursuitTime",0]) == 0) then {DZAI_zDetectRange} else {DZAI_zDetectRange/2};	//Reduce detection range of new zombies while searching for killer unit
-							_nearbyZeds = (leader _unitGroup) nearEntities ["zZombie_Base",_detectRange];
+							_nearbyZeds = _leaderPos nearEntities ["zZombie_Base",_detectRange];
 							_hostileZedsNew = [];
 							{
 								if (rating _x > -30000) then {
@@ -161,14 +162,17 @@ while {(!isNull _unitGroup) && {(_unitGroup getVariable ["GroupSize",-1]) > 0}} 
 		if (((vehicle _x) == _x) && {!(_x getVariable ["unconscious",false])} && {_x getVariable ["canCheckUnit",true]}) then {
 			_x setVariable ["canCheckUnit",false];
 			_nul = _x spawn {
+				if (!alive _this) exitWith {};
 				_unit = _this;
 				_loadout = _unit getVariable ["loadout",[[],[]]];
-				_currentMagazines = (magazines _unit);
-				for "_i" from 0 to ((count (_loadout select 0)) - 1) do {
-					if (((_unit ammo ((_loadout select 0) select _i)) == 0) || {!((((_loadout select 1) select _i) in _currentMagazines))}) then {
-						_unit removeMagazines ((_loadout select 1) select _i);
-						_unit addMagazine ((_loadout select 1) select _i);
-						if ((_i == 0) && {_unit getVariable ["extraMag",false]}) then {_unit addMagazine ((_loadout select 1) select _i)};
+				if (!isNil "_loadout") then {
+					_currentMagazines = (magazines _unit);
+					for "_i" from 0 to ((count (_loadout select 0)) - 1) do {
+						if (((_unit ammo ((_loadout select 0) select _i)) == 0) || {!((((_loadout select 1) select _i) in _currentMagazines))}) then {
+							_unit removeMagazines ((_loadout select 1) select _i);
+							_unit addMagazine ((_loadout select 1) select _i);
+							if ((_i == 0) && {_unit getVariable ["extraMag",false]}) then {_unit addMagazine ((_loadout select 1) select _i)};
+						};
 					};
 				};
 				

@@ -8,7 +8,7 @@
 /*																								 */
 /*************************************************************************************************/
 
-execVM "\z\addons\dayz_server\bankzones\banks.sqf";
+//execVM "\z\addons\dayz_server\bankzones\banks.sqf";
 
 "PVDZE_bank_Save" addPublicVariableEventHandler {
 	_playerObj = ((_this select 1) select 0);

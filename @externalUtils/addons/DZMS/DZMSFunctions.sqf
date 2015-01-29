@@ -4,21 +4,21 @@
 */
 
 diag_log text "[DZMS]: Loading ExecVM Functions.";
-DZMSMajTimer = "\z\addons\dayz_server\DZMS\Scripts\DZMSMajTimer.sqf";
-DZMSMinTimer = "\z\addons\dayz_server\DZMS\Scripts\DZMSMinTimer.sqf";
-DZMSMarkerLoop = "\z\addons\dayz_server\DZMS\Scripts\DZMSMarkerLoop.sqf";
+DZMSMajTimer = "\z\addons\twd_server\DZMS\Scripts\DZMSMajTimer.sqf";
+DZMSMinTimer = "\z\addons\twd_server\DZMS\Scripts\DZMSMinTimer.sqf";
+DZMSMarkerLoop = "\z\addons\twd_server\DZMS\Scripts\DZMSMarkerLoop.sqf";
 
-DZMSAddMajMarker = "\z\addons\dayz_server\DZMS\Scripts\DZMSAddMajMarker.sqf";
-DZMSAddMinMarker = "\z\addons\dayz_server\DZMS\Scripts\DZMSAddMinMarker.sqf";
+DZMSAddMajMarker = "\z\addons\twd_server\DZMS\Scripts\DZMSAddMajMarker.sqf";
+DZMSAddMinMarker = "\z\addons\twd_server\DZMS\Scripts\DZMSAddMinMarker.sqf";
 
-DZMSAIKilled = "\z\addons\dayz_server\DZMS\Scripts\DZMSAIKilled.sqf";
+DZMSAIKilled = "\z\addons\twd_server\DZMS\Scripts\DZMSAIKilled.sqf";
 
-DZMSBoxSetup = "\z\addons\dayz_server\DZMS\Scripts\DZMSBox.sqf";
-DZMSSaveVeh = "\z\addons\dayz_server\DZMS\Scripts\DZMSSaveToHive.sqf";
+DZMSBoxSetup = "\z\addons\twd_server\DZMS\Scripts\DZMSBox.sqf";
+DZMSSaveVeh = "\z\addons\twd_server\DZMS\Scripts\DZMSSaveToHive.sqf";
 
 diag_log text "[DZMS]: Loading Compiled Functions.";
 // compiled functions
-DZMSAISpawn = compile preprocessFileLineNumbers "\z\addons\dayz_server\DZMS\Scripts\DZMSAISpawn.sqf";
+DZMSAISpawn = compile preprocessFileLineNumbers "\z\addons\twd_server\DZMS\Scripts\DZMSAISpawn.sqf";
 
 diag_log text "[DZMS]: Loading All Other Functions.";
 //Attempts to find a mission location

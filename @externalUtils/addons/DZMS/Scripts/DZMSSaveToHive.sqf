@@ -25,7 +25,8 @@ if (DZMSEpoch) then {
 	_uid = _worldspace call dayz_objectUID3;
 
 	diag_log format["CHILD:308:%1:%2:%3:%4:%5:%6:%7:%8:%9:", dayZ_instance, _class, 0, 0, _worldspace, [], [], 1, _uid];
-
+	//_key call server_hiveWrite;
+	
 	//If the server is busy, it might not write on the first try
 	//Because of this, we loop it until it works
 	_done = false;
@@ -33,8 +34,8 @@ if (DZMSEpoch) then {
 	while {_retry < 10} do
 	{
 		sleep 0.3;
-		_key = format["CHILD:388:%1:", _uid];
-		_result = diag_log _key;
+		diag_log format["CHILD:388:%1:", _uid];
+		_result = _key call server_hiveReadWrite;
 		_outcome = _result select 0;
 		if (_outcome == "PASS") then {
 			_oid = _result select 1;
