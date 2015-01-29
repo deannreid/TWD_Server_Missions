@@ -18,7 +18,7 @@ _position = [_player,120,200,10,0,0,0] call BIS_fnc_findSafePos;
 
 _agent = createAgent [_type, _position, [], _radius, _method];
 _agent removeAllEventHandlers "local"; // attach our own later
-_id = _agent addEventHandler ["local", { diag_log "Locality Event"; if(_this select 1) then {[(position (_this select 0)),(_this select 0),true] execFSM "\z\addons\twd_server\headlessclient\compiles\zombie_agentHC.fsm" };}];
+_id = _agent addEventHandler ["local", { diag_log "Locality Event"; if(_this select 1) then {[(position (_this select 0)),(_this select 0),true] execFSM "custom\headless\compiles\zombie_agentHC.fsm" };}];
 
 if (_doLoiter) then {
 	//_agent setPosATL _position;
@@ -67,5 +67,5 @@ if (_rnd < 0.2) then {
 };
 	
 //Start behavior
-_id = [_position,_agent] execFSM "\z\addons\twd_server\headlessclient\compiles\zombie_agentHC.fsm";
+_id = [_position,_agent] execFSM "custom\headless\compiles\zombie_agentHC.fsm";
 hint "fsm id:" + str _id;

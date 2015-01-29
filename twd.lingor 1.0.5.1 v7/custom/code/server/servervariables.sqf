@@ -36,8 +36,7 @@
 	DZE_teleport = [500000,0,0,500000,500000];
 	DZE_AntiWallLimit = 3;
 	DZE_AsReMix_PLAYER_HUD = false;	
-	DZE_MissionLootTable = true;
-	
+
 	twdGUIMoney = true;
 	twdGUIBTFH = true;
 	twdGUIHardcore = false;
@@ -53,8 +52,7 @@ if (dayZ_instance == 11) then
 	dayz_minpos = -1; 
 	dayz_maxpos = 17000;	
 	dayz_spawnselection = 1;
-	DZE_LootSpawnTimer = 5;	
-	
+	DZE_LootSpawnTimer = 5;									
 	DZE_ForceNameTags = true;
 	DZE_PlayerZed   = false;
 	//DZE_vehicleAmmo	= 1;

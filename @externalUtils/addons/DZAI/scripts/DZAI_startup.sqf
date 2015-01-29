@@ -50,7 +50,10 @@ if (DZAI_verifyTables) then {
 
 //Create gamelogic to act as default trigger object if AI is spawned without trigger object specified (ie: for custom vehicle AI groups)
 _nul = [] spawn {
-	DZAI_defaultTrigger = createTrigger ["EmptyDetector",(getMarkerPos 'center')];
+	private ["_logicCenter"];
+	_logicCenter = createCenter sideLogic;
+	DZAI_logicGroup = createGroup _logicCenter;
+	DZAI_defaultTrigger = DZAI_logicGroup createUnit ["LOGIC", [0,0,0], [], 0, "NONE"];
 	DZAI_defaultTrigger setVariable ["isCleaning",true];
 	DZAI_defaultTrigger setVariable ["patrolDist",100];
 	DZAI_defaultTrigger setVariable ["equipType",1];
@@ -58,8 +61,7 @@ _nul = [] spawn {
 	DZAI_defaultTrigger setVariable ["maxUnits",[0,0]];
 	DZAI_defaultTrigger setVariable ["GroupSize",0];
 	DZAI_defaultTrigger setVariable ["initialized",true];
-	DZAI_defaultTrigger setTriggerText "Default Trigger Object";
-	if (DZAI_debugLevel > 1) then {diag_log format ["DZAI Extended Debug: Default trigger check result: %1",[!(isNull DZAI_defaultTrigger),(typeOf DZAI_defaultTrigger),(getPosASL DZAI_defaultTrigger)]]};
+	if (DZAI_debugLevel > 1) then {diag_log format ["DZAI Extended Debug: Default trigger gamelogic spawn check result: %1",(!isNull DZAI_logicGroup) && {(typeName DZAI_defaultTrigger) == "OBJECT"}]};
 };
 
 //Configure AI health system

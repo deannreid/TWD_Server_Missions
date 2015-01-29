@@ -1,13 +1,13 @@
 if (isServer) then {
 
-	private ["_veh","_mission","_player_present"];
+	private ["_mission","_veh"];
 	
 	_veh = _this select 0;
-
+	
 	if (count _this == 2) then {
 		_mission = _this select 1;
 	} else {
-		_mission = nil;
+		_mission = false;
 	};
 	
 	waitUntil { count crew _veh > 0};
@@ -19,24 +19,15 @@ if (isServer) then {
 			_veh setDamage 1;
 			_veh setVariable ["killedat", time];
 		};
-		sleep 1;
+		if ((_mission) && (clean_running_mission)) then {
+			_veh setDamage 1;
+			_veh setVariable ["killedat", time];
+			deleteVehicle _veh;
+		};
+		sleep 30;
 	};
 	
 	_veh setDamage 1;
 	_veh setVariable ["killedat", time];
-
-	waitUntil
-	{
-		sleep 1;
-		_player_present = false;
-		{
-			if((isPlayer _x) && (_x distance _veh <= 750)) exitWith { _player_present = true };
-		} count playableUnits;
-		(!_player_present)
-	};
-
-	{
-		deleteVehicle _x;
-	} count (crew _veh) + [_veh];
 
 };
