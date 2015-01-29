@@ -3,3 +3,7 @@ dayz_server/init/AH.sqf
 dayz_server/init/twdAHConfig.sqf
 dayz_server/init/twdAHCore.sqf
 *.pbo
+@externalUtils/addons/isantihack/AH.sqf
+@externalUtils/addons/isantihack/AHconfig.sqf
+@externalUtils/addons/vlantihack/twdAHConfig.sqf
+@externalUtils/addons/vlantihack/twdAHCore.sqf
