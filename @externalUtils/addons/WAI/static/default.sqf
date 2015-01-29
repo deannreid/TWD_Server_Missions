@@ -9,11 +9,12 @@ if(isServer) then {
 		[953.237,4486.48,0.001],			// Position
 		4,									// Number Of units
 		"Random",							// Skill level of unit (easy, medium, hard, extreme, Random)
-		"Random",							// Primary gun set number. "Random" for random weapon set
+		"Random",	or ["Random","at"],		// Primary gun set number and rocket launcher. "Random" for random weapon set, "at" for anti-tank, "aa" for anti-air launcher
 		4,									// Number of magazines
 		"Random",							// Backpack classname, use "Random" or classname here
 		"Random",							// Skin classname, use "Random" or classname here
-		"Random"							// Gearset number. "Random" for random gear set
+		"Random",							// Gearset number. "Random" for random gear set
+		"Bandit"							// AI Type, "Hero" or "Bandit".
 	] call spawn_group;
 
 	Place your custom group spawns below
@@ -34,6 +35,7 @@ if(isServer) then {
 		"M2StaticMG",						// Classname of turret
 		"easy",								// Skill level of unit (easy, medium, hard, extreme, Random)
 		"Bandit2_DZ",						// Skin classname, use "Random" or classname here
+		"Bandit",							// AI Type, "Hero" or "Bandit".
 		"Random",							// Primary gun set number. "Random" for random weapon set
 		2,									// Number of magazines
 		"Random",							// Backpack classname, use "Random" or classname here
@@ -56,7 +58,9 @@ if(isServer) then {
 		2000,								// Radius of patrol
 		10,									// Number of waypoints to give
 		"UH1H_DZ",							// Classname of vehicle (make sure it has driver and two gunners)
-		"Random"							// Skill level of units (easy, medium, hard, extreme, Random)
+		"Random",							// Skill level of units (easy, medium, hard, extreme, Random)
+		"Random",							// Skin classname, use "Random" or classname here
+		"Bandit"							// AI Type, "Hero" or "Bandit".
 	] spawn heli_patrol;
 
 	Place your heli patrols below
@@ -75,7 +79,9 @@ if(isServer) then {
 		200,								// Radius of patrol
 		10,									// Number of waypoints to give
 		"HMMWV_Armored",					// Classname of vehicle (make sure it has driver and gunner)
-		"Random"							// Skill level of units (easy, medium, hard, extreme, Random)
+		"Random",							// Skill level of units (easy, medium, hard, extreme, Random)
+		"Random",							// Skin classname, use "Random" or classname here
+		"Bandit"							// AI Type, "Hero" or "Bandit".
 	] spawn vehicle_patrol;
 
 	Place your vehicle patrols below this line
@@ -95,11 +101,12 @@ if(isServer) then {
 		"UH1H_DZ",							// Classname of chopper (Make sure it has 2 gunner seats!)
 		5,									// Number of units to be para dropped
 		"Random",							// Skill level of units (easy, medium, hard, extreme, Random)
-		"Random",							// Primary gun set number. "Random" for random weapon set.
+		"Random",	or ["Random","at"],		// Primary gun set number and rocket launcher. "Random" for random weapon set, "at" for anti-tank, "aa" for anti-air launcher
 		4,									// Number of magazines
 		"Random",							// Backpack classname, use "Random" or classname here
 		"Bandit2_DZ",						// Skin classname, use "Random" or classname here
 		"Random",							// Gearset number. "Random" for random gear set.
+		"Bandit",							// AI Type, "Hero" or "Bandit".
 		true								// true: Aircraft will stay at position and fight. false: Heli will leave if not under fire. 
 	] spawn heli_para;
 

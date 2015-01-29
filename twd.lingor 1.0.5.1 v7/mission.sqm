@@ -7,7 +7,7 @@ class Mission
 		//"chernarus",
 		//"namalsk",
 		"ibr_lingor",
-		//"tavi",
+
 //ArmA
 		"ca_modules_animals",
 		"cacharacters_pmc",
@@ -54,20 +54,6 @@ class Mission
 		"ibr_lcivilian_patch",
 		"chn_crocodile",
 
-// Origins Taviana
-/*		"ori_submarine",
-		"ori_flying_fortress",
-		"ori_pragacopter",
-		"origins_pack_cars",
-		"ori_scraptank",
-		"ori_bigraft",
-		"ori_smallraft",
-		"ori_titanic",
-		"ori_scrapbuggy",
-		"ori_vil_pack",
-		"vil_ori_autogyro",
-		"ori_dc3",*/
-		
 //Overwatch
 		"RH_m14",
 		"FHQ_Remington",

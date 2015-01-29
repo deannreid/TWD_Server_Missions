@@ -1,24 +1,25 @@
 if (isServer) then {
 
-	private ["_mission","_aipack","_class","_position2","_static","_position","_unitnumber","_skill","_gun","_mags","_backpack","_skin","_gear","_aiweapon","_aigear","_aiskin","_skillarray","_unitGroup","_weapon","_magazine","_weaponandmag","_gearmagazines","_geartools","_unit"];
+	private ["_ainum","_unarmed","_aicskill","_aitype","_mission","_aipack","_class","_position2","_static","_position","_unitnumber","_skill","_gun","_mags","_backpack","_skin","_gear","_aiweapon","_aigear","_aiskin","_skillarray","_unitGroup","_weapon","_magazine","_weaponandmag","_gearmagazines","_geartools","_unit"];
 
 	_position 			= _this select 0;
 	_class 				= _this select 1;
 	_skill 				= _this select 2;
 	_skin 				= _this select 3;
+	_aitype				= _this select 4;
 
 	if (ai_static_useweapon) then {
-		_gun 			= _this select 4;
-		_mags 			= _this select 5;
-		_backpack 		= _this select 6;
-		_gear 			= _this select 7;
+		_gun 			= _this select 5;
+		_mags 			= _this select 6;
+		_backpack 		= _this select 7;
+		_gear 			= _this select 8;
 	};
-
-	if ((count _this == 9) OR (count _this == 5)) then {
-		if (count _this == 9) then {_mission = _this select 8;};
-		if (count _this == 5) then {_mission = _this select 4;};
+	
+	if ((count _this == 10) OR (count _this == 6)) then {
+		if (count _this == 10) then {_mission = _this select 9;};
+		if (count _this == 6) then {_mission = _this select 5;};
 	} else {
-		_mission = false;
+		_mission = nil;
 	};
 
 	_position2 		= [];
@@ -26,21 +27,35 @@ if (isServer) then {
 	_aigear 		= [];
 	_aiskin 		= "";
 	_aipack 		= "";
-
-	_unitGroup 		= createGroup east;
 	_unitnumber 	= count _position;
 
+	if(_aitype == "Hero") then {
+		_unitGroup	= createGroup RESISTANCE;
+	} else {
+		_unitGroup	= createGroup EAST;
+	};
+	
 	if (!isServer) exitWith {};
 
 	{
 		_position2 = _x;
 
-		if (_skin == "Random") then {
-			_aiskin = ai_skin call BIS_fnc_selectRandom;
-		} else {
-			_aiskin = _skin
+		call {
+			if(_skin == "random") 	exitWith { _aiskin = ai_all_skin call BIS_fnc_selectRandom; };
+			if(_skin == "hero") 	exitWith { _aiskin = ai_hero_skin call BIS_fnc_selectRandom; };
+			if(_skin == "bandit") 	exitWith { _aiskin = ai_bandit_skin call BIS_fnc_selectRandom; };
+			if(_skin == "special") 	exitWith { _aiskin = ai_special_skin call BIS_fnc_selectRandom; };
+			_aiskin = _skin;
 		};
 		
+		if(typeName _aiskin == "ARRAY") then {
+			_aiskin = _aiskin call BIS_fnc_selectRandom;
+		};
+
+		call {
+			if (_class == "Random") exitWith { _class = ai_static_weapons call BIS_fnc_selectRandom; };
+		};
+
 		_unit = _unitGroup createUnit [_aiskin, [0,0,0], [], 10, "PRIVATE"];
 		
 		_static = createVehicle [_class, [(_position2 select 0),(_position2 select 1),(_position2 select 2)], [], 0, "CAN_COLLIDE"];
@@ -48,41 +63,60 @@ if (isServer) then {
 		_static setPos [(_position2 select 0),(_position2 select 1),(_position2 select 2)];
 		
 		[_unit] joinSilent _unitGroup;
+
+		call {
+			if(_aitype == "hero") 		exitWith { _unit setVariable ["Hero",true,true]; };
+			if(_aitype == "bandit") 	exitWith { _unit setVariable ["Bandit",true,true]; };
+			if(_aitype == "special") 	exitWith { _unit setVariable ["Special",true,true]; };
+		};
 		
 		_unit enableAI "TARGET";
 		_unit enableAI "AUTOTARGET";
 		_unit enableAI "MOVE";
 		_unit enableAI "ANIM";
 		_unit enableAI "FSM";
-		_unit setCombatMode ai_combatmode;
-		_unit setBehaviour ai_behaviour;
+		
+		if(_aitype == "Hero") then {
+			_unit setCombatMode ai_hero_combatmode;
+			_unit setBehaviour ai_hero_behaviour;
+		} else {
+			_unit setCombatMode ai_bandit_combatmode;
+			_unit setBehaviour ai_bandit_behaviour;
+		};
 		
 		removeAllWeapons _unit;
 		removeAllItems _unit;
 		
 		if (ai_static_useweapon) then {
-
-			switch (_gun) do {
-				case 0 : {_aiweapon = ai_wep_assault;};
-				case 1 : {_aiweapon = ai_wep_machine;};
-				case 2 : {_aiweapon = ai_wep_sniper;};
-				case "Random" : {_aiweapon = ai_wep_random call BIS_fnc_selectRandom;};
+		
+			call {
+				if(typeName(_gun) == "SCALAR") then {
+					if(_gun == 0) 			exitWith { _aiweapon = ai_wep_assault; };
+					if(_gun == 1) 			exitWith { _aiweapon = ai_wep_machine; };
+					if(_gun == 2) 			exitWith { _aiweapon = ai_wep_sniper; };
+				} else {
+					if(_gun == "random") 	exitWith { _aiweapon = ai_wep_random call BIS_fnc_selectRandom; };
+					if(_gun == "unarmed") 	exitWith { _unarmed = true; };
+				};
 			};
 
-			_weaponandmag 		= _aiweapon call BIS_fnc_selectRandom;
-			_weapon 			= _weaponandmag select 0;
-
-			_magazine = _weaponandmag select 1;
-				switch (_gear) do {
-				case 0 : {_aigear = ai_gear0;};
-				case 1 : {_aigear = ai_gear1;};
-				case "Random" : {_aigear = ai_gear_random call BIS_fnc_selectRandom;};
+			_weaponandmag 	= _aiweapon call BIS_fnc_selectRandom;
+			_weapon 		= _weaponandmag select 0;
+			_magazine 		= _weaponandmag select 1;
+			
+			call {
+				if(typeName(_gear) == "SCALAR") then {
+					if(_gear == 0) 			exitWith {_aigear = ai_gear0;};
+					if(_gear == 1) 			exitWith {_aigear = ai_gear1;};
+				} else {
+					if(_gear == "random") 	exitWith {_aigear = ai_gear_random call BIS_fnc_selectRandom;};
+				};
 			};
 
-			if (_backpack == "Random") then {
-				_aipack = ai_packs call BIS_fnc_selectRandom;
-			} else {
-				_aipack = _backpack
+			call {
+				if(_backpack == "random") 	exitWith { _aipack = ai_packs call BIS_fnc_selectRandom; };
+				if(_backpack == "none") 	exitWith { };
+				_aipack = _backpack;
 			};
 
 			_gearmagazines 		= _aigear select 0;
@@ -93,37 +127,39 @@ if (isServer) then {
 				_unit addMagazine _magazine;
 			};
 
-			_unit addBackpack _aipack;
+			if(_backpack != "none") then {
+				_unit addBackpack _aipack;
+			};
 
 			{
 				_unit addMagazine _x
-			} forEach _gearmagazines;
+			} count _gearmagazines;
 
 			{
 				_unit addweapon _x
-			} forEach _geartools;
+			} count _geartools;
 		};
 		
 		if (ai_static_skills) then {
 
 			{
 				_unit setSkill [(_x select 0),(_x select 1)]
-			} forEach ai_static_array;
+			} count ai_static_array;
 
 		} else {
 
-			switch (_skill) do {
-				case "easy"		: { _aicskill = ai_skill_easy; };
-				case "medium" 	: { _aicskill = ai_skill_medium; };
-				case "hard" 	: { _aicskill = ai_skill_hard; };
-				case "extreme" 	: { _aicskill = ai_skill_extreme; };
-				case "Random" 	: { _aicskill = ai_skill_random call BIS_fnc_selectRandom; };
-				default { _aicskill = ai_skill_random call BIS_fnc_selectRandom; };
+			call {
+				if(_skill == "easy") 		exitWith { _aicskill = ai_skill_easy; };
+				if(_skill == "medium") 		exitWith { _aicskill = ai_skill_medium; };
+				if(_skill == "hard") 		exitWith { _aicskill = ai_skill_hard; };
+				if(_skill == "extreme") 	exitWith { _aicskill = ai_skill_extreme; };
+				if(_skill == "random") 		exitWith { _aicskill = ai_skill_random call BIS_fnc_selectRandom; };
+				_aicskill = ai_skill_random call BIS_fnc_selectRandom;
 			};
 
 			{
 				_unit setSkill [(_x select 0),(_x select 1)]
-			} foreach _aicskill;
+			} count _aicskill;
 		};
 		
 		ai_emplacement_units = (ai_emplacement_units + 1);
@@ -137,12 +173,15 @@ if (isServer) then {
 		
 		_unit moveingunner _static;
 
-		if (_mission) then {
-			_unit setVariable ["missionclean", "static"];
-			[_static, True] spawn vehicle_monitor;
-		} else {
-			[_static] spawn vehicle_monitor;
+		if (!isNil "_mission") then {
+			_ainum = (wai_mission_data select _mission) select 0;
+			wai_mission_data select _mission set [0, (_ainum + 1)];
+			_static setVariable ["missionclean","static"];
+			_static setVariable ["mission",_mission];
+			_unit setVariable ["mission",_mission];
 		};
+
+		[_static] spawn vehicle_monitor;
 
 	} forEach _position;
 
@@ -150,4 +189,5 @@ if (isServer) then {
 
 	diag_log format ["WAI: Spawned in %1 %2",_unitnumber,_class];
 
+	_unitGroup
 };

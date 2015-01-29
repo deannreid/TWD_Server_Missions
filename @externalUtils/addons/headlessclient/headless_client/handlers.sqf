@@ -1,1 +1,1 @@
-call compile preprocessFileLineNumbers "custom\headless\headless_client\pv_hcspawnstuff.sqf";
+call compile preprocessFileLineNumbers "\z\addons\twd_server\headlessclient\headless_client\pv_hcspawnstuff.sqf";

@@ -1,0 +1,23 @@
+if (dayZ_instance == 11) then {	
+execVM "\z\addons\twd_server\buildings\11\balota.sqf";
+execVM "\z\addons\twd_server\buildings\11\bank.sqf";
+execVM "\z\addons\twd_server\buildings\11\bash.sqf";
+execVM "\z\addons\twd_server\buildings\11\camprocket.sqf";
+execVM "\z\addons\twd_server\buildings\11\dean1.sqf";
+execVM "\z\addons\twd_server\buildings\11\fortstary.sqf";
+execVM "\z\addons\twd_server\buildings\11\grishino.sqf";
+execVM "\z\addons\twd_server\buildings\11\herotrader.sqf";
+execVM "\z\addons\twd_server\buildings\11\highandcow.sqf";
+execVM "\z\addons\twd_server\buildings\11\klen.sqf";
+execVM "\z\addons\twd_server\buildings\11\krasno.sqf";
+execVM "\z\addons\twd_server\buildings\11\krutoy.sqf";
+execVM "\z\addons\twd_server\buildings\11\neaf.sqf";
+execVM "\z\addons\twd_server\buildings\11\qdoba.sqf";
+//execVM "\z\addons\twd_server\buildings\11\qdobacrates.sqf";
+execVM "\z\addons\twd_server\buildings\11\stary.sqf";
+execVM "\z\addons\twd_server\buildings\11\skalisty.sqf";
+execVM "\z\addons\twd_server\buildings\11\vybor.sqf";
+execVM "\z\addons\twd_server\buildings\11\zelenogorsk.sqf";
+execVM "\z\addons\twd_server\buildings\11\mine.sqf";
+execVM "\z\addons\twd_server\buildings\11\island.sqf";
+execVM "\z\addons\twd_server\buildings\11\ducks.sqf";};
