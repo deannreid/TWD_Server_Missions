@@ -28,11 +28,14 @@ aiKills = 1;
 diagRadio = 1;
 diagHit = 1;
 
+#include "custom\custom_loot\Configs\CfgBuildingLoot.hpp"
+#include "custom\custom_loot\Configs\CfgLoot.hpp"
+#include "custom\custom_loot\Configs\CfgLootSmall.hpp"
+
 #include "custom\bank\Trader_Items\cfgServerTrader.hpp"
 #include "custom\hpp\defines.hpp"
 #include "custom\hpp\ebaydefines.hpp"
 #include "custom\hpp\ebayicons.hpp"
-#include "custom\custom_loot\Configs\CfgBuildingLoot.hpp"
 
 class RscTitles
 { 
