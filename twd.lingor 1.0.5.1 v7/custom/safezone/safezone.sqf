@@ -180,8 +180,8 @@ if (isNil 'inSafezone') then {inSafezone = false;};
 			};
 		};
 		
-		if (isNil 'gmdadmin') then {gmdadmin = 0;};
-		if (gmdadmin == 1) exitWith {};
+		if (isNil 'twdadmin') then {twdadmin = 0;};
+		if (twdadmin == 1) exitWith {};
 		player allowDamage true;
 		fnc_usec_damageHandler = compile preprocessFileLineNumbers '\z\addons\dayz_code\compile\fn_damageHandler.sqf';
 		player removeAllEventHandlers 'HandleDamage';
