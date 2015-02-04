@@ -11,25 +11,6 @@ USE_SIGNS = false;		// use this to build signs around the SafeZone
 LOG_EnterLeave = true;	// This will log to your .rpt when a player enters or leaves a SafeZone! (only works with infiSTAR.de Admintools / AntiHack)
 /* You can use USE_CANBUILD or/and (works together) the custom positions below (USE_POSITIONS) [position or zone,radius] */
 
-//if (dayZ_instance == 7) then 
-//{
-	_infiSZ =
-	[ 
-		[[1461.24,1449.72],75,true],
-		[[1411.55,1879.96],100,true],
-		[[7601,2946.23],75,true],
-		[[2938.84,6728],75,true],
-		[[7027.19,7104.2],100,true],
-		[[4210.36,1481.21],75,true],
-		[[3852.18,2241.18],50,true],
-		[[5487.95,4386.33],50,true],
-		[[3921.83,5245.13],50,true],
-		[[937.818,9207.2],30,true]
-	];
-//};
-
-if (dayZ_instance == 11) then 
-{
 	_infiSZ =
 	[
 		[[6325.6772,7807.7412],200,true],
@@ -43,7 +24,6 @@ if (dayZ_instance == 11) then
 		[[5068.6636,9723.4248],100,true],
 		[[5054.0127,9736.8398],100,true]
 	];
-};
 
 	if (isServer) exitWith
 {

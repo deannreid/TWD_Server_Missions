@@ -265,6 +265,14 @@ dayz_resetSelfActions = {
 	s_player_refuelSub_crtl = -1;
 	s_player_refuelActionsSub = [];
 	s_fast_med_dialog1 = -1;
+	mv22_fold = -1;
+    mv22_unfold = -1;
+    mv22_open = -1;
+    mv22_close = -1;
+    suv_close = -1;
+    suv_open = -1;
+	s_player_sirens_on = -1;
+	s_player_sirens_off = -1;
 };
 call dayz_resetSelfActions;
 
