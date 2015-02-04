@@ -1,23 +1,3 @@
-/*
-_vehicle_23090000 = objNull;
-if (true) then
-{
-  _this = createVehicle ["SmallTable", [6776.0156, 2491.3271, 0.41503948], [], 0, "CAN_COLLIDE"];
-  _vehicle_23090000 = _this;
-  _this setDir -50.98856;
-  _this setPos [6776.0156, 2491.3271, 0.41503948];
-};
-
-_vehicle_230100000 = objNull;
-if (true) then
-{
-  _this = createVehicle ["Laptop_EP1", [6776.0112, 2491.3359, 1.2162828], [], 0, "CAN_COLLIDE"];
-  _vehicle_230100000 = _this;
-  _this setDir 131.15681;
-  _this setPos [6776.0112, 2491.3359, 1.2162828];
-};
-*/
-
 _unit_2000 = objNull;
 if (true) then
 {
