@@ -1,5 +1,5 @@
-[] execVM "\z\addons\twd_server\init\AH.sqf";
-[] execVM "\z\addons\twd_server\init\twdAHCore.sqf";
+[] execVM "\z\addons\dayz_server\init\AH.sqf";
+[] execVM "\z\addons\dayz_server\init\twdAHCore.sqf";
 
 //[] execVM "\z\addons\csat_server\csat.sqf";
 waituntil {!isnil "bis_fnc_init"};
