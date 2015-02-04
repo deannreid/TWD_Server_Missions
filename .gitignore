@@ -7,3 +7,4 @@ dayz_server/init/twdAHCore.sqf
 @externalUtils/addons/isantihack/AHconfig.sqf
 @externalUtils/addons/vlantihack/twdAHConfig.sqf
 @externalUtils/addons/vlantihack/twdAHCore.sqf
+*.bak

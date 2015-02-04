@@ -64,24 +64,28 @@ _marker_7 = _this;
 // Kamenka
 _sp5  = createMarker ["_sp5 ", [2033.0038, 2243.4602]];
 _sp5  setMarkerType "n_maint";
+_sp5  setMarkerSize [2, 2];
 _sp5  setMarkerText "Service Station";
 _sp5  = _sp5 ;
 
 // Cherno - West
 _sp12  = createMarker ["_sp12 ", [5834.4834, 2187.8044]];
 _sp12  setMarkerType "n_maint";
+_sp12  setMarkerSize [2, 2];
 _sp12  setMarkerText "Service Station";
 _sp12  = _sp12 ;
 
 // Cherno - North
 _sp4  = createMarker ["_sp4 ", [6680.3447, 2982.3054]];
 _sp4  setMarkerType "n_maint";
+_sp4  setMarkerSize [2, 2];
 _sp4  setMarkerText "Service Station";
 _sp4  = _sp4 ;
 
 // Elektro - West
 _sp3  = createMarker ["_sp3 ", [9509.1768, 1992.4501]];
 _sp3  setMarkerType "n_maint";
+_sp3  setMarkerSize [2, 2];
 _sp3  setMarkerText "Service Station";
 _sp3  = _sp3 ;
 
@@ -89,17 +93,20 @@ _sp3  = _sp3 ;
 _sp2  = createMarker ["_sp2 ", [13383.212, 6625.6797]];
 _sp2  setMarkerType "n_maint";
 _sp2  setMarkerSize [2, 2];
+_sp2  setMarkerText "Service Station";
 _sp2  = _sp2 ;
 
 // Staroye
 _sp20  = createMarker ["_sp20 ", [10166.833, 5301.48]];
 _sp20  setMarkerType "n_maint";
 _sp20  setMarkerSize [2, 2];
+_sp20  setMarkerText "Service Station";
 _sp20  = _sp20 ;
 
 // Berezino - North East
 _sp1  = createMarker ["_sp1 ", [13002.69, 10099.583]];
 _sp1  setMarkerType "n_maint";
+_sp1  setMarkerSize [2, 2];
 _sp1  setMarkerText "Service Station";
 _sp1  = _sp1 ;
 
@@ -107,17 +114,20 @@ _sp1  = _sp1 ;
 _sp15  = createMarker ["_sp15 ", [10452.294, 8841.7793]];
 _sp15  setMarkerType "n_maint";
 _sp15  setMarkerSize [2, 2];
+_sp15  setMarkerText "Service Station";
 _sp15  = _sp15 ;
 
 // Grishino
 _sp14  = createMarker ["_sp14 ", [5845.6499, 10099.621]];
 _sp14  setMarkerType "n_maint";
 _sp14  setMarkerSize [2, 2];
+_sp14  setMarkerText "Service Station";
 _sp14  = _sp14 ;
 
 // Vybor
 _sp10  = createMarker ["_sp10 ", [3647.1245, 8992.4834]];
 _sp10  setMarkerType "n_maint";
+_sp10  setMarkerSize [2, 2];
 _sp10  setMarkerText "Service Station";
 _sp10  = _sp10 ;
 
@@ -125,12 +135,14 @@ _sp10  = _sp10 ;
 _sp9  = createMarker ["_sp9 ", [2990.2378, 7451.3711]];
 _sp9  setMarkerType "n_maint";
 _sp9  setMarkerSize [2, 2];
+_sp9  setMarkerText "Service Station";
 _sp9  = _sp9 ;
 
 // Novy Sobor
 _sp16  = createMarker ["_sp16 ", [7244.3687, 7659.0625]];
 _sp16  setMarkerType "n_maint";
 _sp16  setMarkerSize [2, 2];
+_sp16  setMarkerText "Service Station";
 _sp16  = _sp16 ;
 	
 diag_log "Chernarus Markers Added";

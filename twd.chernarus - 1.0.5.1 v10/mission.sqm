@@ -1233,230 +1233,136 @@ class Mission
 	};
 	class Markers
 	{
-		items=31;
+		items=18;
 		class Item0
 		{
-			position[]={4078.8516,30.836605,4757.7241};
+			position[]={7839.6055,381.33774,8414.7324};
 			name="center";
 			type="Empty";
 		};
 		class Item1
 		{
-			position[]={4989.1367,1.1281254,-4178.9229};
+			position[]={-7245.377,365.98782,19535.367};
 			name="respawn_west";
 			type="Empty";
 		};
 		class Item2
 		{
-			position[]={2085.0869,12.754358,5500.8735};
+			position[]={4932.3345,0.39950246,1989.1094};
 			name="spawn0";
 			type="Empty";
 		};
 		class Item3
 		{
-			position[]={1355.4587,13.228598,315.10571};
+			position[]={2236.0391,0.63119155,1923.3735};
 			name="spawn1";
 			type="Empty";
 		};
 		class Item4
 		{
-			position[]={4549.9399,2.847357,912.68982};
+			position[]={8738.1328,0.45720705,2122.1082};
 			name="spawn2";
 			type="Empty";
 		};
 		class Item5
 		{
-			position[]={8880.2793,4.9778252,1703.156};
+			position[]={10909.267,0.57597214,2422.3096};
 			name="spawn3";
 			type="Empty";
 		};
 		class Item6
 		{
-			position[]={579.80536,15.394942,5547.1782};
+			position[]={13510.764,0.44504455,5249.3027};
 			name="spawn4";
 			type="Empty";
 		};
 		class Item7
 		{
-			position[]={3249.5935,6.3452759,2555.6763};
-			name="spawn5";
-			type="Empty";
+			position[]={6326.4805,304.99265,7809.4888};
+			name="Tradercitystary";
+			text="Trader City Stary";
+			type="mil_circle";
+			colorName="ColorBlack";
 		};
 		class Item8
 		{
-			position[]={6143.4604,6.6867952,2753.012};
-			name="spawn6";
-			type="Empty";
+			position[]={4361.4937,3,2259.9526};
+			name="wholesaleSouth";
+			text="Wholesaler";
+			type="mil_dot";
+			colorName="ColorBlack";
 		};
 		class Item9
 		{
-			position[]={1268.5149,14.039586,2857.6775};
-			name="spawn7";
-			type="Empty";
+			position[]={13532.614,3.0083523,6355.9497};
+			name="boatTraderEast";
+			text="Wholesaler";
+			type="mil_dot";
+			colorName="ColorBlack";
 		};
 		class Item10
 		{
-			position[]={8295.4883,8.9126549,8667.2041};
-			name="spawn8";
-			type="Empty";
+			position[]={7989.3354,0.30462033,2900.9946};
+			name="BoatDealerSouth";
+			text="Boat Dealer";
+			type="mil_dot";
+			colorName="ColorBlack";
 		};
 		class Item11
 		{
-			position[]={9071.9766,14.249757,7322.6162};
-			name="spawn9";
-			type="Empty";
+			position[]={12060.471,158.85699,12638.533};
+			name="AirVehicles";
+			text="Aircraft Dealer";
+			type="Airport";
+			colorName="ColorGreen";
 		};
 		class Item12
 		{
-			position[]={6898.7329,6.2468476,3970.9077};
-			name="spawn10";
-			type="Empty";
+			position[]={1606.6443,289.70795,7803.5156};
+			name="BanditDen";
+			text="Bandit Camp";
+			type="mil_dot";
+			colorName="ColorRed";
 		};
 		class Item13
 		{
-			position[]={6011.7676,13.080506,6626.9902};
-			name="RaceTrack";
-			text="Rommelo's Raceway";
-			type="mil_dot";
+			position[]={11447.91,317.27109,11364.536};
+			name="Klen";
+			text="Trader City Klen";
+			type="mil_circle";
 			colorName="ColorGreen";
-			fillName="Border";
-			drawBorder=1;
 		};
 		class Item14
 		{
-			position[]={7027.19,11.873646,7104.2};
-			name="PlaneVendor";
-			text="AWOL's Aircrafts";
+			position[]={13441.16,1.1406164,5429.3013};
+			name="BoatDealerEast";
+			text="Boat Dealer";
 			type="mil_dot";
-			colorName="ColorGreen";
+			colorName="ColorBlack";
 		};
 		class Item15
 		{
-			position[]={3404.16,14.806208,8245.95};
-			name="Wholesale";
-			text="Wholesaler Blivion";
-			type="mil_dot";
+			position[]={4064.2258,365.13501,11665.938};
+			name="TradercityBash";
+			text="Trader City Bash";
+			type="mil_circle";
 			colorName="ColorBlack";
 		};
 		class Item16
 		{
-			position[]={1412.7,235.08131,1879.12};
-			name="GeneralSupplies";
-			text="Drassen Good's n' Gun's";
-			type="mil_dot";
-			colorName="ColorGreen";
-		};
-		class Item17
-		{
-			position[]={7601.0,46.366299,2946.23};
-			name="GeneralSupplies";
-			text="Mongo's Flee Market";
-			type="mil_box";
-			colorName="ColorGreen";
-		};
-		class Item18
-		{
-			position[]={4138.7852,23.635477,1492.9089};
-			name="Choppers";
-			text="Chip's Choppers";
-			type="mil_dot";
-			colorName="ColorGreen";
-		};
-		class Item19
-		{
-			position[]={2938.84,10.998494,6728.0};
-			name="GeneralSupploes";
-			text="Crazy Eddie's Traders";
-			type="mil_dot";
-			colorName="ColorGreen";
-		};
-		class Item20
-		{
-			position[]={8357.583,23.403641,8740.0039};
-			name="Wholesaler";
-			text="Wholesaler Clive";
-			type="mil_dot";
-			colorName="ColorBlack";
-		};
-		class Item21
-		{
-			position[]={1461.24,2.59748,1449.72};
-			name="Wholesalers";
-			text="Wholesaler Santos";
-			type="mil_dot";
-			colorName="ColorBlack";
-		};
-		class Item22
-		{
-			position[]={1724.5925,42.225693,4137.6128};
-			name="DirtTrackVendor";
-			text="Adventure 4x4";
-			type="mil_dot";
-			colorName="ColorGreen";
-		};
-		class Item23
-		{
-			position[]={3921.837,4.2447982,5245.13};
-			name="BoatVendor";
-			text="Big Bob's Boats";
-			type="mil_triangle";
-			colorName="ColorGreen";
-		};
-		class Item24
-		{
-			position[]={5487.95,2.2458067,4386.33};
-			name="BoatVendor1";
-			text="Juan's Tour Boats";
-			type="mil_triangle";
-			colorName="ColorGreen";
-		};
-		class Item25
-		{
-			position[]={3852.18,2.41427,2241.18};
-			name="BoatVendor2";
-			text="Jd's Armed boats";
-			type="mil_triangle";
-			colorName="ColorGreen";
-		};
-		class Item26
-		{
-			position[]={6673.0313,52.049561,6355.9775};
-			name="BagVendor1";
-			text="Stella's Stop";
-			type="mil_dot";
-			colorName="ColorGreen";
-		};
-		class Item27
-		{
-			position[]={4238.8086,48.201847,4842.0874};
-			name="BagVendor2";
-			text="Samish Shop";
-			type="mil_dot";
-			colorName="ColorGreen";
-		};
-		class Item28
-		{
-			position[]={4099.8286,16.890327,9242.6455};
-			name="BanditTrader";
-			text="Bandit Trader";
-			type="mil_dot";
-			colorName="ColorRed";
-		};
-		class Item29
-		{
-			position[]={4139.7085,23.635477,1465.8002};
+			position[]={12944.227,210.19823,12766.889};
 			name="HeroTrader";
-			text="Hero Trader";
+			text="Hero Camp";
 			type="mil_dot";
 			colorName="ColorBlue";
 		};
-		class Item30
+	    class Item17
 		{
-			position[]={937.935,6.87288,9207.35};
-			name="PrisonZone";
-			text="Vox Loo Penitentiary";
-			type="mil_circle";
-			colorName="ColorRed";
+			position[]={5054.0127,14.798248,9736.8398};
+			name="AirVehicles";
+			text="Aircraft Dealer";
+			type="mil_dot";
+			colorName="ColorGreen";
 		};
 	};
 };
