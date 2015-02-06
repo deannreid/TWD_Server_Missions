@@ -16,7 +16,7 @@
 	dayz_zedsAttackVehicles = false;
 	dayz_maxLocalZombies = 60;
 	dayz_maxGlobalZombiesInit = 10;
-	dayz_maxGlobalZombiesIncrease = 3;
+	dayz_maxGlobalZombiesIncrease = 10;
 	dayz_maxZeds = 3000;
 	DayZ_UseSteamID = true;	
 
