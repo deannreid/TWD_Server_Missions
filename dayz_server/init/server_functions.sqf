@@ -920,4 +920,5 @@ server_logUnlockLockEvent = {
 	};
 };
 
+execVM "\z\addons\dayz_server\buildings\init.sqf";
 execVM "\z\addons\dayz_server\init\broadcaster.sqf";

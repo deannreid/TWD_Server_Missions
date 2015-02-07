@@ -1365,7 +1365,157 @@ class Mission
 			colorName="ColorGreen";
 		};
 	};
+	class Sensors
+	{
+		items=9;
+		class Item0
+		{
+			position[]={4053.8501,364.76645,11668.645};
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonebash";
+			expCond="(player distance zonebash) < 75;";
+			expActiv="TitleText[""Now entering trader city Bash"",""PLAIN DOWN""]; canbuild = false;";
+			expDesactiv="TitleText[""Now leaving trader city Bash"",""PLAIN DOWN""]; canbuild = true;";
+			class Effects
+			{
+				soundDet="arabian_market_1";
+			};
+		};
+		class Item1
+		{
+			position[]={11463.747,317.3078,11349.89};
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zoneklen";
+			expCond="(player distance zoneklen) < 75;";
+			expActiv="TitleText[""Now entering trader city Klen"",""PLAIN DOWN""]; canbuild = false;";
+			expDesactiv="TitleText[""Now leaving trader city Klen"",""PLAIN DOWN""]; canbuild = true;";
+			class Effects
+			{
+				soundDet="arabian_market_1";
+			};
+		};
+		class Item2
+		{
+			position[]={6325.6772,304.99033,7807.7412}; 
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonestary";
+			expCond="(player distance zonestary) < 75;";
+			expActiv="TitleText[""Now entering trader city Stary"",""PLAIN DOWN""]; canbuild = false;";
+			expDesactiv="TitleText[""Now leaving trader city Stary"",""PLAIN DOWN""]; canbuild = true;";
+			class Effects
+			{
+				soundDet="arabian_market_1";
+			};
+		};
+        class Item3
+		{
+			position[]={4053.8501,364.76645,11668.645};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonebash_safezone";
+			expCond="(player distance zonebash_safezone) < 150;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{
+				
+			};
+		};
+		class Item4
+		{
+			position[]={11463.747,317.3078,11349.89};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zoneklen_safezone";
+			expCond="(player distance zoneklen_safezone) < 150;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{
+				
+			};
+		};
+		class Item5
+		{
+			position[]={6325.6772,304.99033,7807.7412};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonestary_safezone";
+			expCond="(player distance zonestary_safezone) < 150;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{
+				
+			};
+        };
+		class Item6
+		{
+			position[]={1606.6443,289.70795,7803.5156};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="bandit_safezone";
+			expCond="(player distance bandit_safezone) < 150;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{
+				
+			};
+        };
+		class Item7
+		{
+			position[]={12944.227,210.19823,12766.889};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Hero_safezone";
+			expCond="(player distance Hero_safezone) < 150;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{
+				
+			};
+        };
+		class Item8
+		{
+			position[]={12060.471,158.85699,12638.533};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Aircraft_safezone";
+			expCond="(player distance Aircraft_safezone) < 100;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{
+				
+			};
+        };		
+		
+	};
 };
+
 class Intro
 {
 	addOns[]=
