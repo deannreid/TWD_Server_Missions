@@ -1,3 +1,4 @@
+execVM "custom\code\modnotinstalled.sqf";
 	execVM "custom\safezone\safezone.sqf";
 diag_log "Safezones Loaded";
 	execVM "custom\code\killmsg.sqf";
@@ -11,3 +12,4 @@ diag_log "Service Points Loaded";
 	execVM "custom\markers\init.sqf";
 diag_log "Markers Loaded";
 	execVM "custom\aiclient\init.sqf";
+	

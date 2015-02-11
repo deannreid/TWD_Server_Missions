@@ -46,6 +46,7 @@ diag_log "==============================================";
 		{
 			_serverMonitor = 	[] execVM "\z\addons\dayz_code\system\server_monitor.sqf";
 			execVM "custom\code\server\server.sqf";
+			call compile preprocessFileLineNumbers "admin\NATCore.sqf";
 		};
 	diag_log "Finished Loading Server Monitor & Server Executions!";
 diag_log "==============================================";
