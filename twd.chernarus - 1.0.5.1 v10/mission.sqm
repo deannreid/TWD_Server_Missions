@@ -1233,7 +1233,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=18;
+		items=21;
 		class Item0
 		{
 			position[]={7839.6055,381.33774,8414.7324};
@@ -1282,7 +1282,7 @@ class Mission
 			name="Tradercitystary";
 			text="Trader City Stary";
 			type="mil_circle";
-			colorName="ColorBlack";
+			colorName="ColorGreen";
 		};
 		class Item8
 		{
@@ -1310,7 +1310,7 @@ class Mission
 		};
 		class Item11
 		{
-			position[]={12060.471,158.85699,12638.533};
+			position[]={12429.5,158.85699,12564};
 			name="AirVehicles";
 			text="Aircraft Dealer";
 			type="Airport";
@@ -1346,7 +1346,7 @@ class Mission
 			name="TradercityBash";
 			text="Trader City Bash";
 			type="mil_circle";
-			colorName="ColorBlack";
+			colorName="ColorGreen";
 		};
 		class Item16
 		{
@@ -1358,10 +1358,33 @@ class Mission
 		};
 	    class Item17
 		{
-			position[]={5054.0127,14.798248,9736.8398};
+			position[]={4486.37,14.798248,10313.5};
 			name="AirVehicles";
 			text="Aircraft Dealer";
+			type="Airport";
+			colorName="ColorGreen";
+		};
+		class Item18
+		{
+			position[]={13394.9,14.798248,2869.44};
+			name="BoatDealerSkalisty";
+			text="Skalisty Boats";
 			type="mil_dot";
+			colorName="ColorBlack";
+		};
+		class Item19
+		{
+			position[]={14040.3,14.798248,2806.62};
+			name="BanditDen";
+			text="Skalisty Bandits";
+			type="mil_dot";
+			colorName="ColorRed";
+		};
+		class Item20
+		{
+			position[]={6412.1,14.798248,7744.06};
+			name="AirVehicles";
+			type="Airport";
 			colorName="ColorGreen";
 		};
 	};
