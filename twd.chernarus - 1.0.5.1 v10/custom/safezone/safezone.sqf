@@ -13,16 +13,20 @@ LOG_EnterLeave = true;	// This will log to your .rpt when a player enters or lea
 
 	_infiSZ =
 	[
-		[[6325.6772,7807.7412],200,true],
-		[[4063.4226,11664.19],200,true],
-		[[11447.472,11364.504],200,true],
-		[[1606.6443,7803.5156],150,true],
-		[[12944.227,12766.889],150,true],
-		[[12060.471,12638.533],100,true],
-		[[4361.4937,2259.9526],100,true],	
-		[[5056.7383,9740.4668],100,true],
-		[[5068.6636,9723.4248],100,true],
-		[[5054.0127,9736.8398],100,true]
+		[[14040.3,2806.62],50,true], //bandit skalisty island
+		[[13394.9,2869.44],50,true], //boat trader skalisty island
+		[[13468.1,5438.72],25,true], //east boat dealer
+		[[7997.18,2898.9],25,true], //south boat dealer
+		[[4378.01,2244],60,true], //south wholesaler
+		[[13532.4,6356.92],60,true], //east wholesaler
+		[[4486.37,10313.5],80,true], //North West Airtrader
+		[[4033.34,11660.9],125,true], //trader city bash
+		[[12429.5,12564],125,true], //North East Airtrader
+		[[12895.5,12759],130,true], //Hero Trader
+		[[11449.7,11358.5],200,true], //Klen Trader
+		[[6304.23,7835.31],120,true], //Stary Trader 1
+		[[6412.1,7744.06],50,true], //Stary Trader 2
+		[[1619.7,7797.66],150,true] //Bandit Camp 
 	];
 
 	if (isServer) exitWith
