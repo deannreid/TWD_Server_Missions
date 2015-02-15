@@ -1384,6 +1384,7 @@ class Mission
 		{
 			position[]={6412.1,14.798248,7744.06};
 			name="AirVehicles";
+			text="Heliport";
 			type="Airport";
 			colorName="ColorGreen";
 		};
