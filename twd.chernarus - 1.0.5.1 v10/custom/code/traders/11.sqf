@@ -8,7 +8,7 @@ serverTraders = ["RU_Commander","Assistant","RU_Functionary1","Dr_Annie_Baker_EP
 //------------------------------------------------------------------------------------------------
 // Hero Trader
 menu_RU_Functionary1 = [
-	[["Civilian Airplanes",509],["Civilian Helicopters",500],["Clothes",309],["Helicopter Armed",800],["Military Armed",801],["Trucks Armed",803],["Assualt Rifle Ammo",600],["Assualt Rifle Variants",610],["TAR Variants",603],["DMR Variants",611],["ACR Variants",617],["ACR SD Variants",618],["AK Variants",619],["G3 Variants",620],["HK416/417 Variants",621],["LMG Variants",622],["SMG Variants",626],["SCAR Variants",623],["SCAR SD Variants",624],["Sniper Variants",627],["Sniper Ammo",614],["Advanced Sidearms",625],["Handgun SMG SingleShot Ammo",612],["Single Shot Variants",628],["Sidearm Ammo",601],["Sidearms",602],["LMG Ammo",613],["Standard Snipers",606],["Money Money Money!",700]],
+	[["Clothes",309],["Helicopter Armed",805],["Military Armed",801],["Trucks Armed",803],["Assualt Rifle Ammo",600],["Assualt Rifle Variants",610],["TAR Variants",603],["DMR Variants",611],["ACR Variants",617],["ACR SD Variants",618],["AK Variants",619],["G3 Variants",620],["HK416/417 Variants",621],["LMG Variants",622],["SMG Variants",626],["SCAR Variants",623],["SCAR SD Variants",624],["Sniper Variants",627],["Sniper Ammo",614],["Advanced Sidearms",625],["Handgun SMG SingleShot Ammo",612],["Single Shot Variants",628],["Sidearm Ammo",601],["Sidearms",602],["LMG Ammo",613],["Standard Snipers",606],["Money Money Money!",700]],
 	[],
 	"hero"
 ];
@@ -28,14 +28,14 @@ menu_Dr_Annie_Baker_EP1 = [
 
 // Bandit Trader
 menu_GUE_Soldier_MG = [
-	[["Clothes",302],["Helicopter Armed",800],["Military Armed",801],["Trucks Armed",803],["Assualt Rifle Ammo",600],["Assualt Rifle Variants",610],["TAR Variants",603],["DMR Variants",611],["ACR Variants",617],["ACR SD Variants",618],["AK Variants",619],["G3 Variants",620],["HK416/417 Variants",621],["LMG Variants",622],["SMG Variants",626],["SCAR Variants",623],["SCAR SD Variants",624],["Sniper Variants",627],["Sniper Ammo",614],["Advanced Sidearms",625],["Handgun SMG SingleShot Ammo",612],["Single Shot Variants",628],["Sidearm Ammo",601],["Sidearms",602],["LMG Ammo",613],["Standard Snipers",606],["Money Money Money!",700]],
+	[["Clothes",302],["Helicopter Armed",805],["Military Armed",801],["Trucks Armed",803],["Assualt Rifle Ammo",600],["Assualt Rifle Variants",610],["TAR Variants",603],["DMR Variants",611],["ACR Variants",617],["ACR SD Variants",618],["AK Variants",619],["G3 Variants",620],["HK416/417 Variants",621],["LMG Variants",622],["SMG Variants",626],["SCAR Variants",623],["SCAR SD Variants",624],["Sniper Variants",627],["Sniper Ammo",614],["Advanced Sidearms",625],["Handgun SMG SingleShot Ammo",612],["Single Shot Variants",628],["Sidearm Ammo",601],["Sidearms",602],["LMG Ammo",613],["Standard Snipers",606],["Money Money Money!",700]],
 	[],
 	"hostile"
 ];
 
 // Skalisty Bandit Trader
 menu_GUE_Soldier_MG = [
-	[["Clothes",302],["Helicopter Armed",800],["Military Armed",801],["Trucks Armed",803],["Assualt Rifle Ammo",600],["Assualt Rifle Variants",610],["TAR Variants",603],["DMR Variants",611],["ACR Variants",617],["ACR SD Variants",618],["AK Variants",619],["G3 Variants",620],["HK416/417 Variants",621],["LMG Variants",622],["SMG Variants",626],["SCAR Variants",623],["SCAR SD Variants",624],["Sniper Variants",627],["Sniper Ammo",614],["Advanced Sidearms",625],["Handgun SMG SingleShot Ammo",612],["Single Shot Variants",628],["Sidearm Ammo",601],["Sidearms",602],["LMG Ammo",613],["Standard Snipers",606],["Money Money Money!",700]],
+	[["Clothes",302],["Helicopter Armed",805],["Military Armed",801],["Trucks Armed",803],["Assualt Rifle Ammo",600],["Assualt Rifle Variants",610],["TAR Variants",603],["DMR Variants",611],["ACR Variants",617],["ACR SD Variants",618],["AK Variants",619],["G3 Variants",620],["HK416/417 Variants",621],["LMG Variants",622],["SMG Variants",626],["SCAR Variants",623],["SCAR SD Variants",624],["Sniper Variants",627],["Sniper Ammo",614],["Advanced Sidearms",625],["Handgun SMG SingleShot Ammo",612],["Single Shot Variants",628],["Sidearm Ammo",601],["Sidearms",602],["LMG Ammo",613],["Standard Snipers",606],["Money Money Money!",700]],
 	[],
 	"hostile"
 ];
@@ -185,14 +185,14 @@ menu_Sportswoman1 = [
 
 // North East Aircraft Dealer
 menu_Assistant = [
-	[["Airplanes",517],["Helicopter Unarmed",519],["Money Money Money!",700]],
+	[["Airplanes",509],["Armed Airplanes",800],["Helicopter Unarmed",500],["Money Money Money!",700]],
 	[],
 	"neutral"
 ];
 
 // North West Aircraft Dealer
 menu_RU_Commander = [
-	[["Airplanes",517],["Helicopter Unarmed",519],["Money Money Money!",700]],
+	[["Airplanes",509],["Armed Airplanes",800],["Helicopter Unarmed",500],["Money Money Money!",700]],
 	[],
 	"neutral"
 ];
@@ -226,13 +226,6 @@ menu_HouseWife1 = [
 // Skalisty Boat Trader 3
 menu_HouseWife1 = [
 [["Boats Armed",802],["Boats Unarmed",504],["Money Money Money!",700]],
-	[],
-	"neutral"
-];
-
-// Bike Vendors
-menu_SurvivorWpink_DZ = [
-	[["Bikes and ATVs",800]],
 	[],
 	"neutral"
 ];
