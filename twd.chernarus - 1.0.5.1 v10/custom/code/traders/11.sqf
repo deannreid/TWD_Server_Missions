@@ -76,7 +76,7 @@ menu_Dr_Hladik_EP1 = [
 ];
 // Weapons Trader Stary
 menu_TK_CIV_Takistani04_EP1 = [
-	[["Assault Rifle",610],["Light Machine Gun",622],["Pistols",602],["Shotguns and Single-shot",628],["Sniper Rifle",606],["Submachine Guns",626],["Black Market Weapons",421]],
+	[["Assault Rifle",610],["Light Machine Gun",622],["ACR Variants",617],["ACR SD Variants",618],["AK Variants",619],["G3 Variants",620],["HK416/417 Variants",621],["Pistols",602],["Shotguns and Single-shot",628],["Sniper Rifle",606],["Submachine Guns",626]],
 	[],
 	"neutral"
 ];
@@ -121,13 +121,13 @@ menu_Dr_Annie_Baker_EP1 = [
 ];
 // Weapons Trader Klen
 menu_Rocker4 = [
-	[["Assault Rifle",610],["Light Machine Gun",622],["Pistols",602],["Shotguns and Single-shot",628],["Sniper Rifle",606],["Submachine Guns",626],["Black Market Weapons",421]],
+	[["Assault Rifle",610],["Light Machine Gun",622],["ACR Variants",617],["ACR SD Variants",618],["Pistols",602],["Shotguns and Single-shot",628],["Sniper Rifle",606],["Submachine Guns",626]],
 	[],
 	"neutral"
 ];
 // Ammunition Trader Klen
 menu_RU_Citizen3 = [
-	[["Assault Rifle Ammo",600],["Light Machine Gun Ammo",613],["Pistol Ammo",601],["SMG, Shotguns and Single-shot Ammo",612],["Sniper Rifle Ammo",614],["Black Market Ammo",420]],
+	[["Assault Rifle Ammo",600],["Light Machine Gun Ammo",613],["AK Variants",619],["G3 Variants",620],["HK416/417 Variants",621],["Pistol Ammo",601],["SMG, Shotguns and Single-shot Ammo",612],["Sniper Rifle Ammo",614],["Black Market Ammo",420]],
 	[],
 	"neutral"
 ];
@@ -160,7 +160,7 @@ menu_Doctor = [
 ];
 // Weapons Trader Bash
 menu_CIV_EuroMan01_EP1 = [
-	[["Assault Rifle",610],["Light Machine Gun",622],["Pistols",602],["Shotguns and Single-shot",628],["Sniper Rifle",606],["Submachine Guns",626],["Explosives",422],["Black Market Weapons",421]],
+	[["Assault Rifle",610],["Light Machine Gun",622],["ACR Variants",617],["ACR SD Variants",618],["AK Variants",619],["G3 Variants",620],["HK416/417 Variants",621],["Pistols",602],["Shotguns and Single-shot",628],["Sniper Rifle",606],["Submachine Guns",626]],
 	[],
 	"neutral"
 ];
