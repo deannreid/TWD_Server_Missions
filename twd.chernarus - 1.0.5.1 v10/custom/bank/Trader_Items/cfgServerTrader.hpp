@@ -1,6 +1,6 @@
 class CfgTraderCategory {
 #include "Category\MilitaryLand.hpp"
-#include "Category\Armed_Aircraft.hpp"
+#include "Category\Armed_Airplane.hpp"
 #include "Category\AssaultRifle_Variants_NEW.hpp"
 #include "Category\Assault_Rifle_Ammo_NEW.hpp"
 #include "Category\Backpacks.hpp"
@@ -22,6 +22,7 @@ class CfgTraderCategory {
 #include "Category\FuelTrucks.hpp"
 #include "Category\Handgun_SingleShot_SMG_Ammo.hpp"
 #include "Category\HeroClothes.hpp"
+#include "Category\Heli_Armed.hpp"
 #include "Category\LMG_Ammo.hpp"
 #include "Category\MAS_Variants_NEW.hpp"
 #include "Category\MedicalSupplies.hpp"

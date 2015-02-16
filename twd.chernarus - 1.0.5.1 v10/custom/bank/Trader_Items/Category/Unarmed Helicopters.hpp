@@ -1,13 +1,8 @@
 class Category_500 {
-		class MV22_DZ {
+	class MV22_DZ {
 		type = "trade_any_vehicle";
 		buy[] = {540000};
 		sell[] = {216000};
-	};
-	class C130J {
-		type = "trade_any_vehicle";
-		buy[] = {1890000};
-		sell[] = {9000};
 	};
 	class CSJ_GyroP {
 		type = "trade_any_vehicle";

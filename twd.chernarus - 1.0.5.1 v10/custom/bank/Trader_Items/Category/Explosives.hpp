@@ -6,7 +6,7 @@ class Category_422 {
 	};
 	class PipeBomb {
 		type = "trade_items";
-		buy[] = {36000};
+		buy[] = {100000};
 		sell[] = {18000};
 	};
 	class 1Rnd_HE_M203 {
