@@ -21,6 +21,7 @@ class Mission
 		"CAAir2_UH1Y",
 		"CAAir2_MV22",
 		"CAAir",
+		"arma1_sf_port_patch",
 		
 //DayZ
 		"dayz_anim",
@@ -1391,7 +1392,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=9;
+		items=11;
 		class Item0
 		{
 			position[]={4053.8501,364.76645,11668.645};
@@ -1453,7 +1454,7 @@ class Mission
 			expDesactiv="inSafeZone = false;";
 			class Effects
 			{
-				
+				soundDet="arabian_market_1";
 			};
 		};
 		class Item4
@@ -1469,7 +1470,7 @@ class Mission
 			expDesactiv="inSafeZone = false;";
 			class Effects
 			{
-				
+				soundDet="arabian_market_1";
 			};
 		};
 		class Item5
@@ -1522,6 +1523,22 @@ class Mission
         };
 		class Item8
 		{
+			position[]={12429.5,158.85699,12564};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Aircraft_safezone";
+			expCond="(player distance Aircraft_safezone) < 100;";
+			expActiv="TitleText[""Now entering Airport"",""PLAIN DOWN""]; canbuild = false; inSafeZone = true;";
+			expDesactiv="TitleText[""Now leaving Airport"",""PLAIN DOWN""]; canbuild = true; inSafeZone = false;";
+			class Effects
+			{
+				
+			};
+        };		
+		class Item9
+		{
 			position[]={12060.471,158.85699,12638.533};
 			activationBy="ANY";
 			repeating=1;
@@ -1529,13 +1546,30 @@ class Mission
 			age="UNKNOWN";
 			name="Aircraft_safezone";
 			expCond="(player distance Aircraft_safezone) < 100;";
-			expActiv="inSafeZone = true;";
-			expDesactiv="inSafeZone = false;";
+			expActiv="TitleText[""Now entering Airport"",""PLAIN DOWN""]; canbuild = false; inSafeZone = true;";
+			expDesactiv="TitleText[""Now leaving Airport"",""PLAIN DOWN""]; canbuild = true; inSafeZone = false;";
 			class Effects
 			{
 				
 			};
-        };		
+        };
+		class Item10
+		{
+			position[]={4486.37,14.798248,10313.5};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Aircraftnw_safezone";
+			expCond="(player distance Aircraft_safezone) < 100;";
+			expActiv="TitleText[""Now entering Airport"",""PLAIN DOWN""]; canbuild = false; inSafeZone = true;";
+			expDesactiv="TitleText[""Now leaving Airport"",""PLAIN DOWN""]; canbuild = true; inSafeZone = false;";
+			class Effects
+			{
+				
+			};
+        };	
+
 		
 	};
 };

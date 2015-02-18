@@ -86,5 +86,8 @@ if (true) then
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0; _this enableSimulation false;_this setVariable ["BankerBot",1,true];
 };
 
+if (isNil "AllBankersOnServer") then {
+AllBankersOnServer = [];
+};
 AllBankersOnServer = AllBankersOnServer + [_unit_2000] + [_unit_2100] + [_unit_2200] + [_unit_2300] + [_unit_2400] + [_unit_2500] + [_unit_2600] + [_unit_2700];
 publicVariable "AllBankersOnServer";
