@@ -9,8 +9,6 @@ class Category_509 {
 	class GNT_C185C { type = "trade_any_vehicle"; buy[] = {36000}; sell[] = {18000}; };
 	class GNT_C185F { type = "trade_any_vehicle"; buy[] = {36000}; sell[] = {18000}; };
 	class GNT_C185E { type = "trade_any_vehicle"; buy[] = {36000}; sell[] = {18000}; };
-	class CYBP_Camel_us { type = "trade_any_vehicle"; buy[] = {52000}; sell[] = {25000}; };
-	class CYBP_Camel_rus { type = "trade_any_vehicle"; buy[] = {52000}; sell[] = {25000}; };
 	class CYBP_Camel_civ { type = "trade_any_vehicle"; buy[] = {52000};	sell[] = {25000}; };
 	class C130J_US_EP1 { type = "trade_any_vehicle"; buy[] = {1890000};	sell[] = {25000}; };
 	class C130J { type = "trade_any_vehicle"; buy[] = {1890000}; sell[] = {9000}; };
