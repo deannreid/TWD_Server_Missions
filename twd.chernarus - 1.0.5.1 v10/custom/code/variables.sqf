@@ -1,13 +1,13 @@
 disableSerialization;
-CurrencyName = "Boobs"; // name of your currency
-Bank_Object = ["Laptop_EP1"]; // Object to get option to bank
-LimitOnBank = false; // false = no limits, true = banks are limited on the value below
-MaxBankMoney = 500000; // limit on bank for normal players
-DonatorBank = [""]; // Bigger banks, Players ID
-MaxDonatorBankMoney = 1000000; // Bank size for donators
-InstantTrading = true; // (True = No Animation / False = Animation)
+CurrencyName = "Boobs";
+Bank_Object = ["Laptop_EP1"];
+LimitOnBank = false;
+MaxBankMoney = 500000;
+DonatorBank = [""];
+MaxDonatorBankMoney = 1000000;
+InstantTrading = true; 
 AllBankersOnServer = [];
-SmeltingGoldBarsToCoinsRate = 1000; // How many gold coins are in a gold bar
+SmeltingGoldBarsToCoinsRate = 1000;
 //Model Variables
 Bandit1_DZ = 	"Bandit1_DZ";
 Bandit2_DZ = 	"Bandit2_DZ";
@@ -595,7 +595,7 @@ DZE_isWreckBuilding = ["Land_wreck_cinder","Land_wood_wreck_quarter","Land_wood_
 DZE_isNewStorage = ["VaultStorage","OutHouse_DZ","Wooden_shed_DZ","WoodShack_DZ","StorageShed_DZ","GunRack_DZ","WoodCrate_DZ"];
 
 // These work with just a running generator
-dayz_fuelpumparray = ["FuelPump_DZ","Land_A_FuelStation_Feed","Land_Ind_FuelStation_Feed_EP1","Land_FuelStation_Feed_PMC","FuelStation","Land_ibr_FuelStation_Feed","Land_fuelstation_army","Land_fuelstation","land_fuelstation_w","Land_benzina_schnell"];
+dayz_fuelpumparray = ["MAP_Ind_TankSmall","FuelPump_DZ","Land_A_FuelStation_Feed","Land_Ind_FuelStation_Feed_EP1","Land_FuelStation_Feed_PMC","FuelStation","Land_ibr_FuelStation_Feed","Land_fuelstation_army","Land_fuelstation","land_fuelstation_w","Land_benzina_schnell"];
 DZE_fueltruckarray = ["KamazRefuel_DZ","UralRefuel_TK_EP1_DZ","MtvrRefuel_DES_EP1_DZ","V3S_Refuel_TK_GUE_EP1_DZ","MtvrRefuel_DZ","KamazRefuel_DZE","UralRefuel_TK_EP1_DZE","MtvrRefuel_DES_EP1_DZE","V3S_Refuel_TK_GUE_EP1_DZE","MtvrRefuel_DZE"];
 
 // Standard Fuel sources
