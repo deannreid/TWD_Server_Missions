@@ -54,11 +54,6 @@ class Category_805 {
 		buy[] = {216000};
 		sell[] = {108000};
 	};
-	class UH1Y {
-		type = "trade_any_vehicle";
-		buy[] = {432000};
-		sell[] = {108000};
-	};
 	class UH1Y_DZ {
 		type = "trade_any_vehicle";
 		buy[] = {432000};
