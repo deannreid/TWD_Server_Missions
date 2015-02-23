@@ -1,7 +1,7 @@
 _unit_2000 = objNull;
 if (true) then
 {
-  _this = createAgent ["Functionary1_EP1_DZ", [6338.79,7773.1,0.363251], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Functionary1_EP1_DZ", [6338.79,7773.1,0.39], [], 0, "CAN_COLLIDE"];
   _unit_2000 = _this;
   _this setDir 40.5365;
   _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0; this setVariable [""BankerBot"",1,true];";
@@ -45,9 +45,9 @@ if (true) then
 _unit_2400 = objNull;
 if (true) then
 {
-  _this = createAgent ["Functionary1_EP1_DZ", [14035.9,2825.37,3.52722], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Functionary1_EP1_DZ", [14063.5,2812.3,0.0685959], [], 0, "CAN_COLLIDE"];
   _unit_2400 = _this;
-  _this setDir 189.799;
+  _this setDir 241.522;
   _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0; this setVariable [""BankerBot"",1,true];";
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0; _this enableSimulation false;_this setVariable ["BankerBot",1,true];
@@ -67,9 +67,9 @@ if (true) then
 _unit_2600 = objNull;
 if (true) then
 {
-  _this = createAgent ["Functionary1_EP1_DZ", [12420.2,12500.1,1.03532], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["Functionary1_EP1_DZ", [12413.7,12510.2,0.00143433], [], 0, "CAN_COLLIDE"];
   _unit_2600 = _this;
-  _this setDir 286.565;
+  _this setDir 11.4079;
   _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0; this setVariable [""BankerBot"",1,true];";
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0; _this enableSimulation false;_this setVariable ["BankerBot",1,true];
