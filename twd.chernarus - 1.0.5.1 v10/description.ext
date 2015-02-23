@@ -50,6 +50,6 @@ class RscTitles
 #include "custom\groups\groupManagement.hpp"
 #include "custom\sounds\sounds.hpp"
 
-#include "custom\spawnselection\class.hpp"
-#include "custom\spawnselection\halo.hpp"
-#include "custom\spawnselection\spawn.hpp"
+//#include "custom\spawnselection\class.hpp"
+//#include "custom\spawnselection\halo.hpp"
+//#include "custom\spawnselection\spawn.hpp"
