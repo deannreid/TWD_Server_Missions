@@ -3,6 +3,10 @@ _holder = _this select 0;
 _type = _this select 1;
 _classname = _this select 2;
 
+if (isNil "_actionSet") then {
+_actionSet = 0;
+};
+
 // Exit if player zombie
 if(player isKindOf "PZombie_VB") exitWith {};
 

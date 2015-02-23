@@ -966,7 +966,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 
 				// Database menu
 				LastTraderMenu = (_traderMenu select 0);
-				_buy = player addAction [localize "STR_EPOCH_PLAYER_289", "\z\addons\dayz_code\actions\show_dialog.sqf",(_traderMenu select 0), 999, true, false, "",""];
+				_buy = player addAction [localize "STR_EPOCH_PLAYER_289", "fuckingfixes\show_dialog.sqf",(_traderMenu select 0), 999, true, false, "",""];
 				s_player_parts set [count s_player_parts,_buy];
 
 			};
