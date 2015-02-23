@@ -12,6 +12,7 @@ if (((count _this) >= 6) && {(typeName (_this select 5)) == "STRING"} && {(_this
 };
 _victim = _newObject;
 _newObject setVariable ["bodyName", _victimName, true];
+_newObject setVariable ["bodyUID", _playerID, true];
 
 _killer = _victim getVariable["AttackedBy", "nil"];
 _killerName = _victim getVariable["AttackedByName", "nil"];
