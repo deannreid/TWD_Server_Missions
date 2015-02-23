@@ -1,52 +1,47 @@
-respawn = "BASE";
-respawndelay = 5;
+respawn 			= "BASE";
+respawndelay 		= 5;
+onLoadMission		= "The Wasteland Diaries";
+OnLoadIntro 		= "The Wasteland Diaries V7";
+OnLoadIntroTime 	= false;
+OnLoadMissionTime 	= false;
+disabledAI 			= true;
+disableChannels[]	= {0,2,6};
+enableItemsDropping	= 0;
 
-onLoadMission="The Wasteland Diaries";
-OnLoadIntro = "The Wasteland Diaries V7";
-OnLoadIntroTime = false;
-OnLoadMissionTime = false;
+briefing 			= 0;
+debriefing 			= 0;
 
-disabledAI = true;
-disableChannels[]= {0,2,6};
+onPauseScript 		= "";
+loadScreen 			= "custom\loading\dayzbg.jpg";
 
-enableItemsDropping=0;
-
-briefing = 0;
-debriefing = 0;
-
-onPauseScript = "";
-loadScreen = "custom\loading\dayzbg.jpg";
-
-	class Header
-	{
-		gameType = COOP;            //DM, Team, Coop, ...
-		minPlayers = 1;             //min # of players the mission supports
-		maxPlayers = 100;            //Max # of players the mission supports
+	class Header {
+		gameType 	= COOP;
+		minPlayers 	= 1;
+		maxPlayers 	= 100;
 	};
 
-aiKills = 1;
-diagRadio = 1;
-diagHit = 1;
+aiKills 			= 1;
+diagRadio 			= 1;
+diagHit 			= 1;
 
-#include "custom\custom_loot\Configs\CfgBuildingLoot.hpp"
-#include "custom\bank\Trader_Items\cfgServerTrader.hpp"
-#include "custom\hpp\defines.hpp"
-#include "custom\hpp\ebaydefines.hpp"
-#include "custom\hpp\ebayicons.hpp"
+	#include "custom\custom_loot\Configs\CfgBuildingLoot.hpp"
+	#include "custom\bank\Trader_Items\cfgServerTrader.hpp"
+	#include "custom\hpp\defines.hpp"
+	#include "custom\hpp\ebaydefines.hpp"
+	#include "custom\hpp\ebayicons.hpp"
 
-class RscTitles
-{ 
-#include "custom\hpp\guiClass.hpp"
-#include "custom\GUI\guiAdvanced.hpp"
-};
+	class RscTitles { 
+		#include "custom\hpp\guiClass.hpp"
+		#include "custom\GUI\guiAdvanced.hpp"
+	};
 
-#include "custom\hpp\serverstart.hpp"
-#include "custom\hpp\hw.hpp"
-#include "custom\hpp\common.hpp"
-#include "custom\hpp\bank_dialog.hpp"
-#include "custom\hpp\give_player_dialog.hpp"
-#include "custom\hpp\extra_rc.hpp"
-#include "custom\snap_pro\snappoints.hpp"
-#include "custom\groups\groupManagement.hpp"
-#include "custom\sounds\sounds.hpp"
-#include "custom\trading\dialog.hpp"
+	#include "custom\hpp\serverstart.hpp"
+	#include "custom\hpp\hw.hpp"
+	#include "custom\hpp\common.hpp"
+	#include "custom\hpp\bank_dialog.hpp"
+	#include "custom\hpp\give_player_dialog.hpp"
+	#include "custom\hpp\extra_rc.hpp"
+	#include "custom\snap_pro\snappoints.hpp"
+	#include "custom\groups\groupManagement.hpp"
+	#include "custom\sounds\sounds.hpp"
+	#include "custom\trading\dialog.hpp"
