@@ -221,9 +221,53 @@ if (count _stats > 0) then {
 };
 
 if (_randomSpot) then {
-   if (!isDedicated) then {endLoadingScreen;};
-   _debug = getMarkerpos "respawn_west";
-   _worldspace = [0,[_debug select 0,_debug select 1,0.3]];
+	private["_counter","_position","_isNear","_isZero","_mkr"];
+	if (!isDedicated) then {
+		endLoadingScreen;
+	};
+	
+	//Spawn modify via mission init.sqf
+	if(isnil "spawnArea") then {
+		spawnArea = 1500;
+	};
+	if(isnil "spawnShoremode") then {
+		spawnShoremode = 1;
+	};
+	
+	// 
+	_spawnMC = actualSpawnMarkerCount;
+
+	//spawn into random
+	_findSpot = true;
+	_mkr = "";
+	while {_findSpot} do {
+		_counter = 0;
+		while {_counter < 20 && _findSpot} do {
+			// switched to floor
+			_mkr = "spawn" + str(floor(random _spawnMC));
+			_position = ([(getMarkerPos _mkr),0,spawnArea,10,0,2000,spawnShoremode] call BIS_fnc_findSafePos);
+			_isNear = count (_position nearEntities ["Man",100]) == 0;
+			_isZero = ((_position select 0) == 0) && ((_position select 1) == 0);
+			//Island Check		//TeeChange
+			_pos 		= _position;
+			_isIsland	= false;		//Can be set to true during the Check
+			for [{_w=0},{_w<=150},{_w=_w+2}] do {
+				_pos = [(_pos select 0),((_pos select 1) + _w),(_pos select 2)];
+				if(surfaceisWater _pos) exitWith {
+					_isIsland = true;
+				};
+			};
+			
+			if ((_isNear && !_isZero) || _isIsland) then {_findSpot = false};
+			_counter = _counter + 1;
+		};
+	};
+	_isZero = ((_position select 0) == 0) && ((_position select 1) == 0);
+	_position = [_position select 0,_position select 1,0];
+	if (!_isZero) then {
+		//_playerObj setPosATL _position;
+		_worldspace = [0,_position];
+	};
 };
 
 diag_log ("SETUP WORLDSPACE: " + str(_worldspace));
@@ -240,7 +284,7 @@ _playerObj setVariable["lastPos",getPosATL _playerObj];
 _playerObj setVariable ["cashMoney",_cashMoney,true];
 _playerObj setVariable ["cashMoney_CHK",_cashMoney];
 //Soul end: SC Edit
-dayzPlayerLogin2 = [_worldspace,_state,_randomSpot];
+dayzPlayerLogin2 = [_worldspace,_state];
 
 // PVDZE_obj_Debris = DZE_LocalRoadBlocks;
 _clientID = owner _playerObj;
