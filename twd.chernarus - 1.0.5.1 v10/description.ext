@@ -27,6 +27,7 @@ diagHit 			= 1;
 	#include "custom\custom_loot\Configs\CfgBuildingLoot.hpp"
 	#include "custom\bank\Trader_Items\cfgServerTrader.hpp"
 	#include "custom\hpp\defines.hpp"
+	#include "custom\hpp\zupasc.hpp"
 	#include "custom\hpp\ebaydefines.hpp"
 	#include "custom\hpp\ebayicons.hpp"
 
