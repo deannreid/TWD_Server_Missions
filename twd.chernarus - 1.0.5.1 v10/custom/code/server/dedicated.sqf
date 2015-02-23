@@ -12,4 +12,5 @@ diag_log "Service Points Loaded";
 	execVM "custom\markers\init.sqf";
 diag_log "Markers Loaded";
 	execVM "custom\aiclient\init.sqf";
-	
+diag_log "Loading Spawn Select";
+	execVM "custom\spawnselection\start.sqf";

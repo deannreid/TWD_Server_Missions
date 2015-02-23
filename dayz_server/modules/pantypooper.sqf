@@ -1,3 +1,4 @@
+diag_log "Flyover Started";
 private["_model","_startpos","_endpos","_rand_player"];
 
 _model            = ["MV22","F35B","Su25_CDF","A10","Mi24_D","AV8B","Su25_TK_EP1","L39_TK_EP1","C130J_US_EP1","MQ9PredatorB_US_EP1"] call BIS_fnc_selectRandom;
@@ -6,7 +7,7 @@ _rand_player    = playableUnits call BIS_fnc_selectRandom;
 
 if((isPlayer _rand_player) && (alive _rand_player)) then {
 
-    _rand_num        = ceil(random 5);
+    _rand_num        = ceil(random 6);
     _playerpos        = [_rand_player] call FNC_GetPos;
     _number            = 0;
 
@@ -48,6 +49,18 @@ if((isPlayer _rand_player) && (alive _rand_player)) then {
                 if(_number == 5) exitWith {
                     _cor_y = -120;
                     _cor_x = 120;
+                };
+                if(_number == 6) exitWith {
+                    _cor_y = 240;
+                    _cor_x = 240;
+                };
+                if(_number == 7) exitWith {
+                    _cor_y = -240;
+                    _cor_x = -240;
+                };
+                if(_number == 8) exitWith {
+                    _cor_y = -240;
+                    _cor_x = 240;
                 };
             };
 

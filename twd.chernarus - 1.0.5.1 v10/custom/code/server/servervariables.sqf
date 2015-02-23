@@ -42,7 +42,18 @@
 	twdGUIBTFH = true;
 	twdGUIHardcore = false;
 	
-	
+	EpochEvents = [
+	["any","any","any","any",5,"pantypooper"],
+		["any","any","any","any",15,"pantypooper"],
+			["any","any","any","any",30,"pantypooper"],
+				["any","any","any","any",45,"pantypooper"],
+	["any","any","any","any",0,"booty"],
+		["any","any","any","any",20,"booty"],
+			["any","any","any","any",40,"booty"],
+	["any","any","any","any",10,"Construction"],
+		["any","any","any","any",35,"Construction"],
+			["any","any","any","any",50,"Construction"]
+	];
 	
 //SERVER ONLY VARIABLES
 // Chernarus

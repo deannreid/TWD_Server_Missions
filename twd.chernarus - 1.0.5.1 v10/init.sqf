@@ -1,5 +1,5 @@
 	//Disable when finished testing..
-	twdDebug = true;
+	_debug = true;
 	
 diag_log "==============================================";
 	diag_log "Starting Mission Init";

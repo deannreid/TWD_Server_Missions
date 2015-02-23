@@ -88,7 +88,7 @@ if (_inVehicle && (_vehicle isKindOf "MV22")) then {
    };
 };
 
-if (_inVehicle && (_vehicle isKindOf "ArmoredSUV_Base_PMC")) then {
+if (_inVehicle && {_vehicle isKindOf "ArmoredSUV_Base_PMC"}) then {
    if ((_vehicle animationPhase "HideGun_01") == 1) then {
      _unit = _vehicle turretUnit [0];
      if (!(isNull _unit)) then {
@@ -110,6 +110,54 @@ if (_inVehicle && (_vehicle isKindOf "ArmoredSUV_Base_PMC")) then {
     };
 };
  
+if (_inVehicle && {(typeOf _vehicle) in ["UH1Y","UH1Y_DZ","UH1Y_DZE"]}) then {
+   if (isEngineOn _vehicle) then {[_vehicle,0] call uh1y_pack;};
+   if (uh1y_fold < 0) then {
+     theuh1y = _vehicle;
+     if !(isEngineOn theuh1y) then {
+       uh1y_fold = theuh1y addAction ["Fold","custom\anim\uh1y\uh1y_fold.sqf","",5,false,true];
+       uh1y_unfold = theuh1y addAction ["UnFold","custom\anim\uh1y\uh1y_unfold.sqf","",5,false,true];
+     };
+   };
+   if (isEngineOn theuh1y) then {
+     theuh1y removeAction uh1y_fold;
+     uh1y_fold = -1;
+     theuh1y removeAction uh1y_unfold;
+     uh1y_unfold = -1;
+   };
+} else {
+    if (!isNil "theuh1y") then {
+       theuh1y removeAction uh1y_fold;
+       uh1y_fold = -1;
+       theuh1y removeAction uh1y_unfold;
+       uh1y_unfold = -1;
+   };
+};
+
+if (_inVehicle && {_vehicle isKindOf "AH1Z"}) then {
+   if (isEngineOn _vehicle) then {[_vehicle,0] call ah1z_pack;};
+   if (ah1z_fold < 0) then {
+     theah1z = _vehicle;
+     if !(isEngineOn theah1z) then {
+       ah1z_fold = theah1z addAction ["Fold","custom\anim\ah1z\ah1z_fold.sqf","",5,false,true];
+       ah1z_unfold = theah1z addAction ["UnFold","custom\anim\ah1z\ah1z_unfold.sqf","",5,false,true];
+     };
+   };
+   if (isEngineOn theah1z) then {
+     theah1z removeAction ah1z_fold;
+     ah1z_fold = -1;
+     theah1z removeAction ah1z_unfold;
+     ah1z_unfold = -1;
+   };
+} else {
+    if (!isNil "theah1z") then {
+       theah1z removeAction ah1z_fold;
+       ah1z_fold = -1;
+       theah1z removeAction ah1z_unfold;
+       ah1z_unfold = -1;
+   };
+};
+
 if (DZE_HeliLift) then {
 	_hasAttached = _vehicle getVariable["hasAttached",false];
 	if(_inVehicle && (_vehicle isKindOf "Air") && ((([_vehicle] call FNC_getPos) select 2) < 30) && (speed _vehicle < 5) && (typeName _hasAttached == "OBJECT")) then {

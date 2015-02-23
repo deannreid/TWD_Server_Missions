@@ -271,6 +271,10 @@ dayz_resetSelfActions = {
     mv22_close = -1;
     suv_close = -1;
     suv_open = -1;
+	ah1z_fold = -1;
+    ah1z_unfold = -1;
+    uh1y_fold = -1;
+    uh1y_unfold = -1;
 	s_player_sirens_on = -1;
 	s_player_sirens_off = -1;
 };
