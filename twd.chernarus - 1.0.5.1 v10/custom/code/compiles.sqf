@@ -85,6 +85,14 @@ diag_log "==============================================";
 	diag_log "Loading the fucking fixes that Epoch dev's should have fucking done.....";
 			player_craftItem =			compile preprocessFileLineNumbers "fuckingfixes\player_craftItem.sqf";
 	diag_log "Probably didn't load them all due to how badly coded epoch is.....";
+	
+		_debug  = createMarker ["_debug", [-7240,0,19530]];
+		_debug  setMarkerText "Debug Zone";
+		_debug  setMarkerType "Empty";
+		_debug  setMarkerColor "ColorBlue";
+		_debug  = _debug ;
+
+	
 diag_log "==============================================";
 	diag_log "Finished Initialising VL Compiles";
 diag_log "==============================================";

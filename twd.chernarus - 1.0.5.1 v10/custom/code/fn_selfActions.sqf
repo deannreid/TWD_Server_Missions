@@ -24,6 +24,10 @@ if (!isNull _nearLight) then {
 	};
 };
 
+if (! isNil "dayz_addsirens") then {
+dayz_addsirens = 0;
+};
+
 //Sirens
 _isCopcar = typeOf _vehicle in ["SUV_TK_CIV_EP1","SUV_TK_CIV_EP1_DZE1","SUV_TK_CIV_EP1_DZE2","SUV_TK_CIV_EP1_DZE3","SUV_TK_CIV_EP1_DZE4","policecar"];
 

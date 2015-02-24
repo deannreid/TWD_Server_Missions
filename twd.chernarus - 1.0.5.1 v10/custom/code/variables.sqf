@@ -277,6 +277,9 @@ dayz_resetSelfActions = {
     uh1y_unfold = -1;
 	s_player_sirens_on = -1;
 	s_player_sirens_off = -1;
+	s_player_mining = -1;
+	s_player_mine = -1;
+	r_player_bloodpersec = -1;
 };
 call dayz_resetSelfActions;
 

@@ -448,7 +448,8 @@ if (!isDedicated) then {
                         _control1 = _display displayctrl 8400;
                         _control2 = _display displayctrl 102;
                 };
-                 _control1 ctrlSetText format["TWD Loading Info: %1 & %2.",Zupa_LoadingMessage select 0 ,dayz_loadScreenMsg];             
+                 _control1 ctrlSetText format["TWD Loading Info: %1",Zupa_LoadingMessage select 0];
+              //   _control1 ctrlSetText format["TWD Loading Info: %1 & %2.",Zupa_LoadingMessage select 0 ,dayz_loadScreenMsg];     				 
                  _control2 ctrlSetText format["%1",round(_timeOut*0.01)];
             };
 			
