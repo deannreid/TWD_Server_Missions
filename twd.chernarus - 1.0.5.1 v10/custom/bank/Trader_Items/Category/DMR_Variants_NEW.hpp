@@ -1,5 +1,6 @@
 class Category_611 {
 class DMR { type = "trade_weapons"; buy[] = {35000}; sell[] = {18000}; };
+class DMR_DZ { type = "trade_weapons"; buy[] = {35000}; sell[] = {18000}; };
 class RH_m1s { type = "trade_weapons"; buy[] = {20000}; sell[] = {10000}; };
 class RH_m1sacog { type = "trade_weapons"; buy[] = {20000}; sell[] = {10000}; };
 class RH_m1saim { type = "trade_weapons"; buy[] = {20000}; sell[] = {10000}; };

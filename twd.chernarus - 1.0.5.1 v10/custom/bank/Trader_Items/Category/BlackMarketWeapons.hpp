@@ -22,4 +22,5 @@ class Category_421 {
 	class SCAR_L_STD_EGLM_RCO { type = "trade_weapons"; buy[] = {8800}; sell[] = {4400}; };
 	class SCAR_H_STD_EGLM_Spect { type = "trade_weapons"; buy[] = {27000}; sell[] = {10000}; };
 	class DMR { type = "trade_weapons"; buy[] = {35000}; sell[] = {18000}; };
+	class DMR_DZ { type = "trade_weapons"; buy[] = {35000}; sell[] = {18000}; };
 };
