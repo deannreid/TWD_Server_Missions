@@ -44,4 +44,5 @@ class Category_606 {
 		buy[] = {9000};
 		sell[] = {5400};
 	};
+	class DMR_DZ { type = "trade_weapons"; buy[] = {35000}; sell[] = {18000}; };
 };
