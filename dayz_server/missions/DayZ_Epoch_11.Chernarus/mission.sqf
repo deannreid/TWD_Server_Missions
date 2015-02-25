@@ -658,9 +658,9 @@ if (true) then
 _unit_73 = objNull;
 if (true) then
 {
-  _this = createAgent ["RU_Functionary1", [12929.546, 12781.656, 0.54878908], [], 0, "CAN_COLLIDE"];
+  _this = createAgent ["RU_Functionary1", [12925,12768.9,0.0014801], [], 0, "CAN_COLLIDE"];
   _unit_73 = _this;
-  _this setDir 122.4281;
+  _this setDir 219.789;
   _this setVehicleInit "this allowDammage false; this disableAI 'FSM'; this disableAI 'MOVE'; this disableAI 'AUTOTARGET'; this disableAI 'TARGET'; this setBehaviour 'CARELESS'; this forceSpeed 0;";
   _this setUnitAbility 0.60000002;
   _this allowDammage false; _this disableAI 'FSM'; _this disableAI 'MOVE'; _this disableAI 'AUTOTARGET'; _this disableAI 'TARGET'; _this setBehaviour 'CARELESS'; _this forceSpeed 0;_this enableSimulation false;};
