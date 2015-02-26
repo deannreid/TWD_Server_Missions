@@ -17247,4 +17247,13 @@ if (true) then
   _this setPos [8161.5591, 9128.7266, -0.059966154];
 };
 
+_vehicle_5693 = objNull;
+if (true) then
+{
+  _this = createVehicle ["SpecialWeaponsBox", [23999.1,0.12988,0.00214386], [], 0, "CAN_COLLIDE"];
+  _vehicle_5693 = _this;
+  _this setDir 268.075;
+  _this setPos [23999.1,0.12988,0.00214386];
+};
+
 processInitCommands;
