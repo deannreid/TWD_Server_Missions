@@ -52,12 +52,7 @@ if ((typeName _killer) != "STRING") then
 	if(DZE_DeathMsgGlobal) then {
 		[nil, nil, rspawn, [_killer, _message], { (_this select 0) globalChat (_this select 1) }] call RE;
 	};
-	/* needs customRemoteMessage
-	if(DZE_DeathMsgGlobal) then {
-		customRemoteMessage = ['globalChat', _message, _killer];
-		publicVariable "customRemoteMessage";
-	};
-	*/
+
 	if(DZE_DeathMsgSide) then {
 		[nil, nil, rspawn, [_killer, _message], { (_this select 0) sideChat (_this select 1) }] call RE;
 	};
@@ -65,7 +60,6 @@ if ((typeName _killer) != "STRING") then
 		[nil,nil,"per",rTITLETEXT,_message,"PLAIN DOWN"] call RE;
 	};
 
-	//Use my killboard in order to work correctly
 	_death_record = [
 		_victimName,
 		_killerName,
