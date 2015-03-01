@@ -190,6 +190,11 @@ if (_dikCode == 0x39 or (_dikCode in actionKeys "User19")) then {
 	DZE_5 = true;
 };
 
+if (_dikCode == 0x0D) then {
+   execVM 'custom\rules\rules_init.sqf'
+    _handled = true;
+};
+
 // F key
 if ((_dikCode == 0x21 and (!_alt and !_ctrl)) or (_dikCode in actionKeys "User6")) then {
 	DZE_F = true;

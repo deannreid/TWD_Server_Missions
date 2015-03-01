@@ -280,6 +280,7 @@ dayz_resetSelfActions = {
 	s_player_mining = -1;
 	s_player_mine = -1;
 	r_player_bloodpersec = -1;
+	s_rules = -1;
 };
 call dayz_resetSelfActions;
 

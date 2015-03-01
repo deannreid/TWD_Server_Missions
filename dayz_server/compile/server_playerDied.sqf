@@ -22,16 +22,29 @@ if ((typeName _killer) != "STRING") then
 {
 	_weapon = _victim getVariable["AttackedByWeapon", "nil"];
 	_distance = _victim getVariable["AttackedFromDistance", "nil"];
-
+	_pic = _victim getVariable["AttackedByWeaponImg", "nil"];
+	
 	if ((owner _victim) == (owner _killer)) then 
 	{
-		_message = format["%1 killed himself",_victimName];
+		_message = format["%1 couldn't handle it",_victimName];
 		_loc_message = format["PKILL: %1 killed himself", _victimName];
 	}
 	else
 	{
 		_message = format["%1 was killed by %2 with weapon %3 from %4m",_victimName, _killerName, _weapon, _distance];
 		_loc_message = format["PKILL: %1 was killed by %2 with weapon %3 from %4m", _victimName, _killerName, _weapon, _distance];
+		
+		if ((gettext (configFile >> 'cfgWeapons' >> (currentWeapon _killer) >> 'displayName')) != "Throw") then {
+			if (_pic != "nil") then {
+				_kill_txt = format ["<t align='left' size='0.9'>%1 </t>",_killerName];
+				_kill_txt = _kill_txt + format ["<img size='1.0' align='left' image='%1'/>",_pic];
+				_kill_txt = _kill_txt + format ["<t align='left' size='0.9'> %1 </t>",_victimName];
+				_kill_txt = _kill_txt + format ["<t align='left' size='0.9'>[%1m]</t>",(ceil _distance)];
+				
+				customkillMessage = [_kill_txt];
+				publicVariable "customkillMessage";
+			};
+		};
 	};
 
 	diag_log _loc_message;
@@ -52,15 +65,18 @@ if ((typeName _killer) != "STRING") then
 		[nil,nil,"per",rTITLETEXT,_message,"PLAIN DOWN"] call RE;
 	};
 
-	// build array to store death messages to allow viewing at message board in trader citys.
+	//Use my killboard in order to work correctly
 	_death_record = [
 		_victimName,
 		_killerName,
 		_weapon,
+		_pic,
 		_distance,
 		ServerCurrentTime
 	];
 	PlayerDeaths set [count PlayerDeaths,_death_record];
+	PV_DeathBoard = PlayerDeaths;
+	publicVariable "PV_DeathBoard";
 
 	// Cleanup
 	_victim setVariable["AttackedBy", "nil", true];
@@ -69,14 +85,6 @@ if ((typeName _killer) != "STRING") then
 	_victim setVariable["AttackedFromDistance", "nil", true];
 };
 
-// Might not be the best way...
-/*
-if (isnil "dayz_disco") then {
-	dayz_disco = [];
-};
-*/
-
-// dayz_disco = dayz_disco - [_playerID];
 _newObject setVariable["processedDeath",diag_tickTime];
 
 if (typeName _minutes == "STRING") then

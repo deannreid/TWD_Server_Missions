@@ -22,6 +22,14 @@ diag_log "Chernarus Locating Markers";
 		_mine2 setMarkerSize [0.5,0.5];
 		_mine2 setMarkerType "Destroy";
 		_mine2 = _mine2;
+		
+	// Solnichniy	
+		_hacker = createMarker ["_hacker", [24000.7,0.272036,0.0020752]];
+		_hacker setMarkerText "Free Loot";
+		_hacker setMarkerColor "ColorRed";
+		_hacker setMarkerSize [0.5,0.5];
+		_hacker setMarkerType "mil_arrow2";
+		_hacker = _hacker;
 
 	// Berezino - North East
 		_sp1  = createMarker ["_sp1 ", [13002.69, 10099.583]];
@@ -113,4 +121,11 @@ diag_log "Chernarus Locating Markers";
 		_sp21  setMarkerText "Service Station";
 		_sp21 setMarkerSize [0.5,0.5];
 		_sp21  = _sp21;
+		
+		_debug  = createMarker ["_debug", [-7240,0,19530]];
+		_debug  setMarkerText "Debug Zone";
+		_debug  setMarkerType "Empty";
+		_debug  setMarkerColor "ColorBlue";
+		_debug  = _debug ;
+
 diag_log "Chernarus Markers Added";
