@@ -36,7 +36,6 @@ V10 (Next Release)
 ··Fixed -: Crafting loop when smelting ores
 ··Fixed -: TraderItemList|TraderCatList console error
 ··Fixed -: Zombie Loot Error
-··Fixed -: Old player 
 
 V6.5
 ··Added -: Single Currency Banking
