@@ -1,7 +1,44 @@
 CHANGELOG
 ---------------------
 
-V6.5 (Next Release)
+V10 (Next Release)
+··Added -: Vehicle Removal in safezones
+··Added -: New GUI
+··Added -: Advanced Trading
+··Added -: Animations to some vehicles
+··Added -: Custom Trader Citys
+··Added -: Mining *Again*
+··Added -: New Trader @ NWAF
+··Added -: Better Logistics
+
+··Re-Enabled -: Group Management
+
+··Updated -: TWD AntiHack
+··Updated -: Removal of skin from dead players
+··Updated -: Banking
+··Updated -: Safezones
+
+··Fixed -: Server not showing on Launcher
+··Fixed -: Logging out at traders
+··Fixed -: AI Missions
+··Fixed -: Swapping seats in helicopters
+··Fixed -: Unable to Unlock vehicles
+··Fixed -: Safes loosing inventory
+··Fixed -: Loot Tables and Zeds not spawning
+··Fixed -: Unable to upgrade walls
+··Fixed -: AntiHack banning for entering safezone
+··Fixed -: Unable to login to server
+··Fixed -: Mission Announcements 
+··Fixed -: Unable to upgrade half cinder walls
+··Fixed -: Black screen, able to move around in debug
+··Fixed -: Spawned in debug and not in main land
+··Fixed -: Script error when Drinking/Eating in vehicle
+··Fixed -: Crafting loop when smelting ores
+··Fixed -: TraderItemList|TraderCatList console error
+··Fixed -: Zombie Loot Error
+··Fixed -: Old player 
+
+V6.5
 ··Added -: Single Currency Banking
 ··Added -: Vehicle Painting
 
