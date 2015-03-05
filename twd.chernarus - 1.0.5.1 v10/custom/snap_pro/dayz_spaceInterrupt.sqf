@@ -191,7 +191,7 @@ if (_dikCode == 0x39 or (_dikCode in actionKeys "User19")) then {
 };
 
 if (_dikCode == 0x0D) then {
-   execVM 'custom\rules\rules_init.sqf'
+   execVM 'custom\rules\rules_init.sqf';
     _handled = true;
 };
 

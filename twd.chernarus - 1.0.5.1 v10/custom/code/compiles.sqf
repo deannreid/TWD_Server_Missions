@@ -28,7 +28,9 @@ diag_log "==============================================";
 	diag_log "Loading Animations";	
 		if (!isDedicated) then 
 		{
-			mv22_pack = compile preprocessFileLineNumbers "\ca\air2\mv22\scripts\pack.sqf";
+			ah1z_pack = compile preprocessFileLineNumbers "\ca\air\Scripts\AH1Z_fold.sqf";
+			mv22_pack = compile preprocessFileLineNumbers "\ca\air2\MV22\scripts\pack.sqf";
+			uh1y_pack = compile preprocessFileLineNumbers "\ca\air2\UH1Y\Scripts\fold.sqf";
 		};
 diag_log "Finished Loading Animations";
 diag_log "==============================================";

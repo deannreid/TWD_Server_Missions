@@ -22,8 +22,8 @@
 
 	// DayZ Epoch Config										
 	DZE_DiagFpsSlow = false; //-|
-	DZE_DiagVerbose = false;// | These Don't even work its so effing useful.
-	DZE_DiagFpsFast = false;//-|
+	DZE_DiagVerbose = false; // | These Don't even work its so effing useful.
+	DZE_DiagFpsFast = false; //-|
 	DZE_DeathMsgTitleText = true;
 	DZE_DeathMsgGlobal = true;									
 	DZE_BuildingLimit = 700;									

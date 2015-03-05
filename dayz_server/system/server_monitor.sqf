@@ -236,6 +236,7 @@ if (isServer && isNil "sm_done") then {
 					// total each vehicle
 					serverVehicleCounter set [count serverVehicleCounter,_type];
 				};
+			[_object] execVM "\z\addons\dayz_server\compile\server_deleteSafeZoneVehicles.sqf";
 			};
 
 			//Monitor the object

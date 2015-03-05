@@ -403,7 +403,7 @@ class Mission
 	};
 	class Sensors
 	{
-		items=11;
+		items=10;
 		class Item0
 		{
 			position[]={4053.8501,364.76645,11668.645};
@@ -534,7 +534,7 @@ class Mission
         };
 		class Item8
 		{
-			position[]={12429.5,158.85699,12564};
+			position[]={4486.37,14.798248,10313.5};
 			activationBy="ANY";
 			repeating=1;
 			interruptable=1;
@@ -550,7 +550,7 @@ class Mission
         };		
 		class Item9
 		{
-			position[]={12060.471,158.85699,12638.533};
+			position[]={12429.5,158.85699,12564};
 			activationBy="ANY";
 			repeating=1;
 			interruptable=1;
@@ -564,22 +564,6 @@ class Mission
 				
 			};
         };
-		class Item10
-		{
-			position[]={4486.37,14.798248,10313.5};
-			activationBy="ANY";
-			repeating=1;
-			interruptable=1;
-			age="UNKNOWN";
-			name="Aircraftnw_safezone";
-			expCond="(player distance Aircraft_safezone) < 100;";
-			expActiv="TitleText[""Now entering Airport"",""PLAIN DOWN""]; canbuild = false; inSafeZone = true;";
-			expDesactiv="TitleText[""Now leaving Airport"",""PLAIN DOWN""]; canbuild = true; inSafeZone = false;";
-			class Effects
-			{
-				
-			};
-        };	
 	};
 };
 
