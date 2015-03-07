@@ -1,6 +1,7 @@
-	author = "The Wasteland Diaries";
+	author = "The one and only... DEAN! <3";
 	onLoadName = "The Wasteland Diaries";
 
+	#include "custom\hpp\infiSTAR_AdminMenu.hpp"
 	#include "custom\hpp\boot.hpp"
 
 	class CfgRemoteExecCommands {
