@@ -24,9 +24,7 @@ diag_log text "[DZMS]: Loading All Other Functions.";
 //Attempts to find a mission location
 //If findSafePos fails it searches again until a position is found
 //This fixes the issue with missions spawning in Novy Sobor on Chernarus
-
-
-/*DZMSFindPos = {
+DZMSFindPos = {
     private["_mapHardCenter","_mapRadii","_isTavi","_centerPos","_pos","_disCorner","_hardX","_hardY","_findRun","_posX","_posY","_feel1","_feel2","_feel3","_feel4","_noWater","_tavTest","_tavHeight","_disMaj","_disMin","_okDis","_isBlack","_playerNear"];
   
     //Lets try to use map specific "Novy Sobor Fixes".
@@ -38,43 +36,6 @@ diag_log text "[DZMS]: Loading All Other Functions.";
 	_tavHeight = 0;
 	switch (DZMSWorldName) do {
 		case "chernarus":{_centerPos = [7100, 7750, 0];_mapRadii = 5500;};
-		case "utes":{_centerPos = [3500, 3500, 0];_mapRadii = 3500;};
-		case "zargabad":{_centerPos = [4096, 4096, 0];_mapRadii = 4096;};
-		case "fallujah":{_centerPos = [3500, 3500, 0];_mapRadii = 3500;};
-		case "takistan":{_centerPos = [5500, 6500, 0];_mapRadii = 5000;};
-		case "tavi":{_centerPos = [10370, 11510, 0];_mapRadii = 14090;_isTavi = true;};
-		case "lingor":{_centerPos = [4400, 4400, 0];_mapRadii = 4400;};
-		case "namalsk":{_centerPos = [4352, 7348, 0]};
-		case "napf":{_centerPos = [10240, 10240, 0];_mapRadii = 10240;};
-		case "mbg_celle2":{_centerPos = [8765.27, 2075.58, 0]};
-		case "oring":{_centerPos = [1577, 3429, 0]};
-		case "panthera2":{_centerPos = [4400, 4400, 0];_mapRadii = 4400;};
-		case "isladuala":{_centerPos = [4400, 4400, 0];_mapRadii = 4400;};
-		case "smd_sahrani_a2":{_centerPos = [13200, 8850, 0]};
-		case "sauerland":{_centerPos = [12800, 12800, 0];_mapRadii = 12800;};
-		case "trinity":{_centerPos = [6400, 6400, 0];_mapRadii = 6400;};
-		//We don't have a supported map. Let's use the norm.
-		default{_pos = [getMarkerPos "center",0,5500,60,0,20,0] call BIS_fnc_findSafePos;_mapHardCenter = false;};
-	};
-*/
-
-DZMSFindPos = {
-    private["_mapHardCenter","_mapRadii","_isTavi","_centerPos","_safePos","_pos","_disCorner","_hardX","_hardY","_findRun","_posX","_posY","_feel1","_feel2","_feel3","_feel4","_noWater","_tavTest","_tavHeight","_disMaj","_disMin","_okDis","_isBlack","_playerNear"];
-    //Lets try to use map specific "Novy Sobor Fixes".
-    //If the map is unrecognised this function will still work.
-	//Better code thanks to Halv
-	diag_log "Finding Position";
-	_mapHardCenter = true;
-	_mapRadii = 5500;
-	_isTavi = false;
-	_tavHeight = 0;
-	switch (DZMSWorldName) do {
-		case "chernarus":{
-							_centerPos = [7100, 7750, 0];
-							_mapRadii = 5500;
-							_safePos = [_centerPos, 0, _mapRadii, 30, 0,	20, 0] call BIS_fnc_findSafePos;
-							diag_log format ["Finding Safe Pos for Cherno: %1", _safePos];
-		};
 		case "utes":{_centerPos = [3500, 3500, 0];_mapRadii = 3500;};
 		case "zargabad":{_centerPos = [4096, 4096, 0];_mapRadii = 4096;};
 		case "fallujah":{_centerPos = [3500, 3500, 0];_mapRadii = 3500;};
@@ -105,7 +66,7 @@ DZMSFindPos = {
         _findRun = true;
         while {_findRun} do
         {
-            _pos = [_centerPos,0,_mapRadii,60,0,20,0] call BIS_fnc_findSafePos;
+            _pos = [_centerPos,0,_mapRadii,60,0,5,0] call BIS_fnc_findSafePos;
            
             //Apparently you can't compare two arrays and must compare values
             _posX = _pos select 0;

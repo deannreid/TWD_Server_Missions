@@ -18,8 +18,10 @@
 	dayz_maxGlobalZombiesInit = 10;
 	dayz_maxGlobalZombiesIncrease = 10;
 	dayz_maxZeds = 3000;
-	DayZ_UseSteamID = true;	
+	dayz_dawn = 6; //am
+	dayz_dusk = 18; //pm
 
+	DayZ_UseSteamID = true;	
 	// DayZ Epoch Config										
 	DZE_DiagFpsSlow = false; //-|
 	DZE_DiagVerbose = false; // | These Don't even work its so effing useful.
@@ -37,11 +39,15 @@
 	DZE_AntiWallLimit = 3;
 	DZE_AsReMix_PLAYER_HUD = false;	
 	DZE_MissionLootTable = true;
+	DZE_Debug_Damage = true;
+	DZE_FriendlySaving = true; //Enable Saving of Friends etc.
 	
 	twdGUIMoney = true;
 	twdGUIBTFH = true;
 	twdGUIHardcore = false;
-	
+	timezoneswitch = 0;
+
+
 	EpochEvents = [
 	["any","any","any","any",5,"pantypooper"],
 		["any","any","any","any",15,"pantypooper"],

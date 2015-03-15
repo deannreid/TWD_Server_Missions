@@ -1,1 +1,0 @@
-_this addMPEventHandler["MPKilled",{(_this select 0)call EPOCH_server_save_killedStorage}];
