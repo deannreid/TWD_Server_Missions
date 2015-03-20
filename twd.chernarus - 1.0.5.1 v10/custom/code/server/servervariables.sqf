@@ -140,5 +140,14 @@ if (dayZ_instance == 15) then
 	DZE_vehicleAmmo	= 1;
 	DZE_requireplot = 0;
 	DZE_GodModeBase = true;
-	DZE_R3F_WEIGHT = false;	
+	DZE_R3F_WEIGHT = false;
+	
+	ns_blowout = true;
+	ns_blowout_dayz = true;
+	ns_blow_delaymod = 0.74;
+	ns_blow_itemapsi = "NVGoggles"; //ItemAPSI replacement
+	ns_blow_playerdamage = 4000;
+	ns_blow_emp = false;
+	dzn_ns_bloodsucker = true;
+	dzn_ns_bloodsucker_den = 400;
 };

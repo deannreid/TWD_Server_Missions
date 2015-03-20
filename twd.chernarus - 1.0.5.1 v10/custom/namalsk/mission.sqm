@@ -1,0 +1,654 @@
+version=11;
+class Mission
+{
+	addOns[]=
+	{
+//Map Specific
+		"chernarus",
+		//"namalsk",
+		//"ibr_lingor",
+
+//ArmA
+		"ca_modules_animals",
+		"cacharacters_pmc",
+		"ca_modules_functions",		
+		"CABuildings",
+		"CABuildings2",
+		"CAMisc",
+		"CAMisc2",
+		"CARocks2",
+		"CAStructures",
+		"CAAir2_UH1Y",
+		"CAAir2_MV22",
+		"CAAir",
+		"arma1_sf_port_patch",
+		
+//DayZ
+		"dayz_anim",
+		"dayz_code",
+		"dayz_communityassets",
+		"dayz_weapons",
+		"dayz_equip",
+		"dayz_epoch",
+		"dayz_vehicles",
+		
+//Epoch
+		"map_eu",
+		"glt_m300t",
+		"pook_h13",
+		"csj_gyroac",
+		"jetskiyanahuiaddon",
+		"warfarebuildings",
+		"mbg_killhouses",	
+		"mbg_african_buildings",
+		"mbg_buildings_3",
+		"mbg_buildings_2",	
+		"warehouse",
+		"buildings3",
+		"aif_arma1buildings",
+		"kpfswaysigns",
+		
+//Lingor
+/*		"ibr_plants",
+		"ibr_hangars",
+		"ibr_airports",
+		"ibr_lcivilian_patch",
+		"chn_crocodile",*/
+
+//Overwatch
+		"RH_m14",
+		"FHQ_Remington",
+		"FHQ_Remington_ammo",
+		"FHQ_Remington_msr",
+		"FHQ_Remington_xm2010",
+		"FHQ_Remington_acr",
+		"FHQ_Remington_rsass",
+		"VILAS_WWP",
+		"VILAS_RW_Forces",
+		"VILAS_WWP_CO",
+		"VILAS_RW_Forces_CO",
+		"ddopp_taserpack",
+		"CSJ_GyroAC",
+		"JetSkiYanahuiAddon",
+		"smk_anims_lite",
+		"MicroAirVehicles",
+		"oz_is_objects",
+		"monaro",
+		"gsc_units_stalker_patch",
+		"american_law_enforcement",
+		"bb_mercenary",
+		"CYBP_Camels_Config",
+		"nissan_350z",
+		"ussr_cheytac"
+	};
+	
+	addOnsAuto[]=
+	{
+		"dayz_weapons",
+		"ca_modules_functions",
+		"chernarus"
+	};
+	randomSeed=11171215;
+	class Intel
+	{
+		briefingName="The Wasteland Diaries";
+		briefingDescription="TWD Overpoch V10";
+		startWeather=0;
+		forecastWeather=0;
+		year=2008;
+		month=6;
+		day=1;
+		hour=12;
+	};
+	class Groups
+	{
+		items=3;
+		class Item0
+		{
+			side="WEST";
+			class Vehicles
+			{
+				#define playerDefine position[]={-7240,0,19530};azimut=0;side="WEST";vehicle="Survivor1_DZ";skill=0.6;init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";player="PLAY CDG";
+				items=100;
+				class Item0
+				{
+					position[]={-7240,0,19530};
+					azimut=-17.0839;
+					id=0;
+					side="WEST";
+					vehicle="Survivor1_DZ";
+					player="PLAYER COMMANDER";
+					leader=1;
+					rank="SERGEANT";
+					skill=0.60000002;
+					init="this enableSimulation false;this allowDammage false;this disableAI 'FSM';this disableAI 'ANIM';this disableAI 'MOVE';";
+				};
+				class Item1{id=1;playerDefine};
+				class Item2{id=2;playerDefine};
+				class Item3{id=3;playerDefine};
+				class Item4{id=4;playerDefine};
+				class Item5{id=5;playerDefine};
+				class Item6{id=6;playerDefine};
+				class Item7{id=7;playerDefine};
+				class Item8{id=8;playerDefine};
+				class Item9{id=9;playerDefine};
+				class Item10{id=10;playerDefine};
+				class Item11{id=11;playerDefine};
+				class Item12{id=12;playerDefine};
+				class Item13{id=13;playerDefine};
+				class Item14{id=14;playerDefine};
+				class Item15{id=15;playerDefine};
+				class Item16{id=16;playerDefine};
+				class Item17{id=17;playerDefine};
+				class Item18{id=18;playerDefine};
+				class Item19{id=19;playerDefine};
+				class Item20{id=20;playerDefine};
+				class Item21{id=21;playerDefine};
+				class Item22{id=22;playerDefine};
+				class Item23{id=23;playerDefine};
+				class Item24{id=24;playerDefine};
+				class Item25{id=25;playerDefine};
+				class Item26{id=26;playerDefine};
+				class Item27{id=27;playerDefine};
+				class Item28{id=28;playerDefine};
+				class Item29{id=29;playerDefine};
+				class Item30{id=30;playerDefine};
+				class Item31{id=31;playerDefine};
+				class Item32{id=32;playerDefine};
+				class Item33{id=33;playerDefine};
+				class Item34{id=34;playerDefine};
+				class Item35{id=35;playerDefine};
+				class Item36{id=36;playerDefine};
+				class Item37{id=37;playerDefine};
+				class Item38{id=38;playerDefine};
+				class Item39{id=39;playerDefine};
+				class Item40{id=40;playerDefine};
+				class Item41{id=41;playerDefine};
+				class Item42{id=42;playerDefine};
+				class Item43{id=43;playerDefine};
+				class Item44{id=44;playerDefine};
+				class Item45{id=45;playerDefine};
+				class Item46{id=46;playerDefine};
+				class Item47{id=47;playerDefine};
+				class Item48{id=48;playerDefine};
+				class Item49{id=49;playerDefine};
+				class Item50{id=50;playerDefine};
+				class Item51{id=51;playerDefine};
+				class Item52{id=52;playerDefine};
+				class Item53{id=53;playerDefine};
+				class Item54{id=54;playerDefine};
+				class Item55{id=55;playerDefine};
+				class Item56{id=56;playerDefine};
+				class Item57{id=57;playerDefine};
+				class Item58{id=58;playerDefine};
+				class Item59{id=59;playerDefine};
+				class Item60{id=60;playerDefine};
+				class Item61{id=61;playerDefine};
+				class Item62{id=62;playerDefine};
+				class Item63{id=63;playerDefine};
+				class Item64{id=64;playerDefine};
+				class Item65{id=65;playerDefine};
+				class Item66{id=66;playerDefine};
+				class Item67{id=67;playerDefine};
+				class Item68{id=68;playerDefine};
+				class Item69{id=69;playerDefine};
+				class Item70{id=70;playerDefine};
+				class Item71{id=71;playerDefine};
+				class Item72{id=72;playerDefine};
+				class Item73{id=73;playerDefine};
+				class Item74{id=74;playerDefine};
+				class Item75{id=75;playerDefine};
+				class Item76{id=76;playerDefine};
+				class Item77{id=77;playerDefine};
+				class Item78{id=78;playerDefine};
+				class Item79{id=79;playerDefine};
+				class Item80{id=80;playerDefine};
+				class Item81{id=81;playerDefine};
+				class Item82{id=82;playerDefine};
+				class Item83{id=83;playerDefine};
+				class Item84{id=84;playerDefine};
+				class Item85{id=85;playerDefine};
+				class Item86{id=86;playerDefine};
+				class Item87{id=87;playerDefine};
+				class Item88{id=88;playerDefine};
+				class Item89{id=89;playerDefine};
+				class Item90{id=90;playerDefine};
+				class Item91{id=91;playerDefine};
+				class Item92{id=92;playerDefine};
+				class Item93{id=93;playerDefine};
+				class Item94{id=94;playerDefine};
+				class Item95{id=95;playerDefine};
+				class Item96{id=96;playerDefine};
+				class Item97{id=97;playerDefine};
+				class Item98{id=98;playerDefine};
+				class Item99{id=99;playerDefine};				
+			};
+		};
+		class Item1
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={-143.93861,0.52647489,2319.5012};
+					id=50;
+					side="LOGIC";
+					vehicle="FunctionsManager";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item3 {
+		   side="West";
+		   class Vehicles 
+			{
+				items=1;
+				class Item0
+				{
+					position[]={23973.1,0.000656128,-5.40161};
+					id=52;
+					side="West";
+					vehicle="ns_bloodsucker";
+					leader=1;
+					skill=0.60000002;
+					text="sefik";
+					init="this allowDamage false;";
+				};
+		    };
+		};	
+
+	};
+	class Markers
+	{
+		items=21;
+		class Item0
+		{
+			position[]={7839.6055,381.33774,8414.7324};
+			name="center";
+			type="Empty";
+		};
+		class Item1
+		{
+			position[]={-7245.377,365.98782,19535.367};
+			name="respawn_west";
+			type="Empty";
+		};
+		class Item2
+		{
+			position[]={4932.3345,0.39950246,1989.1094};
+			name="spawn0";
+			type="Empty";
+		};
+		class Item3
+		{
+			position[]={2236.0391,0.63119155,1923.3735};
+			name="spawn1";
+			type="Empty";
+		};
+		class Item4
+		{
+			position[]={8738.1328,0.45720705,2122.1082};
+			name="spawn2";
+			type="Empty";
+		};
+		class Item5
+		{
+			position[]={10909.267,0.57597214,2422.3096};
+			name="spawn3";
+			type="Empty";
+		};
+		class Item6
+		{
+			position[]={13510.764,0.44504455,5249.3027};
+			name="spawn4";
+			type="Empty";
+		};
+		class Item7
+		{
+			position[]={6326.4805,304.99265,7809.4888};
+			name="Tradercitystary";
+			text="Trader City Stary";
+			type="mil_circle";
+			colorName="ColorGreen";
+		};
+		class Item8
+		{
+			position[]={4361.4937,3,2259.9526};
+			name="wholesaleSouth";
+			text="Wholesaler";
+			type="mil_dot";
+			colorName="ColorBlack";
+		};
+		class Item9
+		{
+			position[]={13532.614,3.0083523,6355.9497};
+			name="boatTraderEast";
+			text="Wholesaler";
+			type="mil_dot";
+			colorName="ColorBlack";
+		};
+		class Item10
+		{
+			position[]={7989.3354,0.30462033,2900.9946};
+			name="BoatDealerSouth";
+			text="Boat Dealer";
+			type="mil_dot";
+			colorName="ColorBlack";
+		};
+		class Item11
+		{
+			position[]={12429.5,158.85699,12564};
+			name="AirVehicles";
+			text="Aircraft Dealer";
+			type="Airport";
+			colorName="ColorGreen";
+		};
+		class Item12
+		{
+			position[]={1606.6443,289.70795,7803.5156};
+			name="BanditDen";
+			text="Bandit Camp";
+			type="mil_dot";
+			colorName="ColorRed";
+		};
+		class Item13
+		{
+			position[]={11447.91,317.27109,11364.536};
+			name="Klen";
+			text="Trader City Klen";
+			type="mil_circle";
+			colorName="ColorGreen";
+		};
+		class Item14
+		{
+			position[]={13441.16,1.1406164,5429.3013};
+			name="BoatDealerEast";
+			text="Boat Dealer";
+			type="mil_dot";
+			colorName="ColorBlack";
+		};
+		class Item15
+		{
+			position[]={4064.2258,365.13501,11665.938};
+			name="TradercityBash";
+			text="Trader City Bash";
+			type="mil_circle";
+			colorName="ColorGreen";
+		};
+		class Item16
+		{
+			position[]={12944.227,210.19823,12766.889};
+			name="HeroTrader";
+			text="Hero Camp";
+			type="mil_dot";
+			colorName="ColorBlue";
+		};
+	    class Item17
+		{
+			position[]={4486.37,14.798248,10313.5};
+			name="AirVehicles";
+			text="Aircraft Dealer";
+			type="Airport";
+			colorName="ColorGreen";
+		};
+		class Item18
+		{
+			position[]={13394.9,14.798248,2869.44};
+			name="BoatDealerSkalisty";
+			text="Skalisty Boats";
+			type="mil_dot";
+			colorName="ColorBlack";
+		};
+		class Item19
+		{
+			position[]={14040.3,14.798248,2806.62};
+			name="BanditDen";
+			text="Skalisty Bandits";
+			type="mil_dot";
+			colorName="ColorRed";
+		};
+		class Item20
+		{
+			position[]={6412.1,14.798248,7744.06};
+			name="AirVehicles";
+			text="Heliport";
+			type="Airport";
+			colorName="ColorGreen";
+		};
+	};
+	class Sensors
+	{
+		items=10;
+		class Item0
+		{
+			position[]={4053.8501,364.76645,11668.645};
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonebash";
+			expCond="(player distance zonebash) < 75;";
+			expActiv="TitleText[""Now entering trader city Bash"",""PLAIN DOWN""]; canbuild = false;";
+			expDesactiv="TitleText[""Now leaving trader city Bash"",""PLAIN DOWN""]; canbuild = true;";
+			class Effects
+			{
+				soundDet="arabian_market_1";
+			};
+		};
+		class Item1
+		{
+			position[]={11463.747,317.3078,11349.89};
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zoneklen";
+			expCond="(player distance zoneklen) < 75;";
+			expActiv="TitleText[""Now entering trader city Klen"",""PLAIN DOWN""]; canbuild = false;";
+			expDesactiv="TitleText[""Now leaving trader city Klen"",""PLAIN DOWN""]; canbuild = true;";
+			class Effects
+			{
+				soundDet="arabian_market_1";
+			};
+		};
+		class Item2
+		{
+			position[]={6325.6772,304.99033,7807.7412}; 
+			activationBy="WEST";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonestary";
+			expCond="(player distance zonestary) < 75;";
+			expActiv="TitleText[""Now entering trader city Stary"",""PLAIN DOWN""]; canbuild = false;";
+			expDesactiv="TitleText[""Now leaving trader city Stary"",""PLAIN DOWN""]; canbuild = true;";
+			class Effects
+			{
+				soundDet="arabian_market_1";
+			};
+		};
+        class Item3
+		{
+			position[]={4053.8501,364.76645,11668.645};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonebash_safezone";
+			expCond="(player distance zonebash_safezone) < 150;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{
+				soundDet="arabian_market_1";
+			};
+		};
+		class Item4
+		{
+			position[]={11463.747,317.3078,11349.89};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zoneklen_safezone";
+			expCond="(player distance zoneklen_safezone) < 150;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{
+				soundDet="arabian_market_1";
+			};
+		};
+		class Item5
+		{
+			position[]={6325.6772,304.99033,7807.7412};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="zonestary_safezone";
+			expCond="(player distance zonestary_safezone) < 150;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{
+				
+			};
+        };
+		class Item6
+		{
+			position[]={1606.6443,289.70795,7803.5156};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="bandit_safezone";
+			expCond="(player distance bandit_safezone) < 150;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{
+				
+			};
+        };
+		class Item7
+		{
+			position[]={12944.227,210.19823,12766.889};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Hero_safezone";
+			expCond="(player distance Hero_safezone) < 150;";
+			expActiv="inSafeZone = true;";
+			expDesactiv="inSafeZone = false;";
+			class Effects
+			{
+				
+			};
+        };
+		class Item8
+		{
+			position[]={4486.37,14.798248,10313.5};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Aircraft_safezone";
+			expCond="(player distance Aircraft_safezone) < 100;";
+			expActiv="TitleText[""Now entering Airport"",""PLAIN DOWN""]; canbuild = false; inSafeZone = true;";
+			expDesactiv="TitleText[""Now leaving Airport"",""PLAIN DOWN""]; canbuild = true; inSafeZone = false;";
+			class Effects
+			{
+				
+			};
+        };		
+		class Item9
+		{
+			position[]={12429.5,158.85699,12564};
+			activationBy="ANY";
+			repeating=1;
+			interruptable=1;
+			age="UNKNOWN";
+			name="Aircraft_safezone";
+			expCond="(player distance Aircraft_safezone) < 100;";
+			expActiv="TitleText[""Now entering Airport"",""PLAIN DOWN""]; canbuild = false; inSafeZone = true;";
+			expDesactiv="TitleText[""Now leaving Airport"",""PLAIN DOWN""]; canbuild = true; inSafeZone = false;";
+			class Effects
+			{
+				
+			};
+        };
+	};
+};
+
+class Intro
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=6913869;
+	class Intel
+	{
+		startWeather=0;
+		forecastWeather=0;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroWin
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=4081731;
+	class Intel
+	{
+		startWeather=0;
+		forecastWeather=0;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};
+class OutroLoose
+{
+	addOns[]=
+	{
+		"chernarus"
+	};
+	addOnsAuto[]=
+	{
+		"chernarus"
+	};
+	randomSeed=4975929;
+	class Intel
+	{
+		startWeather=0;
+		forecastWeather=0;
+		year=2008;
+		month=10;
+		day=11;
+		hour=9;
+		minute=20;
+	};
+};

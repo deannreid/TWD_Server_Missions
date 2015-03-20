@@ -40,6 +40,7 @@ if (dayZ_instance == 15) then
 			_nil = [] execVM "\z\addons\dayz_server\missions\DayZ_Epoch_15.namalsk\mission.sqf";
 			call compile preprocessFileLineNumbers "custom\code\traders\15.sqf";
 		};
+	_bul = [ns_blow_emp] execVM "custom\namalsk\blowout\module\blowout_server.sqf";
 };
 
 if (dayZ_instance == 16) then

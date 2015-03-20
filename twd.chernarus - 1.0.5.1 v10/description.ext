@@ -34,6 +34,7 @@ diagHit 			= 1;
 	class RscTitles { 
 		#include "custom\hpp\guiClass.hpp"
 		#include "custom\GUI\guiAdvanced.hpp"
+		#include "custom\hpp\namalsk.hpp"
 	};
 
 	#include "custom\hpp\serverstart.hpp"
