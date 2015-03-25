@@ -4,6 +4,7 @@
 	MaxDynamicDebris = 10;
 	DynamicVehicleDamageLow = 0;
 	DynamicVehicleDamageHigh = 40;										
+	timezoneswitch = 0;
 	
 	// DayZ Config											
 	dayz_paraSpawn = false;
@@ -20,8 +21,8 @@
 	dayz_maxZeds = 3000;
 	dayz_dawn = 6; //am
 	dayz_dusk = 18; //pm
-
 	DayZ_UseSteamID = true;	
+	
 	// DayZ Epoch Config										
 	DZE_DiagFpsSlow = false; //-|
 	DZE_DiagVerbose = false; // | These Don't even work its so effing useful.
@@ -45,8 +46,6 @@
 	twdGUIMoney = true;
 	twdGUIBTFH = true;
 	twdGUIHardcore = false;
-	timezoneswitch = 0;
-
 
 	EpochEvents = [
 	["any","any","any","any",5,"pantypooper"],
@@ -61,10 +60,8 @@
 			["any","any","any","any",50,"Construction"]
 	];
 	
-//SERVER ONLY VARIABLES
 // Chernarus
-if (dayZ_instance == 11) then
-{
+if (dayZ_instance == 11) then {
 	spawnShoremode = 1;
 	spawnArea= 2500;
 
@@ -85,8 +82,7 @@ if (dayZ_instance == 11) then
 };
 
 //Panthera
-if (dayZ_instance == 16) then
-{
+if (dayZ_instance == 16) then {
 	spawnShoremode = 1;
 	spawnArea= 1500;
 	
@@ -104,8 +100,7 @@ if (dayZ_instance == 16) then
 };
 
 //Lingor
-if (dayZ_instance == 7) then
-{
+if (dayZ_instance == 7) then {
 	spawnShoremode = 1;
 	spawnArea= 1500;
 	
@@ -125,8 +120,7 @@ if (dayZ_instance == 7) then
 };
 
 //Namalsk
-if (dayZ_instance == 15) then
-{
+if (dayZ_instance == 15) then {
 	spawnShoremode = 1;
 	spawnArea= 1500;
 	

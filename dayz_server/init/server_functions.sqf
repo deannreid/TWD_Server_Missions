@@ -802,14 +802,6 @@ server_checkHackers = {
 	DZE_DYN_HackerCheck = true;
 	{
 	if (!((isNil "_x") || {(isNull _x)})) then {
-		// Epoch Admin Tools
-		//if(vehicle _x != _x && !(vehicle _x in PVDZE_serverObjectMonitor) && (isPlayer _x)  && !((typeOf vehicle _x) in DZE_safeVehicle)) then {
-		if(vehicle _x != _x && !(vehicle _x in PVDZE_serverObjectMonitor) && (isPlayer _x)  && !((typeOf vehicle _x) in DZE_safeVehicle) && (vehicle _x getVariable ["MalSar",0] !=1)) then {
-			diag_log ("CLEANUP: KILLING A HACKER " + (name _x) + " " + str(_x) + " IN " + (typeOf vehicle _x));
-			(vehicle _x) setDamage 1;
-			_x setDamage 1;
-			sleep 0.25;
-		};
 	};
 		sleep 0.001;
 	} count allUnits;
