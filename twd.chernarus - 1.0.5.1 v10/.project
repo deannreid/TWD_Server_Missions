@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>The Wasteland Diaries</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+		<nature>org.friedenhq.armascript.projectNature</nature>
+	</natures>
+	<variableList>
+		<variable>
+			<name>DayZ_Code</name>
+			<value>file:/G:/ArmA%20Mods/ArmA%202/@DayZ_Epoch1051/addons/dayz_code</value>
+		</variable>
+		<variable>
+			<name>DayZ_Server</name>
+			<value>file:/E:/Repositories/TWD_Server_Missions/dayz_server</value>
+		</variable>
+	</variableList>
+</projectDescription>

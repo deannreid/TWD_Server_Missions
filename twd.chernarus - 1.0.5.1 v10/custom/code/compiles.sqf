@@ -3,20 +3,20 @@ diag_log "==============================================";
 	diag_log "Initialising DayZ_Code";
 		fnc_usec_selfActions =						compile preprocessFileLineNumbers "custom\code\fn_selfActions.sqf";
 		player_switchModel   =						compile preprocessFileLineNumbers "custom\code\player_switchModel.sqf";
-		player_death =								compile preprocessFileLineNumbers "custom\dean\skinrecover\player_death.sqf";
-		player_updateGui =							compile preprocessFileLineNumbers "custom\GUI\player_updateGui.sqf";
-		player_selectSlot = 							compile preprocessFileLineNumbers "custom\code\ui_selectSlot.sqf";
-		player_craftItem =							compile preprocessFileLineNumbers "fuckingfixes\player_craftItem.sqf";
+		player_death =							compile preprocessFileLineNumbers "custom\dean\skinrecover\player_death.sqf";
+		player_updateGui =						compile preprocessFileLineNumbers "custom\GUI\player_updateGui.sqf";
+		player_selectSlot = 						compile preprocessFileLineNumbers "custom\code\ui_selectSlot.sqf";
+		player_craftItem =						compile preprocessFileLineNumbers "fuckingfixes\player_craftItem.sqf";
 											    call compile preprocessFileLineNumbers "fuckingfixes\player_murderMenu.sqf";
 	if (dayZ_instance == 15) then {
-		fnc_isInsideBuilding = 						compile preprocessFileLineNumbers "custom\namalsk\blowout\fn_isInsideBuilding.sqf";
+		fnc_isInsideBuilding = 					compile preprocessFileLineNumbers "custom\namalsk\blowout\fn_isInsideBuilding.sqf";
 		building_spawnZombies =   					compile preprocessFileLineNumbers "custom\namalsk\bloodsuckers\building_spawnZombies.sqf";
 	};
 	diag_log "DayZ Code Initialized";
 
 diag_log "==============================================";
 	diag_log "Initialising Snap Building";
-		player_build = 								compile preprocessFileLineNumbers "custom\snap_pro\player_build.sqf";
+		player_build = 							compile preprocessFileLineNumbers "custom\snap_pro\player_build.sqf";
 		snap_build = 								compile preprocessFileLineNumbers "custom\snap_pro\snap_build.sqf";
 		dayz_spaceInterrupt = 						compile preprocessFileLineNumbers "custom\snap_pro\dayz_spaceInterrupt.sqf";
 	diag_log "Snap Building Initialized";
@@ -24,9 +24,9 @@ diag_log "==============================================";
 diag_log "==============================================";
 	diag_log "Loading Animations";	
 	if (!isDedicated) then {
-		ah1z_pack = 									compile preprocessFileLineNumbers "\ca\air\Scripts\AH1Z_fold.sqf";
-		mv22_pack = 									compile preprocessFileLineNumbers "\ca\air2\MV22\scripts\pack.sqf";
-		uh1y_pack = 									compile preprocessFileLineNumbers "\ca\air2\UH1Y\Scripts\fold.sqf";
+		ah1z_pack = 								compile preprocessFileLineNumbers "\ca\air\Scripts\AH1Z_fold.sqf";
+		mv22_pack = 								compile preprocessFileLineNumbers "\ca\air2\MV22\scripts\pack.sqf";
+		uh1y_pack = 								compile preprocessFileLineNumbers "\ca\air2\UH1Y\Scripts\fold.sqf";
 	};
 	diag_log "Animations Initialized";
 

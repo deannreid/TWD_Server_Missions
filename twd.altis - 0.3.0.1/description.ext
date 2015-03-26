@@ -3,6 +3,11 @@
 
 	#include "custom\hpp\infiSTAR_AdminMenu.hpp"
 	#include "custom\hpp\boot.hpp"
+	#include "custom\ZHB\ZHudBuilder.hpp"
+
+
+    #include "custom\hpp\rsctitles.hpp"
+    #include "custom\hpp\cfgfunctions.hpp"
 
 	class CfgRemoteExecCommands {
 	
