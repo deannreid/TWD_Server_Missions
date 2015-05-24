@@ -39,7 +39,7 @@ class Category_500 {
 		buy[] = {108000};
 		sell[] = {18000};
 	};
-	class BAF_Merlin_DZ {
+	class BAF_Merlin_DZE {
 		type = "trade_any_vehicle";
 		buy[] = {150000};
 		sell[] = {18000};
