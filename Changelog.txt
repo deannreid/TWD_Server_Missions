@@ -37,6 +37,7 @@ V10 (Next Release)
 ··Fixed -: TraderItemList|TraderCatList console error
 ··Fixed -: Zombie Loot Error
 ··Fixed -: Klen Vehicle Trader
+··Fixed -: Admin Menu Hive Spawn  
 
 ··Removed -: Advanced Trading 
 ··Removed -: Some Vehicle Animations
