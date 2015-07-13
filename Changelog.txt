@@ -39,7 +39,8 @@ V10 (Next Release)
 ··Fixed -: Klen Vehicle Trader
 
 ··Removed -: Advanced Trading 
-
+··Removed -: Some Vehicle Animations
+··Removed -: Sirens 
 
 V6.5
 ··Added -: Single Currency Banking
