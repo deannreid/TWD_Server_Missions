@@ -1,3 +1,6 @@
+	//Disable when finished testing..
+	_debug = true;
+	
 diag_log "==============================================";
 	diag_log "Starting Mission Init";
 
@@ -12,10 +15,6 @@ diag_log "==============================================";
 		enableRadio true;
 		enableSentences false;
 		execVM "custom\code\server\config.sqf"; //Instance Select
-		sleep 0.1;
-		diag_log format ["Loaded Config for %1:%2", dayZ_instance, worldname];
-		execVM "custom\code\server\addoncontrol.sqf";
-		
 diag_log "==============================================";
 		
 	diag_log "Loading Default Epoch Files";
@@ -27,11 +26,10 @@ diag_log "==============================================";
 	progressLoadingScreen 0.4;
 		call compile preprocessFileLineNumbers "custom\code\defaultcompiles.sqf";
 	progressLoadingScreen 0.5;
-	
-	diag_log "Loading Custom TWD Files";
+diag_log "Loading Custom TWD Files";
 diag_log "==============================================";
-	diag_log "Loading Compiles & Traders";
-	call compile preprocessFileLineNumbers format ["custom\code\traders\%1.sqf",dayz_Instance];
+	diag_log "Loading Compiles";
+	call compile preprocessFileLineNumbers "custom\code\traders\11.sqf";
 		call compile preprocessFileLineNumbers "custom\code\compiles.sqf";
 	diag_log "Custom Compiles Loaded";
 		call compile preprocessFileLineNumbers "custom\code\variables.sqf"; 

@@ -4,7 +4,6 @@
 	MaxDynamicDebris = 10;
 	DynamicVehicleDamageLow = 0;
 	DynamicVehicleDamageHigh = 40;										
-	timezoneswitch = 0;
 	
 	// DayZ Config											
 	dayz_paraSpawn = false;
@@ -19,14 +18,12 @@
 	dayz_maxGlobalZombiesInit = 10;
 	dayz_maxGlobalZombiesIncrease = 10;
 	dayz_maxZeds = 3000;
-	dayz_dawn = 6; //am
-	dayz_dusk = 18; //pm
 	DayZ_UseSteamID = true;	
-	
+
 	// DayZ Epoch Config										
 	DZE_DiagFpsSlow = false; //-|
-	DZE_DiagVerbose = false; // | These Don't even work its so effing useful.
-	DZE_DiagFpsFast = false; //-|
+	DZE_DiagVerbose = false;// | These Don't even work its so effing useful.
+	DZE_DiagFpsFast = false;//-|
 	DZE_DeathMsgTitleText = true;
 	DZE_DeathMsgGlobal = true;									
 	DZE_BuildingLimit = 700;									
@@ -40,13 +37,11 @@
 	DZE_AntiWallLimit = 3;
 	DZE_AsReMix_PLAYER_HUD = false;	
 	DZE_MissionLootTable = true;
-	DZE_Debug_Damage = true;
-	DZE_FriendlySaving = true; //Enable Saving of Friends etc.
 	
 	twdGUIMoney = true;
 	twdGUIBTFH = true;
 	twdGUIHardcore = false;
-
+	
 	EpochEvents = [
 	["any","any","any","any",5,"pantypooper"],
 		["any","any","any","any",15,"pantypooper"],
@@ -60,8 +55,10 @@
 			["any","any","any","any",50,"Construction"]
 	];
 	
+//SERVER ONLY VARIABLES
 // Chernarus
-if (dayZ_instance == 11) then {
+if (dayZ_instance == 11) then
+{
 	spawnShoremode = 1;
 	spawnArea= 2500;
 
@@ -82,7 +79,8 @@ if (dayZ_instance == 11) then {
 };
 
 //Panthera
-if (dayZ_instance == 16) then {
+if (dayZ_instance == 16) then
+{
 	spawnShoremode = 1;
 	spawnArea= 1500;
 	
@@ -100,7 +98,8 @@ if (dayZ_instance == 16) then {
 };
 
 //Lingor
-if (dayZ_instance == 7) then {
+if (dayZ_instance == 7) then
+{
 	spawnShoremode = 1;
 	spawnArea= 1500;
 	
@@ -120,7 +119,8 @@ if (dayZ_instance == 7) then {
 };
 
 //Namalsk
-if (dayZ_instance == 15) then {
+if (dayZ_instance == 15) then
+{
 	spawnShoremode = 1;
 	spawnArea= 1500;
 	
@@ -134,14 +134,5 @@ if (dayZ_instance == 15) then {
 	DZE_vehicleAmmo	= 1;
 	DZE_requireplot = 0;
 	DZE_GodModeBase = true;
-	DZE_R3F_WEIGHT = false;
-	
-	ns_blowout = true;
-	ns_blowout_dayz = true;
-	ns_blow_delaymod = 0.74;
-	ns_blow_itemapsi = "NVGoggles"; //ItemAPSI replacement
-	ns_blow_playerdamage = 4000;
-	ns_blow_emp = false;
-	dzn_ns_bloodsucker = true;
-	dzn_ns_bloodsucker_den = 400;
+	DZE_R3F_WEIGHT = false;	
 };

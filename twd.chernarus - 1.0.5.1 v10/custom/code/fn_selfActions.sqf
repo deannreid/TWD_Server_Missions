@@ -24,22 +24,25 @@ if (!isNull _nearLight) then {
 	};
 };
 
-if (twdSirens) then {
-	_isCopcar = typeOf _vehicle in ["SUV_TK_CIV_EP1","SUV_TK_CIV_EP1_DZE1","SUV_TK_CIV_EP1_DZE2","SUV_TK_CIV_EP1_DZE3","SUV_TK_CIV_EP1_DZE4","policecar"];
+/*
+//Sirens
+_isCopcar = typeOf _vehicle in ["SUV_TK_CIV_EP1","SUV_TK_CIV_EP1_DZE1","SUV_TK_CIV_EP1_DZE2","SUV_TK_CIV_EP1_DZE3","SUV_TK_CIV_EP1_DZE4","policecar"];
 
-	if (_inVehicle and _isCopcar and (driver _vehicle == player)) then {
-			dayz_addsirens = _vehicle;
-		if (s_player_sirens_on < 0) then {
-			s_player_sirens_on = dayz_addsirens addAction ["Sirens on","custom\sirens\sirens_on.sqf",dayz_addsirens,2,false,true,"",""];
-			s_player_sirens_off = dayz_addsirens addAction ["Sirens off","custom\sirens\sirens_off.sqf",dayz_addsirens,2,false,true,"",""];
-		};
-	} else {
-			dayz_addsirens removeAction s_player_sirens_on;
-			dayz_addsirens removeAction s_player_sirens_off;
-			s_player_sirens_on = -1;
-			s_player_sirens_off = -1;
-	};
-};	
+if (_inVehicle and _isCopcar and (driver _vehicle == player)) then {
+        dayz_addsirens = _vehicle;
+    if (s_player_sirens_on < 0) then {
+        s_player_sirens_on = dayz_addsirens addAction ["Sirens on","custom\sirens\sirens_on.sqf",dayz_addsirens,2,false,true,"",""];
+        s_player_sirens_off = dayz_addsirens addAction ["Sirens off","custom\sirens\sirens_off.sqf",dayz_addsirens,2,false,true,"",""];
+        };
+    } else {
+        dayz_addsirens removeAction s_player_sirens_on;
+        dayz_addsirens removeAction s_player_sirens_off;
+        s_player_sirens_on = -1;
+        s_player_sirens_off = -1;
+    };
+	*/
+	
+	
 //Grab Flare
 if (_canPickLight && !dayz_hasLight && !_isPZombie) then {
 	if (s_player_grabflare < 0) then {
@@ -53,112 +56,63 @@ if (_canPickLight && !dayz_hasLight && !_isPZombie) then {
 	s_player_grabflare = -1;
 	s_player_removeflare = -1;
 };
-if (twdAnimation) then {
-	if (_inVehicle && (_vehicle isKindOf "MV22")) then {
-	   if (isEngineOn _vehicle) then {[_vehicle,0] call mv22_pack;};
-			if (mv22_fold < 0) then {
-				themv22 = _vehicle;
-				if !(isEngineOn themv22) then {
-					mv22_fold = themv22 addAction ["Fold","custom\anim\mv22\mv22_fold.sqf","",5,false,true];
-					mv22_unfold = themv22 addAction ["UnFold","custom\anim\mv22\mv22_unfold.sqf","",5,false,true];
-					mv22_open = themv22 addAction ["Open Ramp","custom\anim\mv22\mv22_open.sqf","",5,false,true];
-					mv22_close = themv22 addAction ["Close Ramp","custom\anim\mv22\mv22_close.sqf","",5,false,true];
-				};
-			};
-		if (isEngineOn themv22) then {
-			themv22 removeAction mv22_fold;
-				mv22_fold = -1;
-			themv22 removeAction mv22_unfold;
-				mv22_unfold = -1;
-			themv22 removeAction mv22_open;
-				mv22_open = -1;
-			themv22 removeAction mv22_close;
-				mv22_close = -1;
-		};
-	} else {
-		if (!isNil "themv22") then {
-			themv22 removeAction mv22_fold;
-				mv22_fold = -1;
-			themv22 removeAction mv22_unfold;
-				mv22_unfold = -1;
-			themv22 removeAction mv22_open;
-				mv22_open = -1;
-			themv22 removeAction mv22_close;
-				mv22_close = -1;
-	   };
-	};
 
-	if (_inVehicle && {_vehicle isKindOf "ArmoredSUV_Base_PMC"}) then {
-		if ((_vehicle animationPhase "HideGun_01") == 1) then {
-			_unit = _vehicle turretUnit [0];
-			if (!(isNull _unit)) then {
-				_unit action ["moveToCargo",_vehicle,2];
-				titleText ["\n\nYou must open the hatch first.","PLAIN DOWN"];titleFadeOut 4;
-			};
-		};
-		if (suv_close < 0) then {
-			thesuv = _vehicle;
-			suv_close = thesuv addAction ["Close Hatch","custom\anim\suv\suv_close.sqf","",5,false,true];
-			suv_open = thesuv addAction ["Open Hatch","custom\anim\suv\suv_open.sqf","",5,false,true];
-		};
-	} else {
-		if (!isNil "thesuv") then {
-			thesuv removeAction suv_close;
-				suv_close = -1;
-			thesuv removeAction suv_open;
-				suv_open = -1;
-		};
-	};
-	 
-	if (_inVehicle && {(typeOf _vehicle) in ["UH1Y","UH1Y_DZ","UH1Y_DZE"]}) then {
-		if (isEngineOn _vehicle) then {[_vehicle,0] call uh1y_pack;};
-			if (uh1y_fold < 0) then {
-				theuh1y = _vehicle;
-				if !(isEngineOn theuh1y) then {
-					uh1y_fold = theuh1y addAction ["Fold","custom\anim\uh1y\uh1y_fold.sqf","",5,false,true];
-					uh1y_unfold = theuh1y addAction ["UnFold","custom\anim\uh1y\uh1y_unfold.sqf","",5,false,true];
-				};
-			};
-		if (isEngineOn theuh1y) then {
-			theuh1y removeAction uh1y_fold;
-				uh1y_fold = -1;
-			theuh1y removeAction uh1y_unfold;
-				uh1y_unfold = -1;
-		};
-	} else {
-		if (!isNil "theuh1y") then {
-			theuh1y removeAction uh1y_fold;
-			uh1y_fold = -1;
-			theuh1y removeAction uh1y_unfold;
-			uh1y_unfold = -1;
-		};
-	};
-
-	if (_inVehicle && {_vehicle isKindOf "AH1Z"}) then {
-		if (isEngineOn _vehicle) then {[_vehicle,0] call ah1z_pack;};
-			if (ah1z_fold < 0) then {
-				theah1z = _vehicle;
-				if !(isEngineOn theah1z) then {
-					ah1z_fold = theah1z addAction ["Fold","custom\anim\ah1z\ah1z_fold.sqf","",5,false,true];
-					ah1z_unfold = theah1z addAction ["UnFold","custom\anim\ah1z\ah1z_unfold.sqf","",5,false,true];
-				};
-			};
-		if (isEngineOn theah1z) then {
-			theah1z removeAction ah1z_fold;
-				ah1z_fold = -1;
-			theah1z removeAction ah1z_unfold;
-				ah1z_unfold = -1;
-		};
-	} else {
-		if (!isNil "theah1z") then {
-			theah1z removeAction ah1z_fold;
-				ah1z_fold = -1;
-			theah1z removeAction ah1z_unfold;
-				ah1z_unfold = -1;
-		};
-	};
+if (_inVehicle && (_vehicle isKindOf "MV22")) then {
+   if (isEngineOn _vehicle) then {[_vehicle,0] call mv22_pack;};
+   if (mv22_fold < 0) then {
+     themv22 = _vehicle;
+     if !(isEngineOn themv22) then {
+       mv22_fold = themv22 addAction ["Fold","custom\anim\mv22\mv22_fold.sqf","",5,false,true];
+       mv22_unfold = themv22 addAction ["UnFold","custom\anim\mv22\mv22_unfold.sqf","",5,false,true];
+       mv22_open = themv22 addAction ["Open Ramp","custom\anim\mv22\mv22_open.sqf","",5,false,true];
+       mv22_close = themv22 addAction ["Close Ramp","custom\anim\mv22\mv22_close.sqf","",5,false,true];
+     };
+   };
+   if (isEngineOn themv22) then {
+     themv22 removeAction mv22_fold;
+     mv22_fold = -1;
+     themv22 removeAction mv22_unfold;
+     mv22_unfold = -1;
+     themv22 removeAction mv22_open;
+     mv22_open = -1;
+     themv22 removeAction mv22_close;
+     mv22_close = -1;
+   };
+} else {
+    if (!isNil "themv22") then {
+       themv22 removeAction mv22_fold;
+       mv22_fold = -1;
+       themv22 removeAction mv22_unfold;
+       mv22_unfold = -1;
+       themv22 removeAction mv22_open;
+       mv22_open = -1;
+       themv22 removeAction mv22_close;
+       mv22_close = -1;
+   };
 };
 
+if (_inVehicle && {_vehicle isKindOf "ArmoredSUV_Base_PMC"}) then {
+   if ((_vehicle animationPhase "HideGun_01") == 1) then {
+     _unit = _vehicle turretUnit [0];
+     if (!(isNull _unit)) then {
+       _unit action ["moveToCargo",_vehicle,2];
+       titleText ["\n\nYou must open the hatch first.","PLAIN DOWN"];titleFadeOut 4;
+     };
+   };
+   if (suv_close < 0) then {
+     thesuv = _vehicle;
+     suv_close = thesuv addAction ["Close Hatch","custom\anim\suv\suv_close.sqf","",5,false,true];
+     suv_open = thesuv addAction ["Open Hatch","custom\anim\suv\suv_open.sqf","",5,false,true];
+   };
+} else {
+    if (!isNil "thesuv") then {
+        thesuv removeAction suv_close;
+        suv_close = -1;
+        thesuv removeAction suv_open;
+        suv_open = -1;
+    };
+};
+ 
 if (DZE_HeliLift) then {
 	_hasAttached = _vehicle getVariable["hasAttached",false];
 	if(_inVehicle && (_vehicle isKindOf "Air") && ((([_vehicle] call FNC_getPos) select 2) < 30) && (speed _vehicle < 5) && (typeName _hasAttached == "OBJECT")) then {
@@ -207,11 +161,12 @@ if(_isPZombie) then {
 	if (s_player_pzombiesvision < 0) then {
 		s_player_pzombiesvision = player addAction [localize "STR_EPOCH_ACTIONS_NIGHTVIS", "\z\addons\dayz_code\actions\pzombie\pz_vision.sqf", [], 4, false, true, "nightVision", "_this == _target"];
 	};
-	if (!isNull cursorTarget && (player distance cursorTarget < 3)) then {
+	if (!isNull cursorTarget && (player distance cursorTarget < 3)) then {	//Has some kind of target
 		_isAnimal = cursorTarget isKindOf "Animal";
 		_isZombie = cursorTarget isKindOf "zZombie_base";
 		_isHarvested = cursorTarget getVariable["meatHarvested",false];
 		_isMan = cursorTarget isKindOf "Man";
+		// Pzombie Gut human corpse || animal
 		if (!alive cursorTarget && (_isAnimal || _isMan) && !_isZombie && !_isHarvested) then {
 			if (s_player_pzombiesfeed < 0) then {
 				s_player_pzombiesfeed = player addAction [localize "STR_EPOCH_ACTIONS_FEED", "\z\addons\dayz_code\actions\pzombie\pz_feed.sqf",cursorTarget, 3, true, false, "",""];
@@ -226,7 +181,7 @@ if(_isPZombie) then {
 	};
 };
 
-
+// Increase distance only if AIR || SHIP
 _allowedDistance = 4;
 _isAir = cursorTarget isKindOf "Air";
 _isShip = cursorTarget isKindOf "Ship";
@@ -400,6 +355,8 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 			} count DZE_HeliAllowToTow;
 		};
 
+		//diag_log format["CREW: %1 ALLOW: %2",(count (crew _cursorTarget)),_allowTow];
+
 		if (_allowTow) then {
 			_liftHelis = nearestObjects [player, DZE_HeliAllowTowFrom, 15];
 			{
@@ -417,6 +374,8 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 				};
 			} count _liftHelis;
 		};
+
+		//diag_log format["HELI: %1 TARGET: %2",_found,_cursorTarget];
 
 		_attached = _cursorTarget getVariable["attached",false];
 		if(_found && _allowTow && _canDo && !locked _cursorTarget && !_isPZombie && (typeName _attached != "OBJECT")) then {
@@ -468,7 +427,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 	};
 
 	if(DZE_AllowForceSave) then {
-
+		//Allow player to force save
 		if((_isVehicle || _isTent) && !_isMan) then {
 			if (s_player_forceSave < 0) then {
 				s_player_forceSave = player addAction [format[localize "str_actions_save",_text], "\z\addons\dayz_code\actions\forcesave.sqf",_cursorTarget, 1, true, true, "", ""];
@@ -481,6 +440,8 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 			s_player_forceSave = -1;
 		};
 	};
+
+	
 	
 	If(DZE_AllowCargoCheck) then {
 		if((_isVehicle || _isTent || _isnewstorage) && _isAlive && !_isMan && !locked _cursorTarget) then {
@@ -492,6 +453,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 			s_player_checkGear = -1;
 		};
 	};
+	
 	
 	//flip vehicle small vehicles by your self && all other vehicles with help nearby
 	if(_player_flipveh) then {
@@ -544,6 +506,7 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 			};
 		};
 	};
+
 
 	// Human Gut animal || zombie
 	if (_player_butcher) then {
@@ -953,8 +916,8 @@ if (!isNull cursorTarget && !_inVehicle && !_isPZombie && (player distance curso
 				
 				} count (_traderMenu select 1);
 				
-				_buyV = player addAction ["<t color='#0059FF'>Advanced Trading</t>", "custom\trading\init.sqf",(_traderMenu select 0), 999, true, false, "",""];
-				s_player_parts set [count s_player_parts,_buyV];
+				//_buyV = player addAction ["<t color='#0059FF'>Advanced Trading</t>", "custom\trading\init.sqf",(_traderMenu select 0), 999, true, false, "",""];
+				//s_player_parts set [count s_player_parts,_buyV];
 
 				// Database menu
 				LastTraderMenu = (_traderMenu select 0);

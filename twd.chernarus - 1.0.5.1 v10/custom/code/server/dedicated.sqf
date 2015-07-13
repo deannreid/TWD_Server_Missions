@@ -14,7 +14,3 @@ diag_log "Markers Loaded";
 	execVM "custom\aiclient\init.sqf";
 diag_log "Mining Loaded";
 	execVM 'custom\mining\init.sqf';
-	
-if (dayZ_instance == 15) then {
-	_bul = [] execVM "custom\namalsk\blowout\module\blowout_client.sqf";
-};

@@ -7,7 +7,6 @@ class Mission
 		"chernarus",
 		//"namalsk",
 		//"ibr_lingor",
-		//"tavi",
 
 //ArmA
 		"ca_modules_animals",
@@ -56,11 +55,6 @@ class Mission
 		"ibr_lcivilian_patch",
 		"chn_crocodile",*/
 
-//Tavi
-		//"kh_dayztaviana",
-
-
-//
 //Overwatch
 		"RH_m14",
 		"FHQ_Remington",

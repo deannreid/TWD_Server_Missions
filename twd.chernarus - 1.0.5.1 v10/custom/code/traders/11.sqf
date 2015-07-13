@@ -102,7 +102,7 @@ menu_Damsel5 = [
 	"neutral"
 ];
 // Vehicle Trader Klen
-menu_Profiteer4 = [
+menu_RU_Profiteer4 = [
 	[["Bikes and ATV",501],["Buses and Vans",503],["Cargo Trucks",502],["Fuel Trucks",506],["Military Unarmed",804],["Trucks",505],["Used Cars",508],["Utility Vehicles",507]],
 	[],
 	"neutral"
