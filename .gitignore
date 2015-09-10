@@ -11,3 +11,5 @@ dayz_server/init/twdAHCore.sqf
 epochhive/$MIKERO$
 twd.altis - 0.2.5.2/custom/hpp/infiSTAR_AdminMenu.hpp
 *.lnk
+.metadata/*
+RemoteSystemsTempFiles/.project
